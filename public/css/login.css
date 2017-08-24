@@ -1,0 +1,23 @@
+.cont{
+  position: relative;
+  height: 100%;
+  background-image: url("http://cdn.wallpapersafari.com/26/2/UNhoE1.jpg");
+  background-size: cover;
+  overflow: auto;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.login-background{
+	margin-top: 20%;
+	background-color: rgba(128,128,128,0.5);
+	color: #FFF;
+}
+
+.login-heading-background{
+	background-color: rgba(256,256,256,0.8);
+	color: rgba(0,0,0,0.6);
+	padding:10px 15px;
+	border-bottom:1px solid transparent;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+}

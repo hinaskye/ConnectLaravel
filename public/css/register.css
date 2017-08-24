@@ -1,0 +1,8 @@
+.style{
+  position: relative;
+  height: 100%;
+  background-image: url("http://cdn.wallpapersafari.com/26/2/UNhoE1.jpg");
+  background-size: cover;
+  overflow: auto;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}

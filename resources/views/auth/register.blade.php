@@ -205,6 +205,13 @@
                         </div>
                     </div>
 
+                        <div class="form-group">
+                            <label for="firstname" class="col-lg-2 control-label">About Me</label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" name="aboutme" value="{{old('aboutme)}}" placeholder="Tell us a bit about yourself">
+                            </div>
+                        </div>
+
 <legend></legend>
 
                     <div class="form-group">

@@ -49,8 +49,6 @@ class CustomAuthController extends Controller
         ]);
     }
 
-
-    //test
     //For login form
     public function showLoginForm(){
         return view('auth.login');

@@ -34,6 +34,7 @@ class CreateUsersTable extends Migration
             $table->integer('q8');
             $table->integer('q9');
             $table->integer('q10');
+            $table->string('aboutme');
         });
     }
 

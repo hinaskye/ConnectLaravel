@@ -15,10 +15,6 @@
 //     die("Connection failed: " . $conn->connect_error);
 //   } -->
 
-
-
-
-
 <!-- // $sql = "SELECT firstname, lastname FROM UserDB";
 // $result = $conn->query($sql);
 //
@@ -33,6 +29,12 @@
 //
 // $conn->close(); -->
 
+
+<?php
+  use Illuminate\Support\Facades\Auth;
+  $user = Auth::user();
+echo $user->username;
+?>
 
 @section('content')
 

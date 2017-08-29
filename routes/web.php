@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -42,6 +46,3 @@ Route::get('Login','CustomAuthController@showLoginForm')->name('auth.login');
 Route::post('Login','CustomAuthController@login');
 
 Route::post('Logout','CustomAuthController@logout')->name('auth.logout');
-
-
-

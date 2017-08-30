@@ -177,6 +177,7 @@
                 }
                 $currentID ++;
                 $i++;
+                $matchPcent = 0;
             }
 
 

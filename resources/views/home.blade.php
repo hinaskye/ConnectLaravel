@@ -121,72 +121,56 @@
                     echo "<br>". "This is row q1: " . $row ['q1'];
                     echo "<br>". "MatchPercentage: " . $matchPcent;
                     echo "<br>". "Start loop ";
-                    $loopchecker = 1;
+
                     if ($user->q1 == $row ['q1']){
                         echo "Gone through q1";
-                        echo "<br>";
+                        echo "<br>". "Usermatch for: " . $currentID;
                         $matchPcent += 10;
-                        if ($user->q2 == $row ['q2']){
-                            $matchPcent += 10;
-                            echo "Gone through q2";
-                            echo "<br>";
-                            if ($user->q3 == $row ['q3']){
-                                $matchPcent += 10;
-                                echo "Gone through q3";
-                                echo "<br>";
-                                if ($user->q4 == $row ['q4']){
-                                    $matchPcent += 10;
-                                    echo "Gone through q4";
-                                    echo "<br>";
-                                    if ($user->q5 == $row ['q5']){
-                                        $matchPcent += 10;
-                                        echo "Gone through q5";
-                                        echo "<br>";
-                                        if ($user->q6 == $row ['q6']){
-                                            $matchPcent += 10;
-                                            echo "Gone through q6";
-                                            echo "<br>";
-                                            if ($user->q7 == $row ['q7']){
-                                                $matchPcent += 10;
-                                                echo "Gone through q7";
-                                                echo "<br>";
-                                                if ($user->q8 == $row ['q8']){
-                                                    $matchPcent += 10;
-                                                    echo "Gone through q8";
-                                                    echo "<br>";
-                                                    if ($user->q9 == $row ['q9']){
-                                                        $matchPcent += 10;
-                                                        echo "Gone through q9";
-                                                        echo "<br>";
-                                                        if ($user->q10 == $row ['q10']){
-                                                            $matchPcent += 10;
-                                                            echo "Gone through q10";
-                                                            echo "<br>";
-                                                            echo "<br>" . "CurrentID: " .$currentID. "Final Match score: " . $matchPcent;
-                                                            echo "<br>" . "Loopchecker: " . $loopchecker;
-                                                            $loopchecker += 1;
-
-                                                        }
-
-                                                    }
-
-                                                }
-
-                                            }
-
-                                        }
-
-                                    }
-
-                                }
-
-                            }
-
-                        }
-
                     }
-
-
+                    if ($user->q2 == $row ['q2']){
+                        echo "Gone through q2";
+                        echo "<br>". "Usermatch for: " . $currentID;
+                        $matchPcent += 10;
+                    }
+                    if ($user->q3 == $row ['q3']){
+                        echo "Gone through q3";
+                        echo "<br>". "Usermatch for: " . $currentID;
+                        $matchPcent += 10;
+                    }
+                    if ($user->q4 == $row ['q4']){
+                        echo "Gone through q4";
+                        echo "<br>". "Usermatch for: " . $currentID;
+                        $matchPcent += 10;
+                    }
+                    if ($user->q5 == $row ['q5']){
+                        echo "Gone through q5";
+                        echo "<br>". "Usermatch for: " . $currentID;
+                        $matchPcent += 10;
+                    }
+                    if ($user->q6 == $row ['q6']){
+                        echo "Gone through q6";
+                        echo "<br>". "Usermatch for: " . $currentID;
+                        $matchPcent += 10;
+                    }
+                    if ($user->q7 == $row ['q7']){
+                        echo "Gone through q7";
+                        echo "<br>". "Usermatch for: " . $currentID;
+                        $matchPcent += 10;
+                    }
+                    if ($user->q8 == $row ['q8']){
+                        echo "Gone through q8";
+                        echo "<br>". "Usermatch for: " . $currentID;
+                        $matchPcent += 10;
+                    }
+                    if ($user->q9 == $row ['q9']){
+                        echo "Gone through q9";
+                        echo "<br>". "Usermatch for: " . $currentID;
+                        $matchPcent += 10;
+                    }if ($user->q10 == $row ['q10']){
+                        echo "Gone through q10";
+                        echo "<br>". "Usermatch for: " . $currentID;
+                        $matchPcent += 10;
+                    }
 
 
 

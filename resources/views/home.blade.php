@@ -110,13 +110,56 @@
             $matchPcent = 0; //match percentage for users
             //check to make sure have not reached the end of the DB
             while ($i < $maxID){
+
                 //Check to make sure you are not matching yourself
                 if ($userID != $currentID){
+
                     //Query DB for First users in DB answers to questions
                     $questionSql = "SELECT q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 FROM users WHERE id = $currentID";
                     $questionResult = mysqli_query($conn, $questionSql);
                     $row = mysqli_fetch_assoc($questionResult);
                     echo "<br>". "This is row q1" . $row ['q1'];
+
+                    if ($user->q1 == $row ['q1']){
+                        $matchPcent + 10;
+                        if ($user->q2 == $row ['q2']){
+                            $matchPcent + 10;
+                            if ($user->q3 == $row ['q3']){
+                                $matchPcent + 10;
+                                if ($user->q4 == $row ['q4']){
+                                    $matchPcent + 10;
+                                    if ($user->q5 == $row ['q5']){
+                                        $matchPcent + 10;
+                                        if ($user->q6 == $row ['q6']){
+                                            $matchPcent + 10;
+                                            if ($user->q7 == $row ['q7']){
+                                                $matchPcent + 10;
+                                                if ($user->q8 == $row ['q8']){
+                                                    $matchPcent + 10;
+                                                    if ($user->q9 == $row ['q9']){
+                                                        $matchPcent + 10;
+                                                        if ($user->q10 == $row ['q10']){
+                                                            $matchPcent + 10;
+                                                            echo $matchPcent;
+                                                        }
+
+                                                    }
+
+                                                }
+
+                                            }
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                    }
 
 
 

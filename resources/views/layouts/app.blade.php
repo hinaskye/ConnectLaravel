@@ -59,6 +59,7 @@
                                       <a href="{{ url('/home') }}">Home</a>
                                       <a href="{{ url('/profile') }}">My Profile</a>
                                       <a href="{{ url('/profile') }}">Setting</a>
+                                      <a href="{{ url('/about') }}">Founders</a>
                                       <a href="https://www.paypal.me/lcemocha">Donate Money Here</a>
                                       <a href="{{ route('auth.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
 

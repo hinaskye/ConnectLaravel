@@ -121,6 +121,7 @@
                     echo "<br>". "This is row q1: " . $row ['q1'];
                     echo "<br>". "MatchPercentage: " . $matchPcent;
                     echo "<br>". "Start loop ";
+                    echo "<br>";
                     $matchPcent = 0;
 
                     if ($user->q1 == $row ['q1']){

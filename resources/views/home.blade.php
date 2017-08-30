@@ -172,12 +172,11 @@
                         $matchPcent += 10;
                     }
 
-
+                    $matchPcent = 0;
 
                 }
                 $currentID ++;
                 $i++;
-                $matchPcent = 0;
             }
 
 

@@ -10,7 +10,8 @@
 <title>Connect Profile</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+<link href="{{ asset('css/profile.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -61,8 +62,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <hr>
         </div>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Movies I Like</b></h5>
-          <p><?php echo $user->q1,", ",$user->q2,", ",$user->q3,", ",$user->q4," " ;  ?></p>
+          <h5 class="w3-opacity"><b>Favourite Movie Genre</b></h5>
+
+
           <hr>
         </div>
         <div class="w3-container">
@@ -102,7 +104,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </div>
 
 
-<footer class="w3-container footer w3-center w3-margin-top">
+<footer class="w3-container footer-static-bottom w3-center w3-margin-top">
   <p>Find me on social media.</p>
   <i class="fa fa-facebook-official w3-hover-opacity"></i>
   <i class="fa fa-instagram w3-hover-opacity"></i>

@@ -65,10 +65,10 @@
 
 
 
-   //Matching Algorithm code
 
 
     <?php
+            //matching Algorithm code.
             //creating connection to database with details
             $servername = "connectdb.ckktlmrdu53g.ap-southeast-2.rds.amazonaws.com";
             $username = "ConnectAdmin";
@@ -80,23 +80,33 @@
             if($conn->connect_error){
                 die("Connection Failed: " . $conn->connect_error);
             }
-
-            //ID of the current user logged in
-            $user = Auth::user();
-            $userID = $user->id;
-
             //test to make sure DB connection is working.
             $sql = "SELECT id FROM users";
             $result = $conn->query($sql);
 
             if($result->num_rows > 0){
                 while ($row = $result->fetch_assoc()){
-                    echo "id: " . $row["id"];
+                    echo "id: " . $row["id"]."<br>";
                 }
             } else{
                 echo "No Results";
             }
-        $conn->close();
+
+
+
+            //ID of the current user logged in
+            $user = Auth::user();
+            $userID = $user->id;
+
+            //Getting the maximum ID of all the users in the DB
+            $maxSql = "SELECT max(id) as id FROM users";
+            $mResult=mysqli_query($conn,$maxSql);
+            $row = mysqli_fetch_assoc($mResult);
+            $maxID = $row['id'];
+            echo "Max id: ". $maxID;
+
+
+            $conn->close();
 
 
     ?>

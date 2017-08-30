@@ -105,17 +105,21 @@
             $maxID = $row['id'];
             echo "Max id: ". $maxID;
 
-            $i = 1;
-            $currentID = 1;
+            $i = 1; //used as a counter int
+            $currentID = 1; //current ID of User in DB
+            $matchPcent = 0; //match percentage for users
             //check to make sure have not reached the end of the DB
             while ($i < $maxID){
                 //Check to make sure you are not matching yourself
                 if ($userID != $currentID){
-                    //Query DB for First users in DB answer
+                    //Query DB for First users in DB answers to questions
                     $questionSql = "SELECT q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 FROM users WHERE id = $currentID";
                     $questionResult = mysqli_query($conn, $questionSql);
-                    var_dump($questionResult);
-                    echo "here";
+                    $row = mysqli_fetch_assoc($questionResult);
+                    echo "<br>". "This is row q1" . $row ['q1'];
+
+
+
 
 
                 }

@@ -63,4 +63,39 @@
     </div>
 </div>
 
+
+
+   //Matching Algorithm code
+
+
+    <?php
+            //creating connection to database with details
+            $servername = "connectdb.ckktlmrdu53g.ap-southeast-2.rds.amazonaws.com";
+            $username = "ConnectAdmin";
+            $password = "password";
+            $dbname = "users";
+
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            if($conn->connect_error){
+                die("Connection Failed: " . $conn->connect_error);
+            }
+
+            //ID of the current user logged in
+            $userID = $user->id;
+
+            //test to make sure DB connection is working.
+            $sql = "SELECT id FROM users";
+            $result = $conn->query($sql);
+            echo $result;
+
+
+
+
+
+    ?>
+
+
+
+
 @endsection

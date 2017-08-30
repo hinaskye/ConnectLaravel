@@ -105,6 +105,24 @@
             $maxID = $row['id'];
             echo "Max id: ". $maxID;
 
+            $i = 1;
+            $currentID = 1;
+            //check to make sure have not reached the end of the DB
+            while ($i < $maxID){
+                //Check to make sure you are not matching yourself
+                if ($userID != $currentID){
+                    //Query DB for First users in DB answer
+                    $questionSql = "SELECT q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 FROM users WHERE id = $currentID";
+                    $questionResult = mysqli_query($conn, $questionSql);
+                    var_dump($questionResult);
+                    echo "here";
+
+
+                }
+
+                $i++;
+            }
+
 
             $conn->close();
 

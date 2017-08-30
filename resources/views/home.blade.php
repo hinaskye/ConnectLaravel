@@ -119,7 +119,7 @@
                     $questionResult = mysqli_query($conn, $questionSql);
                     $row = mysqli_fetch_assoc($questionResult);
                     echo "<br>". "This is row q1" . $row ['q1'];
-
+                    echo "<br>". "MatchPercentage: " . $matchPcent;
                     if ($user->q1 == $row ['q1']){
                         $matchPcent + 10;
                         if ($user->q2 == $row ['q2']){
@@ -140,7 +140,7 @@
                                                         $matchPcent + 10;
                                                         if ($user->q10 == $row ['q10']){
                                                             $matchPcent + 10;
-                                                            echo $matchPcent;
+                                                            echo "Final Match score: " . $matchPcent;
                                                         }
 
                                                     }

@@ -142,6 +142,7 @@
                                                         if ($user->q10 == $row ['q10']){
                                                             $matchPcent += 10;
                                                             echo "Final Match score: " . $matchPcent;
+
                                                         }
 
                                                     }

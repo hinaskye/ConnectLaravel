@@ -120,6 +120,7 @@
                     $row = mysqli_fetch_assoc($questionResult);
                     echo "<br>". "This is row q1: " . $row ['q1'];
                     echo "<br>". "MatchPercentage: " . $matchPcent;
+                    echo "<br>". "Current user in DB: ". $currentID;
                     echo "<br>". "Start loop ";
                     echo "<br>";
                     $matchPcent = 0;

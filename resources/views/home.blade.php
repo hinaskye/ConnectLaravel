@@ -188,6 +188,9 @@
 
 
                 }
+                echo "<br>";
+                echo "Current user has increased by 1";
+                echo "<br>";
                 $currentID ++;
                 $i++;
             }

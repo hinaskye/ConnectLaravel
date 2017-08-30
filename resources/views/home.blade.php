@@ -73,7 +73,7 @@
             $servername = "connectdb.ckktlmrdu53g.ap-southeast-2.rds.amazonaws.com";
             $username = "ConnectAdmin";
             $password = "password";
-            $dbname = "users";
+            $dbname = "UserDB";
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -87,10 +87,15 @@
             //test to make sure DB connection is working.
             $sql = "SELECT id FROM users";
             $result = $conn->query($sql);
-            echo $result;
 
-
-
+            if($result->num_rows > 0){
+                while ($row = $result->fetch_assoc()){
+                    echo "id: " . $row["id"];
+                }
+            } else{
+                echo "No Results";
+            }
+        $conn->close();
 
 
     ?>

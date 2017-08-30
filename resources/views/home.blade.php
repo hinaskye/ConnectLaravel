@@ -121,6 +121,7 @@
                     echo "<br>". "This is row q1: " . $row ['q1'];
                     echo "<br>". "MatchPercentage: " . $matchPcent;
                     echo "<br>". "Start loop ";
+                    $matchPcent = 0;
 
                     if ($user->q1 == $row ['q1']){
                         echo "Gone through q1";
@@ -172,7 +173,6 @@
                         $matchPcent += 10;
                     }
 
-                    $matchPcent = 0;
 
                 }
                 $currentID ++;

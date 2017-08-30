@@ -82,6 +82,7 @@
             }
 
             //ID of the current user logged in
+            $user = Auth::user();
             $userID = $user->id;
 
             //test to make sure DB connection is working.

@@ -118,7 +118,7 @@
                     $questionSql = "SELECT q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 FROM users WHERE id = $currentID";
                     $questionResult = mysqli_query($conn, $questionSql);
                     $row = mysqli_fetch_assoc($questionResult);
-                    echo "<br>". "This is row q1" . $row ['q1'];
+                    echo "<br>". "This is row q1: " . $row ['q1'];
                     echo "<br>". "MatchPercentage: " . $matchPcent;
                     echo "<br>". "Start loop ";
                     if ($user->q1 == $row ['q1']){
@@ -141,7 +141,7 @@
                                                         $matchPcent += 10;
                                                         if ($user->q10 == $row ['q10']){
                                                             $matchPcent += 10;
-                                                            echo "Final Match score: " . $matchPcent;
+                                                            echo "CurrentID: " .$currentID. "Final Match score: " . $matchPcent;
 
                                                         }
 
@@ -168,7 +168,7 @@
 
 
                 }
-
+                $currentID ++;
                 $i++;
             }
 

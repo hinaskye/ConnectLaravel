@@ -143,8 +143,9 @@
                                                         if ($user->q10 == $row ['q10']){
                                                             $matchPcent += 10;
                                                             echo "<br>" . "CurrentID: " .$currentID. "Final Match score: " . $matchPcent;
-                                                            echo $loopchecker;
+                                                            echo "Loopchecker: " . $loopchecker;
                                                             $loopchecker += 1;
+                                                            break;
 
                                                         }
 

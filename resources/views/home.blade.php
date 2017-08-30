@@ -109,7 +109,7 @@
             $currentID = 1; //current ID of User in DB
             $matchPcent = 0; //match percentage for users
             //check to make sure have not reached the end of the DB
-            while ($i < $maxID){
+            while ($i <= $maxID){
 
                 //Check to make sure you are not matching yourself
                 if ($userID != $currentID){

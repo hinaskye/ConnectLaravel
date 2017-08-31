@@ -46,8 +46,9 @@
                             <li><a href="{{ route('auth.login') }}">Login</a></li>
                             <li><a href="{{ route('auth.register') }}">Register</a></li>
                         @else
-                            Welcome, <?php echo $user->username; ?>
-                            <li class="dropdown">
+                        <div class="topwelcome">
+                            <h5 class="topusername">Welcome, <?php echo $user->username; ?></h5>
+                            <li class="dropdown dropdownuser">
 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 
@@ -69,6 +70,7 @@
                                     </li>
                                 </ul>
                             </li>
+                        <div>
                         @endif
                     </ul>
                 </div>

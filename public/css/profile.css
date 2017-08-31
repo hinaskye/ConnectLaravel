@@ -1,0 +1,24 @@
+div {
+    color: #FFF;
+}
+
+body {
+    background-image: url("http://cdn.wallpapersafari.com/26/2/UNhoE1.jpg");
+    background-size: cover;
+}
+
+.card {
+    background-color:rgba(84, 84, 84, 0.75);
+    background-clip: padding-box;
+    border: 1em solid transparent;
+    border-radius: 3em;
+}
+
+.card-body {
+    padding: 1.5em;
+}
+
+.footer {
+  background-color:rgba(256,256,256,0.22) ;
+  border-color: rgba(128,128,128,0.5)
+}

@@ -105,12 +105,7 @@
 <div class="container">
     <h1>My Matches</h1><br>
     <div class="row">
-        var $wrapper = $('.container');
 
-        $wrapper.find('.card col-md-4 col-sm-6').sort(function (a, b) {
-            return +a.data.matchingPercent - +b.data.matchingPercentage;
-        })
-                .appendTo( $wrapper );
     </div><br>
 
 @for($matchCount=0; $matchCount<count($matches); $matchCount++)
@@ -125,5 +120,13 @@
     </div>
     @endif
 @endfor
+    <script>
+    var $wrapper = $('.container');
+
+    $wrapper.find('.card col-md-4 col-sm-6').sort(function (a, b) {
+    return +a.data.matchingPercent - +b.data.matchingPercentage;
+    })
+    .appendTo( $wrapper );
+    </script>
 @endsection
 

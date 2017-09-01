@@ -121,9 +121,9 @@
     @endif
 @endfor
     <script>
-    var $wrapper = $("container");
+    var $wrapper = $('.container');
 
-    $wrapper.find("card col-md-4 col-sm-6").sort(function (a, b) {
+    $wrapper.find('.card col-md-4 col-sm-6').sort(function (a, b) {
         return +a.data.matchingPercent - +b.data.matchingPercentage;
     })
     .appendTo( $wrapper );

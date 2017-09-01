@@ -120,8 +120,8 @@
     </div>
     @endif
 @endfor
-    <script>
-        //find and cache the highest distance
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8">
+
         $('.container').each(function (index, value) {
             var matchingPercentage = 0;
             $(this).find('.matchingPercentage').each(function(){
@@ -132,7 +132,6 @@
             $(this).data('max-matchingPercentage', matchingPercentage);
         });
 
-        //sort the elements
         $('.container').sort(function(a, b){
             return $(a).data('max-matchingPercentage') - $(b).data('max-matchingPercentage')
         }).appendTo('container');

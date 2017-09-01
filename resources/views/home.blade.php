@@ -110,7 +110,7 @@
     <div class="row">
 
     </div><br>
-
+    <?php echo $currentID;?>
 @for($matchCount=0; $matchCount<count($matches); $matchCount++)
     @if($matches[$matchCount]['matchPcent'] != 0)
     <div class="card col-md-4 col-sm-6" id="<?php $currentID; echo $currentID;?>">

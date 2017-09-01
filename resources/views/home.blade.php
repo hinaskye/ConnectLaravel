@@ -91,6 +91,9 @@
             $matchDetails = array("user"=>$row, "matchPcent"=>$matchPcent); //may want to change $row to $match
             array_push($matches, $matchDetails);
 
+            //Gets ID of current user, we need to store ID and pass it to the tempprofile so we know whos data to pull in.
+
+
         }
         $currentID ++;
         $i++;
@@ -107,10 +110,10 @@
     <div class="row">
 
     </div><br>
-
+    <?php echo $currentID;?>
 @for($matchCount=0; $matchCount<count($matches); $matchCount++)
     @if($matches[$matchCount]['matchPcent'] != 0)
-    <div class="card col-md-4 col-sm-6">
+    <div class="card col-md-4 col-sm-6" id="<?php $currentID; echo $currentID;?>">
         <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
         <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
         <div class="card-body">
@@ -137,20 +140,6 @@
             return $(a).data('max-matchingPercent') - $(b).data('max-matchingPercent')
         }).appendTo('#container');
 
-
-
-        var all = document.selectElementsByTagName("div");
-        var prev = false;
-
-        for(i = 0; x < ALL.length; i++) {
-            all[i].onclick = function() {
-                all[i].style.position = 'relative';
-                if (prev) { prev.style.zIndex = 1; }
-                this.style.zIndex = 1000;
-                prev = this;
-            }
-        }
-        }
 
     </script>
 @endsection

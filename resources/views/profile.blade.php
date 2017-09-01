@@ -55,15 +55,15 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <div class="w3-twothird">
 
       <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-grey"></i>About Me</h2>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>About me</b></h5>
+          <legend><h3>About Me</h3></legend>
           <p><?php echo $user->aboutme; ?></p>
           <hr>
         </div>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Favourite Movie Genre</b></h5>
-            <p> "I like to watch "
+          <legend><h3>Questions I answered...</h3></legend>
+          <h4><li>Favourite Movie Genre</li></h4>
+            <p> I like to watch
             <?php  if ($user->q1 == "1")
               {
               echo "Action";
@@ -86,36 +86,127 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
               {
               echo "Disney";
               }
-            ?></p>
-
-          <hr>
+            ?> movies!</p><br>
         </div>
+
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>My Hobbies</b></h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
+          <h4><li>My activity level...</li></h4>
+          <p><?php  if ($user->q2 == "1")
+            {
+            echo "Active";
+            } elseif ($user->q2 == "2")
+            {
+            echo "Moderate";
+            } elseif ($user->q2 == "3")
+            {
+            echo "Couch Potato";
+            }
+            ?></p><br>
+        </div>
+
+        <div class="w3-container">
+          <h4><li>Stay at home or go out?</li></h4>
+          <p><?php  if ($user->q3 == "1")
+            {
+            echo "Stay at home!";
+            } elseif ($user->q3 == "2")
+            {
+            echo "Go out with friends!";
+            }
+            ?></p><br>
+        </div>
+
+        <div class="w3-container">
+          <h4><li>Am I funny?</li></h4>
+          <p><?php  if ($user->q4 == "1")
+            {
+            echo "Of course!";
+            } elseif ($user->q4 == "2")
+            {
+            echo "Not really :(";
+            }
+            ?></p><br>
+        </div>
+
+        <div class="w3-container">
+          <h4><li>Eat out or at home?</li></h4>
+          <p>I like to <?php  if ($user->q5 == "1")
+            {
+            echo "eat out.";
+            } elseif ($user->q5 == "2")
+            {
+            echo "cook at home.";
+            }
+            ?></p><br>
+        </div>
+
+        <div class="w3-container">
+          <h4><li>Animal lover?</li></h4>
+          <p><?php  if ($user->q6 == "1")
+            {
+            echo "Love em!";
+            } elseif ($user->q6 == "2")
+            {
+            echo "Nope!!!";
+          } elseif ($user->q6 == "3")
+            {
+            echo "Don't hate nor like em'";
+            }
+            ?></p><br>
+        </div>
+
+        <div class="w3-container">
+          <h4><li>Play a musical instrument?</li></h4>
+          <p><?php  if ($user->q7 == "1")
+            {
+            echo "Hell yeah!";
+            } elseif ($user->q7 == "2")
+            {
+            echo "Nope!!!";
+            }
+            ?></p><br>
+        </div>
+
+        <div class="w3-container">
+          <h4><li>Do you admit mistakes?</li></h4>
+          <p><?php  if ($user->q8 == "1")
+            {
+            echo "Yep";
+            } elseif ($user->q8 == "2")
+            {
+            echo "Nope!!!";
+            }
+            ?></p><br>
+        </div>
+
+        <div class="w3-container">
+          <h4><li>Like reading?</li></h4>
+          <p><?php  if ($user->q9 == "1")
+            {
+            echo "Yep, books are awesome!";
+            } elseif ($user->q9 == "2")
+            {
+            echo "Nope, reading isn't for me";
+            }
+            ?></p><br>
+        </div>
+
+        <div class="w3-container">
+          <h4><li>Do I believe in fate??</li></h4>
+          <p><?php  if ($user->q10 == "1")
+            {
+            echo "Yeah, I am waiting for the one <3";
+            } elseif ($user->q10 == "2")
+            {
+            echo "No, who believes in that make believe?";
+            }
+            ?></p><br>
         </div>
       </div>
 
-      <div class="w3-container w3-card-2 w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-grey"></i>Education</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
-          <h6 class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
-          <p>Web Development! All I need to know in one place</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>RMIT University </b></h5>
-          <h6 class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
-          <p>Masters Degree</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>RMIT University</b></h5>
-          <h6 class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
-          <p>Bachelor Degree</p><br>
-        </div>
-      </div>
+
+
+
 
     <!-- End Right Column -->
     </div>

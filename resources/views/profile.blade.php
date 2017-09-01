@@ -179,7 +179,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div classl="w3-container">
+        <div class="w3-container">
           <h4><li>Like reading?</li></h4>
           <p><?php  if ($user->q9 == "1")
             {

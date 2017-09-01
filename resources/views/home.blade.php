@@ -122,19 +122,20 @@
 @endfor
     <script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8">
 
-        $('.container').each(function (index, value) {
-            var matchingPercentage = 0;
-            $(this).find('.matchingPercentage').each(function(){
-                if(matchingPercentage < $(this).data('matchingPercentage')){
-                    matchingPercentage = $(this).data('matchingPercentage');
+        //this should work, however will need to deal with the fact that no values are held in matching percent.
+        $('.card col-md-4 col-sm-6').each(function (index, value) {
+            var matchingPercent = 0;
+            $(this).find('.matchingPercent').each(function(){
+                if(matchingPercent < $(this).data('matchingPercent')){
+                    matchingPercent = $(this).data('matchingPercent');
                 }
             });
-            $(this).data('max-matchingPercentage', matchingPercentage);
+            $(this).data('max-matchingPercent', matchingPercent);
         });
 
-        $('.container').sort(function(a, b){
-            return $(a).data('max-matchingPercentage') - $(b).data('max-matchingPercentage')
-        }).appendTo('container');
+        $('.card col-md-4 col-sm-6').sort(function(a, b){
+            return $(a).data('max-matchingPercent') - $(b).data('max-matchingPercent')
+        }).appendTo('#container');
     </script>
 @endsection
 

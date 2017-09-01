@@ -34,7 +34,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
         <div class="w3-container">
           <br>
-          <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
 
           <br>
         </div>
@@ -50,7 +49,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-grey"></i>About Me</h2>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>About me</b></h5>
-          <p><?php echo $user->aboutme; ?></p>
           <hr>
         </div>
 

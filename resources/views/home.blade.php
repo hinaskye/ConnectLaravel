@@ -122,6 +122,33 @@
 @endfor
     <script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8">
 
+
+        function sort (parent, childSelector, keySelector) {
+            var items = parent.children(childSelector).sort(function(a, b) {
+                var vA = $(keySelector, a).text();
+                var vB = $(keySelector, b).text();
+                return (vA < vB) ? -1 : (vA > vB) ? 1 : 0;
+            });
+            parent.append(items);
+        }
+
+        /* setup sort attributes */
+        $('#sPrice').data("sortKey", "span.price");
+        $('#sStyle').data("sortKey", "span.style");
+
+
+        /* sort on button click */
+        $("button.btnSort").click(function() {
+            sortUsingNestedText($('#sortThis'), "div", $(this).data("sortKey"));
+        });
+
+
+
+
+
+
+
+
         //this should work, however will need to deal with the fact that no values are held in matching percent.
         $('.card col-md-4 col-sm-6').each(function (index, value) {
             var matchingPercent = 0;
@@ -137,20 +164,6 @@
             return $(a).data('max-matchingPercent') - $(b).data('max-matchingPercent')
         }).appendTo('#container');
 
-
-
-        var all = document.selectElementsByTagName("div");
-        var prev = false;
-
-        for(i = 0; x < ALL.length; i++) {
-            all[i].onclick = function() {
-                all[i].style.position = 'relative';
-                if (prev) { prev.style.zIndex = 1; }
-                this.style.zIndex = 1000;
-                prev = this;
-            }
-        }
-        }
 
     </script>
 @endsection

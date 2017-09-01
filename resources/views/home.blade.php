@@ -121,12 +121,21 @@
     @endif
 @endfor
     <script>
-    var $wrapper = $('.container');
+        //find and cache the highest distance
+        $('.container').each(function (index, value) {
+            var matchingPercentage = 0;
+            $(this).find('.matchingPercentage').each(function(){
+                if(matchingPercentage < $(this).data('matchingPercentage')){
+                    matchingPercentage = $(this).data('matchingPercentage');
+                }
+            });
+            $(this).data('max-matchingPercentage', matchingPercentage);
+        });
 
-    $wrapper.find('.card col-md-4 col-sm-6').sort(function (a, b) {
-        return +a.data.matchingPercent - +b.data.matchingPercentage;
-    })
-    .appendTo( $wrapper );
+        //sort the elements
+        $('.container').sort(function(a, b){
+            return $(a).data('max-matchingPercentage') - $(b).data('max-matchingPercentage')
+        }).appendTo('container');
     </script>
 @endsection
 

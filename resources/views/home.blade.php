@@ -105,7 +105,12 @@
 <div class="container">
     <h1>My Matches</h1><br>
     <div class="row">
-        Filter to be implemented
+        var $wrapper = $('.container');
+
+        $wrapper.find('.card col-md-4 col-sm-6').sort(function (a, b) {
+            return +a.data.matchingPercent - +b.data.matchingPercentage;
+        })
+                .appendTo( $wrapper );
     </div><br>
 
 @for($matchCount=0; $matchCount<count($matches); $matchCount++)
@@ -120,11 +125,5 @@
     </div>
     @endif
 @endfor
-    var $wrapper = $('.container');
-
-    $wrapper.find('.card col-md-4 col-sm-6').sort(function (a, b) {
-    return +a.data.matchingPercent - +b.data.matchingPercentage;
-    })
-    .appendTo( $wrapper );
 @endsection
 

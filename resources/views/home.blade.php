@@ -51,7 +51,7 @@
 
             //Query DB for First users in DB answers to questions
             $questionSql = "SELECT firstname, lastname, gender, birthday, aboutme,
-            q1, q2, q3, q4, q5, q6, q7, q8, q9, q10
+            q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, id
             FROM users WHERE id = $currentID";
             $questionResult = mysqli_query($conn, $questionSql);
             $row = mysqli_fetch_assoc($questionResult);
@@ -110,7 +110,6 @@
     <div class="row">
 
     </div><br>
-    <?php echo $currentID;?>
 @for($matchCount=0; $matchCount<count($matches); $matchCount++)
     @if($matches[$matchCount]['matchPcent'] != 0)
     <div class="card col-md-4 col-sm-6" id="<?php $currentID; echo $currentID;?>">

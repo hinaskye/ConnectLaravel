@@ -136,6 +136,22 @@
         $('.card col-md-4 col-sm-6').sort(function(a, b){
             return $(a).data('max-matchingPercent') - $(b).data('max-matchingPercent')
         }).appendTo('#container');
+
+
+
+        var all = document.selectElementsByTagName("div");
+        var prev = false;
+
+        for(i = 0; x < ALL.length; i++) {
+            all[i].onclick = function() {
+                all[i].style.position = 'relative';
+                if (prev) { prev.style.zIndex = 1; }
+                this.style.zIndex = 1000;
+                prev = this;
+            }
+        }
+        }
+
     </script>
 @endsection
 

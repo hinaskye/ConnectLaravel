@@ -63,7 +63,30 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Favourite Movie Genre</b></h5>
-
+            <p> "I like to watch "
+            <?php  if ($user->q1 == "1")
+              {
+              echo "Action";
+              } elseif ($user->q1 == "2")
+              {
+              echo "Romance";
+              } elseif ($user->q1 == "3")
+              {
+              echo "Comedy";
+              } elseif ($user->q1 == "4")
+              {
+              echo "Horror";
+              } elseif ($user->q1 == "5")
+              {
+              echo "Thriller";
+              } elseif ($user->q1 == "6")
+              {
+              echo "Sci-Fi";
+              } elseif ($user->q1 == "7")
+              {
+              echo "Disney";
+              }
+            ?></p>
 
           <hr>
         </div>

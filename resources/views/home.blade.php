@@ -91,6 +91,9 @@
             $matchDetails = array("user"=>$row, "matchPcent"=>$matchPcent); //may want to change $row to $match
             array_push($matches, $matchDetails);
 
+            //Gets ID of current user, we need to store ID and pass it to the tempprofile so we know whos data to pull in.
+
+
         }
         $currentID ++;
         $i++;
@@ -110,7 +113,7 @@
 
 @for($matchCount=0; $matchCount<count($matches); $matchCount++)
     @if($matches[$matchCount]['matchPcent'] != 0)
-    <div class="card col-md-4 col-sm-6">
+    <div class="card col-md-4 col-sm-6" id="<?php $currentID; echo $currentID;?>">
         <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
         <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
         <div class="card-body">
@@ -121,33 +124,6 @@
     @endif
 @endfor
     <script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8">
-
-
-        function sort (parent, childSelector, keySelector) {
-            var items = parent.children(childSelector).sort(function(a, b) {
-                var vA = $(keySelector, a).text();
-                var vB = $(keySelector, b).text();
-                return (vA < vB) ? -1 : (vA > vB) ? 1 : 0;
-            });
-            parent.append(items);
-        }
-
-        /* setup sort attributes */
-        $('#sPrice').data("sortKey", "span.price");
-        $('#sStyle').data("sortKey", "span.style");
-
-
-        /* sort on button click */
-        $("button.btnSort").click(function() {
-            sortUsingNestedText($('#sortThis'), "div", $(this).data("sortKey"));
-        });
-
-
-
-
-
-
-
 
         //this should work, however will need to deal with the fact that no values are held in matching percent.
         $('.card col-md-4 col-sm-6').each(function (index, value) {

@@ -5,11 +5,32 @@ div {
 .matchingPercent {
     position:absolute;
     margin-left: 75%;
-    background-color: rgba(255, 131, 121, 0.9);
+    /*background-color: rgba(255, 131, 121, 0.9); */ /* Default colour */
     padding:5px;
     padding-left: 20px;
     color:#FFF;
     border-radius: 5px;
+}
+
+/* T-shirt size background red */
+.bg-red-xl {
+    background-color: rgba(255, 18, 0, 0.90);
+}
+
+.bg-red-l {
+    background-color: rgba(248, 56, 43, 0.90);
+}
+
+.bg-red-m {
+    background-color: rgba(251, 81, 69, 0.90);
+}
+
+.bg-red-s {
+    background-color: rgba(255, 100, 89, 0.90);
+}
+
+.bg-red-xs {
+    background-color: rgba(253, 116, 106, 0.90);
 }
 
 body {

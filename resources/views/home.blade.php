@@ -94,10 +94,16 @@
             //Gets ID of current user, we need to store ID and pass it to the tempprofile so we know whos data to pull in.
 
 
-        }
+        }//if
         $currentID ++;
         $i++;
-    }
+    }//while
+
+    //sort matches by highest match percentage, uses anonymous function
+    usort($matches, function($a, $b){
+        return $b['matchPcent'] - $a['matchPcent'];
+    });
+
     $conn->close();
 
     //test printing of matchDetails

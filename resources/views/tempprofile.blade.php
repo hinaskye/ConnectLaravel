@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 @extends('layouts.app')
-<!-- <link href="{{ asset('css/profile.css') }}" rel="stylesheet"> -->
-<!-- Defining $User -->
-
 @section('content')
+
+<!--SQL SERVER CONNECTION DETAILS  -->
+
+
 <html>
 <title>Connect Profile</title>
 <meta charset="UTF-8">
@@ -52,6 +53,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-grey"></i>About Me</h2>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>About me</b></h5>
+          <!-- ECHO STUFF ABOUT USER HERE -->
+            <?php $user = DB::table('users')->where('id','2')->first();
+              echo $user->firstname,' ', $user->lastname ;
+             ?>
           <hr>
         </div>
 

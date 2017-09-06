@@ -52,3 +52,7 @@ body {
 .card:hover {
     opacity: 0.8;
 }
+
+search-bar {
+    float: right;
+}

@@ -115,9 +115,9 @@
 <div class="container">
     <h1>My Matches</h1><br>
 
-    <div class="search-bar">
-        <input type="text" name="search" value="" autocomplete="off" id="input" onkeyup="searchFunction()" placeholder="Search...">
-    </div>
+    /*search bar*/
+    <input type="text" name="search" value="" autocomplete="off" id="input" onkeyup="searchFunction()" placeholder="Search...">
+
 
 
     <div class="row">

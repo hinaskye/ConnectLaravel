@@ -144,7 +144,7 @@ body {
 
 input[input=range] {
         resize: horizontal;
-        width: 1000px;
+        width: 400px;
     }
     
 input[input=range]:active {
@@ -152,5 +152,5 @@ input[input=range]:active {
 }
 
 input[input=range]:focus {
-    min-width: 200px;
+    min-width: 400px;
 }

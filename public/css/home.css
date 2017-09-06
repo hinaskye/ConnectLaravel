@@ -140,12 +140,21 @@ body {
     background-color:#fff;
  }
 
-/*input[type=range] {
+
+
+input[type=range] {
    -webkit-appearance: none;
    width: 100%;
+   resize: horizontal;
+   width: 200px;
    margin-left: 20px ;
- }
- input[type=range]:focus {
+ }    
+input[type=range]:active {
+    width: auto;   
+}
+
+input[type=range]:focus {
+   min-width: 200px;
    outline: none;
  }
  input[type=range]::-webkit-slider-runnable-track {
@@ -224,4 +233,4 @@ body {
  }
  input[type=range]:focus::-ms-fill-upper {
    background: #f0f0f0;
- }*/
+ }

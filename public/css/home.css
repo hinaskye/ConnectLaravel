@@ -139,16 +139,3 @@ body {
     color:#000;
     background-color:#fff;
  }
-
-input[input=range] {
-    resize: horizontal;
-    width: 400px;
-}
-    
-input[input=range]:active {
-    width: auto;   
-}
-
-input[input=range]:focus {
-    min-width: 400px;
-}

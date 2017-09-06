@@ -144,8 +144,9 @@ body {
 
 input[type=range] {
    -webkit-appearance: none;
+   width: 100%;
    resize: horizontal;
-   width: 400px;
+   width: 200px;
    margin-left: 20px ;
  }    
 input[type=range]:active {
@@ -153,7 +154,7 @@ input[type=range]:active {
 }
 
 input[type=range]:focus {
-   min-width: 400px;
+   min-width: 200px;
    outline: none;
  }
  input[type=range]::-webkit-slider-runnable-track {

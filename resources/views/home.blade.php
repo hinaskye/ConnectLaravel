@@ -124,7 +124,7 @@
               <span class="whiteText">Filter:</span> 
               <input type="range" class="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
               <span id="filterPercent">50%</span>
-              <button class="inline-button button-white">Filter</button>
+              <button class="inline-button button-white" onclick="filterMatches()">Filter</button>
         </div>
     </div>
 

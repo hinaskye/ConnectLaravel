@@ -54,6 +54,11 @@ body {
 }
 
 
+
+
+
+
+
 .searchBox {
     position: relative;
     width: 15%;
@@ -70,14 +75,16 @@ body {
     box-sizing:border-box;
     opacity:0;
 }
-.input-expand {
+
+.input-expanded {
     max-width: 30%;
     opacity: 1;
 }
+
 .icon {
     width: 20px;
     height: 20px;
     background-image: url("http://ec2-54-252-216-244.ap-southeast-2.compute.amazonaws.com/images/searchIcon.png");
     position: absolute;
-    right: 0;
+    left: 0;
 }

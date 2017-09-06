@@ -140,7 +140,7 @@ body {
     background-color:#fff;
  }
 
-input[type=range] {
+/*input[type=range] {
    -webkit-appearance: none;
    width: 100%;
    margin-left: 20px ;
@@ -224,4 +224,4 @@ input[type=range] {
  }
  input[type=range]:focus::-ms-fill-upper {
    background: #f0f0f0;
- }
+ }*/

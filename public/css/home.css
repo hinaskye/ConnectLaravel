@@ -140,12 +140,10 @@ body {
     background-color:#fff;
  }
 
-
-
 input[input=range] {
-        resize: horizontal;
-        width: 400px;
-    }
+    resize: horizontal;
+    width: 400px;
+}
     
 input[input=range]:active {
     width: auto;   

@@ -1,7 +1,7 @@
 /* Run script straight away */
 var matchPercent = document.getElementsByClassName("matchingPercent");
 for(var i=0; i<matchPercent.length; i++) {
-    var percent_value = matchPercent[i].innerHTML.replace(/%/g,'');
+    var percent_value = parseInt(matchPercent[i].innerHTML.replace(/%/g,''));
     if(percent_value<= 60) {
         w3.addClass(matchPercent[i],'bg-red-xs');
     }
@@ -21,7 +21,21 @@ for(var i=0; i<matchPercent.length; i++) {
 
 /* Functions */
 
+/* filter function */
+function filterMatches() {
+    var filterPercentString = document.getElementById("filterPercent").innerHTML.replace(/%/g,'');
+    var filterPercent = parseInt(filterPercentString);
+    console.log("filterMatches invoked");
 
+    for(var i=0; i<matchPercent.length; i++) {
+        var percent_value = parseInt(matchPercent[i].innerHTML.replace(/%/g,''));
+        console.log(percent_value+"<"+filterPercent);
+        if(percent_value<filterPercent) {
+            w3.addClass(matchPercent[i].parentElement, 'hidden');
+            console.log("true "+percent_value);
+        }
+    }
+}
 
 /* search functions */
 function searchFunction() {

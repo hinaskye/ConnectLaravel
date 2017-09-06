@@ -140,6 +140,11 @@ body {
     background-color:#fff;
  }
 
+input[type=range]{
+    width:50%;
+    display:inline-block;
+}
+
 .range {
    -webkit-appearance: none;
    width: 40%;

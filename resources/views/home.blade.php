@@ -1,6 +1,31 @@
 @extends('layouts.app')
 <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
+<html>
+    <body>
+        <style>
+        input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+        </style>
+    </body>
+</html>
+
+
+
+
+
 <?php
     //matching Algorithm code.
     //creating connection to database with details
@@ -128,29 +153,3 @@
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script src="{{ asset('js/home.js') }}"></script>
 @endsection
-
-
-
-    <html>
-    <style>
-        input[type=text] {
-            width: 130px;
-            box-sizing: border-box;
-            border: 2px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            background-color: white;
-            background-image: url('searchicon.png');
-            background-position: 10px 10px;
-            background-repeat: no-repeat;
-            padding: 12px 20px 12px 40px;
-            -webkit-transition: width 0.4s ease-in-out;
-            transition: width 0.4s ease-in-out;
-        }
-    </style>
-    </html>
-
-
-
-
-

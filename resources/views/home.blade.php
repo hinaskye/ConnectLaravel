@@ -1,6 +1,25 @@
 @extends('layouts.app')
 <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
+<html>
+<style>
+    input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+</style>
+</html>
+
 <?php
     //matching Algorithm code.
     //creating connection to database with details
@@ -20,7 +39,6 @@
 
     if($result->num_rows > 0){
         while ($row = $result->fetch_assoc()){
-            // echo "id: " . $row["id"]."<br>";
         }
     } else{
         echo "No Results";
@@ -35,7 +53,6 @@
     $mResult=mysqli_query($conn,$maxSql);
     $row = mysqli_fetch_assoc($mResult);
     $maxID = $row['id'];
-    // echo "Max id: ". $maxID;
 
     $i = 1; //used as a counter int
     $currentID = 1; //current ID of User in DB
@@ -91,13 +108,11 @@
             $matchDetails = array("user"=>$row, "matchPcent"=>$matchPcent); //may want to change $row to $match
             array_push($matches, $matchDetails);
 
-            //Gets ID of current user, we need to store ID and pass it to the tempprofile so we know whos data to pull in.
 
-
-        }//if
+        }
         $currentID ++;
         $i++;
-    }//while
+    }
 
     //sort matches by highest match percentage, uses anonymous function
     usort($matches, function($a, $b){
@@ -128,25 +143,6 @@
     </div>
     @endif
 @endfor
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8">
-
-        //this should work, however will need to deal with the fact that no values are held in matching percent.
-        $('.card col-md-4 col-sm-6').each(function (index, value) {
-            var matchingPercent = 0;
-            $(this).find('.matchingPercent').each(function(){
-                if(matchingPercent < $(this).data('matchingPercent')){
-                    matchingPercent = $(this).data('matchingPercent');
-                }
-            });
-            $(this).data('max-matchingPercent', matchingPercent);
-        });
-
-        $('.card col-md-4 col-sm-6').sort(function(a, b){
-            return $(a).data('max-matchingPercent') - $(b).data('max-matchingPercent')
-        }).appendTo('#container');
-
-
-    </script>
     <!-- Need w3.js to use their methods -->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script src="{{ asset('js/home.js') }}"></script>

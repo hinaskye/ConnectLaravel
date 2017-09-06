@@ -110,6 +110,32 @@ body {
     padding-bottom:16px!important
  }
  
+ .inline-button{
+    margin-left: 20px;  
+    border:none;
+    display:inline-block;
+    outline:0;
+    padding:4px 12px;
+    vertical-align:middle;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    background-color:inherit;
+    text-align:center;
+    cursor:pointer;
+    white-space:nowrap;
+ }
+
+ .button-white:hover{
+    color:#000;
+    background-color: #C0C0C0;
+ }
+ 
+ .button-white{
+    color:#000;
+    background-color:#fff;
+ }
+
 input[type=range] {
    -webkit-appearance: none;
    width: 30%;
@@ -119,7 +145,7 @@ input[type=range] {
    outline: none;
  }
  input[type=range]::-webkit-slider-runnable-track {
-   width: 100%;
+   width: 38%;
    height: 8.4px;
    cursor: pointer;
    box-shadow: 0.9px 0.9px 1px #000000, 0px 0px 0.9px #0d0d0d;

@@ -148,6 +148,7 @@ input[type=range]{
 .range {
    -webkit-appearance: none;
    width: 40%;
+   display: inline-block;
    margin-left: 20px ;
  }
  .range:focus {

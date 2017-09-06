@@ -143,17 +143,18 @@ body {
 
 
 
-input[type=range] {
+.range{
    -webkit-appearance: none;
    resize: horizontal;
+   display: inline-block;
    width: 400px;
    margin-left: 20px ;
  }    
-input[type=range]:active {
+.range:active {
     width: auto;   
 }
 
-input[type=range]:focus {
+.range{
    min-width: 400px;
    outline: none;
  }

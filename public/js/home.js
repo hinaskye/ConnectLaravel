@@ -1,5 +1,6 @@
 /* Run script straight away */
 var matchPercent = document.getElementsByClassName("matchingPercent");
+/* For each match card add background colour based on match percentage */
 for(var i=0; i<matchPercent.length; i++) {
     var percent_value = parseInt(matchPercent[i].innerHTML.replace(/%/g,''));
     if(percent_value<= 60) {
@@ -25,14 +26,15 @@ for(var i=0; i<matchPercent.length; i++) {
 function filterMatches() {
     var filterPercentString = document.getElementById("filterPercent").innerHTML.replace(/%/g,'');
     var filterPercent = parseInt(filterPercentString);
-    console.log("filterMatches invoked");
 
+    /* for each match*/
     for(var i=0; i<matchPercent.length; i++) {
         var percent_value = parseInt(matchPercent[i].innerHTML.replace(/%/g,''));
-        console.log(percent_value+"<"+filterPercent);
+        /* remove hidden first */
+        w3.removeClass(matchPercent[i].parentElement, 'hidden');
         if(percent_value<filterPercent) {
+            /* add hidden based on filter */
             w3.addClass(matchPercent[i].parentElement, 'hidden');
-            console.log("true "+percent_value);
         }
     }
 }

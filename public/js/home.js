@@ -24,6 +24,6 @@ for(var i=0; i<matchPercent.length; i++) {
 
 
 /* search functions */
-('.icon').click(function () {
-    ('.input').toggleClass('expanded');
+$('.icon').click(function () {
+    $('.input').toggleClass('expanded');
 });

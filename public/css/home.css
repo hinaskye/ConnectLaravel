@@ -99,7 +99,6 @@ body {
 .side-container{
     padding:0.01em 16px;
   }
-  
 .filter-section{
     margin-top:16px!important;
     margin-bottom:16px!important;
@@ -149,7 +148,7 @@ input[type=range] {
    outline: none;
  }
  input[type=range]::-webkit-slider-runnable-track {
-   width: 38%;
+   width: 30%;
    height: 8.4px;
    cursor: pointer;
    box-shadow: 0.9px 0.9px 1px #000000, 0px 0px 0.9px #0d0d0d;
@@ -172,7 +171,7 @@ input[type=range] {
    background: #f0f0f0;
  }
  input[type=range]::-moz-range-track {
-   width: 100%;
+   width: 30%;
    height: 8.4px;
    cursor: pointer;
    box-shadow: 0.9px 0.9px 1px #000000, 0px 0px 0.9px #0d0d0d;
@@ -190,7 +189,7 @@ input[type=range] {
    cursor: pointer;
  }
  input[type=range]::-ms-track {
-   width: 100%;
+   width: 30%;
    height: 8.4px;
    cursor: pointer;
    background: transparent;

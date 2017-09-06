@@ -119,12 +119,13 @@
         <input type="text" id="input" class="input" onkeyup="searchFunction()" placeholder="Search..."/>
         <div class="icon"></div>
     </div>
-
-     <div class="filter-section filter-bottombar filter-padding">
-      <span class="whiteText">Filter:</span> 
-      <input type="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
-      <span id="filterPercent">0%</span>
-      <button class="inline-button button-white">Filter</button>
+    <div class="side-container">
+         <div class="filter-section filter-bottombar filter-padding">
+              <span class="whiteText">Filter:</span> 
+              <input type="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
+              <span id="filterPercent">0%</span>
+              <button class="inline-button button-white">Filter</button>
+        </div>
     </div>
 
     <div class="row" id="row">

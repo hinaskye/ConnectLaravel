@@ -156,9 +156,9 @@ input[type=range]:focus {
    min-width: 400px;
    outline: none;
  }
- 
+
  input[type=range]::-webkit-slider-runnable-track {
-   width: 100%;
+   width: 400px;
    height: 8.4px;
    cursor: pointer;
    box-shadow: 0.9px 0.9px 1px #000000, 0px 0px 0.9px #0d0d0d;
@@ -181,7 +181,7 @@ input[type=range]:focus {
    background: #f0f0f0;
  }
  input[type=range]::-moz-range-track {
-   width: 100%;
+   width: 400px;
    height: 8.4px;
    cursor: pointer;
    box-shadow: 0.9px 0.9px 1px #000000, 0px 0px 0.9px #0d0d0d;
@@ -199,7 +199,7 @@ input[type=range]:focus {
    cursor: pointer;
  }
  input[type=range]::-ms-track {
-   width: 100%;
+   width: 400px;
    height: 8.4px;
    cursor: pointer;
    background: transparent;

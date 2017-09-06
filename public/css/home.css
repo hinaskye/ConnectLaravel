@@ -53,12 +53,31 @@ body {
     opacity: 0.8;
 }
 
-.input {
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
+
+.searchBox {
+    position: relative;
     width: 15%;
-    font-size: 16px;
-    padding: 12px 20px 12px 40px;
-    border: 1px solid #ddd;
-    margin-bottom: 12px;
+}
+
+
+.input {
+    width: 15%;
+    max-width:0;
+    padding: 5px;
+    transition: all .5s ease;
+    position:absolute;
+    right:20px;
+    box-sizing:border-box;
+    opacity:0;
+}
+.input-expand {
+    max-width: 30%;
+    opacity: 1;
+}
+.icon {
+    width: 20px;
+    height: 20px;
+    background-image: url("http://ec2-54-252-216-244.ap-southeast-2.compute.amazonaws.com/images/searchIcon.png");
+    position: absolute;
+    right: 0;
 }

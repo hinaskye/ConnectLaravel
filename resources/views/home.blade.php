@@ -115,9 +115,10 @@
 <div class="container">
     <h1>My Matches</h1><br>
 
-    /*search bar*/
-    <input type="text" name="search" value="" autocomplete="off" id="input" onkeyup="searchFunction()" placeholder="Search...">
-
+    <div class="searchBox">
+        <input type="text" class="search" name="search" value="" autocomplete="off" id="input" onkeyup="searchFunction()" placeholder="Search...">
+        <div class="icon"></div>
+    </div>
 
 
     <div class="row">

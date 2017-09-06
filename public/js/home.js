@@ -20,3 +20,8 @@ for(var i=0; i<matchPercent.length; i++) {
 }
 
 /* Functions */
+
+/* search functions */
+$('.icon').click(function () {
+    $('.input').toggleClass('expanded');
+});

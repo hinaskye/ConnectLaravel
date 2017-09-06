@@ -111,6 +111,7 @@
     //print_r($matches);
 
         echo "
+        <html>
             input[type=text] {
             width: 130px;
             box-sizing: border-box;
@@ -124,7 +125,8 @@
             padding: 12px 20px 12px 40px;
             -webkit-transition: width 0.4s ease-in-out;
             transition: width 0.4s ease-in-out;
-        }"
+        }
+        </html>"
 ?>
 
 @section('content')

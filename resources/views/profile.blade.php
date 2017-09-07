@@ -45,9 +45,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-grey"></i><?php
             $from = new DateTime($user->birthday);
             $to = new DateTime('today');
-            echo $from->diff($to)->y;
-
-          echo $user->birthday; ?></p>
+            echo $from->diff($to)->y, " years old";?></p>
           <hr>
           <br>
         </div>

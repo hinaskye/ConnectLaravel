@@ -10,7 +10,7 @@
 <title>Connect Profile</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+<link href="{{ asset('css/about.css') }}" rel="stylesheet">
 <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
@@ -29,10 +29,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
     </div>
 
-    <!-- Right Column -->
-    <div class="w3-twothird">
+      <!-- <div class="container w3-card-2 w3-white w3-margin-bottom"> -->
+        <div class="ccontainer">
 
-      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
         <div class="w3-container">
           <h3 class="w3-opacity"><b>About Connect</b></h3><hr>
           <p>The main objective of project connect is to find a person's soulmate by linking
@@ -60,8 +59,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             <hr>
         </div>
       </div>
-
-      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+      <br>
+      <!-- <div class="w3-container w3-card-2 w3-white w3-margin-bottom"> -->
+      <div class="ccontainer">
         <div class="w3-container">
           <h3 class="w3-opacity"><b>Developers of Connect</b></h3><hr>
           <p>
@@ -94,14 +94,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             <p> Hi my name is Phillip and I am Connect's developer</p><br>
             <p><b>Student Number:</b> s3536311</p>
             <p><b>Roles:</b> Developer, Debugger, Tester</p>
-
             </p><br>
             <hr>
         </div>
       </div>
 
-  <!-- End Grid -->
-  </div>
 
   <!-- End Page Container -->
 </div>

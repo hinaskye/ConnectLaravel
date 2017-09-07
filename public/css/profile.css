@@ -6,17 +6,4 @@ body {
     background-size: cover;
 }
 
-.footer {
-    background-color:rgba(84, 84, 84, 0.75);
-    background-clip: padding-box;
-    border: 1em solid transparent;
-    border-radius: 3em;
-}
 
-.footer-body {
-    padding: 1.5em;
-}
-
-.footer:hover {
-    opacity: 0.8;
-}

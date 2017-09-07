@@ -37,5 +37,6 @@ class S3ImageController extends Controller
     	return back()
     		->with('success','Image Uploaded successfully.')
     		->with('path',$imageName);
+        return $request->file('image');
     }
 }

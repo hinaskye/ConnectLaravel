@@ -59,7 +59,7 @@ return [
             'driver' => 's3',
             'key' => env("S3_KEY", "AKIAIM7RTDZLTAD5GMXA"),
             'secret' => env("S3_SECRET", "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"),
-            'region' => env("S3_REGION", "ap-southeast-2"),
+            'region' => env("S3_REGION"),
             'bucket' => env("S3_BUCKET", "programming.project"),
         ],
 

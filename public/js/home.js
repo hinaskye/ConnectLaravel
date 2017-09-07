@@ -42,10 +42,15 @@ function filterMatches() {
 /* search functions */
 function searchFunction() {
     $("#input").on("keyup", function() {
-        var g = $(this).val().toLowerCase();
-        $(".row .card-body").each(function() {
-            var s = $(this).text().toLowerCase();
-            $(this).closest('.row')[ s.indexOf(g) !== -1 ? 'show' : 'hide' ]();
+        var g = $(this).val();
+        $(".row .card-body").each( function() {
+            var s = $(this).text();
+            if (s.indexOf(g)!=-1) {
+                $(this).parent().parent().show();
+            }
+            else {
+                $(this).parent().parent().hide();
+            }
         });
     })
 }

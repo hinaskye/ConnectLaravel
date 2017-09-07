@@ -33,14 +33,57 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <div class="w3-twothird">
 
       <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-grey"></i>About Connect</h2>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>About Connect</b></h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
-          <hr>
-        </div>
+          <h3 class="w3-opacity"><b>About Connect</b></h3><hr>
+          <p>The main objective of project connect is to find a person's soulmate by linking
+              them to compatible people and facilitate the connecting of the two. <br><br>
 
-    </div>
+              In order to accomplish the perfect matching and successfully connect compatible
+              couples together, the development team will be using a unique algorithm which will
+              be different from any other known dating competitors that are currently available. <br><br>
+
+              Connect will not just be a service that runs on desktops but will also be compatible
+              with mobile devices, which will increase traffic to the application as well as providing
+              the flexibility of a different means of access to the service.<br><br>
+
+              Due to the fact that this project will be an agile SCRUM project, the development team
+              will consist of five members, including a SCRUM Master (Rhys Ellwood) from RMIT University.
+              The project’s  expected duration will be running for twelve weeks and will commence on 21st
+              of July 2017.<br><br>
+
+              Connect will be programmed using Laravel, a PHP framework which will handle all the back-end
+              coding logic and the front-end user interface will be designed using HTML, CSS, Bootstrap and
+              Javascript. All team members are expected to have at least some basic knowledge about the programming
+              languages stated and participate in coding the application so that every team member will have equal
+              contribution for the project.<br>
+            </p>
+            <hr>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+        <div class="w3-container">
+          <h3 class="w3-opacity"><b>Developers of Connect</b></h3><hr>
+          <p>
+            <h5 class="w3-opacity"><b>Rhys Ellwood</b></h5>
+            <p> Hi my name is Rhys and I am Connect's scrum Master</p><br><hr>
+
+            <h5 class="w3-opacity"><b>Michael Huynh</b></h5>
+            <p> Hi my name is Michael and I am Connect's developer</p><br><hr>
+
+            <h5 class="w3-opacity"><b>Ching Loo</b></h5>
+            <p> Hi my name is Ching and I am Connect's developer</p><br><hr>
+
+            <h5 class="w3-opacity"><b>Hieu Ngo</b></h5>
+            <p> Hi my name is Hieu and I am Connect's developer</p><br><hr>
+
+            <h5 class="w3-opacity"><b>Chan Hoe Teng</b></h5>
+            <p> Hi my name is Phillip and I am Connect's developer</p>
+
+            </p><br>
+            <hr>
+        </div>
+      </div>
 
   <!-- End Grid -->
   </div>

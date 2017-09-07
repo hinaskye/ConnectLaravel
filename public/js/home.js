@@ -41,16 +41,11 @@ function filterMatches() {
 
 /* search functions */
 function searchFunction() {
-    $("#input").on("keyup", function() {
-        var g = $(this).val();
-        $(".row .card-body").each( function() {
-            var s = $(this).text();
-            if (s.indexOf(g)!=-1) {
-                $(this).parent().parent().show();
-            }
-            else {
-                $(this).parent().parent().hide();
-            }
+    $("input").on("keyup", function() {
+        var g = $(this).val().toLowerCase();
+        $(".card col-md-4 col-sm-6 .card-body").each(function() {
+            var s = $(this).text().toLowerCase();
+            $(this).closest('.card col-md-4 col-sm-6')[ s.indexOf(g) !== -1 ? 'show' : 'hide' ]();
         });
     })
 }

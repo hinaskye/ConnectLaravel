@@ -41,18 +41,11 @@ function filterMatches() {
 
 /* search functions */
 function searchFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("input");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("row");
-    li = ul.getElementsByClassName("card col-md-4 col-sm-6");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByClassName("card col-md-4 col-sm-6")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-
-        }
-    }
+    $("#input").on("keyup", function() {
+        var g = $(this).val().toLowerCase();
+        $(".row .card-body").each(function() {
+            var s = $(this).text().toLowerCase();
+            $(this).closest('.row')[ s.indexOf(g) !== -1 ? 'show' : 'hide' ]();
+        });
+    });​
 }

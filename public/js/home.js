@@ -47,5 +47,5 @@ function searchFunction() {
             var s = $(this).text().toLowerCase();
             $(this).closest('.row')[ s.indexOf(g) !== -1 ? 'show' : 'hide' ]();
         });
-    });​
+    })
 }

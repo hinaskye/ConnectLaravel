@@ -43,9 +43,9 @@ function filterMatches() {
 function searchFunction() {
     $("input").on("keyup", function() {
         var g = $(this).val().toLowerCase();
-        $(".card.col-md-4.col-sm-6 .card-body").each(function() {
+        $(".card col-md-4 col-sm-6 .card-body").each(function() {
             var s = $(this).text().toLowerCase();
-            $(this).closest('.card.col-md-4.col-sm-6')[ s.indexOf(g) !== -1 ? 'show' : 'hide' ]();
+            $(this).closest('.card col-md-4 col-sm-6')[ s.indexOf(g) !== -1 ? 'show' : 'hide' ]();
         });
     })
 }

@@ -16,3 +16,13 @@
 .white-text{
 	color:#FFF;
 }
+
+.topusername, .dropdownuser{
+	color:#FFF;
+	display: inline;
+	margin-top: 5%;
+}
+
+.topwelcome{
+	margin-top: 10%;
+}

@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-<?php
-  $user = Auth::user();
-?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,23 +43,18 @@
                             <li><a href="{{ route('auth.login') }}">Login</a></li>
                             <li><a href="{{ route('auth.register') }}">Register</a></li>
                         @else
-                        <div class="topwelcome">
-                            <h5 class="topusername">Welcome, <?php echo $user->username; ?></h5>
-                            <li class="dropdown dropdownuser">
-
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                      <a href="{{ url('/home') }}">Home</a>
-                                      <a href="{{ url('/profile') }}">My Profile</a>
-                                      <a href="{{ url('/profile') }}">Setting</a>
-                                      <a href="{{ url('/about') }}">Founders</a>
-                                      <a href="https://www.paypal.me/lcemocha">Donate Money Here</a>
-                                      <a href="{{ route('auth.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                                        <a href="{{ route('auth.logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
 
                                         <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -70,7 +62,6 @@
                                     </li>
                                 </ul>
                             </li>
-                        <div>
                         @endif
                     </ul>
                 </div>

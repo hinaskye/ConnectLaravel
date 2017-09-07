@@ -15,6 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/tempprofile', function () {
+    return view('tempprofile');
+});
+
+
+Route::get('/about', function () {
+    return view('about');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -43,5 +56,5 @@ Route::post('Login','CustomAuthController@login');
 
 Route::post('Logout','CustomAuthController@logout')->name('auth.logout');
 
-
-
+Route::get('s3-image-upload','S3ImageController@imageUpload');
+Route::post('s3-image-upload','S3ImageController@imageUploadPost');

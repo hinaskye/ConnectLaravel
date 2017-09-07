@@ -66,19 +66,34 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <h3 class="w3-opacity"><b>Developers of Connect</b></h3><hr>
           <p>
             <h5 class="w3-opacity"><b>Rhys Ellwood</b></h5>
-            <p> Hi my name is Rhys and I am Connect's scrum Master</p><br><hr>
+            <p> Hi my name is Rhys and I am Connect's scrum Master</p><br>
+            <p><b>Student Number:</b> s3491191</p>
+            <p><b>Roles:</b> Scrum Master, Designer, Developer, Tester</p>
+            <hr>
 
             <h5 class="w3-opacity"><b>Michael Huynh</b></h5>
-            <p> Hi my name is Michael and I am Connect's developer</p><br><hr>
+            <p> Hi my name is Michael and I am Connect's developer</p><br>
+            <p><b>Student Number:</b> s3539352</p>
+            <p><b>Roles:</b> Developer, Tester, Document Manager, Trello Board Manager</p>
+            <hr>
 
             <h5 class="w3-opacity"><b>Ching Loo</b></h5>
-            <p> Hi my name is Ching and I am Connect's developer</p><br><hr>
+            <p> Hi my name is Ching and I am Connect's developer</p><br>
+            <p><b>Student Number:</b> s3557584</p>
+            <p><b>Roles:</b> Developer, Tester</p>
+            <hr>
+
 
             <h5 class="w3-opacity"><b>Hieu Ngo</b></h5>
-            <p> Hi my name is Hieu and I am Connect's developer</p><br><hr>
+            <p> Hi my name is Hieu and I am Connect's developer</p><br>
+            <p><b>Student Number:</b> ss3502260</p>
+            <p><b>Roles:</b> Developer, Debugger, Tester</p>
+            <hr>
 
             <h5 class="w3-opacity"><b>Chan Hoe Teng</b></h5>
-            <p> Hi my name is Phillip and I am Connect's developer</p>
+            <p> Hi my name is Phillip and I am Connect's developer</p><br>
+            <p><b>Student Number:</b> s3536311</p>
+            <p><b>Roles:</b> Developer, Debugger, Tester</p>
 
             </p><br>
             <hr>

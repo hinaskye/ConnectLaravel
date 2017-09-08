@@ -36,6 +36,8 @@ div {
 body {
     background-image: url("http://cdn.wallpapersafari.com/26/2/UNhoE1.jpg");
     background-size: cover;
+    background-attachment: fixed;
+}
 }
 
 .card {

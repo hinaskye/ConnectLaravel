@@ -53,8 +53,8 @@
         if ($userID != $currentID){
 
             //Query DB for First users in DB answers to questions
-            $questionSql = "SELECT firstname, lastname, gender, birthday, aboutme,
-            q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, postcode,
+            $questionSql = "SELECT firstname, lastname, gender, birthday,
+            q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, id, aboutme, postcode
             FROM users WHERE id = $currentID";
             $questionResult = mysqli_query($conn, $questionSql);
             $row = mysqli_fetch_assoc($questionResult);

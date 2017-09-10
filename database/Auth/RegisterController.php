@@ -66,7 +66,8 @@ class RegisterController extends Controller
             'q8' => 'required|q8',
             'q9' => 'required|q9',
             'q10' => 'required|q10',
-            'aboutme' => 'required|string|max:255'
+            'aboutme' => 'required|aboutme',
+            'postcode' => 'required|postcode'
         ]);
     }
 
@@ -98,7 +99,8 @@ class RegisterController extends Controller
             'q8' => $data['q8'],
             'q9' => $data['q9'],
             'q10' => $data['q10'],
-            'aboutme' => $data['aboutme']
+            'aboutme' => $data ['aboutme'],
+            'postcode' => $data ['postcode']
         ]);
     }
 }

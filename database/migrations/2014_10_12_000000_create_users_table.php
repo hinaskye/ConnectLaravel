@@ -35,6 +35,7 @@ class CreateUsersTable extends Migration
             $table->integer('q9');
             $table->integer('q10');
             $table->string('aboutme');
+            $table->integer('postcode');
         });
     }
 

@@ -100,8 +100,11 @@
             $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";
             $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);
             $mPostCodeRow = mysqli_fetch_assoc($mPostCodeResult);
-            $maxPostCode = $row['postcode'];
+            $maxPostCode = $mPostCodeRow['postcode'];
             echo $maxPostCode;
+
+
+
 
             $postcodeSql = "SELECT postcode, suburb, state, latitude, longitude
             FROM postcodes";

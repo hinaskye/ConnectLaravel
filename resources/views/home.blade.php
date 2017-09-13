@@ -94,38 +94,45 @@
             $matchDetails = array("user"=>$row, "matchPcent"=>$matchPcent); //may want to change $row to $match
             array_push($matches, $matchDetails);
 
-
-
-            //postcode code
-            $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";
-            $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);
-            $mPostCodeRow = mysqli_fetch_assoc($mPostCodeResult);
-            $maxPostCode = $mPostCodeRow['postcode'];
-            echo $maxPostCode;
-
-            $x = 1000;
-
-            while ($x <= $maxPostCode){
-
-            $postcodeSql = "SELECT postcode, suburb, state, latitude, longitude
-            FROM postcodes";
-            $pcResult = mysqli_query($conn, $postcodeSql);
-            $pcRow = mysqli_fetch_assoc($pcResult);
-
-            if ($pcRow ['postcode'] == $row['postcode']){
-                echo $pcRow ['suburb'];
-            }
-            else{
-                echo "did not work";
-            }
-
-            $x++;
-            }
-
         }
         $currentID ++;
         $i++;
     }
+
+        //postcode code
+
+        $userPostCodeSQL = "SELECT postcode FROM users";
+        $userPostCodeResult=mysqli_query($conn,$userPostCodeResult);
+        $userPostCode = mysqli_fetch_assoc($mResult);
+
+        $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";
+        $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);
+        $mPostCodeRow = mysqli_fetch_assoc($mPostCodeResult);
+        $maxPostCode = $mPostCodeRow['postcode'];
+        echo $maxPostCode;
+
+        $x = 1000;
+
+        while ($x <= $maxPostCode){
+
+        $postcodeSql = "SELECT postcode, suburb, state, latitude, longitude
+            FROM postcodes";
+        $pcResult = mysqli_query($conn, $postcodeSql);
+        $pcRow = mysqli_fetch_assoc($pcResult);
+
+        if ($pcRow ['postcode'] == $userPostCode['postcode']){
+            echo $pcRow ['suburb'];
+        }
+        else{
+            echo "did not work";
+        }
+
+        $x++;
+
+        }
+
+
+
 
     //sort matches by highest match percentage, uses anonymous function
     usort($matches, function($a, $b){

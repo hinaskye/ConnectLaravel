@@ -110,6 +110,16 @@
         $userPostCode = mysqli_fetch_assoc($userPostCodeResult);
 
 
+        if($userPostCodeResult->num_rows > 0){
+            while ($userPostCoderow = $userPostCodeResult->fetch_assoc()){
+                echo $userPostCoderow;
+            }
+        } else{
+            echo "No Results";
+        }
+
+
+
         $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";
         $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);
         $mPostCodeRow = mysqli_fetch_assoc($mPostCodeResult);

@@ -116,11 +116,10 @@
         $maxPostCode = $mPostCodeRow['postcode'];
 
 
-        foreach ($userPostCode as $c=>$values){
+        foreach ($userPostCode as $values){
         echo "      ";
         echo $values;
         echo "      ";
-        $c ++;
         }
 
 

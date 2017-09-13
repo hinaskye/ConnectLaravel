@@ -121,6 +121,8 @@
         while ($x <= $maxPostCode){
 
             foreach ($mPostCodeRow as $values){
+                echo $values;
+            }
 
             $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
             FROM postcodes WHERE postcode = $values";
@@ -132,7 +134,7 @@
                 echo $pcRow ['suburb'];
             }
             $x ++;
-            }
+
         }
 
 

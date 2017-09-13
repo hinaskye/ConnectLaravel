@@ -129,6 +129,7 @@
         while ($x <= $maxPostCode){
         if ($pcRow ['postcode'] == $userPostCode['postcode']){
             echo $pcRow ['suburb'];
+            echo "SHE LOOPS";
         }
             echo "   ";
         echo $x;

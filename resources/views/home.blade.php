@@ -97,10 +97,15 @@
 
 
             $postcodeSql = "SELECT postcode, suburb, state, latitude, longitude
-            FROM postcodes WHERE postcode = $user->postcode";
+            FROM postcodes";
             $pcResult = mysqli_query($conn, $postcodeSql);
             $pcRow = mysqli_fetch_assoc($pcResult);
-            echo $pcRow ['suburb'];
+            if ($pcRow ['postcode'] == $row['postcode']){
+                echo $pcRow ['suburb'];
+            }
+            else{
+                echo "did not work";
+            }
 
 
 

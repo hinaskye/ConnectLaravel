@@ -105,7 +105,7 @@
         $userPostCodeSQL = "SELECT postcode FROM users";
         $userPostCodeResult=mysqli_query($conn,$userPostCodeSQL);
         $userPostCode = mysqli_fetch_assoc($mResult);
-        echo $userPostCode;
+        echo $userPostCode['postcode'];
 
         $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";
         $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);

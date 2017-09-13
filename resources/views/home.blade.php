@@ -118,6 +118,7 @@
 
         foreach ($userPostCode as $values){
         echo "      ";
+        var_dump($user);
         var_dump($values);
         echo $values;
         echo "      ";

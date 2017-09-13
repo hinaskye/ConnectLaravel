@@ -130,9 +130,13 @@
         if ($pcRow ['postcode'] == $userPostCode['postcode']){
             echo $pcRow ['suburb'];
         }
+            echo "   ";
         echo $x;
+            echo "   ";
         $x ++;
+            echo "   ";
         echo $x;
+            echo "   ";
         }
 
 

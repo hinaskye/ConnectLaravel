@@ -38,10 +38,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <br>
           <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
           <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->gender; ?></p>
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-grey"></i>RMIT Lecturer (Hard-Coded)</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-grey"></i>Melbourne, AU (Hard-Coded)</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->postcode; ?></p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->email; ?></p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-grey"></i>1800-333-000</p>
           <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-grey"></i><?php
             $from = new DateTime($user->birthday);
             $to = new DateTime('today');

@@ -107,6 +107,7 @@
         $userPostCodeSQL = "SELECT postcode FROM users";
         $userPostCodeResult=mysqli_query($conn,$userPostCodeSQL);
         $userPostCode = mysqli_fetch_assoc($userPostCodeResult);
+        echo "This is userPostCode: . $userPostCode.";
 
         $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";
         $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);
@@ -114,37 +115,40 @@
         $maxPostCode = $mPostCodeRow['postcode'];
 
 
-
+/*
         while ($x <= $maxPostCode){
-        if ($x == $userPostCode){
-        $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
-            FROM postcodes";
-        $pcResult = mysqli_query($conn, $postcodeSql);
-        $pcRow = mysqli_fetch_assoc($pcResult);
+
+            if (){
 
 
-        if ($pcRow['postcode'] == $userPostCode['postcode']){
-            echo $pcRow ['suburb'];
-        }
-        $x ++;
+            }
+            $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
+            FROM postcodes WHERE id ";
+            $pcResult = mysqli_query($conn, $postcodeSql);
+            $pcRow = mysqli_fetch_assoc($pcResult);
 
-            echo "<br>";
-            echo $x;
-            echo "   ";
-            echo "Suburb = ";
-            echo $pcRow ['suburb'];
-            echo "   ";
-            echo "pcRow Postcode = ";
-            echo $pcRow['postcode'];
-            echo "   ";
-            echo "userPostCode = ";
-            echo $userPostCode['postcode'];
-            echo "   ";
-            echo "   ";
-            echo "   ";
-            echo "   ";
-        }
-    }
+
+            if ($pcRow['postcode'] == $userPostCode['postcode']){
+                echo $pcRow ['suburb'];
+            }
+            $x ++;
+                echo "<br>";
+                echo $x;
+                echo "   ";
+                echo "Suburb = ";
+                echo $pcRow ['suburb'];
+                echo "   ";
+                echo "pcRow Postcode = ";
+                echo $pcRow['postcode'];
+                echo "   ";
+                echo "userPostCode = ";
+                echo $userPostCode['postcode'];
+                echo "   ";
+                echo "   ";
+                echo "   ";
+                echo "   ";
+        }*/
+
 
 
 

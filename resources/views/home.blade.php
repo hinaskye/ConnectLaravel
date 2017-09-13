@@ -131,6 +131,8 @@
         while ($x <= $maxPostCode){
         if ($pcRow['postcode'] == $userPostCode['postcode']){
             echo $pcRow ['suburb'];
+        }
+        $x ++;
 
             echo "   ";
             echo "Suburb = ";
@@ -142,10 +144,6 @@
             echo "userPostCode = ";
             echo $userPostCode['postcode'];
             echo "   ";
-
-
-        }
-        $x ++;
 
         }
 

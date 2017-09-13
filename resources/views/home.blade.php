@@ -116,28 +116,23 @@
         $pcResult = mysqli_query($conn, $postcodeSql);
         $pcRow = mysqli_fetch_assoc($pcResult);
 
-        echo "   ";
+        echo "Suburb = ";
         echo $pcRow ['suburb'];
-        echo "   ";
+        echo "pcRow Postcode = ";
         echo $pcRow['postcode'];
-        echo "   ";
+        echo "userPostCode = ";
         echo $userPostCode['postcode'];
 
 
         $x = 200;
 
         while ($x <= $maxPostCode){
-        if ($pcRow ['postcode'] == $userPostCode['postcode']){
+        if ($pcRow['postcode'] == $userPostCode['postcode']){
             echo $pcRow ['suburb'];
-            echo "SHE LOOPS";
+
         }
-            echo "   ";
-        echo $x;
-            echo "   ";
         $x ++;
-            echo "   ";
-        echo $x;
-            echo "   ";
+
         }
 
 

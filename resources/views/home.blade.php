@@ -102,7 +102,7 @@
         //postcode code
 
         $userPostCodeSQL = "SELECT postcode FROM users";
-        $userPostCodeResult=mysqli_query($conn,$userPostCodeResult);
+        $userPostCodeResult=mysqli_query($conn,$userPostCodeSQL);
         $userPostCode = mysqli_fetch_assoc($mResult);
 
         $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";

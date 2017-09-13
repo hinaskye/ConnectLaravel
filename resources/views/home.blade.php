@@ -120,11 +120,7 @@
         if ($pcRow ['postcode'] == $userPostCode['postcode']){
             echo $pcRow ['suburb'];
         }
-        else{
-            echo "did not work";
-
-        }
-
+        echo "did not work";
         $x++;
 
         }

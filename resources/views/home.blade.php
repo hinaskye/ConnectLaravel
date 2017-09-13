@@ -116,12 +116,12 @@
 
 
         while ($x <= $maxPostCode){
-
+        if ($x == $userPostCode){
         $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
-            FROM postcodes WHERE postcode = $userPostCode";
+            FROM postcodes";
         $pcResult = mysqli_query($conn, $postcodeSql);
         $pcRow = mysqli_fetch_assoc($pcResult);
-
+        }
 
         if ($pcRow['postcode'] == $userPostCode['postcode']){
             echo $pcRow ['suburb'];

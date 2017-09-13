@@ -100,7 +100,6 @@
     }
 
         //postcode code
-        $x = 200;
 
         $userPostCodeSQL = "SELECT postcode FROM users";
         $userPostCodeResult=mysqli_query($conn,$userPostCodeSQL);
@@ -125,12 +124,15 @@
         echo "   ";
         echo $userPostCode['postcode'];
 
+
+        $x = 200;
+
         while ($x <= $maxPostCode){
         if ($pcRow ['postcode'] == $userPostCode['postcode']){
             echo $pcRow ['suburb'];
         }
 
-        $x++;
+        $x ++;
         }
 
 

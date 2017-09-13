@@ -118,7 +118,7 @@
         while ($x <= $maxPostCode){
 
         $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
-            FROM postcodes WHERE postcode = $x";
+            FROM postcodes WHERE postcode = $userPostCode";
         $pcResult = mysqli_query($conn, $postcodeSql);
         $pcRow = mysqli_fetch_assoc($pcResult);
 

@@ -108,9 +108,9 @@
         $userPostCodeSQL = "SELECT postcode FROM users";
         $userPostCodeResult=mysqli_query($conn,$userPostCodeSQL);
         $userPostCode = mysqli_fetch_assoc($userPostCodeResult);
-        while($c <= $maxID){
+        foreach ($userPostCode as $c){
         echo "This is userPostCode: ";
-        print_r(array_values($userPostCode));
+        echo $userPostCode[$c];
         $c ++;
         }
 

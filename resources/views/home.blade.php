@@ -115,20 +115,34 @@
             FROM postcodes";
         $pcResult = mysqli_query($conn, $postcodeSql);
         $pcRow = mysqli_fetch_assoc($pcResult);
-
+        echo "   ";
         echo "Suburb = ";
         echo $pcRow ['suburb'];
+        echo "   ";
         echo "pcRow Postcode = ";
         echo $pcRow['postcode'];
+        echo "   ";
         echo "userPostCode = ";
         echo $userPostCode['postcode'];
-
+        echo "   ";
 
         $x = 200;
 
         while ($x <= $maxPostCode){
         if ($pcRow['postcode'] == $userPostCode['postcode']){
             echo $pcRow ['suburb'];
+
+            echo "   ";
+            echo "Suburb = ";
+            echo $pcRow ['suburb'];
+            echo "   ";
+            echo "pcRow Postcode = ";
+            echo $pcRow['postcode'];
+            echo "   ";
+            echo "userPostCode = ";
+            echo $userPostCode['postcode'];
+            echo "   ";
+
 
         }
         $x ++;

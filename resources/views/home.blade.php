@@ -134,7 +134,7 @@
         }
         $x ++;
 
-            echo "\n";
+            echo "<br>";
             echo $x;
             echo "   ";
             echo "Suburb = ";
@@ -146,7 +146,7 @@
             echo "userPostCode = ";
             echo $userPostCode['postcode'];
             echo "   ";
-            echo "\n";
+            echo "<br>";
         }
 
 

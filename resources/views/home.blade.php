@@ -127,12 +127,12 @@
             /*$postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
             FROM postcodes WHERE postcode = $values";
             $pcResult = mysqli_query($conn, $postcodeSql);
-            $pcRow = mysqli_fetch_assoc($pcResult);*/
+            $pcRow = mysqli_fetch_assoc($pcResult);
 
 
             if ($pcRow['postcode'] == $userPostCode['postcode']){
                 echo $pcRow ['suburb'];
-            }
+            }*/
             $x ++;
 
         }

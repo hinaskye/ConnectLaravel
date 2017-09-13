@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="{{ route('home') }}"><img src="{{ asset('images/Logo.png') }}" width =25%></a><li>
+                        <li class="nav-pad"><a href="{{ route('home') }}"><img src="{{ asset('images/Logo.png') }}" width =25%></a><li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

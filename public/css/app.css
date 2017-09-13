@@ -26,3 +26,8 @@
 .topwelcome{
 	margin-top: 10%;
 }
+
+.nav-pad{
+	display: inline;
+	padding:0px;
+}

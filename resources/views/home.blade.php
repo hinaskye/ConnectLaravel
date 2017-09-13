@@ -94,8 +94,10 @@
 
             $postcodeSql = "SELECT postcode, suburb, state, latitude, longitude
             FROM postcodes WHERE postcode = $user->postcode";
+            $postcodeResult = mysqli_query($conn, $postcodeSqlSql);
+            $postcodeRow = mysqli_fetch_assoc($postcodeResult);
+            echo $postcodeRow;
 
-            echo $postcodeSql;
 
 
 

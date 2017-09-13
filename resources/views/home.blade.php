@@ -120,7 +120,7 @@
 
         while ($x <= $maxPostCode){
 
-            foreach ($mPostCodeRow as $values){
+            foreach ($userPostCode as $values){
                 echo "      ";
                 echo $values;
                 echo "      ";

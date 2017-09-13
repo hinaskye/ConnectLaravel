@@ -96,15 +96,16 @@
 
 
 
-
+            //postcode code
             $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";
             $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);
             $mPostCodeRow = mysqli_fetch_assoc($mPostCodeResult);
             $maxPostCode = $mPostCodeRow['postcode'];
             echo $maxPostCode;
 
+            $x = 1000;
 
-
+            while ($x <= $maxPostCode){
 
             $postcodeSql = "SELECT postcode, suburb, state, latitude, longitude
             FROM postcodes";
@@ -118,7 +119,8 @@
                 echo "did not work";
             }
 
-
+            $x++;
+            }
 
         }
         $currentID ++;

@@ -121,7 +121,7 @@
             FROM postcodes";
         $pcResult = mysqli_query($conn, $postcodeSql);
         $pcRow = mysqli_fetch_assoc($pcResult);
-        }
+
 
         if ($pcRow['postcode'] == $userPostCode['postcode']){
             echo $pcRow ['suburb'];
@@ -144,7 +144,7 @@
             echo "   ";
             echo "   ";
         }
-
+    }
 
 
 

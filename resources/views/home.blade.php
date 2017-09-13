@@ -104,17 +104,17 @@
         $userPostCodeSQL = "SELECT postcode FROM users";
         $userPostCodeResult=mysqli_query($conn,$userPostCodeSQL);
         $userPostCode = mysqli_fetch_assoc($userPostCodeResult);
-        echo $userPostCode['postcode'];
+
         $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";
         $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);
         $mPostCodeRow = mysqli_fetch_assoc($mPostCodeResult);
         $maxPostCode = $mPostCodeRow['postcode'];
-        echo $maxPostCode;
 
-        $postcodeSql = "SELECT postcode, suburb, state, latitude, longitude
+        $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
             FROM postcodes";
         $pcResult = mysqli_query($conn, $postcodeSql);
         $pcRow = mysqli_fetch_assoc($pcResult);
+
         echo "   ";
         echo "Suburb = ";
         echo $pcRow ['suburb'];
@@ -127,16 +127,15 @@
         echo "   ";
 
         $x = 200;
-
+        $i = 0;
         while ($x <= $maxPostCode){
         if ($pcRow['postcode'] == $userPostCode['postcode']){
             echo $pcRow ['suburb'];
         }
         $x ++;
+        $pcRow ++;
 
-            echo "   ";
-            echo "   ";
-            echo "   ";
+            echo "<br>";
             echo $x;
             echo "   ";
             echo "Suburb = ";
@@ -148,8 +147,8 @@
             echo "userPostCode = ";
             echo $userPostCode['postcode'];
             echo "   ";
-            echo "   ";
-            echo "   ";
+            echo "<br>";
+
         }
 
 

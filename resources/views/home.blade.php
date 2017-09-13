@@ -100,7 +100,7 @@
             FROM postcodes WHERE postcode = $user->postcode";
             $pcResult = mysqli_query($conn, $postcodeSql);
             $pcRow = mysqli_fetch_assoc($pcResult);
-            echo "done";
+            echo $pcRow;
 
 
 

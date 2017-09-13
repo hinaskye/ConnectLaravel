@@ -97,7 +97,7 @@
 
 
 
-            $maxPostCodeSql = "SELECT max(id) as id FROM postcodes";
+            $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";
             $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);
             $mPostCodeRow = mysqli_fetch_assoc($mPostCodeResult);
             $maxPostCode = $row['postcode'];

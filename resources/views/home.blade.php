@@ -120,10 +120,11 @@
 
         while ($x <= $maxPostCode){
 
-            foreach ($userPostCode as $values){
+            foreach ($userPostCode as $c=>$values){
                 echo "      ";
                 echo $values;
                 echo "      ";
+                $c
             }
 
             /*$postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude

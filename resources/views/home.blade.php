@@ -96,10 +96,18 @@
 
 
 
+
+            $maxPostCodeSql = "SELECT max(id) as id FROM postcodes";
+            $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);
+            $mPostCodeRow = mysqli_fetch_assoc($mPostCodeResult);
+            $maxPostCode = $row['postcode'];
+            echo $maxPostCode;
+
             $postcodeSql = "SELECT postcode, suburb, state, latitude, longitude
             FROM postcodes";
             $pcResult = mysqli_query($conn, $postcodeSql);
             $pcRow = mysqli_fetch_assoc($pcResult);
+
             if ($pcRow ['postcode'] == $row['postcode']){
                 echo $pcRow ['suburb'];
             }

@@ -28,6 +28,5 @@
 }
 
 .nav-pad{
-	display: inline;
-	padding:0px;
+	display: inline !important;
 }

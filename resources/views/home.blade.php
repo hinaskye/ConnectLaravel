@@ -112,12 +112,11 @@
         $maxPostCode = $mPostCodeRow['postcode'];
         echo $maxPostCode;
 
-      /*  while ($x <= $maxPostCode){
         $postcodeSql = "SELECT postcode, suburb, state, latitude, longitude
-            FROM postcodes WHERE postcode = ";
+            FROM postcodes";
         $pcResult = mysqli_query($conn, $postcodeSql);
         $pcRow = mysqli_fetch_assoc($pcResult);
-
+        while ($x <= $maxPostCode){
         if ($pcRow ['postcode'] == $userPostCode['postcode']){
             echo $pcRow ['suburb'];
         }
@@ -127,7 +126,7 @@
 
         $x++;
 
-        }*/
+        }
 
 
 

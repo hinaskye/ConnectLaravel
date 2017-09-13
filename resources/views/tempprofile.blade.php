@@ -5,6 +5,7 @@
 <?php
   $user = DB::table('users')->where('id','2')->first();
 ?>
+
 @section('content')
 <html>
 <title>Connect Profile</title>
@@ -38,10 +39,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <br>
           <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
           <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->gender; ?></p>
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-grey"></i>RMIT Lecturer (Hard-Coded)</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-grey"></i>Melbourne, AU (Hard-Coded)</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-grey"></i>Postcode, <?php echo $user->postcode; ?></p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->email; ?></p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-grey"></i>1800-333-000</p>
           <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-grey"></i><?php
             $from = new DateTime($user->birthday);
             $to = new DateTime('today');
@@ -59,7 +58,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
       <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
         <div class="w3-container">
-          <p> NOTE: CURRENTLY HARD-CODED TO QUERY DATA ON USER WITH ID=2, WIP TO MAKE IT UNIVERSAL
+          <p> NOTE: CURRENTLY HARD-CODED TO QUERY DATA ON USER WITH ID=2, WIP TO MAKE IT UNIVERSAL</p>
           <legend><h3>About Me</h3></legend>
           <p><?php echo $user->aboutme; ?></p>
           <hr>

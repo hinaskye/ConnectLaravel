@@ -29,7 +29,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <!-- Left Column -->
     <div class="w3-third">
 
-      <div class="w3-white w3-text-grey w3-card-4 box">
+      <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
           <img src="https://i.ytimg.com/vi/2qZHh_iN5Zs/hqdefault.jpg" style="width:100%" alt="Avatar">
 
@@ -232,12 +232,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script> 
-$(document).ready(function(){
-    $(".box").animate({left: '250px'});
-});
-</script> 
+
 </body>
 </html>
 @endsection

@@ -91,6 +91,16 @@
                 $matchPcent += 10;
             }
 
+
+            $postcodeSql = "SELECT postcode, suburb, state, latitude, longitude
+            FROM postcodes WHERE postcode = $user->postcode";
+
+            echo $postcodeSql;
+
+
+
+
+
             $matchDetails = array("user"=>$row, "matchPcent"=>$matchPcent); //may want to change $row to $match
             array_push($matches, $matchDetails);
 
@@ -113,13 +123,7 @@
 
 
 
-<?php
-        $user = Auth::user();
-        $userPostcode = $user->postcode;
-        $json = "http://v0.postcodeapi.com.au/suburbs/" .$userPostcode.".json";
 
-
-?>
 
 
 

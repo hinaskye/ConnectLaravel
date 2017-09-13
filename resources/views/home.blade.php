@@ -105,7 +105,6 @@
         $userPostCodeResult=mysqli_query($conn,$userPostCodeSQL);
         $userPostCode = mysqli_fetch_assoc($userPostCodeResult);
         echo $userPostCode['postcode'];
-
         $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";
         $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);
         $mPostCodeRow = mysqli_fetch_assoc($mPostCodeResult);
@@ -131,8 +130,9 @@
         if ($pcRow ['postcode'] == $userPostCode['postcode']){
             echo $pcRow ['suburb'];
         }
-
+        echo $x;
         $x ++;
+        echo $x;
         }
 
 

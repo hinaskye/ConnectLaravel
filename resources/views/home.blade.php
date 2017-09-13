@@ -124,7 +124,7 @@
                 echo "      ";
                 echo $values;
                 echo "      ";
-                $c
+                $c;
             }
 
             /*$postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude

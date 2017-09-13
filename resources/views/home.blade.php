@@ -91,20 +91,17 @@
                 $matchPcent += 10;
             }
 
+            $matchDetails = array("user"=>$row, "matchPcent"=>$matchPcent); //may want to change $row to $match
+            array_push($matches, $matchDetails);
+
+
 
             $postcodeSql = "SELECT postcode, suburb, state, latitude, longitude
             FROM postcodes WHERE postcode = $user->postcode";
-            $postcodeResult = mysqli_query($conn, $postcodeSql);
-            $postcodeRow = mysqli_fetch_assoc($postcodeResult);
-            echo $postcodeRow;
+            $pcResult = mysqli_query($conn, $postcodeSql);
+            $pcRow = mysqli_fetch_assoc($pcResult);
+            echo "done";
 
-
-
-
-
-
-            $matchDetails = array("user"=>$row, "matchPcent"=>$matchPcent); //may want to change $row to $match
-            array_push($matches, $matchDetails);
 
 
         }

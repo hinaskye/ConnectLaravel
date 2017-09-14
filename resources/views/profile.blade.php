@@ -20,7 +20,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </style>
 <body class="w3-light-grey">
 <div class="container">
-  {!!Html::image(getImage($myPath),'logo',['width'=>60,'height'=>55])!!}
   <div class="panel panel-primary">
     <div class="panel-heading"><h2>Laravel 5.3 Amazon S3 Image Upload with Validation example</h2></div>
 

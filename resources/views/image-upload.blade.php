@@ -7,7 +7,7 @@
 <body>
 
 <div class="container">
-	{!!Html::image(getImage($myPath),'logo',['width'=>60,'height'=>55])!!}
+	{{ Html::image($myPath) }}
   <div class="panel panel-primary">
     <div class="panel-heading"><h2>Laravel 5.3 Amazon S3 Image Upload with Validation example</h2></div>
 

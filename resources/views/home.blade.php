@@ -53,8 +53,8 @@
         if ($userID != $currentID){
 
             //Query DB for First users in DB answers to questions
-            $questionSql = "SELECT firstname, lastname, gender, birthday, aboutme,
-            q1, q2, q3, q4, q5, q6, q7, q8, q9, q10
+            $questionSql = "SELECT firstname, lastname, gender, birthday,
+            q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, id, aboutme, postcode
             FROM users WHERE id = $currentID";
             $questionResult = mysqli_query($conn, $questionSql);
             $row = mysqli_fetch_assoc($questionResult);
@@ -111,6 +111,18 @@
     //print_r($matches);
 ?>
 
+
+
+<?php
+        $user = Auth::user();
+        $userPostcode = $user->postcode;
+        $json = "http://v0.postcodeapi.com.au/suburbs/" .$userPostcode.".json";
+
+
+?>
+
+
+
 @section('content')
 <div class="container">
     <h1>My Matches</h1><br>
@@ -121,7 +133,7 @@
     </div>
     <div class="side-container">
          <div class="filter-section filter-bottombar filter-padding">
-              <span class="whiteText">Filter:</span> 
+              <span class="whiteText">Filter:</span>
               <input type="range" class="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
               <span id="filterPercent">50%</span>
               <button class="inline-button button-white" onclick="filterMatches()">Filter</button>
@@ -133,14 +145,21 @@
     </div><br>
 @for($matchCount=0; $matchCount<count($matches); $matchCount++)
     @if($matches[$matchCount]['matchPcent'] != 0)
-    <div class="card col-md-4 col-sm-6" id="<?php $currentID; echo $currentID;?>">
+      <div class="card col-md-4 col-sm-6">
+<div onclick=passID() id={{$matches[$matchCount]['user']['id']}}>
         <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
         <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
         <div class="card-body">
             <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
-            <p class="card-text">{{$matches[$matchCount]['user']['birthday']}}</p>
-        </div>
+            <p class="card-text"><?php
+              $from = new DateTime($matches[$matchCount]['user']['birthday']);
+              $to = new DateTime('today');
+              echo $from->diff($to)->y, " years old";?></p>
+            <p class="card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
+            <div onclick=passID() id={{$matches[$matchCount]['user']['id']}}>Click for ID</div>
+      </div>
     </div>
+  </div>
     @endif
 @endfor
 
@@ -154,5 +173,10 @@
     function updateFilter(val){
         document.getElementById("filterPercent").innerHTML=val+"%";
     }
-   </script>  
+
+    function passID(id){
+      alert("Id is: " + id;
+    }
+   </script>
+
 @endsection

@@ -49,3 +49,8 @@ function searchFunction() {
         });
     })
 }
+
+/* Michael */
+function passID(){
+  alert(passID.caller.arguments[0].target.id);
+}

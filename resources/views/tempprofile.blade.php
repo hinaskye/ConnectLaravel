@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 @extends('layouts.app')
-<!-- <link href="{{ asset('css/profile.css') }}" rel="stylesheet"> -->
 <!-- Defining $User -->
 <?php
   $user = DB::table('users')->where('id','2')->first();
 ?>
-
 @section('content')
 <html>
 <title>Connect Profile</title>
@@ -58,7 +56,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
       <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
         <div class="w3-container">
-          <p> NOTE: CURRENTLY HARD-CODED TO QUERY DATA ON USER WITH ID=2, WIP TO MAKE IT UNIVERSAL</p>
+          <p> NOTE: CURRENTLY HARD-CODED TO QUERY DATA ON USER WITH ID=2, WIP TO MAKE IT UNIVERSAL
           <legend><h3>About Me</h3></legend>
           <p><?php echo $user->aboutme; ?></p>
           <hr>

@@ -16,7 +16,17 @@ html,body,h1,h2,h3,h4,h5,h6 {
 }
 @keyframes animateleft{
 	from{left:-300px;opacity:0}
-	 to{left:0;opacity:1}}
+	 to{left:0;opacity:1}
+}
+
+.w3-animate-bottom{
+	position:relative;animation:animatebottom 0.4s
+}
+
+@keyframes animatebottom{
+	from{bottom:-300px;opacity:0} 
+	to{bottom:0;opacity:1}
+}
 
 .margin-right-16{
 	margin-right: 16px!important;

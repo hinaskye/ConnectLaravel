@@ -46,12 +46,18 @@ function filterMatches() {
 function filterPostcode() {
     var postcodeSelected = parseInt(document.getElementById("postcodeFilter").innerHTML);
     var postcodes = document.getElementsByClassName("postcode");
+
+    console.log(postcodeSelected);
+    console.log(postcodes);
+    console.log("");
+    console.log("parentOf Postcode:"+postcodes[0].parentElement);
     
-    for(var i=0; i<matchPercent.length; i++) {
+    for(var i=0; i<postcodes.length; i++) {
         postcode_value = parseInt(postcodes[i].innerHTML);
-        w3.removeClass(postcodes[i].parentElement, 'hidden');
+        console.log("postcode_value:"+ postcode_value);
+        w3.removeClass(postcodes[i].parentElement.parentElement, 'hidden');
         if(postcode_value != postcodeSelected) {
-            w3.addClass(postcodes[i].parentElement, 'hidden');
+            w3.addClass(postcodes[i].parentElement.parentElement, 'hidden');
         }
     }
 }
@@ -62,6 +68,13 @@ function filterAge() {
     var upperAge = parseInt(document.getElementById("upperAge").innerHTML);
     var ages = document.getElementsByClassName("age");
 
+    console.log(lowerAge);
+    console.log(upperAge);
+    console.log("");
+    console.log(ages);
+    console.log("");
+    console.log("parentOf Age:"+ages[0].parentElement);
+
     if(lowerAge>upperAge)
     {
         /* throw an error to user if lower age is not lower than upper age */
@@ -69,12 +82,12 @@ function filterAge() {
     }
     else
     {
-        for(var i=0; i<matchPercent.length; i++) {
+        for(var i=0; i<ages.length; i++) {
             age_value = parseInt(ages[i].innerHTML);
-            w3.removeClass(ages[i].parentElement, 'hidden');
+            w3.removeClass(ages[i].parentElement.parentElement, 'hidden');
             if(age_value<lowerAge || age_value > upperAge)
             {
-                w3.addClass(ages[i].parentElement, 'hidden');
+                w3.addClass(ages[i].parentElement.parentElement, 'hidden');
             }
         }
     }

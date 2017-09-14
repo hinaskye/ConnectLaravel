@@ -30,11 +30,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <div class="w3-third">
 
       <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
+        <div class="container">
           <img src="https://i.ytimg.com/vi/2qZHh_iN5Zs/hqdefault.jpg" style="width:100%" alt="Avatar">
 
         </div>
-        <div class="w3-container">
+        <div class="container">
           <br>
           <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
           <p><i class="fa fa-user fa-fw label label-default"></i><?php echo $user->gender; ?></p>

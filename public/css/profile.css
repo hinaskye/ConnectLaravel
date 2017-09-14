@@ -11,6 +11,13 @@ html,body,h1,h2,h3,h4,h5,h6 {
 	color:white;
 }
 
+.animate-left{
+	position:relative;animation:animateleft 0.4s
+}
+@keyframes animateleft{
+	from{left:-300px;opacity:0}
+	 to{left:0;opacity:1}}
+
 .margin-right-16{
 	margin-right: 16px!important;
 }

@@ -24,20 +24,20 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 <div class="container" style="max-width:1400px;">
 
   <!-- The Grid -->
-  <div class="row p-4">
+  <div class="container">
 
     <!-- Left Column -->
-    <div class="w3-third">
+    <div class="pull-left">
 
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="col-lg-20">
+      <div class="col-lg-10 col-lg-10 col-lg-8">
+        <div class="col-lg-10 col-lg-10 col-lg-8">
           <img src="https://i.ytimg.com/vi/2qZHh_iN5Zs/hqdefault.jpg" style="width:100%" alt="Avatar">
 
         </div>
-        <div class="col-lg-20">
+        <div class="col-lg-18 col-lg-12 col-lg-9">
           <br>
           <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
-          <p><i class="fa fa-user fa-fw"></i><?php echo $user->gender; ?></p>
+          <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->gender; ?></p>
           <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-grey"></i>RMIT Lecturer (Hard-Coded)</p>
           <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-grey"></i>Melbourne, AU (Hard-Coded)</p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->email; ?></p>
@@ -55,7 +55,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </div>
 
     <!-- Right Column -->
-    <div class="w3-twothird">
+    <div class="pull-right">
 
       <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
         <div class="w3-container">

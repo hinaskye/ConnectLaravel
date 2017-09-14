@@ -123,8 +123,7 @@
             while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
                 $userPostcodeArray[] = $loopRow;
                 echo $loopRow['postcode'];
-                $searchPC = $loopRow['postcode']
-                var_dump($loopRow);
+                $searchPC = $loopRow['postcode'];
                 $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
                 FROM postcodes WHERE postcode = $searchPC";
                 $pcResult = mysqli_query($conn, $postcodeSql);

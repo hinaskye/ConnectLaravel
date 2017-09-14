@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/profile', function () {
+Route::get('/profile', 'S3ImageController@imageUploadPost', function () {
     return view('profile');
 });
 

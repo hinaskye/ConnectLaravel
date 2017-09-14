@@ -32,7 +32,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
           <img src="https://i.ytimg.com/vi/2qZHh_iN5Zs/hqdefault.jpg" style="width:100%" alt="Avatar">
-
+              <form action="{{ url('s3-image-upload') }}" enctype="multipart/form-data" method="POST">
+              {{ csrf_field() }}
+              <div class="row">
+                <div class="col-md-12">
+                  <input type="file" name="image" />
+                </div>
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-success">Upload</button>
+                </div>
+              </div>
+              </form>
         </div>
         <div class="w3-container">
           <br>

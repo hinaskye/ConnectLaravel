@@ -31,7 +31,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
       <div class="col-lg-10 col-lg-10 col-sm-8">
         <div class="col-lg-10 col-lg-10 col-lg-8">
-          <img src="https://goo.gl/BtLtVt" style="width:100%" alt="Avatar">
+          <img src="https://www.google.com.au/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiT8fX85aTWAhVHebwKHetVBy0QjRwIBw&url=http%3A%2F%2Fcoub.com%2Fview%2F7zvux&psig=AFQjCNHXQETZdtbHdbdQuunSCNHbTdaw8w&ust=1505482604117594" style="width:100%" alt="Avatar">
 
         </div>
         <div class="col-lg-18 col-lg-12 col-lg-9">

@@ -22,7 +22,9 @@ for(var i=0; i<matchPercent.length; i++) {
 
 /* Functions */
 
-/* filter function */
+/* filter functions */
+
+/* filter by match %*/
 function filterMatches() {
     var filterPercentString = document.getElementById("filterPercent").innerHTML.replace(/%/g,'');
     var filterPercent = parseInt(filterPercentString);
@@ -37,6 +39,26 @@ function filterMatches() {
             w3.addClass(matchPercent[i].parentElement, 'hidden');
         }
     }
+}
+
+/* filter by postcode */
+/* similar to filter by match */
+function filterPostcode() {
+    var postcodeSelected = parseInt(document.getElementById("postcodeFilter").innerHTML);
+    var postcodes = document.getElementsByClassName("postcode");
+    
+    for(var i=0; i<matchPercent.length; i++) {
+        postcode_value = parseInt(postcodes[i].innerHTML);
+        w3.removeClass(postcodes[i].parentElement, 'hidden');
+        if(postcode_value != postcodeSelected) {
+            w3.addClass(postcodes[i].parentElement, 'hidden');
+        }
+    }
+}
+
+/* filter by age */
+function filterAge() {
+    
 }
 
 /* search functions */

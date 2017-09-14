@@ -47,7 +47,7 @@
                             <li><a href="{{ route('auth.register') }}">Register</a></li>
                         @else
                         <div class="topwelcome">
-                           <a href="{{ route('url('/profile') }}"><h5 class="topusername">Welcome, <?php echo $user->username; ?></h5></a>
+                            <h5 class="topusername">Welcome, <?php echo $user->username; ?></h5>
                             <li class="dropdown dropdownuser">
 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

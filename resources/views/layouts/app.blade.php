@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-left nav-inline">
-                        <li><a href="{{ route('home') }}"><img src="{{ asset('images/Logo.png') }}" width =25%></a><li>
+                        <li><a href="{{ url('/home') }}"><img src="{{ asset('images/Logo.png') }}" width =25%></a><li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -47,7 +47,7 @@
                             <li><a href="{{ route('auth.register') }}">Register</a></li>
                         @else
                         <div class="topwelcome">
-                            <h5 class="topusername">Welcome, <?php echo $user->username; ?></h5>
+                            <h5 class="topusername"><a href="{{ route('url('/profile') }}">Welcome, <?php echo $user->username; ?></a></h5>
                             <li class="dropdown dropdownuser">
 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

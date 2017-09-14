@@ -22,14 +22,14 @@
   <div class="row">
 
     <!-- Left Column -->
-    <div class="col-lg-4">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 
-      <div class="col-lg-12 background-gray">
-        <div class="col-lg-12 margin-top-10">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
           <img src="{{ asset('images/profile.jpg') }}" style="width:100%" alt="Avatar">
 
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <br>
           <legend class="text-white"><?php echo $user->firstname," ", $user->lastname; ?></legend>
           <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
@@ -47,15 +47,15 @@
     </div>
 
     <!-- Right Column -->
-    <div class="col-lg-8 ">
+    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
 
-      <div class="col-lg-12 background-gray">
-        <div class="col-lg-12">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
+        <div class="col-lg-12 col-md-12">
           <legend><h3>About Me</h3></legend>
           <p><?php echo $user->aboutme; ?></p>
           <hr>
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <legend><h3>Questions I answered...</h3></legend>
           <h4><li>Favourite Movie Genre</li></h4>
             <p> I like to watch
@@ -84,7 +84,7 @@
             ?> movies!</p><br>
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>My activity level...</li></h4>
           <p><?php  if ($user->q2 == "1")
             {
@@ -99,7 +99,7 @@
             ?></p><br>
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Stay at home or go out?</li></h4>
           <p><?php  if ($user->q3 == "1")
             {
@@ -111,7 +111,7 @@
             ?></p><br>
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Am I funny?</li></h4>
           <p><?php  if ($user->q4 == "1")
             {
@@ -123,7 +123,7 @@
             ?></p><br>
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Eat out or at home?</li></h4>
           <p>I like to <?php  if ($user->q5 == "1")
             {
@@ -135,7 +135,7 @@
             ?></p><br>
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Animal lover?</li></h4>
           <p><?php  if ($user->q6 == "1")
             {
@@ -150,7 +150,7 @@
             ?></p><br>
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Play a musical instrument?</li></h4>
           <p><?php  if ($user->q7 == "1")
             {
@@ -162,7 +162,7 @@
             ?></p><br>
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Do you admit mistakes?</li></h4>
           <p><?php  if ($user->q8 == "1")
             {
@@ -174,7 +174,7 @@
             ?></p><br>
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Like reading?</li></h4>
           <p><?php  if ($user->q9 == "1")
             {
@@ -186,7 +186,7 @@
             ?></p><br>
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Do I believe in fate??</li></h4>
           <p><?php  if ($user->q10 == "1")
             {

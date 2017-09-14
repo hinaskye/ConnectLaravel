@@ -154,11 +154,11 @@
         <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
         <div class="card-body">
             <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
-            <p class="card-text"><?php
+            <p class="age card-text"><?php
               $from = new DateTime($matches[$matchCount]['user']['birthday']);
               $to = new DateTime('today');
               echo $from->diff($to)->y, " years old";?></p>
-            <p class="card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
+            <p class="postcode card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
         </div>
     </div>
     @endif

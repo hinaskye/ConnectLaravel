@@ -116,16 +116,25 @@
 
         while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
             $userPostcodeArray[] = $loopRow;
+            echo "   ";
+            echo "loopRow: ";
+            echo "   ";
             echo $loopRow['postcode'];
             $searchPC = $loopRow['postcode'];
+
             $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
             FROM postcodes WHERE postcode = $searchPC";
             $pcResult = mysqli_query($conn, $postcodeSql);
             $pcRow = mysqli_fetch_assoc($pcResult);
 
+            echo "   ";
+            echo "pcRow: ";
+            echo "   ";
+
             if ($pcRow['postcode'] == $userPostCode['postcode']){
                 echo "User PostCode is:  ";
                 echo $pcRow ['suburb'];
+                echo "   ";
             }
         }
 

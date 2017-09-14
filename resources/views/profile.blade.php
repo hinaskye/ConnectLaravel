@@ -27,7 +27,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <div class="row p-4">
 
     <!-- Left Column -->
-    <div class="float-sm-left">
+    <div class="w3-third">
 
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="col-lg-20">

@@ -6,6 +6,10 @@ body {
     background-size: cover;
 }
 
+html,body,h1,h2,h3,h4,h5,h6 {
+	font-family: "Roboto", sans-serif
+}
+
 .footer {
     background-color:rgba(84, 84, 84, 0.75);
     background-clip: padding-box;

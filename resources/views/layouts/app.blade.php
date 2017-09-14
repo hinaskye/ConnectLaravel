@@ -89,15 +89,15 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <h3>Connect</h3>
                     <ul>
-                        <li>Home</li>
-                        <li>My Profile</li>
+                        <a hef="{{route('home')}}"><li>Home</li></a>
+                        <a hef="{{route('profile')}}"><li>My Profile</li></a>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <h3>About</h3>
                     <ul>
-                        <li>Founders</li>
-                        <li>Donate Money</li>
+                        <a hef="{{route('about')}}"><li>Founders</li></a>
+                        <a hef="https://www.paypal.me"><li>Donate Money</li></a>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">

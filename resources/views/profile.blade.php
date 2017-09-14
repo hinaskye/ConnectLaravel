@@ -30,7 +30,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <div class="w3-third">
 
       <div class="w3-white w3-text-grey w3-card-4">
-        <div class="container">
+        <div class="row">
           <img src="https://i.ytimg.com/vi/2qZHh_iN5Zs/hqdefault.jpg" style="width:100%" alt="Avatar">
 
         </div>

@@ -27,7 +27,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <div class="row">
 
     <!-- Left Column -->
-    <div class="pull-left col-lg-6">
+    <div class="col-sm-4">
 
       <div class="col-lg-10 col-lg-10 col-sm-8">
         <div class="col-lg-10 col-lg-10 col-lg-8">
@@ -55,7 +55,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </div>
 
     <!-- Right Column -->
-    <div class="pull-left col-lg-6">
+    <div class="col-sm-8">
 
       <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
         <div class="w3-container">

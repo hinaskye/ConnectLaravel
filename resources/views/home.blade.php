@@ -140,8 +140,8 @@
                     echo $pcRow ['suburb'];
                 }
             $x ++;
+            }
         }
-
 
 
 

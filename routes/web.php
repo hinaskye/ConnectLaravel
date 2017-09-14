@@ -19,7 +19,7 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-Route::get('/tempprofile','S3ImageController@imageUploadPost', function () {
+Route::get('/tempprofile', function () {
     return view('tempprofile');
 });
 

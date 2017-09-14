@@ -89,14 +89,14 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <h3>Connect</h3>
                     <ul>
-                        <li><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="{{ route('profile') }}">My Profile</a></li>
+                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li><a href="{{ url('/profile') }}">My Profile</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <h3>About</h3>
                     <ul>
-                        <li><a href="{{ route('about') }}">Founders</a></li>
+                        <li><a href="{{ url('/about') }}">Founders</a></li>
                         <li><a href="https://www.paypal.me">Donate Money</a></li>
                     </ul>
                 </div>

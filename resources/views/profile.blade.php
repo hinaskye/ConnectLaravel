@@ -27,20 +27,20 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <div class="row">
 
     <!-- Left Column -->
-    <div class="col-sm-4">
+    <div class="col-lg-4">
 
-      <div class="col-lg-10 col-lg-10 col-sm-8">
-        <div class="col-lg-10 col-lg-10 col-lg-8">
+      <div class="col-lg-12">
+        <div class="col-lg-12">
           <img src="{{ asset('images/profile.jpg') }}" style="width:100%" alt="Avatar">
 
         </div>
-        <div class="col-lg-18 col-lg-12 col-lg-9">
+        <div class="col-lg-12">
           <br>
           <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
-          <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->gender; ?></p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->email; ?></p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-grey"></i>1800-333-000</p>
-          <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-grey"></i><?php
+          <p><i class="fa fa-user fa-fw w3-margin-right w3-large text-grey"></i><?php echo $user->gender; ?></p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large text-grey"></i><?php echo $user->email; ?></p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large text-grey"></i>1800-333-000</p>
+          <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large text-grey"></i><?php
             $from = new DateTime($user->birthday);
             $to = new DateTime('today');
             echo $from->diff($to)->y, " years old";?></p>
@@ -53,9 +53,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </div>
 
     <!-- Right Column -->
-    <div class="col-sm-8">
+    <div class="col-lg-8">
 
-      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+      <div class="w3-container w3-card-2 text-white w3-margin-bottom">
         <div class="w3-container">
           <legend><h3>About Me</h3></legend>
           <p><?php echo $user->aboutme; ?></p>

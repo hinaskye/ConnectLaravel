@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
 use Storage;
 
@@ -26,7 +26,7 @@ class S3ImageController extends Controller
     public function imageUploadPost(Request $request)
     {
         $user = Auth::user();
-        $userID = user->id;
+        $userID = $user->id;
         $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);

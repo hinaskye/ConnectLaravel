@@ -124,7 +124,7 @@
 
 
             echo "   ";
-            echo "Search PC"
+            echo "Search PC";
             echo $searchPC;
             echo "   ";
 

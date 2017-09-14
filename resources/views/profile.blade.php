@@ -34,10 +34,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <img src="https://i.ytimg.com/vi/2qZHh_iN5Zs/hqdefault.jpg" style="width:100%" alt="Avatar">
 
         </div>
-        <div class="container">
+        <div class="col-md-5">
           <br>
           <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
-          <p><i class="fa fa-user fa-fw label label-default"></i><?php echo $user->gender; ?></p>
+          <p><i class="fa fa-user fa-fw"></i><?php echo $user->gender; ?></p>
           <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-grey"></i>RMIT Lecturer (Hard-Coded)</p>
           <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-grey"></i>Melbourne, AU (Hard-Coded)</p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->email; ?></p>
@@ -219,19 +219,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
   <!-- End Page Container -->
 </div>
-
-
-<footer class="w3-container footer-static-bottom w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
-
 
 </body>
 </html>

@@ -18,10 +18,10 @@
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </style>
-<body class="w3-light-grey">
+<body>
 
 <!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+<div class="container" style="max-width:1400px;">
 
   <!-- The Grid -->
   <div class="w3-row-padding">
@@ -37,7 +37,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <div class="w3-container">
           <br>
           <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
-          <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->gender; ?></p>
+          <p><i class="fa fa-user fa-fw label label-default"></i><?php echo $user->gender; ?></p>
           <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-grey"></i>RMIT Lecturer (Hard-Coded)</p>
           <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-grey"></i>Melbourne, AU (Hard-Coded)</p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->email; ?></p>

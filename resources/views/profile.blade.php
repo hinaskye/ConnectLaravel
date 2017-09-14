@@ -37,7 +37,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <div class="col-lg-12">
           <br>
           <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
-          <p><i class="fa fa-user fa-fw w3-margin-right w3-large text-grey"></i><?php echo $user->gender; ?></p>
+          <p><i class="fa fa-user fa-fw w3-margin-right w3-large text-white"></i><?php echo $user->gender; ?></p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large text-grey"></i><?php echo $user->email; ?></p>
           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large text-grey"></i>1800-333-000</p>
           <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large text-grey"></i><?php
@@ -55,13 +55,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <!-- Right Column -->
     <div class="col-lg-8">
 
-      <div class="w3-container w3-card-2 text-white w3-margin-bottom">
-        <div class="w3-container">
+      <div class="col-lg-12">
+        <div class="col-lg-12">
           <legend><h3>About Me</h3></legend>
           <p><?php echo $user->aboutme; ?></p>
           <hr>
         </div>
-        <div class="w3-container">
+        <div class="col-lg-12">
           <legend><h3>Questions I answered...</h3></legend>
           <h4><li>Favourite Movie Genre</li></h4>
             <p> I like to watch
@@ -90,7 +90,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?> movies!</p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12">
           <h4><li>My activity level...</li></h4>
           <p><?php  if ($user->q2 == "1")
             {
@@ -105,7 +105,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12">
           <h4><li>Stay at home or go out?</li></h4>
           <p><?php  if ($user->q3 == "1")
             {
@@ -117,7 +117,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12">
           <h4><li>Am I funny?</li></h4>
           <p><?php  if ($user->q4 == "1")
             {
@@ -129,7 +129,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12">
           <h4><li>Eat out or at home?</li></h4>
           <p>I like to <?php  if ($user->q5 == "1")
             {
@@ -141,7 +141,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12">
           <h4><li>Animal lover?</li></h4>
           <p><?php  if ($user->q6 == "1")
             {
@@ -156,7 +156,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12">
           <h4><li>Play a musical instrument?</li></h4>
           <p><?php  if ($user->q7 == "1")
             {
@@ -168,7 +168,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12">
           <h4><li>Do you admit mistakes?</li></h4>
           <p><?php  if ($user->q8 == "1")
             {
@@ -180,7 +180,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12">
           <h4><li>Like reading?</li></h4>
           <p><?php  if ($user->q9 == "1")
             {
@@ -192,7 +192,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12">
           <h4><li>Do I believe in fate??</li></h4>
           <p><?php  if ($user->q10 == "1")
             {

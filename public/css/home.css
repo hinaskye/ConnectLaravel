@@ -58,7 +58,9 @@ body {
     display: none;
 }
 
-
+.text-dark {
+    color:#000000;
+}
 
 
 /*for Search bar*/

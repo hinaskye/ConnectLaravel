@@ -135,14 +135,14 @@
         <div class="row">
             <span>Filter by age:</span>
             <span>between</span>
-            <input type="number" id="lowerAge" min="0" max="125">
+            <input class="text-dark" type="number" id="lowerAge" min="1" max="125" value="18">
             <span>and</span>
-            <input type="number" id="upperAge" min="0" max="125">
+            <input class="text-dark" type="number" id="upperAge" min="1" max="125" value="30">
             <button class="inline-button button-white" onclick="filterAge()">Filter</button>
         </div>
         <div class="row">
             <span>Filter by postcode:</span>
-            <input type="number" id="postcodeFilter" min="0" max="9999" value="3000">
+            <input class="text-dark" type="number" id="postcodeFilter" min="0" max="9999" value="3000">
             <button class="inline-button button-white" onclick="filterPostcode()">Filter</button>
         </div>
 

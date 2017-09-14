@@ -58,7 +58,26 @@ function filterPostcode() {
 
 /* filter by age */
 function filterAge() {
-    
+    var lowerAge = parseInt(document.getElementById("lowerAge").innerHTML);
+    var upperAge = parseInt(document.getElementById("upperAge").innerHTML);
+    var ages = document.getElementsByClassName("age");
+
+    if(lowerAge>upperAge)
+    {
+        /* throw an error to user if lower age is not lower than upper age */
+        alert("Lower age specified is higher than the highest age specified!");
+    }
+    else
+    {
+        for(var i=0; i<matchPercent.length; i++) {
+            age_value = parseInt(ages[i].innerHTML);
+            w3.removeClass(ages[i].parentElement, 'hidden');
+            if(age_value<lowerAge || age_value > upperAge)
+            {
+                w3.addClass(ages[i].parentElement, 'hidden');
+            }
+        }
+    }
 }
 
 /* search functions */

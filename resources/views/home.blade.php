@@ -127,22 +127,32 @@
 <div class="container">
     <h1>My Matches</h1><br>
 
+    <div class="row">
         <div class="searchBox">
             <input type="text" id="input" class="input" onkeyup="searchFunction()" placeholder="Search..."/>
             <div class="icon"></div>
         </div>
-
+    </div>
+    <div class="row">
         <button class="btn btn-success" onclick="w3.toggleClass('#filterOptions','hideFilterOptions')">Toggle Advance Filter Options</button>
-        <div id="filterOptions"class="hideFilterOptions">
-            <div class="side-container">
-                <div class="filter-section filter-bottombar filter-padding">
-                    <span class="whiteText">Filter by match %:</span>
-                    <input type="range" class="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
-                    <span id="filterPercent">50%</span>
-                    <button class="inline-button button-white" onclick="filterMatches()">Filter</button>
-                </div>
+    </div>
+    <div id="filterOptions"class="hideFilterOptions">
+        <div class="row">
+            <span>Filter by postcode:</span>
+            <input type="number" id="postcodeFilter" min="0" max="9999" value="3000">
+            <button class="inline-button button-white" onclick="filterPostcode()">Filter</button>
+        </div>
+
+        <div class="side-container">
+            <div class="filter-section filter-bottombar filter-padding">
+                <span class="whiteText">Filter by match %:</span>
+                <input type="range" class="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
+                <span id="filterPercent">50%</span>
+                <button class="inline-button button-white" onclick="filterMatches()">Filter</button>
             </div>
         </div>
+    </div>
+</div>
 
     <div class="row" id="row">
 

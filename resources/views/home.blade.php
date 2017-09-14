@@ -95,23 +95,12 @@
 
         //postcode code
 
-        $c = 0;
-        $x = 200;
-        $i = 0;
-
+        //query user DB to get the postcodes of all users are put them in an array
         $userPostCodeSQL = "SELECT postcode FROM users";
         $userPostCodeResult=mysqli_query($conn,$userPostCodeSQL);
         $userPostCode = mysqli_fetch_assoc($userPostCodeResult);
 
-
-        $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";
-        $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);
-        $mPostCodeRow = mysqli_fetch_assoc($mPostCodeResult);
-        $maxPostCode = $mPostCodeRow['postcode'];
-
-
         $userPostCodeQuery = mysqli_query($conn, $userPostCodeSQL);
-
         $userPostcodeArray = array();
 
         //loops through every postcode in the user table and returns each postcode
@@ -128,7 +117,7 @@
             var_dump($pcRow,$searchPC,$loopRow);
 
 
-
+            //print test to make sure postcodes are getting converted to suburbs correctly
             if ($pcRow['postcode'] == $searchPC){
                 echo "User PostCode is:  ";
                 echo $pcRow ['suburb'];

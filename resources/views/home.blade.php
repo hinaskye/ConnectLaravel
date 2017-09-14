@@ -109,14 +109,6 @@
         $userPostCodeResult=mysqli_query($conn,$userPostCodeSQL);
         $userPostCode = mysqli_fetch_assoc($userPostCodeResult);
 
-        $data = array();
-        while(($pCrow = mysqli_fetch_array($userPostCodeResult))) {
-            $data[] = $pCrow['postcode'];
-            echo $pCrow['postcode'];
-        }
-        echo "here it is: ";
-        echo $pCrow['postcode'];
-
 
         $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";
         $mPostCodeResult=mysqli_query($conn,$maxPostCodeSql);
@@ -124,13 +116,15 @@
         $maxPostCode = $mPostCodeRow['postcode'];
 
 
-        foreach ($userPostCode as $values){
-        echo "      ";
-        var_dump($userPostCode);
-        var_dump($values);
-        echo $values;
-        echo "      ";
+        $userPostCodeQuery = "SELECT postcode FROM users";
+
+        $userPostcodeArray = array();
+
+        while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
+            $userPostcodeArray[] = $loopRow;
+            echo $loopRow['postcode'];
         }
+        print_r($userPostcodeArray);
 
 
         while ($x <= $maxPostCode){

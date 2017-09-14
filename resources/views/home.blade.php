@@ -129,7 +129,7 @@
 
 
 
-            if ($pcRow['postcode'] == $searchPC['postcode']){
+            if ($pcRow['postcode'] == $searchPC){
                 echo "User PostCode is:  ";
                 echo $pcRow ['suburb'];
                 echo "   ";

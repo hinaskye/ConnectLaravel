@@ -122,10 +122,18 @@
             echo $loopRow['postcode'];
             $searchPC = $loopRow['postcode'];
 
+
+            echo "   ";
+            echo "Search PC"
+            echo $searchPC;
+            echo "   ";
+
+
             $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
             FROM postcodes WHERE postcode = $searchPC";
             $pcResult = mysqli_query($conn, $postcodeSql);
             $pcRow = mysqli_fetch_assoc($pcResult);
+            var_dump($pcRow,$searchPC,$loopRow);
 
             echo "   ";
             echo "pcRow: ";

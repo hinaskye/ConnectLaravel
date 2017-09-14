@@ -15,7 +15,7 @@ class S3ImageController extends Controller
     */
     public function imageUpload()
     {
-    	return view('image-upload');
+        return view('image-upload');
     }
 
     /**
@@ -25,18 +25,20 @@ class S3ImageController extends Controller
     */
     public function imageUploadPost(Request $request)
     {
-    	$this->validate($request, [
+        $user = Auth::user();
+        $userID = user->id;
+        $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
-        $imageName = time().'.'.$request->image->getClientOriginalExtension();
+        $imageName = user();
+        //$imageName = time().'.'.$request->image->getClientOriginalExtension();
         $image = $request->file('image');
         $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
         $imageName = Storage::disk('s3')->url($imageName);
 
-    	return back()
-    		->with('success','Image Uploaded successfully.')
-    		->with('path',$imageName);
+        return back()
+            ->with('success','$userID')
+            ->with('path',$imageName);
         return $request->file('image');
     }
 }

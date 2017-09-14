@@ -31,7 +31,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
       <div class="col-lg-10 col-lg-10 col-sm-8">
         <div class="col-lg-10 col-lg-10 col-lg-8">
-          <img src="https://goo.gl/JDBcTy" style="width:100%" alt="Avatar">
+          <img src="https://goo.gl/BtLtVt" style="width:100%" alt="Avatar">
 
         </div>
         <div class="col-lg-18 col-lg-12 col-lg-9">

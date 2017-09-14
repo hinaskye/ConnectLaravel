@@ -10,8 +10,8 @@
 <title>Connect Profile</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--this css links gives the logo-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
 <body>
@@ -33,10 +33,10 @@
         <div class="col-lg-12">
           <br>
           <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
-          <p><i class="fa fa-user fa-fw w3-margin-right w3-large text-white"></i><?php echo $user->gender; ?></p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large text-grey"></i><?php echo $user->email; ?></p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large text-grey"></i>1800-333-000</p>
-          <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large text-grey"></i><?php
+          <p><i class="fa fa-user fa-fw margin-right text-large text-grey"></i><?php echo $user->gender; ?></p>
+          <p><i class="fa fa-envelope fa-fw margin-right text-large text-grey"></i><?php echo $user->email; ?></p>
+          <p><i class="fa fa-phone fa-fw margin-right text-large text-grey"></i>1800-333-000</p>
+          <p><i class="fa fa-birthday-cake fa-fw margin-right text-large text-grey"></i><?php
             $from = new DateTime($user->birthday);
             $to = new DateTime('today');
             echo $from->diff($to)->y, " years old";?></p>

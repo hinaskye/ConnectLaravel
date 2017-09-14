@@ -25,16 +25,16 @@
     <div class="col-lg-4">
 
       <div class="col-lg-12 background-gray">
-        <div class="col-lg-12">
+        <div class="col-lg-12 margin-top-10">
           <img src="{{ asset('images/profile.jpg') }}" style="width:100%" alt="Avatar">
 
         </div>
         <div class="col-lg-12">
           <br>
-          <legend class="text-grey"><?php echo $user->firstname," ", $user->lastname; ?></legend>
-          <p><i class="fa fa-user fa-fw margin-right text-large text-grey"></i><?php echo $user->gender; ?></p>
-          <p><i class="fa fa-envelope fa-fw margin-right text-large text-grey"></i><?php echo $user->email; ?></p>
-          <p><i class="fa fa-birthday-cake fa-fw margin-right text-large text-grey"></i><?php
+          <legend class="text-white"><?php echo $user->firstname," ", $user->lastname; ?></legend>
+          <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
+          <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>
+          <p><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i><?php
             $from = new DateTime($user->birthday);
             $to = new DateTime('today');
             echo $from->diff($to)->y, " years old";?></p>

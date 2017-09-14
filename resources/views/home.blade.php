@@ -114,32 +114,22 @@
 
         $userPostcodeArray = array();
 
+        //loops through every postcode in the user table and returns each postcode
         while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
             $userPostcodeArray[] = $loopRow;
-            echo "   ";
-            echo "loopRow: ";
-            echo "   ";
-            echo $loopRow['postcode'];
             $searchPC = $loopRow['postcode'];
 
 
-            echo "   ";
-            echo "Search PC";
-            echo $searchPC;
-            echo "   ";
-
-
+            //gives all the data for a row that matches the postcode of the users
             $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
             FROM postcodes WHERE postcode = $searchPC";
             $pcResult = mysqli_query($conn, $postcodeSql);
             $pcRow = mysqli_fetch_assoc($pcResult);
             var_dump($pcRow,$searchPC,$loopRow);
 
-            echo "   ";
-            echo "pcRow: ";
-            echo "   ";
 
-            if ($pcRow['postcode'] == $userPostCode['postcode']){
+
+            if ($pcRow['postcode'] == $searchPC['postcode']){
                 echo "User PostCode is:  ";
                 echo $pcRow ['suburb'];
                 echo "   ";

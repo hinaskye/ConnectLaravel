@@ -31,7 +31,7 @@
         </div>
         <div class="col-lg-12">
           <br>
-          <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
+          <legend class="text-grey"><?php echo $user->firstname," ", $user->lastname; ?></legend>
           <p><i class="fa fa-user fa-fw margin-right text-large text-grey"></i><?php echo $user->gender; ?></p>
           <p><i class="fa fa-envelope fa-fw margin-right text-large text-grey"></i><?php echo $user->email; ?></p>
           <p><i class="fa fa-birthday-cake fa-fw margin-right text-large text-grey"></i><?php

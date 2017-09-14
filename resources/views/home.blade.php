@@ -115,7 +115,7 @@
             echo $pCrow['postcode'];
         }
         echo "here it is: ";
-        echo $data;
+        echo $data['postcode'];
 
 
         $maxPostCodeSql = "SELECT max(postcode) as postcode FROM postcodes";

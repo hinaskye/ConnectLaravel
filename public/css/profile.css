@@ -19,7 +19,7 @@ html,body,h1,h2,h3,h4,h5,h6 {
 	 to{left:0;opacity:1}
 }
 
-.w3-animate-bottom{
+.animate-bottom{
 	position:relative;animation:animatebottom 0.4s
 }
 

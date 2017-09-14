@@ -109,7 +109,10 @@
         $userPostCodeResult=mysqli_query($conn,$userPostCodeSQL);
         $userPostCode = mysqli_fetch_assoc($userPostCodeResult);
 
-
+        $data = array();
+        while(($pCrow = mysqli_fetch_array($userPostCodeResult))) {
+            $data[] = $pCrow['postcode'];
+        }
 
 
 

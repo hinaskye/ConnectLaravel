@@ -116,7 +116,7 @@
         $maxPostCode = $mPostCodeRow['postcode'];
 
 
-        $userPostCodeQuery = "SELECT postcode FROM users";
+        $userPostCodeQuery = mysqli_query($conn, $userPostCodeSQL);
 
         $userPostcodeArray = array();
 

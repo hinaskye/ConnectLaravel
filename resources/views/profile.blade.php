@@ -24,17 +24,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 <div class="container" style="max-width:1400px;">
 
   <!-- The Grid -->
-  <div class="w3-row-padding">
+  <div class="row p-10">
 
     <!-- Left Column -->
     <div class="w3-third">
 
       <div class="w3-white w3-text-grey w3-card-4">
-        <div class="row">
+        <div class="col-lg-20">
           <img src="https://i.ytimg.com/vi/2qZHh_iN5Zs/hqdefault.jpg" style="width:100%" alt="Avatar">
 
         </div>
-        <div class="col-md-5">
+        <div class="col-lg-20">
           <br>
           <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
           <p><i class="fa fa-user fa-fw"></i><?php echo $user->gender; ?></p>

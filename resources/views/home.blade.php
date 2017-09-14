@@ -1,11 +1,6 @@
 @extends('layouts.app')
 <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
-
-
-
-
-
 <?php
     //matching Algorithm code.
     //creating connection to database with details
@@ -160,7 +155,6 @@
             </div>
         </div>
     </div>
-</div>
 
     <div class="row" id="row">
 
@@ -181,7 +175,7 @@
     </div>
     @endif
 @endfor
-
+</div>
 
 
 

@@ -93,7 +93,10 @@
         $i++;
     }
 
+
         //postcode to suburb algorithm
+
+        $counter = 0;
 
         //query user DB to get the postcodes of all users are put them in an array
         $userPostCodeSQL = "SELECT postcode FROM users";
@@ -124,13 +127,18 @@
                 echo "   ";
             }
 
+            $counter = 0;
+            array_push($matches[$counter], $pcRow['suburb']);
+
+            $counter ++;
 
 
 
             //distance from user algorithm
 
-            //get the
-            $logUserPostCode = "SELECT postcode FROM users WHERE postcode = $userID";
+            //get the users postcode
+            /*$logUserPostCode = "SELECT postcode FROM users WHERE postcode = $userID";
+            //get the users postcode to get latitude and longitude
             $logUserLat = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCode";
             $logUserLon = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCode";
 
@@ -155,7 +163,7 @@
                 } else {
                     return $miles;
                 }
-            }
+            }*/
 
         }
 

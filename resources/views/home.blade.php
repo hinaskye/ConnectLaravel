@@ -93,7 +93,7 @@
         $i++;
     }
 
-        //postcode code
+        //postcode to suburb algorithm
 
         //query user DB to get the postcodes of all users are put them in an array
         $userPostCodeSQL = "SELECT postcode FROM users";
@@ -123,7 +123,43 @@
                 echo $pcRow ['suburb'];
                 echo "   ";
             }
+
+
+
+
+            //distance from user algorithm
+
+            //get the
+            $logUserPostCode = "SELECT postcode FROM users WHERE postcode = $userID";
+            $logUserLat = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCode";
+            $logUserLon = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCode";
+
+
+            $currentUserLon = $pcRow['longitude'];
+            $currentUserLat = $pcRow['latitude'];
+
+
+            function distance($currentUserLat, $currentUserLon, $logUserLat, $logUserLon, $unit) {
+
+                $theta = $currentUserLon - $logUserLon;
+                $dist = sin(deg2rad($currentUserLat)) * sin(deg2rad($logUserLat)) +  cos(deg2rad($currentUserLat)) * cos(deg2rad($logUserLat)) * cos(deg2rad($theta));
+                $dist = acos($dist);
+                $dist = rad2deg($dist);
+                $miles = $dist * 60 * 1.1515;
+                $unit = strtoupper($unit);
+
+                if ($unit == "K") {
+                    return ($miles * 1.609344);
+                } else if ($unit == "N") {
+                    return ($miles * 0.8684);
+                } else {
+                    return $miles;
+                }
+            }
+
         }
+
+
 
 
 

@@ -33,7 +33,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <div class="w3-display-container">
           <img src="https://s3-ap-southeast-2.amazonaws.com/programming.project/6" style="width:100%" alt="Avatar">
           <div class="container-upload" style="padding-top: 20px">
-              <form action="{{ url('s3-image-upload') }}" enctype="multipart/form-data" method="POST">
+              <form action="{{ url('profile') }}" enctype="multipart/form-data" method="POST">
               {{ csrf_field() }}
                 <div class="row">
                   <div class="col-md-12">

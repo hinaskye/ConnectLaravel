@@ -37,11 +37,12 @@ class S3ImageController extends Controller
         $imageName = Storage::disk('s3')->url($imageName);
 
         return back()
-            ->with('success','$userID')
+            ->with('success',$imagePath)
             ->with('path',$imageName);
         return $request->file('image');
     }
-    public static function getImage ($imagePath)
+
+    public function getImage ($imagePath)
     {
         if(Storage::exists($imagePath))
         {

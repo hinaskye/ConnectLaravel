@@ -44,6 +44,12 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
                   </div>
                 </div>
               </form>
+              @if ($message = Session::get('success'))
+              <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                      <strong>{{ $message }}</strong>
+              </div>
+              @endif
           </div>
         </div>
         <div class="w3-container">

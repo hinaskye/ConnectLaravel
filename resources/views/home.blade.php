@@ -1,11 +1,5 @@
 @extends('layouts.app')
 <link href="{{ asset('css/home.css') }}" rel="stylesheet">
-
-
-
-
-
-
 <?php
     //matching Algorithm code.
     //creating connection to database with details
@@ -117,8 +111,6 @@
         $user = Auth::user();
         $userPostcode = $user->postcode;
         $json = "http://v0.postcodeapi.com.au/suburbs/" .$userPostcode.".json";
-
-
 ?>
 
 
@@ -143,23 +135,26 @@
     <div class="row" id="row">
 
     </div><br>
-@for($matchCount=0; $matchCount<count($matches); $matchCount++)
-    @if($matches[$matchCount]['matchPcent'] != 0)
-    <div class="card col-md-4 col-sm-6">
-        <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
-        <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
-        <div class="card-body">
-          <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
-            <p class="card-text"><?php
-              $from = new DateTime($matches[$matchCount]['user']['birthday']);
-              $to = new DateTime('today');
-              echo $from->diff($to)->y, " years old";?></p>
-            <p class="card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
-            <a href="{{ url('/uniqueprofile/'.$matches[$matchCount]['user']['id']) }}">Click to View Profile</a>
+    @for($matchCount=0; $matchCount<count($matches); $matchCount++)
+        <a href="{{ url('/uniqueprofile/'.$matches[$matchCount]['user']['id']) }}">
+        @if($matches[$matchCount]['matchPcent'] != 0)
+        <div class="uniqueprofilecss">
+        <div class="card col-md-4 col-sm-6">
+            <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
+            <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
+            <div class="card-body">
+              <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
+                <p class="card-text"><?php
+                  $from = new DateTime($matches[$matchCount]['user']['birthday']);
+                  $to = new DateTime('today');
+                  echo $from->diff($to)->y, " years old";?></p>
+                <p class="card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
+          </div>
+            </div>
         </div>
-    </div>
-    @endif
-@endfor
+          </a>
+        @endif
+    @endfor
 
 
 
@@ -171,12 +166,5 @@
     function updateFilter(val){
         document.getElementById("filterPercent").innerHTML=val+"%";
     }
-
-    // function passID(){
-    //   var b = document.getElementById('id').value,
-    //   url = 'http://ec2-54-252-216-244.ap-southeast-2.compute.amazonaws.com/tempprofile' + encodeURIComponent(b);
-    //   document.location.href = url;
-    // }
-
-   </script>
+    </script>
 @endsection

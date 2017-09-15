@@ -10,37 +10,31 @@
 <title>Connect Profile</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
-<link href="{{ asset('css/profile.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<!--this css links gives the logo-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-</style>
-<body class="w3-light-grey">
+<link href="{{ asset('css/profile.css') }}" rel="stylesheet">
+<body>
 
 <!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+<div class="container" style="max-width:1400px;">
 
   <!-- The Grid -->
-  <div class="w3-row-padding">
+  <div class="row">
 
     <!-- Left Column -->
-    <div class="w3-third">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animate-left">
 
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="https://i.ytimg.com/vi/2qZHh_iN5Zs/hqdefault.jpg" style="width:100%" alt="Avatar">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
+          <img src="{{ asset('images/profile.jpg') }}" style="width:100%" alt="Avatar">
 
         </div>
-        <div class="w3-container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <br>
-          <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
-          <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->gender; ?></p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-grey"></i>Postcode, <?php echo $user->postcode; ?></p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->email; ?></p>
-          <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-grey"></i><?php
+          <legend class="text-white"><?php echo $user->firstname," ", $user->lastname; ?></legend>
+          <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
+          <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>
+          <p><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i><?php
             $from = new DateTime($user->birthday);
             $to = new DateTime('today');
             echo $from->diff($to)->y, " years old";?></p>
@@ -53,15 +47,15 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </div>
 
     <!-- Right Column -->
-    <div class="w3-twothird">
+    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
 
-      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-        <div class="w3-container">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
+        <div class="col-lg-12 col-md-12">
           <legend><h3>About Me</h3></legend>
           <p><?php echo $user->aboutme; ?></p>
           <hr>
         </div>
-        <div class="w3-container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <legend><h3>Questions I answered...</h3></legend>
           <h4><li>Favourite Movie Genre</li></h4>
             <p> I like to watch
@@ -90,7 +84,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?> movies!</p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>My activity level...</li></h4>
           <p><?php  if ($user->q2 == "1")
             {
@@ -105,7 +99,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Stay at home or go out?</li></h4>
           <p><?php  if ($user->q3 == "1")
             {
@@ -117,7 +111,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Am I funny?</li></h4>
           <p><?php  if ($user->q4 == "1")
             {
@@ -129,7 +123,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Eat out or at home?</li></h4>
           <p>I like to <?php  if ($user->q5 == "1")
             {
@@ -141,7 +135,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Animal lover?</li></h4>
           <p><?php  if ($user->q6 == "1")
             {
@@ -156,7 +150,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Play a musical instrument?</li></h4>
           <p><?php  if ($user->q7 == "1")
             {
@@ -168,7 +162,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Do you admit mistakes?</li></h4>
           <p><?php  if ($user->q8 == "1")
             {
@@ -180,7 +174,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Like reading?</li></h4>
           <p><?php  if ($user->q9 == "1")
             {
@@ -192,7 +186,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             ?></p><br>
         </div>
 
-        <div class="w3-container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>Do I believe in fate??</li></h4>
           <p><?php  if ($user->q10 == "1")
             {
@@ -217,19 +211,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
   <!-- End Page Container -->
 </div>
-
-
-<footer class="w3-container footer-static-bottom w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
-
 
 </body>
 </html>

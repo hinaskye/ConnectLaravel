@@ -16,7 +16,7 @@ class passIDController extends Controller
     */
     public function getPassID()
     {
-    	return view('tempprofile');
+    	return view('uniqueprofile');
     }
 
 
@@ -27,13 +27,11 @@ class passIDController extends Controller
     */
 
 
-    public function passID()
+    public function passID($userId)
     {
-    $varName = 1;
-	  $user = DB::table('users')->select('firstname','lastname','username','email','gender','birthday','q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','aboutme','postcode')->where('id',$varName)->first();
-    // $user = "SELECT firstname, lastname , username , email , gender , birthday , q1 , q2 , q3 , q4 , q5 , q6 , q7 ,q8 ,q9 ,q10 , aboutme , postcode  FROM users WHERE id= $varName";
-    // dd($user);
-    return view('tempprofile');
+    $user = DB::table('users')->where('id', $userId)->first();
+    return view('uniqueprofile')->with('user', $user);
+
 	  }
 }
 

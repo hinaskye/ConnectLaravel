@@ -149,18 +149,13 @@
         <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
         <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
         <div class="card-body">
-            <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
+          <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
             <p class="card-text"><?php
               $from = new DateTime($matches[$matchCount]['user']['birthday']);
               $to = new DateTime('today');
               echo $from->diff($to)->y, " years old";?></p>
             <p class="card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
-
-
-            <form method="post" action="tempprofile">
-              <input type="hidden" name="varName" value="4"}}>
-              <input type ="submit">
-            </form>
+            <a href="{{ url('/uniqueprofile/'.$matches[$matchCount]['user']['id']) }}">Click to View Profile</a>
         </div>
     </div>
     @endif
@@ -177,11 +172,11 @@
         document.getElementById("filterPercent").innerHTML=val+"%";
     }
 
-    function passID(){
-      var b = document.getElementById('id').value,
-      url = 'http://ec2-54-252-216-244.ap-southeast-2.compute.amazonaws.com/tempprofile' + encodeURIComponent(b);
-      document.location.href = url;
-    }
+    // function passID(){
+    //   var b = document.getElementById('id').value,
+    //   url = 'http://ec2-54-252-216-244.ap-southeast-2.compute.amazonaws.com/tempprofile' + encodeURIComponent(b);
+    //   document.location.href = url;
+    // }
 
    </script>
 @endsection

@@ -145,8 +145,7 @@
     </div><br>
 @for($matchCount=0; $matchCount<count($matches); $matchCount++)
     @if($matches[$matchCount]['matchPcent'] != 0)
-      <div class="card col-md-4 col-sm-6">
-<div onclick=passID() id={{$matches[$matchCount]['user']['id']}}>
+    <div class="card col-md-4 col-sm-6">
         <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
         <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
         <div class="card-body">
@@ -156,10 +155,14 @@
               $to = new DateTime('today');
               echo $from->diff($to)->y, " years old";?></p>
             <p class="card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
-            <div onclick=passID() id={{$matches[$matchCount]['user']['id']}}>Click for ID</div>
-      </div>
+
+
+            <form method="post" action="tempprofile">
+              <input type="hidden" name="varName" value="4"}}>
+              <input type ="submit">
+            </form>
+        </div>
     </div>
-  </div>
     @endif
 @endfor
 
@@ -174,9 +177,11 @@
         document.getElementById("filterPercent").innerHTML=val+"%";
     }
 
-    function passID(id){
-      alert("Id is: " + id;
+    function passID(){
+      var b = document.getElementById('id').value,
+      url = 'http://ec2-54-252-216-244.ap-southeast-2.compute.amazonaws.com/tempprofile' + encodeURIComponent(b);
+      document.location.href = url;
     }
-   </script>
 
+   </script>
 @endsection

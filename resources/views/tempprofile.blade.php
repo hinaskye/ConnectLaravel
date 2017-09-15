@@ -2,8 +2,16 @@
 @extends('layouts.app')
 <!-- Defining $User -->
 <?php
-  $user = DB::table('users')->where('id','2')->first();
+
+
+
+$passedID = $_POST['varName'];
+$user = DB::table('users')->select('firstname','lastname','username','email','gender','birthday','q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','aboutme','postcode')->where('id',$passedID)->first();
+
 ?>
+
+
+
 @section('content')
 <html>
 <title>Connect Profile</title>
@@ -37,14 +45,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <br>
           <legend><?php echo $user->firstname," ", $user->lastname; ?></legend>
           <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->gender; ?></p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-grey"></i>Postcode, <?php echo $user->postcode; ?></p>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-grey"></i>RMIT Lecturer (Hard-Coded)</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-grey"></i>Melbourne, AU (Hard-Coded)</p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-grey"></i><?php echo $user->email; ?></p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-grey"></i>1800-333-000</p>
           <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-grey"></i><?php
             $from = new DateTime($user->birthday);
             $to = new DateTime('today');
             echo $from->diff($to)->y, " years old";?></p>
           <hr>
           <br>
+
         </div>
       </div>
 

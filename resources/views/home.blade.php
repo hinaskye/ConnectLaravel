@@ -137,7 +137,7 @@
             //distance from user algorithm
 
             //get the users postcode
-            /*$logUserPostCode = "SELECT postcode FROM users WHERE postcode = $userID";
+            $logUserPostCode = "SELECT postcode FROM users WHERE postcode = $userID";
             //get the users postcode to get latitude and longitude
             $logUserLat = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCode";
             $logUserLon = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCode";
@@ -156,14 +156,7 @@
                 $miles = $dist * 60 * 1.1515;
                 $unit = strtoupper($unit);
 
-                if ($unit == "K") {
-                    return ($miles * 1.609344);
-                } else if ($unit == "N") {
-                    return ($miles * 0.8684);
-                } else {
-                    return $miles;
-                }
-            }*/
+            }
 
         }
 

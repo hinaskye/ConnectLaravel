@@ -19,9 +19,7 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-Route::get('/tempprofile', function () {
-    return view('tempprofile');
-});
+Route::get('/tempprofile/{id}', 'passIDController@passID');
 
 
 Route::get('/about', function () {

@@ -44,17 +44,11 @@ function filterMatches() {
 /* filter by postcode */
 /* similar to filter by match */
 function filterPostcode() {
-    var postcodeSelected = parseInt(document.getElementById("postcodeFilter").innerHTML);
+    var postcodeSelected = parseInt(document.getElementById("postcodeFilter").value);
     var postcodes = document.getElementsByClassName("postcode");
-
-    console.log(postcodeSelected);
-    console.log(postcodes);
-    console.log("");
-    console.log("parentOf Postcode:"+postcodes[0].parentElement);
     
     for(var i=0; i<postcodes.length; i++) {
         postcode_value = parseInt(postcodes[i].innerHTML);
-        console.log("postcode_value:"+ postcode_value);
         w3.removeClass(postcodes[i].parentElement.parentElement, 'hidden');
         if(postcode_value != postcodeSelected) {
             w3.addClass(postcodes[i].parentElement.parentElement, 'hidden');
@@ -64,16 +58,9 @@ function filterPostcode() {
 
 /* filter by age */
 function filterAge() {
-    var lowerAge = parseInt(document.getElementById("lowerAge").innerHTML);
-    var upperAge = parseInt(document.getElementById("upperAge").innerHTML);
+    var lowerAge = parseInt(document.getElementById("lowerAge").value);
+    var upperAge = parseInt(document.getElementById("upperAge").value);
     var ages = document.getElementsByClassName("age");
-
-    console.log(lowerAge);
-    console.log(upperAge);
-    console.log("");
-    console.log(ages);
-    console.log("");
-    console.log("parentOf Age:"+ages[0].parentElement);
 
     if(lowerAge>upperAge)
     {

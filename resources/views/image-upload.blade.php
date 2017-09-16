@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Laravel 5.3 Amazon S3 Image Upload with Validation example</title>

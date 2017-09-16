@@ -15,7 +15,7 @@ class S3ImageController extends Controller
     */
     public function imageUpload()
     {
-        return view('profile');
+        return view('image-upload');
     }
 
     /**
@@ -40,5 +40,15 @@ class S3ImageController extends Controller
             ->with('success','Uploaded')
             ->with('path',$imageName);
         return $request->file('image');
+    }
+    public static function getImage ($imagePath)
+    {
+        if(Storage::exists($imagePath))
+        {
+            return Storage::disk('s3')->get($imagePath);
+        }else
+        {
+            return 'No Image';
+        }
     }
 }

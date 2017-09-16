@@ -14,7 +14,7 @@ class passIDController extends Controller
     *
     * @return void
     */
-    public function getPassID()
+    public function getUserID()
     {
     	return view('uniqueprofile');
     }
@@ -27,9 +27,10 @@ class passIDController extends Controller
     */
 
 
-    public function passID($userId)
+    public function userID(Request $request)
     {
-    $user = DB::table('users')->where('id', $userId)->first();
+    $user = $request->id;
+    $user = DB::table('users')->where('id', $user)->first();
     return view('uniqueprofile')->with('user', $user);
 
 	  }

@@ -11,6 +11,9 @@
 |
 */
 
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,12 +22,11 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-Route::get('/uniqueprofile/{id}', 'passIDController@passID');
-
-
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::post('/uniqueprofile',['uses'=>'passIDController@userID']);
 
 Auth::routes();
 

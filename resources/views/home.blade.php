@@ -135,12 +135,13 @@
     <div class="row" id="row">
 
     </div><br>
+
     @for($matchCount=0; $matchCount<count($matches); $matchCount++)
-        <a href="{{ url('/uniqueprofile/'.$matches[$matchCount]['user']['id']) }}">
-        @if($matches[$matchCount]['matchPcent'] != 0)
-        <div class="uniqueprofilecss">
-        <div class="card col-md-4 col-sm-6">
-            <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
+    @if($matches[$matchCount]['matchPcent'] != 0)
+
+        <div onClick="submitForm()" class="card col-md-4 col-sm-6">
+          <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
+          <form id="idForm" method="POST" action="/uniqueprofile">
             <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
             <div class="card-body">
               <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
@@ -148,11 +149,15 @@
                   $from = new DateTime($matches[$matchCount]['user']['birthday']);
                   $to = new DateTime('today');
                   echo $from->diff($to)->y, " years old";?></p>
-                <p class="card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
-          </div>
+                <p class="card-text">Postcode, {{$matches[$matchCount]['user']['postcode']}}</p>
+
+                {{ csrf_field() }}
+                <input type="hidden" id="idInput" name="id" value={{$matches[$matchCount]['user']['id']}} >
+                <input type="submit" value="View my profile!">
+
+              </div>
             </div>
-        </div>
-          </a>
+            </form>
         @endif
     @endfor
 
@@ -165,6 +170,10 @@
     <script>
     function updateFilter(val){
         document.getElementById("filterPercent").innerHTML=val+"%";
+    }
+
+    function submitForm() {
+      document.getElementById('idForm').submit();
     }
     </script>
 @endsection

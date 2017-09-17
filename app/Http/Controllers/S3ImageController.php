@@ -15,7 +15,7 @@ class S3ImageController extends Controller
     */
     public function imageUpload()
     {
-        return view('s3-image-upload');
+        return view('image-upload');
     }
 
     /**

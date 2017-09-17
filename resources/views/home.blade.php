@@ -148,21 +148,12 @@
             $logUserLatResult = mysqli_query($conn, $logUserLatSQL);
             $logUserLat = mysqli_fetch_assoc($logUserLatResult);
 
-            if (!$logUserLatSQL) {
-                echo 'MySQL Error: ' . mysqli_error($conn);
-                exit;
-            }
 
 
             $logUserLonSQL = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCode";
             $logUserLonResult = mysqli_query($conn, $logUserLonSQL);
             $logUserLon = mysqli_fetch_assoc($logUserLonResult);
 
-
-            if (!$logUserLonSQL) {
-                echo 'MySQL Error: ' . mysqli_error($conn);
-                exit;
-            }
 
 
             $currentUserLon = $pcRow['longitude'];

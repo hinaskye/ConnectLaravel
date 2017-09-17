@@ -169,7 +169,7 @@
             $currentUserLon = $pcRow['longitude'];
             $currentUserLat = $pcRow['latitude'];
 
-            var_dump($logUserLat, $logUserLon, $currentUserLat, $currentUserLon);
+            var_dump($currentUserLat, $currentUserLon);
 
 
 

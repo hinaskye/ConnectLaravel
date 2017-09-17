@@ -146,17 +146,8 @@
             $currentUserLon = $pcRow['longitude'];
             $currentUserLat = $pcRow['latitude'];
 
+            var_dump($logUserLat, $logUserLon, $currentUserLat, $currentUserLon);
 
-            $unit = "K";
-
-            $theta = $currentUserLon - $logUserLon;
-            $dist = sin(deg2rad($currentUserLat)) * sin(deg2rad($logUserLat)) +  cos(deg2rad($currentUserLat)) * cos(deg2rad($logUserLat)) * cos(deg2rad($theta));
-            $dist = acos($dist);
-            $dist = rad2deg($dist);
-            $miles = $dist * 60 * 1.1515;
-            $unit = strtoupper($unit);
-            echo $unit;
-            var_dump($unit);
 
 
 

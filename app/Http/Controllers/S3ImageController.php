@@ -32,10 +32,11 @@ class S3ImageController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $imageName = $userID;
-       // $imageName = time().'.'.$request->image->getClientOriginalExtension();
+        $imageName = time().'.'.$request->image->getClientOriginalExtension();
         $image = $request->file('image');
         $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
-        $imageName = Storage::disk('s3')->url($imageName);
+        //$imageName = Storage::disk('s3')->url($imageName);
+        $imageName = $userID;
         return back()
             ->with('success','Image Uploaded successfully.')
             ->with('path',$imageName);

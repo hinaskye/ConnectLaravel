@@ -129,7 +129,7 @@
 
             $counter = 0;
             array_push($matches[$counter], $pcRow['suburb']);
-
+            var_dump($matches);
             $counter ++;
 
 
@@ -148,24 +148,25 @@
             $logUserLatResult = mysqli_query($conn, $logUserLatSQL);
             $logUserLat = mysqli_fetch_assoc($logUserLatResult);
             $logUserLatCall = $logUserLat['latitude'];
-            var_dump($logUserLat);
+            var_dump($logUserLatCall);
 
             $logUserLonSQL = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCodeCall";
             $logUserLonResult = mysqli_query($conn, $logUserLonSQL);
             $logUserLon = mysqli_fetch_assoc($logUserLonResult);
             $logUserLonCall = $logUserLon['longitude'];
-            var_dump($logUserLon);
+            var_dump($logUserLonCall);
 
 
-            $currentUserLon = $pcRow['longitude'];
             $currentUserLat = $pcRow['latitude'];
+            $currentUserLon = $pcRow['longitude'];
+
 
             var_dump($logUserLon, $logUserLat, $currentUserLat, $currentUserLon);
 
             $unit = 0;
 
             $theta = $currentUserLon - $logUserLon;
-            $dist = sin(deg2rad($currentUserLat)) * sin(deg2rad($logUserLatCall)) +  cos(deg2rad($currentUserLat)) * cos(deg2rad($logUserLatCall)) * cos(deg2rad($theta));
+            $dist = sin(deg2rad($currentUserLatCall)) * sin(deg2rad($logUserLatCall)) +  cos(deg2rad($currentUserLatCall)) * cos(deg2rad($logUserLatCall)) * cos(deg2rad($theta));
             $dist = acos($dist);
             $dist = rad2deg($dist);
             $miles = $dist * 60 * 1.1515;

@@ -137,7 +137,9 @@
             //distance from user algorithm
 
             //get the users postcode
-            $logUserPostCode = "SELECT postcode FROM users WHERE id = $userID";
+            $logUserPostCodeSQL = "SELECT postcode FROM users WHERE id = $userID";
+            $logUserPostCodeResult = mysqli_query($conn, $logUserPostCodeSQL);
+            $logUserPostCode = mysqli_fetch_assoc($logUserPostCodeResult);
             var_dump($logUserPostCode);
 
 

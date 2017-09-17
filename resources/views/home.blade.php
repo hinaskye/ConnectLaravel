@@ -167,7 +167,7 @@
 
             var_dump($currentUserLatConvert, $currentUserLonConvert);
 
-            $unit = "M";
+            $unit = "K";
 
             $theta = $currentUserLonConvert - $logUserLonCallConvert;
             $dist = sin(deg2rad($currentUserLatConvert)) * sin(deg2rad($logUserLatCallConvert)) +  cos(deg2rad($currentUserLatConvert)) * cos(deg2rad($logUserLatCallConvert)) * cos(deg2rad($theta));
@@ -176,14 +176,7 @@
             $miles = $dist * 60 * 1.1515;
             $unit = strtoupper($unit);
 
-            if ($unit == "K") {
-                return ($miles * 1.609344);
-            } else if ($unit == "N") {
-                return ($miles * 0.8684);
-            } else {
-                return $miles;
-            }
-        }
+
             echo $unit;
             var_dump($unit);
 

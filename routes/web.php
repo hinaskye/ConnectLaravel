@@ -56,6 +56,5 @@ Route::post('Login','CustomAuthController@login');
 
 Route::post('Logout','CustomAuthController@logout')->name('auth.logout');
 
-Route::get('image-upload','S3ImageController@getImage');
-Route::post('image-upload','S3ImageController@imageUploadPost');
-Route::get('image-upload','S3ImageController@imageUpload');
+Route::get('s3-image-upload','S3ImageController@imageUpload');
+Route::post('s3-image-upload','S3ImageController@imageUploadPost');

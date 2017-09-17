@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use Storage;
 
@@ -25,6 +26,8 @@ class S3ImageController extends Controller
     */
     public function imageUploadPost(Request $request)
     {
+        $user = Auth::user();
+        $userID = $user->id;
         $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -32,8 +35,7 @@ class S3ImageController extends Controller
         $imageName = time().'.'.$request->image->getClientOriginalExtension();
         $image = $request->file('image');
         $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
-        $imageName = Storage::disk('s3')->url($imageName);
-
+        $imageName = $userID
         return back()
             ->with('success','Image Uploaded successfully.')
             ->with('path',$imageName);

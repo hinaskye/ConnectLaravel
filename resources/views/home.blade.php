@@ -137,11 +137,11 @@
             //distance from user algorithm
 
             //get the users postcode
-            $logUserPostCode = "SELECT postcode FROM users WHERE postcode = $userID";
+            $logUserPostCode = "SELECT postcode FROM users WHERE id = $userID";
 
 
 
-          /*  //get the users postcode to get latitude and longitude
+           //get the users postcode to get latitude and longitude
             $logUserLatSQL = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCode";
             $logUserLatResult = mysqli_query($conn, $logUserLatSQL);
             $logUserLat = mysqli_fetch_assoc($logUserLatResult);
@@ -149,7 +149,7 @@
             if (!$logUserLatSQL) {
                 echo 'MySQL Error: ' . mysqli_error($conn);
                 exit;
-            }*/
+            }
 
 
             $logUserLonSQL = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCode";

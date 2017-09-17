@@ -166,7 +166,7 @@
             $currentUserLon = $pcRow['longitude'];
             $currentUserLonConvert = floatval($currentUserLon);
 
-            var_dump($currentUserLat, $currentUserLon);
+            var_dump($currentUserLatConvert, $currentUserLonConvert);
 
             $unit = 0;
 

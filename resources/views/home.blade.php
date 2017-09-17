@@ -147,19 +147,20 @@
             $currentUserLat = $pcRow['latitude'];
 
 
-            function distance($currentUserLat, $currentUserLon, $logUserLat, $logUserLon, $unit) {
-
-                $theta = $currentUserLon - $logUserLon;
-                $dist = sin(deg2rad($currentUserLat)) * sin(deg2rad($logUserLat)) +  cos(deg2rad($currentUserLat)) * cos(deg2rad($logUserLat)) * cos(deg2rad($theta));
-                $dist = acos($dist);
-                $dist = rad2deg($dist);
-                $miles = $dist * 60 * 1.1515;
-                $unit = strtoupper($unit);
-
-            }
 
         }
 
+    function distance($currentUserLat, $currentUserLon, $logUserLat, $logUserLon, $unit) {
+
+        $theta = $currentUserLon - $logUserLon;
+        $dist = sin(deg2rad($currentUserLat)) * sin(deg2rad($logUserLat)) +  cos(deg2rad($currentUserLat)) * cos(deg2rad($logUserLat)) * cos(deg2rad($theta));
+        $dist = acos($dist);
+        $dist = rad2deg($dist);
+        $miles = $dist * 60 * 1.1515;
+        $unit = strtoupper($unit);
+        echo $unit;
+
+    }
 
 
 

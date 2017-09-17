@@ -143,7 +143,7 @@
                 echo 'MySQL Error: ' . mysqli_error($conn);
                 exit;
             }
-
+/*
             //get the users postcode to get latitude and longitude
             $logUserLatSQL = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCode";
             $logUserLatResult = mysqli_query($conn, $logUserLatSQL);
@@ -163,7 +163,7 @@
             if (!$logUserLonSQL) {
                 echo 'MySQL Error: ' . mysqli_error($conn);
                 exit;
-            }
+            }*/
 
 
             $currentUserLon = $pcRow['longitude'];

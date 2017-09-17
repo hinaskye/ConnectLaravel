@@ -176,8 +176,7 @@
             $miles = $dist * 60 * 1.1515;
             $unit = strtoupper($unit);
 
-            echo $miles;
-            var_dump($unit);
+            var_dump($miles);
 
 
 

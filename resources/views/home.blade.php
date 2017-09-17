@@ -117,7 +117,7 @@
             FROM postcodes WHERE postcode = $searchPC";
             $pcResult = mysqli_query($conn, $postcodeSql);
             $pcRow = mysqli_fetch_assoc($pcResult);
-            var_dump($pcRow,$searchPC,$loopRow);
+
 
 
             //print test to make sure postcodes are getting converted to suburbs correctly
@@ -159,6 +159,7 @@
         $miles = $dist * 60 * 1.1515;
         $unit = strtoupper($unit);
         echo $unit;
+        var_dump($unit);
 
     }
 

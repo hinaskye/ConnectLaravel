@@ -162,7 +162,7 @@
 
             var_dump($logUserLon, $logUserLat, $currentUserLat, $currentUserLon);
 
-            $unit = "K";
+            $unit = 0;
 
             $theta = $currentUserLon - $logUserLon;
             $dist = sin(deg2rad($currentUserLat)) * sin(deg2rad($logUserLatCall)) +  cos(deg2rad($currentUserLat)) * cos(deg2rad($logUserLatCall)) * cos(deg2rad($theta));

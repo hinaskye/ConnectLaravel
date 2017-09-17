@@ -2,13 +2,13 @@
 @extends('layouts.app')
 <!-- <link href="{{ asset('css/profile.css') }}" rel="stylesheet"> -->
 <!-- Defining $User -->
-<?php
+<!--<?php
   $user = Auth::user();
   $userID = $user->id;
   $key = $user->id;
   $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/programming.project'.'/'.$key;
 echo $file['url'];
-?>
+?>-->
 @section('content')
 <html>
 <title>Connect Profile</title>

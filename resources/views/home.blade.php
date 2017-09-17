@@ -138,11 +138,11 @@
 
             //get the users postcode
             $logUserPostCode = "SELECT postcode FROM users WHERE id = $userID";
-
+            var_dump($logUserPostCode);
 
 
            //get the users postcode to get latitude and longitude
-            $logUserLatSQL = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCode";
+            /*$logUserLatSQL = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCode";
             $logUserLatResult = mysqli_query($conn, $logUserLatSQL);
             $logUserLat = mysqli_fetch_assoc($logUserLatResult);
 
@@ -166,7 +166,7 @@
             $currentUserLon = $pcRow['longitude'];
             $currentUserLat = $pcRow['latitude'];
 
-            var_dump($currentUserLat, $currentUserLon);
+            var_dump($currentUserLat, $currentUserLon);*/
 
 
 

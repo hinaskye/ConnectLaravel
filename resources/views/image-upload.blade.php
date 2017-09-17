@@ -4,7 +4,7 @@
     /* Set bucket */
     /* Set file key */
     $key = $user->id;
-    $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/programming.project'.'/'.$key;
+    $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
 echo $file['url'];
 ?>
 <!DOCTYPE html>

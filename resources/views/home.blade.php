@@ -121,7 +121,12 @@
 
 ?>
 
-
+<?php
+  $user = Auth::user();
+  $userID = $user->id;
+  $key = $user->id;
+  $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
+?>
 
 @section('content')
 <div class="container">
@@ -147,7 +152,11 @@
     @if($matches[$matchCount]['matchPcent'] != 0)
     <div class="card col-md-4 col-sm-6">
         <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
+        @if($userID==$key)
+        <img class="card-img-top" src="{!! $file['url'] !!}" width="100%" alt="Match Image">
+        @else
         <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
+        @endif
         <div class="card-body">
             <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
             <p class="card-text"><?php

@@ -1,4 +1,4 @@
-
+<?php
 	$user = Auth::user();
     $userID = $user->id;
     /* Set bucket */
@@ -6,7 +6,7 @@
     $key = $user->id;
     $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/programming.project'.'/'.$key;
 echo $file['url'];
-
+?>
 <!DOCTYPE html>
 <html>
 <head>

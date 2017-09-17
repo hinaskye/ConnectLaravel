@@ -158,7 +158,7 @@
 
             $logUserLatCallConvert = floatval($logUserLatCall);
             $logUserLonCallConvert = floatval($logUserLonCall);
-
+            var_dump($logUserLatCallConvert, $logUserLonCallConvert);
 
             $currentUserLat = $pcRow['latitude'];
             $currentUserLatConvert = floatval($currentUserLat);

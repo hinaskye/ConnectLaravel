@@ -147,14 +147,14 @@
             $logUserLatSQL = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCodeCall";
             $logUserLatResult = mysqli_query($conn, $logUserLatSQL);
             $logUserLat = mysqli_fetch_assoc($logUserLatResult);
-            $logUserLatCall = $logUserLat['postcode'];
-
+            //$logUserLatCall = $logUserLat['postcode'];
+            var_dump($logUserLat);
 
             $logUserLonSQL = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCodeCall";
             $logUserLonResult = mysqli_query($conn, $logUserLonSQL);
             $logUserLon = mysqli_fetch_assoc($logUserLonResult);
-            $logUserLonCall = $logUserLon['postcode'];
-
+            //$logUserLonCall = $logUserLon['postcode'];
+            var_dump($logUserLon);
 
 
             $currentUserLon = $pcRow['longitude'];
@@ -164,14 +164,14 @@
 
             $unit = "K";
 
-            $theta = $currentUserLon - $logUserLon;
+            /*$theta = $currentUserLon - $logUserLon;
             $dist = sin(deg2rad($currentUserLat)) * sin(deg2rad($logUserLatCall)) +  cos(deg2rad($currentUserLat)) * cos(deg2rad($logUserLatCall)) * cos(deg2rad($theta));
             $dist = acos($dist);
             $dist = rad2deg($dist);
             $miles = $dist * 60 * 1.1515;
             $unit = strtoupper($unit);
             echo $unit;
-            var_dump($unit);
+            var_dump($unit);*/
 
 
 

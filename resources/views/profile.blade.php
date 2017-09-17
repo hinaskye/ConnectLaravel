@@ -4,6 +4,10 @@
 <!-- Defining $User -->
 <?php
   $user = Auth::user();
+  $userID = $user->id;
+  $key = $user->id;
+  $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/programming.project'.'/'.$key;
+echo $file['url'];
 ?>
 @section('content')
 <html>
@@ -31,7 +35,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="https://s3-ap-southeast-2.amazonaws.com/programming.project/6" style="width:100%" alt="Avatar">
+          <img src="{!! $file['url'] !!}" style="width:100%" alt="Avatar">
           <div class="container-upload" style="padding-top: 20px">
               <form action="{{ url('profile') }}" enctype="multipart/form-data" method="POST">
               {{ csrf_field() }}

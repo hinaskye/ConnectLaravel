@@ -152,7 +152,7 @@
     @if($matches[$matchCount]['matchPcent'] != 0)
     <div class="card col-md-4 col-sm-6">
         <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
-        @if($userID==$key)
+        @if($currentID==$key)
         <img class="card-img-top" src="{!! $file['url'] !!}" width="100%" alt="Match Image">
         @else
         <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">

@@ -170,7 +170,7 @@
 
             $unit = 0;
 
-            $theta = $currentUserLon - $logUserLon;
+            $theta = $currentUserLonConvert - $logUserLonCallConvert;
             $dist = sin(deg2rad($currentUserLatConvert)) * sin(deg2rad($logUserLatCallConvert)) +  cos(deg2rad($currentUserLatConvert)) * cos(deg2rad($logUserLatCallConvert)) * cos(deg2rad($theta));
             $dist = acos($dist);
             $dist = rad2deg($dist);

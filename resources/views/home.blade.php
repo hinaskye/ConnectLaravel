@@ -148,13 +148,12 @@
             $logUserLatResult = mysqli_query($conn, $logUserLatSQL);
             $logUserLat = mysqli_fetch_assoc($logUserLatResult);
             $logUserLatCall = $logUserLat['latitude'];
-            var_dump($logUserLatCall);
 
             $logUserLonSQL = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCodeCall";
             $logUserLonResult = mysqli_query($conn, $logUserLonSQL);
             $logUserLon = mysqli_fetch_assoc($logUserLonResult);
             $logUserLonCall = $logUserLon['longitude'];
-            var_dump($logUserLonCall);
+
 
             $logUserLatCallConvert = floatval($logUserLatCall);
             $logUserLonCallConvert = floatval($logUserLonCall);
@@ -182,19 +181,6 @@
 
 
         }
-
-    function distance($currentUserLat, $currentUserLon, $logUserLat, $logUserLon, $unit) {
-
-        $theta = $currentUserLon - $logUserLon;
-        $dist = sin(deg2rad($currentUserLat)) * sin(deg2rad($logUserLat)) +  cos(deg2rad($currentUserLat)) * cos(deg2rad($logUserLat)) * cos(deg2rad($theta));
-        $dist = acos($dist);
-        $dist = rad2deg($dist);
-        $miles = $dist * 60 * 1.1515;
-        $unit = strtoupper($unit);
-        echo $unit;
-        var_dump($unit);
-
-    }
 
 
 

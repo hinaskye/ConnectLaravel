@@ -159,16 +159,19 @@
             $logUserLatCallConvert = floatval($logUserLatCall);
             $logUserLonCallConvert = floatval($logUserLonCall);
 
-            $currentUserLat = $pcRow['latitude'];
-            $currentUserLon = $pcRow['longitude'];
 
+            $currentUserLat = $pcRow['latitude'];
+            $currentUserLatConvert = floatval($currentUserLat);
+
+            $currentUserLon = $pcRow['longitude'];
+            $currentUserLonConvert = floatval($currentUserLon);
 
             var_dump($currentUserLat, $currentUserLon);
 
             $unit = 0;
 
             $theta = $currentUserLon - $logUserLon;
-            $dist = sin(deg2rad($currentUserLat)) * sin(deg2rad($logUserLatCallConvert)) +  cos(deg2rad($currentUserLat)) * cos(deg2rad($logUserLatCallConvert)) * cos(deg2rad($theta));
+            $dist = sin(deg2rad($currentUserLatConvert)) * sin(deg2rad($logUserLatCallConvert)) +  cos(deg2rad($currentUserLatConvert)) * cos(deg2rad($logUserLatCallConvert)) * cos(deg2rad($theta));
             $dist = acos($dist);
             $dist = rad2deg($dist);
             $miles = $dist * 60 * 1.1515;

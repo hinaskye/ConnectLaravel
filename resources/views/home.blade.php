@@ -144,8 +144,8 @@
             $logUserLat = mysqli_fetch_assoc($logUserLatResult);
 
             $logUserLonSQL = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCode";
-            $logUserLatResult = mysqli_query($conn,$logUserLonSQL);
-            $logUserLon = mysqli_fetch_assoc($logUserLatResult);
+            $logUserLonResult = mysqli_query($conn,$logUserLonSQL);
+            $logUserLon = mysqli_fetch_assoc($logUserLonResult);
 
 
             $currentUserLon = $pcRow['longitude'];

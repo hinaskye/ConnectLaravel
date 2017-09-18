@@ -147,7 +147,7 @@
     @if($matches[$matchCount]['matchPcent'] != 0)
     <?php
         $key = $matches[$matchCount]['user']['id'];
-        if()
+        
         $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
         echo $key;
     ?>

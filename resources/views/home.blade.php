@@ -149,12 +149,12 @@
   $userID = $user->id;
   $key = $matchCount;
   $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
-  echo $currentID;
+  echo $matches[$matchCount]['user'];
 ?>
     @if($matches[$matchCount]['matchPcent'] != 0)
     <div class="card col-md-4 col-sm-6">
         <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
-        @if($matches[$matchCount]['id']==$key)
+        @if($matches[$matchCount]['user']==$key)
         <img class="card-img-top" src="{!! $file['url'] !!}" width="100%" alt="Match Image">
         @else
         <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">

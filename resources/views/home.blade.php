@@ -145,9 +145,7 @@
     </div><br>
 @for($matchCount=0; $matchCount<count($matches); $matchCount++)
 <?php
-  $user = Auth::user();
-  $userID = $user->id;
-  $key = $matchCount;
+  $key = $matchCount['user']['id'];
   $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
 ?>
     @if($matches[$matchCount]['matchPcent'] != 0)

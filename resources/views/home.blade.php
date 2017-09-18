@@ -121,13 +121,7 @@
 
 ?>
 
-<?php
-  $user = Auth::user();
-  $userID = $user->id;
-  $key = $currentID;
-  $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
-  echo $currentID;
-?>
+
 
 @section('content')
 <div class="container">
@@ -150,6 +144,13 @@
 
     </div><br>
 @for($matchCount=0; $matchCount<count($matches); $matchCount++)
+<?php
+  $user = Auth::user();
+  $userID = $user->id;
+  $key = $matchcount;
+  $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
+  echo $currentID;
+?>
     @if($matches[$matchCount]['matchPcent'] != 0)
     <div class="card col-md-4 col-sm-6">
         <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>

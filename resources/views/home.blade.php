@@ -145,7 +145,7 @@
     </div><br>
 @for($matchCount=0; $matchCount<count($matches); $matchCount++)
 <?php
-  $key = $matchCount['user']['id'];
+  $key = $matches[$matchCount]['user']['id'];
   $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
   echo $key;
 ?>

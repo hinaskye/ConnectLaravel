@@ -126,6 +126,7 @@
   $userID = $user->id;
   $key = $user->id;
   $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
+  echo $currentID;
 ?>
 
 @section('content')

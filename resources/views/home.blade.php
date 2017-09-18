@@ -124,7 +124,7 @@
 <?php
   $user = Auth::user();
   $userID = $user->id;
-  $key = $user->id;
+  $key = $currentID;
   $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
   echo $currentID;
 ?>

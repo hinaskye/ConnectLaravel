@@ -156,8 +156,7 @@
        @if($matches[$matchCount]['user']['id']==$key)
         <img class="card-img-top" src="{!! $file['url'] !!}" width="100%" alt="Match Image">
        @else
-       <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">-->
-       @endif
+       <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
         <div class="card-body">
             <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
             <p class="card-text"><?php

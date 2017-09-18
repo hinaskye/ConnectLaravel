@@ -147,9 +147,10 @@
     @if($matches[$matchCount]['matchPcent'] != 0)
     <?php
         $key = $matches[$matchCount]['user']['id'];
-        
+
         $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
         echo $key;
+        echo $file['url'];
     ?>
     <div class="card col-md-4 col-sm-6">
         <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>

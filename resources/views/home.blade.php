@@ -147,6 +147,7 @@
 <?php
   $key = $matchCount['user']['id'];
   $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
+  echo $matchCount['user']['id'];
 ?>
     @if($matches[$matchCount]['matchPcent'] != 0)
     <div class="card col-md-4 col-sm-6">

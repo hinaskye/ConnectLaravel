@@ -70,6 +70,14 @@ body {
     padding-right: 2.5em;
 }
 
+.padding-top {
+    padding-top: 1.3em;
+}
+
+.padding-bottom {
+    padding-bottom: 1.3em;
+}
+
 .hideFilterOptions {
     display: none;
 }
@@ -119,10 +127,6 @@ body {
 .side-container{
     display: block;
   }
-.filter-section{
-    margin-top:16px!important;
-    margin-bottom:16px!important;
- }
  
  .filter-bottombar{
     border-bottom:6px solid #ccc!important;

@@ -132,7 +132,7 @@
         <button class="btn btn-success" onclick="w3.toggleClass('#filterOptions','hideFilterOptions')">Toggle Advance Filter Options</button>
     </div>
     <div id="filterOptions"class="hideFilterOptions padding-y padding-x">
-        <div class="row">
+        <div class="row padding-top">
             <span>Filter by age:</span>
             <span>between</span>
             <input class="text-dark" type="number" id="lowerAge" min="18" max="125" value="18">
@@ -140,14 +140,14 @@
             <input class="text-dark" type="number" id="upperAge" min="18" max="125" value="30">
             <button class="inline-button btn-primary" onclick="filterAge()">Filter</button>
         </div>
-        <div class="row">
+        <div class="row padding-top">
             <span>Filter by postcode:</span>
             <input class="text-dark" type="number" id="postcodeFilter" min="0" max="9999" value="3000">
             <button class="inline-button btn-primary" onclick="filterPostcode()">Filter</button>
         </div>
 
-        <div class="side-container">
-            <div class="filter-section filter-bottombar padding-y padding-x">
+        <div class="row">
+            <div class="filter-bottombar padding-bottom">
                 <span class="whiteText">Filter by match %:</span>
                 <input type="range" class="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
                 <span id="filterPercent">50%</span>

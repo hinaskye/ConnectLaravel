@@ -128,11 +128,11 @@
             <div class="icon"></div>
         </div>
     </div>
-    <div class="row">
+    <div class="row padding-bottom">
         <button class="btn btn-success" onclick="w3.toggleClass('#filterOptions','hideFilterOptions')">Toggle Advance Filter Options</button>
     </div>
     <div id="filterOptions"class="hideFilterOptions padding-y padding-x">
-        <div class="row padding-top">
+        <div class="row">
             <span>Filter by age:</span>
             <span>between</span>
             <input class="text-dark" type="number" id="lowerAge" min="18" max="125" value="18">
@@ -146,7 +146,7 @@
             <button class="inline-button btn-primary" onclick="filterPostcode()">Filter</button>
         </div>
 
-        <div class="row">
+        <div class="row padding-top">
             <div class="filter-bottombar padding-bottom">
                 <span class="whiteText">Filter by match %:</span>
                 <input type="range" class="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">

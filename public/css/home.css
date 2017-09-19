@@ -54,6 +54,22 @@ body {
     opacity: 0.8;
 }
 
+#filterOptions {
+    background-color: rgba(52, 58, 64, 0.7)!important;
+    border-radius: 1.2em;
+    padding-left: 2.5em;
+}
+
+.padding-y {
+    padding-top: 1.3em;
+    padding-bottom: 1.3em;
+}
+
+.padding-x {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
 .hideFilterOptions {
     display: none;
 }
@@ -93,7 +109,6 @@ body {
 
 /*for filter bar*/
 .whiteText{
-    margin-left: 60px;
     color:#FFF;
  }
 
@@ -102,7 +117,6 @@ body {
     color:#FFF;
  }
 .side-container{
-    padding:0.01em 16px;
     display: block;
   }
 .filter-section{
@@ -112,11 +126,6 @@ body {
  
  .filter-bottombar{
     border-bottom:6px solid #ccc!important;
- }
- 
- .filter-padding{
-    padding-top:16px!important;
-    padding-bottom:16px!important
  }
  
  .inline-button{

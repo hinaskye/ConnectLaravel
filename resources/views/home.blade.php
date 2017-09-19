@@ -142,7 +142,7 @@
         </div>
         <div class="row padding-top">
             <span>Filter by postcode:</span>
-            <input class="text-dark" type="number" id="postcodeFilter" min="0" max="9999" value="3000">
+            <input class="text-dark" type="text" id="postcodeFilter" value="3000" maxlength="4">
             <button class="inline-button btn-primary" onclick="filterPostcode()">Filter</button>
         </div>
 

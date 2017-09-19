@@ -46,13 +46,33 @@ function filterMatches() {
 function filterPostcode() {
     var postcodeSelected = parseInt(document.getElementById("postcodeFilter").value);
     var postcodes = document.getElementsByClassName("postcode");
+
+    var isValid = validatePostcode();
     
-    for(var i=0; i<postcodes.length; i++) {
-        postcode_value = parseInt(postcodes[i].innerHTML);
-        w3.removeClass(postcodes[i].parentElement.parentElement, 'hidden');
-        if(postcode_value != postcodeSelected) {
-            w3.addClass(postcodes[i].parentElement.parentElement, 'hidden');
+    if(isValid)
+    {
+        for(var i=0; i<postcodes.length; i++) {
+            postcode_value = parseInt(postcodes[i].innerHTML);
+            w3.removeClass(postcodes[i].parentElement.parentElement, 'hidden');
+            if(postcode_value != postcodeSelected) {
+                w3.addClass(postcodes[i].parentElement.parentElement, 'hidden');
+            }
         }
+    }
+}
+
+/* performs validation without a form on postcode */
+function validatePostcode() {
+    var postcodeSelected = document.getElementById("postcodeFilter");
+    if(postcodeSelected.checkValidity() == false)
+    {
+        document.getElementById("postcodeError").innerHTML = "Invalid Australian Postcode";
+        return false;
+    }
+    else
+    {
+        document.getElementById("postcodeError").innerHTML = "";
+        return true;
     }
 }
 

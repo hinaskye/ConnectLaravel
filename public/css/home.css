@@ -86,6 +86,10 @@ body {
     color:#000000;
 }
 
+.text-red {
+    color: #FF0000
+}
+
 
 /*for Search bar*/
 .input {

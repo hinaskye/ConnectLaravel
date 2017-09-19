@@ -142,8 +142,10 @@
         </div>
         <div class="row padding-top">
             <span>Filter by postcode:</span>
-            <input class="text-dark" type="text" id="postcodeFilter" value="3000" maxlength="4">
+            <input class="text-dark" type="text" id="postcodeFilter" value="3000" maxlength="4"
+            pattern="^(0[289][0-9]{2})|([1345689][0-9]{3})|(2[0-8][0-9]{2})|(290[0-9])|(291[0-4])|(7[0-4][0-9]{2})|(7[8-9][0-9]{2})$">
             <button class="inline-button btn-primary" onclick="filterPostcode()">Filter</button>
+            <p id="postcodeError"></p>
         </div>
 
         <div class="row padding-top">

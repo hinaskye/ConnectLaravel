@@ -75,11 +75,11 @@
 			    <input type="text" placeholder="Email Address">
 			  </div>
 			  <div class="setting-input">
-			    <span"><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i></span>
+			    <span><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i></span>
 			    <input type="date" placeholder="birthday">
 			  </div>
 			  <div class="setting-input">
-			  	<input class="btn btn-default " type="submit" placeholder="Edit">
+			  	<input class="btn btn-default " type="submit" value="Edit">
 			  </div>
 		  </form>
           <hr>

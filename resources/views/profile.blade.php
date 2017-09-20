@@ -21,8 +21,6 @@
   <!-- The Grid -->
   <div class="row">
 
-  	<button onclick="toggleSetting()">try me</button>
-
     <!-- Left Column -->
     <div id="user-profile" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animate-left">
 
@@ -33,7 +31,8 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <br>
-          <legend class="text-white"><?php echo $user->firstname," ", $user->lastname; ?></legend>
+          <legend class="text-white pull-left"><?php echo $user->firstname," ", $user->lastname; ?></legend>
+          <button onclick="toggleSetting()"><i class="fa fa-cog fa-fw margin-right-16 text-large text-grey pull-right"></i></button>
           <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
           <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>
           <p><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i><?php

@@ -157,7 +157,7 @@
 
             $logUserLatCallConvert = floatval($logUserLatCall);
             $logUserLonCallConvert = floatval($logUserLonCall);
-            var_dump($logUserLatCallConvert, $logUserLonCallConvert);
+            //var_dump($logUserLatCallConvert, $logUserLonCallConvert);
 
             $currentUserLat = $pcRow['latitude'];
             $currentUserLatConvert = floatval($currentUserLat);
@@ -165,7 +165,7 @@
             $currentUserLon = $pcRow['longitude'];
             $currentUserLonConvert = floatval($currentUserLon);
 
-            var_dump($currentUserLatConvert, $currentUserLonConvert);
+            //var_dump($currentUserLatConvert, $currentUserLonConvert);
 
             $unit = "K";
 
@@ -176,8 +176,8 @@
             $miles = $dist * 60 * 1.1515;
             $unit = strtoupper($unit);
 
-            var_dump($miles);
-
+            $kilometres = $miles * 1.6;
+            var_dump($kilometres);
 
 
         }

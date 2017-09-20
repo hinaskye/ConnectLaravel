@@ -64,6 +64,6 @@ html,body,h1,h2,h3,h4,h5,h6 {
 	margin:10px;
 }
 
-input{
-	border-radius: 25px !important;
+input,select{
+	border-radius: 15px !important;
 }

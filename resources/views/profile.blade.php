@@ -66,8 +66,8 @@
 			  <div class="setting-input">
 			    <span class="add-on"><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i></span>
 			    <select>
-			    	<option><i class="fa fa-male fa-fw margin-right-16 text-large text-grey"></i>Male</option>
-			    	<option><i class="fa fa-female fa-fw margin-right-16 text-large text-grey"></i>Female</option>
+			    	<option>>Male</option>
+			    	<option>Female</option>
 			    </select>
 			  </div>
 			  <div class="setting-input">

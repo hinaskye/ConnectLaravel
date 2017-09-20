@@ -21,7 +21,7 @@
   <!-- The Grid -->
   <div class="row">
 
-  	<button onclick="toggleSetting">try me</button>
+  	<button onclick="toggleSetting()">try me</button>
 
     <!-- Left Column -->
     <div id="user-profile" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animate-left">
@@ -240,7 +240,7 @@
 <script type="text/javascript">
 	function toggleSetting() {
     var setting = document.getElementById('settings');
-    var user = document.getElementById('user-profiler');
+    var user = document.getElementById('user-profile');
     if (setting.style.display === 'none') {
         setting.style.display = 'block';
         user.style.display = 'none';

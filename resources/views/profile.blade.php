@@ -78,7 +78,7 @@
 			    <span><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i></span>
 			    <input type="date" placeholder="birthday">
 			  </div>
-			  <div class="setting-input">
+			  <div class="setting-input pull-right">
 			  	<input class="btn btn-default " type="submit" value="Edit">
 			  </div>
 		  </form>
@@ -90,11 +90,14 @@
     <!-- End Left Column -->
 
     <!-- Right Column -->
-    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
+    <div id="user-info" class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12">
-          <legend><h3>About Me</h3></legend>
+          <legend>
+          	<h3>About Me</h3>
+          	<a class="btn" href="#"  onclick="toggleInfo()"><i class="fa fa-cog fa-fw margin-right-16 text-large text-grey pull-right"></i></a>
+          </legend>
           <p><?php echo $user->aboutme; ?></p>
           <hr>
         </div>
@@ -242,10 +245,113 @@
         </div>
       </div>
 
+<!-- User Info Settings -->
+<div id="user-info-settings" class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom display-none">
 
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
+        <div class="col-lg-12 col-md-12">
+        <form>
+          <legend>
+          	<h3>About Me</h3>
+          	<a class="btn" href="#"  onclick="toggleInfo()"><i class="fa fa-cog fa-fw margin-right-16 text-large text-grey pull-right"></i></a>
+          </legend>
+          <input type="text" placeholder="About Me">
+          <hr>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <legend><h3>Questions I answered...</h3></legend>
+          <h4><li>Favourite Movie Genre</li></h4>
+            <select>
+		    	<option >Action</option>
+		    	<option>Romance</option>
+		    	<option>Comedy</option>
+		    	<option>Horror</option>
+		    	<option>Thriller</option>
+		    	<option>Sci-fi</option>
+		    	<option>Disney</option>
+		    </select>
+		    <br>
+        </div>
 
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h4><li>My activity level...</li></h4>
+            <select>
+            	<option>Active</option>
+		    	<option>Moderate</option>
+		    	<option>Couch Potato</option>
+		    </select>
+            <br>
+        </div>
 
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h4><li>Stay at home or go out?</li></h4>
+            <select>
+            	<option>Stay at home!</option>
+            	<option>Go out with friends!</option>
+            </select>
+            <br>
+        </div>
 
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h4><li>Am I funny?</li></h4>
+            <select>
+            	<option value="1">Of course!</option>
+            	<option value="2">Not really</option>
+            </select>
+            <br>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h4><li>Eat out or at home?</li></h4>
+            <select>
+            	<option>eat out</option>
+            	<option>cook at home</option>
+            </select>
+            <br>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h4><li>Animal lover?</li></h4>
+            <select>
+            	<option>Love em!</option>
+            	<option>Nope!!!</option>
+            	<option>Don't hate not like em</option>
+            </select><br>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h4><li>Play a musical instrument?</li></h4>
+            <select>
+            	<option>Hell yeah!</option>
+            	<option>Nope!!!</option>
+            </select><br>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h4><li>Do you admit mistakes?</li></h4>
+            <select>
+            	<option>Yep</option>
+            	<option>Nope!!!</option>
+            </select><br>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h4><li>Like reading?</li></h4>
+            <select>
+            	<option> Yep, books are awesome!</option>
+            	<option>Nope, reading isn't for me</option>
+            </select><br>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h4><li>Do I believe in fate??</li></h4>
+            <select>
+            	<option>Yeah, I am waiting for the one! </option>
+            	<option>No, who believes in that make believe?</option>
+            </select><br>
+        </div>
+      </div>
+ 	 </form>
     <!-- End Right Column -->
     </div>
 
@@ -259,6 +365,18 @@
 	function toggleSetting() {
     var setting = document.getElementById('settings');
     var user = document.getElementById('user-profile');
+    if (setting.style.display === 'none') {
+        setting.style.display = 'block';
+        user.style.display = 'none';
+    } else {
+        setting.style.display = 'none';
+        user.style.display = 'block';
+    }
+}
+
+function toggleUser() {
+    var setting = document.getElementById('user-info-settings');
+    var user = document.getElementById('user-info');
     if (setting.style.display === 'none') {
         setting.style.display = 'block';
         user.style.display = 'none';

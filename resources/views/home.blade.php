@@ -96,7 +96,7 @@
 
         //postcode to suburb algorithm
 
-        $counter = 1;
+
 
         //query user DB to get the postcodes of all users are put them in an array
         $userPostCodeSQL = "SELECT postcode FROM users";
@@ -105,7 +105,7 @@
 
         $userPostCodeQuery = mysqli_query($conn, $userPostCodeSQL);
         $userPostcodeArray = array();
-
+        $counter = 0;
         //loops through every postcode in the user table and returns each postcode
         while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
             $userPostcodeArray[] = $loopRow;

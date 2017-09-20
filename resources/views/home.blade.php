@@ -37,6 +37,7 @@
     $i = 1; //used as a counter int
     $currentID = 1; //current ID of User in DB
     $matchPcent = 0; //match percentage for users
+    $counter = 0;
 
     $matches = array(); //Keep track of all matches and their percentage
 
@@ -105,13 +106,13 @@
 
         $userPostCodeQuery = mysqli_query($conn, $userPostCodeSQL);
         $userPostcodeArray = array();
-        $counter = 0;
+
         //loops through every postcode in the user table and returns each postcode
         while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
             $userPostcodeArray[] = $loopRow;
             $searchPC = $loopRow['postcode'];
 
-            $counter = 0;
+
             //gives all the data for a row that matches the postcode of the users
             $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
             FROM postcodes WHERE postcode = $searchPC";

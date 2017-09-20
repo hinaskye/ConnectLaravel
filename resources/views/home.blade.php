@@ -127,7 +127,6 @@
                 echo "   ";
             }
 
-            $counter = 0;
             array_push($matches[$counter], $pcRow['suburb']);
             var_dump($matches);
 

@@ -60,14 +60,25 @@
           <br>
           <legend class="text-white">
           	<?php echo $user->firstname," ", $user->lastname; ?>
-          	<button class="btn clear-background" onclick="toggleSetting()"><i class="fa fa-times fa-fw margin-right-16 text-large text-grey pull-right"></i></button>
+          	<a class="btn" href="#" onclick="toggleSetting()"><i class="fa fa-times fa-fw margin-right-16 text-large text-grey pull-right"></i></a>
           </legend>
-          <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
-          <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>
-          <p><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i><?php
-            $from = new DateTime($user->birthday);
-            $to = new DateTime('today');
-            echo $from->diff($to)->y, " years old";?></p>
+          <form>
+			  <div class="input-prepend">
+			    <span class="add-on"><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i></span>
+			    <select>
+			    	<option><i class="fa fa-male fa-fw margin-right-16 text-large text-grey"></i>Male</option>
+			    	<option><i class="fa fa-female fa-fw margin-right-16 text-large text-grey"></i>Female</option>
+			    </select>
+			  </div>
+			  <div class="input-prepend">
+			    <span class="add-on"><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i></span>
+			    <input class="span2" type="text" placeholder="Email Address">
+			  </div>
+			  <div class="input-prepend">
+			    <span class="add-on"><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i></span>
+			    <input class="span2" type="date" placeholder="birthday">
+			  </div>
+		  </form>
           <hr>
           <br>
         </div>

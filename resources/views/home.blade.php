@@ -176,7 +176,7 @@
             $kilometres = $miles * 1.6;
             var_dump($kilometres);
             var_dump($miles);
-            //array_push($matches[$counter], $pcRow['suburb']);
+            array_push($matches[$counter-1], $pcRow['suburb']);
             //array_push($matches[$counter], $kilometres);
             ++$counter;
             var_dump($pcRow);

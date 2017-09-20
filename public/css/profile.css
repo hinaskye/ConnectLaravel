@@ -61,6 +61,9 @@ html,body,h1,h2,h3,h4,h5,h6 {
 
 .setting-input{
 	color:darkgray;
-	border-radius:25px;
 	margin:10px;
+}
+
+input{
+	border-radius: 25px !important;
 }

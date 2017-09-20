@@ -245,6 +245,8 @@
         </div>
       </div>
 
+  </div>
+
 <!-- User Info Settings -->
 <div id="user-info-settings" class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom display-none">
 
@@ -356,7 +358,6 @@
     </div>
 
   <!-- End Grid -->
-  </div>
 
   <!-- End Page Container -->
 </div>

@@ -28,6 +28,10 @@ html,body,h1,h2,h3,h4,h5,h6 {
 	to{bottom:0;opacity:1}
 }
 
+.display-none{
+	display:none;
+}
+
 .margin-right-16{
 	margin-right: 16px!important;
 }

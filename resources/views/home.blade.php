@@ -119,17 +119,6 @@
 
 
 
-            //print test to make sure postcodes are getting converted to suburbs correctly
-            if ($pcRow['postcode'] == $searchPC){
-                echo "User PostCode is:  ";
-                echo $pcRow ['suburb'];
-                echo "   ";
-            }
-
-            var_dump($matches);
-
-
-
 
             //distance from user algorithm
 
@@ -175,15 +164,15 @@
 
             $kilometres = $miles * 1.6;
             var_dump($kilometres);
-            var_dump($miles);
-            array_push($matches[$counter-1], $pcRow['suburb']);
-            //array_push($matches[$counter], $kilometres);
+            $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
+            array_push($matches[$counter], $locoArray);
+
             ++$counter;
-            var_dump($pcRow);
-            var_dump($counter);
+
 
         }
-
+        var_dump($matches);
+        var_dump($counter);
 
 
 

@@ -59,6 +59,8 @@ html,body,h1,h2,h3,h4,h5,h6 {
     border-radius: 2em;
 }
 
-.clear-background{
-	opacity: 0;
+.setting-input{
+	color:darkgray;
+	border-radius:25px;
+	margin:10px;
 }

@@ -63,18 +63,18 @@
           	<a class="btn" href="#" onclick="toggleSetting()"><i class="fa fa-times fa-fw margin-right-16 text-large text-grey pull-right"></i></a>
           </legend>
           <form>
-			  <div class="input-prepend">
+			  <div class="setting-input">
 			    <span class="add-on"><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i></span>
 			    <select>
 			    	<option><i class="fa fa-male fa-fw margin-right-16 text-large text-grey"></i>Male</option>
 			    	<option><i class="fa fa-female fa-fw margin-right-16 text-large text-grey"></i>Female</option>
 			    </select>
 			  </div>
-			  <div class="input-prepend">
+			  <div class="setting-input">
 			    <span class="add-on"><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i></span>
 			    <input class="span2" type="text" placeholder="Email Address">
 			  </div>
-			  <div class="input-prepend">
+			  <div class="setting-input">
 			    <span class="add-on"><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i></span>
 			    <input class="span2" type="date" placeholder="birthday">
 			  </div>

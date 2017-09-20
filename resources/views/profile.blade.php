@@ -33,7 +33,7 @@
           <br>
           <legend class="text-white">
           	<?php echo $user->firstname," ", $user->lastname; ?>
-          	<button onclick="toggleSetting()"><i class="fa fa-cog fa-fw margin-right-16 text-large text-grey pull-right clear-background"></i></button>
+          	<button class="btn clear-background" onclick="toggleSetting()"><i class="fa fa-cog fa-fw margin-right-16 text-large text-grey pull-right"></i></button>
           </legend>
           <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
           <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>
@@ -60,7 +60,7 @@
           <br>
           <legend class="text-white">
           	<?php echo $user->firstname," ", $user->lastname; ?>
-          	<button onclick="toggleSetting()"><i class="fa fa-times fa-fw margin-right-16 text-large text-grey pull-right clear-background"></i></button>
+          	<button class="btn clear-background" onclick="toggleSetting()"><i class="fa fa-times fa-fw margin-right-16 text-large text-grey pull-right clear-background"></i></button>
           </legend>
           <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
           <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>

@@ -73,5 +73,5 @@ html,body,h1,h2,h3,h4,h5,h6 {
 input,select{
 	border-radius: 10px !important;
 	color: darkgray;
-	padding:20px;
+	padding-right:20px;
 }

@@ -95,8 +95,8 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12">
           <legend>
-          	<h3>About Me</h3>
-          	<a class="btn" href="#"  onclick="toggleUser()"><i class="fa fa-cog fa-fw margin-right-16 text-large text-grey pull-right"></i></a>
+          	<h3 class="display-inline">About Me</h3>
+          	<a class="btn display-inline pull-right" href="#"  onclick="toggleUser()"><i class="fa fa-cog fa-fw margin-right-16 text-large text-grey"></i></a>
           </legend>
           <p><?php echo $user->aboutme; ?></p>
           <hr>
@@ -256,7 +256,7 @@
         <form>
           <legend>
           	<h3 class="display-inline">About Me</h3>
-          	<a class="btn" href="#"  onclick="toggleUser()"><i class="fa fa-times fa-fw margin-right-16 text-large text-grey display-inline pull-right"></i></a>
+          	<a class="btn  display-inline pull-right" href="#"  onclick="toggleUser()"><i class="fa fa-times fa-fw margin-right-16 text-large text-grey"></i></a>
           </legend>
           <input type="text" placeholder="About Me">
           <hr>

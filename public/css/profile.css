@@ -32,6 +32,10 @@ html,body,h1,h2,h3,h4,h5,h6 {
 	display:none;
 }
 
+.display-inline{
+	display:inline;
+}
+
 .margin-right-16{
 	margin-right: 16px!important;
 }
@@ -59,11 +63,15 @@ html,body,h1,h2,h3,h4,h5,h6 {
     border-radius: 2em;
 }
 
+
+
 .setting-input{
 	color:darkgray;
 	margin:10px;
 }
 
 input,select{
-	border-radius: 15px !important;
+	border-radius: 10px !important;
+	color: darkgray;
+	padding:20px;
 }

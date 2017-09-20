@@ -251,11 +251,12 @@
 <div id="user-info-settings" class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom display-none">
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
+      	<h2>Settings</h2>
         <div class="col-lg-12 col-md-12">
         <form>
           <legend>
-          	<h3>About Me</h3>
-          	<a class="btn" href="#"  onclick="toggleUser()"><i class="fa fa-cog fa-fw margin-right-16 text-large text-grey pull-right"></i></a>
+          	<h3 class="display-inline">About Me</h3>
+          	<a class="btn" href="#"  onclick="toggleUser()"><i class="fa fa-times fa-fw margin-right-16 text-large text-grey display-inline pull-right"></i></a>
           </legend>
           <input type="text" placeholder="About Me">
           <hr>

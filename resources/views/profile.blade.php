@@ -82,6 +82,7 @@
 			  	<input class="btn btn-default " type="submit" value="Edit">
 			  </div>
 		  </form>
+		  <br>
           <hr>
           <br>
         </div>
@@ -95,7 +96,7 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12">
           <legend>
-          	<h3 class="display-inline">About Me</h3>
+          	<h3 class="display-inline margin-top-10">About Me</h3>
           	<a class="btn display-inline pull-right" href="#"  onclick="toggleUser()"><i class="fa fa-cog fa-fw margin-right-16 text-large text-grey"></i></a>
           </legend>
           <p><?php echo $user->aboutme; ?></p>
@@ -353,6 +354,9 @@
             	<option>No, who believes in that make believe?</option>
             </select><br>
         </div>
+       	 <div class="setting-input pull-right">
+	  		<input class="btn btn-default " type="submit" value="Edit">
+	 	 </div>
       </div>
  	 </form>
     <!-- End Right Column -->

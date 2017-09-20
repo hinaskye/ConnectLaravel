@@ -64,19 +64,22 @@
           </legend>
           <form>
 			  <div class="setting-input">
-			    <span class="add-on"><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i></span>
+			    <span><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i></span>
 			    <select>
-			    	<option>>Male</option>
+			    	<option >Male</option>
 			    	<option>Female</option>
 			    </select>
 			  </div>
 			  <div class="setting-input">
-			    <span class="add-on"><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i></span>
-			    <input class="span2" type="text" placeholder="Email Address">
+			    <span><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i></span>
+			    <input type="text" placeholder="Email Address">
 			  </div>
 			  <div class="setting-input">
-			    <span class="add-on"><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i></span>
-			    <input class="span2" type="date" placeholder="birthday">
+			    <span"><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i></span>
+			    <input type="date" placeholder="birthday">
+			  </div>
+			  <div class="setting-input">
+			  	<input class="btn btn-default " type="submit" placeholder="Edit">
 			  </div>
 		  </form>
           <hr>

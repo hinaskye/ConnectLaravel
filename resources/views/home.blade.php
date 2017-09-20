@@ -111,7 +111,8 @@
             $userPostcodeArray[] = $loopRow;
             $searchPC = $loopRow['postcode'];
 
-
+            $count = $counter + 1;
+            $counter --;
             //gives all the data for a row that matches the postcode of the users
             $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
             FROM postcodes WHERE postcode = $searchPC";
@@ -177,8 +178,8 @@
             $kilometres = $miles * 1.6;
             var_dump($kilometres);
             var_dump($miles);
-            //array_push($matches[$counter], $pcRow['suburb']);
-            //array_push($matches[$counter], $kilometres);
+            array_push($matches[$counter], $pcRow['suburb']);
+            array_push($matches[$counter], $kilometres);
             $counter ++;
             var_dump($pcRow);
             var_dump($counter);

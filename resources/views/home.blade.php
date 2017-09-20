@@ -179,7 +179,7 @@
             var_dump($miles);
             array_push($matches[$counter], $pcRow['suburb']);
             array_push($matches[$counter], $kilometres);
-            $counter ++;
+            ++$counter;
             var_dump($pcRow);
             var_dump($counter);
 

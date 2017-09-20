@@ -21,10 +21,8 @@
   <!-- The Grid -->
   <div class="row">
 
-  	<button onclick="toggleSetting">try me</button>
-
     <!-- Left Column -->
-    <div id="user-profile" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animate-left">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animate-left">
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
@@ -44,32 +42,9 @@
           <br>
         </div>
       </div>
-    </div>
 
-	<!-- Toggle settings -->
-    <div id="settings" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animate-left">
-
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
-      	<h2>Settings</h2>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-          <img src="{{ asset('images/profile.jpg') }}" style="width:100%" alt="Avatar">
-
-        </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <br>
-          <legend class="text-white"><?php echo $user->firstname," ", $user->lastname; ?></legend>
-          <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
-          <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>
-          <p><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i><?php
-            $from = new DateTime($user->birthday);
-            $to = new DateTime('today');
-            echo $from->diff($to)->y, " years old";?></p>
-          <hr>
-          <br>
-        </div>
-      </div>
-    </div>
     <!-- End Left Column -->
+    </div>
 
     <!-- Right Column -->
     <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
@@ -236,20 +211,6 @@
 
   <!-- End Page Container -->
 </div>
-
-<script type="text/javascript">
-	function toggleSetting() {
-    var setting = document.getElementById('settings');
-    var user = document.getElementById('user-profiler');
-    if (setting.style.display === 'none') {
-        setting.style.display = 'block';
-        user.style.display = 'none';
-    } else {
-        setting.style.display = 'none';
-        user.style.display = 'block';
-    }
-}
-</script>
 
 </body>
 </html>

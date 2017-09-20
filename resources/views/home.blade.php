@@ -130,7 +130,7 @@
             $counter = 0;
             array_push($matches[$counter], $pcRow['suburb']);
             var_dump($matches);
-            $counter ++;
+
 
 
 
@@ -179,6 +179,9 @@
             $kilometres = $miles * 1.6;
             var_dump($kilometres);
             var_dump($miles);
+            array_push($matches[$counter], $kilometres);
+            $counter ++;
+            var_dump($counter);
 
         }
 
@@ -230,7 +233,7 @@
         <div class="card-body">
             <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
             <p class="card-text">{{$matches[$matchCount]['user']['birthday']}}</p>
-            <p class="card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
+            <p class="card-text">{{$matches[$matchCount]['0']['']}}</p>
         </div>
     </div>
     @endif

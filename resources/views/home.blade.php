@@ -172,7 +172,9 @@
             //array_push($matches[$counter], $locoArray);
 
             ++$counter;
+
             }
+            $loopingID++;
         }
 
         var_dump($matches);

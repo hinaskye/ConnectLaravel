@@ -66,17 +66,17 @@
 			  <div class="setting-input">
 			    <span><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i></span>
 			    <select>
-			    	<option >Male</option>
+			    	<option>Male</option>
 			    	<option>Female</option>
 			    </select>
 			  </div>
 			  <div class="setting-input">
 			    <span><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i></span>
-			    <input type="text" placeholder="Email Address">
+			    <input type="text" placeholder="Email Address" value=<?php echo htmlentities($user->email); ?>>
 			  </div>
 			  <div class="setting-input">
 			    <span><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i></span>
-			    <input type="date" placeholder="birthday">
+			    <input type="date" placeholder="birthday" value=<?php echo htmlentities($user->birthday); ?>>
 			  </div>
 			  <div class="setting-input pull-right">
 			  	<input class="btn btn-default " type="submit" value="Edit">

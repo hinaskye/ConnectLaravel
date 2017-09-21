@@ -119,7 +119,7 @@
             $pcRow = mysqli_fetch_assoc($pcResult);
 
 
-
+            var_dump($counter);
 
             //distance from user algorithm
 
@@ -173,7 +173,6 @@
 
         var_dump($matches);
         var_dump($counter);
-        var_dump($locoArray);
 
 
 

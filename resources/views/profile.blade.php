@@ -259,7 +259,7 @@
           	<h3 class="display-inline-block">About Me</h3>
           	<a class="btn  display-inline pull-right" href="#"  onclick="toggleUser()"><i class="fa fa-times fa-fw margin-right-16 text-large text-grey"></i></a>
           </legend>
-          <input type="text" placeholder="About Me">
+          <input type="text" placeholder="About Me" value=<?php echo htmlentities($user->aboutme); ?>>
           <hr>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

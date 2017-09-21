@@ -169,7 +169,7 @@
             $kilometres = $miles * 1.6;
             var_dump($kilometres);
             $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
-            //array_push($matches[$counter], $locoArray);
+            array_push($matches[$counter], $locoArray);
 
             ++$counter;
 

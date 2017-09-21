@@ -149,7 +149,6 @@
 
             $logUserLatCallConvert = floatval($logUserLatCall);
             $logUserLonCallConvert = floatval($logUserLonCall);
-            //var_dump($logUserLatCallConvert, $logUserLonCallConvert);
 
             $currentUserLat = $pcRow['latitude'];
             $currentUserLatConvert = floatval($currentUserLat);
@@ -157,7 +156,6 @@
             $currentUserLon = $pcRow['longitude'];
             $currentUserLonConvert = floatval($currentUserLon);
 
-            //var_dump($currentUserLatConvert, $currentUserLonConvert);
 
             $unit = "K";
 
@@ -171,7 +169,7 @@
             $kilometres = $miles * 1.6;
             var_dump($kilometres);
             $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
-            //array_push($matches[$counter], $locoArray);
+            array_push($matches[$counter], $locoArray);
 
             ++$counter;
             }

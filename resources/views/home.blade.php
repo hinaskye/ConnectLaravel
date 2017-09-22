@@ -111,7 +111,7 @@
         $mResult=mysqli_query($conn,$lowestSql);
         $row = mysqli_fetch_assoc($mResult);
         $lowID = $row['id'];
-        echo "Lowest ID: ". $lowID;
+        var_dump($lowID);
 
         $counter = 0;
         $loopingID = 1;

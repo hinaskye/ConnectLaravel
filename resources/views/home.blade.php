@@ -108,8 +108,8 @@
 
 
         $lowestSQL = "SELECT min(id) as id FROM users";
-        $mResult=mysqli_query($conn,$lowestSql);
-        $row = mysqli_fetch_assoc($mResult);
+        $lResult=mysqli_query($conn,$lowestSQL);
+        $row = mysqli_fetch_assoc($lResult);
         $lowID = $row['id'];
         var_dump($lowID);
 

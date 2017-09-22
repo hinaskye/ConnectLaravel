@@ -116,64 +116,67 @@
             echo "Here: " . $counter;
             echo $matches[$counter]['user'];
             if ($userID != $loopingID){
-            $userPostcodeArray[] = $loopRow;
-            $searchPC = $loopRow['postcode'];
+                if($matches['user'] != null){
+                $userPostcodeArray[] = $loopRow;
+                $searchPC = $loopRow['postcode'];
 
-            //gives all the data for a row that matches the postcode of the users
-            $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
-            FROM postcodes WHERE postcode = $searchPC";
-            $pcResult = mysqli_query($conn, $postcodeSql);
-            $pcRow = mysqli_fetch_assoc($pcResult);
-
-
-            //distance from user algorithm
-
-            //get the users postcode
-            $logUserPostCodeSQL = "SELECT postcode FROM users WHERE id = $userID";
-            $logUserPostCodeResult = mysqli_query($conn, $logUserPostCodeSQL);
-            $logUserPostCode = mysqli_fetch_assoc($logUserPostCodeResult);
-            $logUserPostCodeCall = $logUserPostCode['postcode'];
+                //gives all the data for a row that matches the postcode of the users
+                $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
+                FROM postcodes WHERE postcode = $searchPC";
+                $pcResult = mysqli_query($conn, $postcodeSql);
+                $pcRow = mysqli_fetch_assoc($pcResult);
 
 
-           //get the users postcode to get latitude and longitude
-            $logUserLatSQL = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCodeCall";
-            $logUserLatResult = mysqli_query($conn, $logUserLatSQL);
-            $logUserLat = mysqli_fetch_assoc($logUserLatResult);
-            $logUserLatCall = $logUserLat['latitude'];
+                //distance from user algorithm
 
-            $logUserLonSQL = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCodeCall";
-            $logUserLonResult = mysqli_query($conn, $logUserLonSQL);
-            $logUserLon = mysqli_fetch_assoc($logUserLonResult);
-            $logUserLonCall = $logUserLon['longitude'];
+                //get the users postcode
+                $logUserPostCodeSQL = "SELECT postcode FROM users WHERE id = $userID";
+                $logUserPostCodeResult = mysqli_query($conn, $logUserPostCodeSQL);
+                $logUserPostCode = mysqli_fetch_assoc($logUserPostCodeResult);
+                $logUserPostCodeCall = $logUserPostCode['postcode'];
 
 
-            $logUserLatCallConvert = floatval($logUserLatCall);
-            $logUserLonCallConvert = floatval($logUserLonCall);
+                //get the users postcode to get latitude and longitude
+                $logUserLatSQL = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCodeCall";
+                $logUserLatResult = mysqli_query($conn, $logUserLatSQL);
+                $logUserLat = mysqli_fetch_assoc($logUserLatResult);
+                $logUserLatCall = $logUserLat['latitude'];
 
-            $currentUserLat = $pcRow['latitude'];
-            $currentUserLatConvert = floatval($currentUserLat);
+                $logUserLonSQL = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCodeCall";
+                $logUserLonResult = mysqli_query($conn, $logUserLonSQL);
+                $logUserLon = mysqli_fetch_assoc($logUserLonResult);
+                $logUserLonCall = $logUserLon['longitude'];
 
-            $currentUserLon = $pcRow['longitude'];
-            $currentUserLonConvert = floatval($currentUserLon);
+
+                $logUserLatCallConvert = floatval($logUserLatCall);
+                $logUserLonCallConvert = floatval($logUserLonCall);
+
+                $currentUserLat = $pcRow['latitude'];
+                $currentUserLatConvert = floatval($currentUserLat);
+
+                $currentUserLon = $pcRow['longitude'];
+                $currentUserLonConvert = floatval($currentUserLon);
 
 
-            //Longitude & Latitude to distance algorithm (code based of code from: http://www.geodatasource.com/developers/php)
-            $unit = "K";
+                //Longitude & Latitude to distance algorithm (code based of code from: http://www.geodatasource.com/developers/php)
+                $unit = "K";
 
-            $theta = $currentUserLonConvert - $logUserLonCallConvert;
-            $dist = sin(deg2rad($currentUserLatConvert)) * sin(deg2rad($logUserLatCallConvert)) +  cos(deg2rad($currentUserLatConvert)) * cos(deg2rad($logUserLatCallConvert)) * cos(deg2rad($theta));
-            $dist = acos($dist);
-            $dist = rad2deg($dist);
-            $miles = $dist * 60 * 1.1515;
-            $unit = strtoupper($unit);
+                $theta = $currentUserLonConvert - $logUserLonCallConvert;
+                $dist = sin(deg2rad($currentUserLatConvert)) * sin(deg2rad($logUserLatCallConvert)) +  cos(deg2rad($currentUserLatConvert)) * cos(deg2rad($logUserLatCallConvert)) * cos(deg2rad($theta));
+                $dist = acos($dist);
+                $dist = rad2deg($dist);
+                $miles = $dist * 60 * 1.1515;
+                $unit = strtoupper($unit);
 
-            $kilometresFloat = $miles * 1.6;
-            $kilometres = round($kilometresFloat);
-            $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
-            array_push($matches[$counter], $locoArray);
+                $kilometresFloat = $miles * 1.6;
+                $kilometres = round($kilometresFloat);
+                $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
+                array_push($matches[$counter], $locoArray);
 
-            echo $counter;
-            ++$counter;
+                echo $counter;
+                ++$counter;
+                }
+
             }
             $loopingID++;
         }

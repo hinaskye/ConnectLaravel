@@ -260,7 +260,7 @@ input[type=range]{
 }
 
 .display-none{
-  display: none;
+  display: none!important;
 }
 
 .display-inlineblock{

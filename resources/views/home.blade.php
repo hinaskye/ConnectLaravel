@@ -227,16 +227,22 @@ $conn->close();
                     <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
                     <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
                     <div class="card-body">
-                    	<p id="blank" class="card-text  display-inlineblock" onclick="like()" ><i class="fa fa-heart-o fa-2x margin-right-16 text-large text-grey"></i></p>
-                    	<p id="fill" class="card-text  display-none" onclick="like()" ><i class="fa fa-heart fa-2x margin-right-16 text-large text-grey"></i></p>
+                    	<p id="blank" class="card-text  display-inlineblock" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
+                    		<i class="fa fa-heart-o fa-2x margin-right-16 text-large text-grey"></i>
+                    	</p>
+                    	<p id="fill" class="card-text  display-none" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
+                    		<i class="fa fa-heart fa-2x margin-right-16 text-large text-grey"></i>
+                    	</p>
                         <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
                         <p class="card-text">{{$matches[$matchCount]['user']['birthday']}}</p>
                         <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
                         <p class="card-text">{{"Suburb: ".$matches[$matchCount]['0']['suburb']}}</p>
-                        <button type="button" id="chat" class="btn btn-info display-inlineblock pull-right" disabled>
+                        <button type="button" href="#" id="chat" class="btn btn-info display-inlineblock pull-right" disabled>
                         	<i class="fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>Chat
                         </button>
                     </div>
+
+                    <p id="test"></p>
                 </div>
         @endif
     @endfor
@@ -252,13 +258,14 @@ $conn->close();
                 document.getElementById("filterPercent").innerHTML=val+"%";
             }
 
-            function like(){
+            function like(id){
             	var blank = document.getElementById("blank");
             	var fill = document.getElementById("fill");
             	if(blank.style.display === 'inline-block'){
             		fill.style.display = 'inline-block';
             		blank.style.display = 'none';
             		document.getElementById('chat').disabled = false;
+                	document.getElementById("test").innerHTML=id;
             	}
             	else{
             		fill.style.display = 'none';

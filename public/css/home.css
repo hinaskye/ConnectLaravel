@@ -262,3 +262,7 @@ input[type=range]{
 .display-none{
   display: none;
 }
+
+.display-inlineblock{
+  display: inline-block;
+}

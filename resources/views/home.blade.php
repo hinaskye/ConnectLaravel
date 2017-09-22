@@ -227,9 +227,9 @@ $conn->close();
                     <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
                     <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
                     <div class="card-body">
-                    	<p id="blank" class="card-text" onclick="like()"><i class="fa fa-heart-o fa-fw margin-right-16 text-large text-grey display-block"></i></p>
+                    	<p id="blank" class="card-text" onclick="like()"><i class="fa fa-heart-o fa-fw margin-right-16 text-large text-grey display-inlineblock"></i></p>
                     	<p id="fill" class="card-text" onclick="like()"><i class="fa fa-heart fa-fw margin-right-16 text-large text-grey display-none"></i></p>
-                    	<a href="#" id="chat" onload="chat()"  class="card-text"><i class="fa fa-heart fa-fw margin-right-16 text-large text-grey display-none"></i></a>		
+                    	<a href="#" id="chat" onload="chat()"  class="card-text"><i class="fa fa-comments fa-fw margin-right-16 text-large text-grey display-inlineblock"></i></a>		
                         <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
                         <p class="card-text">{{$matches[$matchCount]['user']['birthday']}}</p>
                         <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
@@ -253,20 +253,20 @@ $conn->close();
             function like(){
             	var blank = document.getElementById("blank");
             	var fill = document.getElementById("fill");
-            	if(blank.style.display === 'block'){
-            		fill.style.display = 'block';
+            	if(blank.style.display === 'inline-block'){
+            		fill.style.display = 'inline-block';
             		blank.style.display = 'none';
             	}
             	else{
             		fill.style.display = 'none';
-            		blank.style.display = 'block';
+            		blank.style.display = 'inline-block';
             	}
             }
 
             function chat(){
             	var fill = document.getElementById("fill");
             	var chat = document.getElementById("chat");
-            	if(fill.style.display === 'block'){
+            	if(fill.style.display === 'inline-block'){
             		chat.disabled = true;
             	}
             	else{

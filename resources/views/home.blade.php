@@ -229,7 +229,7 @@ $conn->close();
                     <div class="card-body">
                     	<p id="blank" class="card-text  display-inlineblock" onclick="like()" ><i class="fa fa-heart-o fa-2x margin-right-16 text-large text-grey"></i></p>
                     	<p id="fill" class="card-text  display-none" onclick="like()" ><i class="fa fa-heart fa-2x margin-right-16 text-large text-grey"></i></p>
-                    	<a href="#" id="chat"  class="card-text display-inlineblock"><i class="fa fa-comments fa-2x margin-right-16 text-large text-grey"></i></a>		
+                    	<button type="button" id="chat" class="btn btn-default display-inlineblock" disabled><i class="fa fa-comments fa-2x margin-right-16 text-large text-grey"></i></a>
                         <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
                         <p class="card-text">{{$matches[$matchCount]['user']['birthday']}}</p>
                         <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>

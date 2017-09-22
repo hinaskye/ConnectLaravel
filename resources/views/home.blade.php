@@ -228,7 +228,7 @@
             <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
             <p class="card-text">{{$matches[$matchCount]['user']['birthday']}}</p>
             <p class="card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
-            <p class="card-text">{{$matches[$matchCount]['0']['distance']}}</p>
+            <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."KMs"}}</p>
             <p class="card-text">{{$matches[$matchCount]['0']['suburb']}}</p>
         </div>
     </div>

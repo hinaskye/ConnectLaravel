@@ -223,7 +223,7 @@ $conn->close();
         </div><br>
         @for($matchCount=0; $matchCount<count($matches); $matchCount++)
             @if($matches[$matchCount]['matchPcent'] != 0)
-                <div class="card col-md-4 col-sm-6" ondblclick="like()">
+                <div class="card col-md-4 col-sm-6" ondblclick="like({{ $matches[$matchCount]['user']['id'] }})">
                     <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
                     <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
                     <div class="card-body">

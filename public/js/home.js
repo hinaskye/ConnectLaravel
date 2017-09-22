@@ -22,7 +22,9 @@ for(var i=0; i<matchPercent.length; i++) {
 
 /* Functions */
 
-/* filter function */
+/* filter functions */
+
+/* filter by match %*/
 function filterMatches() {
     var filterPercentString = document.getElementById("filterPercent").innerHTML.replace(/%/g,'');
     var filterPercent = parseInt(filterPercentString);
@@ -35,6 +37,65 @@ function filterMatches() {
         if(percent_value<filterPercent) {
             /* add hidden based on filter */
             w3.addClass(matchPercent[i].parentElement, 'hidden');
+        }
+    }
+}
+
+/* filter by postcode */
+/* similar to filter by match */
+function filterPostcode() {
+    var postcodeSelected = parseInt(document.getElementById("postcodeFilter").value);
+    var postcodes = document.getElementsByClassName("postcode");
+
+    var isValid = validatePostcode();
+    
+    if(isValid)
+    {
+        for(var i=0; i<postcodes.length; i++) {
+            postcode_value = parseInt(postcodes[i].innerHTML);
+            w3.removeClass(postcodes[i].parentElement.parentElement, 'hidden');
+            if(postcode_value != postcodeSelected) {
+                w3.addClass(postcodes[i].parentElement.parentElement, 'hidden');
+            }
+        }
+    }
+}
+
+/* performs validation without a form on postcode */
+function validatePostcode() {
+    var postcodeSelected = document.getElementById("postcodeFilter");
+    if(postcodeSelected.checkValidity() == false)
+    {
+        document.getElementById("postcodeError").innerHTML = "Invalid Australian Postcode";
+        return false;
+    }
+    else
+    {
+        document.getElementById("postcodeError").innerHTML = "";
+        return true;
+    }
+}
+
+/* filter by age */
+function filterAge() {
+    var lowerAge = parseInt(document.getElementById("lowerAge").value);
+    var upperAge = parseInt(document.getElementById("upperAge").value);
+    var ages = document.getElementsByClassName("age");
+
+    if(lowerAge>upperAge)
+    {
+        /* throw an error to user if lower age is not lower than upper age */
+        alert("Lower age specified is higher than the highest age specified!");
+    }
+    else
+    {
+        for(var i=0; i<ages.length; i++) {
+            age_value = parseInt(ages[i].innerHTML);
+            w3.removeClass(ages[i].parentElement.parentElement, 'hidden');
+            if(age_value<lowerAge || age_value > upperAge)
+            {
+                w3.addClass(ages[i].parentElement.parentElement, 'hidden');
+            }
         }
     }
 }

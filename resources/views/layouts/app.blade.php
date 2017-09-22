@@ -17,6 +17,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <link href="{{ asset('css/register.css') }}" rel="stylesheet">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="app">
@@ -35,8 +37,8 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-left">
-                        <li> <img src="{{ asset('images/Logo.png') }}" width =25%><li>
+                    <ul class="nav navbar-nav navbar-left nav-inline col-lg-2">
+                        <li class="col-lg-12"><a href="{{ url('/home') }}"><img src="{{ asset('images/Logo.png') }}" width =100%></a><li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -79,6 +81,44 @@
 
         @yield('content')
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid" id="footer">
+            <div class="container">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li><a href="{{ url('/profile') }}">My Profile</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="{{ url('/about') }}">Founders</a></li>
+                        <li><a href="https://www.paypal.me">Donate Money</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <h3>Follow Us</h3>
+                    <!-- Linked do not link to real accounts, code from free site: https://bootsnipp.com/snippets/featured/social-icon-strip-footer -->
+                    <a href="https://www.facebook.com/connect"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                    <a href="https://twitter.com/connect"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                    <a href="https://plus.google.com/connect"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                    <a href="mailto:connect@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <br>
+                    <a href="{{ url('/settings') }}"><button type="button" class="btn btn-success">Settings</button></a>
+                </div>
+            </div>
+
+            <div class="container-fluid footer-bottom">
+                <br><p class="text-center"> Copyright © Connect 2017. All right reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

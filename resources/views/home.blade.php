@@ -113,16 +113,14 @@
         $lowID = $row['id'];
         var_dump($lowID);
 
-        $counter = (int)$lowID;
-        $loopingID = (int)$lowID;
-
+        $counter = $lowID;
+        $loopingID = 1;
+        echo $counter;
 
         //loops through every postcode in the user table and returns each postcode
         while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
 
             if ($userID != $loopingID){
-
-                var_dump($matches[$counter]['user']);
 
                 if($matches[$counter]['user'] != null){
                 $userPostcodeArray[] = $loopRow;
@@ -181,7 +179,6 @@
                 $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
                 array_push($matches[$counter], $locoArray);
 
-                echo $counter;
                 ++$counter;
                 }
 

@@ -227,9 +227,9 @@ $conn->close();
                     <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
                     <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
                     <div class="card-body">
-                    	<p id="blank" class="card-text" onclick="like()"><i class="fa fa-heart-o fa-fw margin-right-16 text-large text-grey display-inlineblock"></i></p>
-                    	<p id="fill" class="card-text" onclick="like()"><i class="fa fa-heart fa-fw margin-right-16 text-large text-grey display-none"></i></p>
-                    	<a href="#" id="chat" onload="chat()"  class="card-text"><i class="fa fa-comments fa-fw margin-right-16 text-large text-grey display-inlineblock"></i></a>		
+                    	<p id="blank" class="card-text" onclick="like()" onchange="chat_enable()" ><i class="fa fa-heart-o fa-fw margin-right-16 text-large text-grey display-inlineblock"></i></p>
+                    	<p id="fill" class="card-text" onclick="like()" onchange="chat_disable()"><i class="fa fa-heart fa-fw margin-right-16 text-large text-grey display-none"></i></p>
+                    	<a href="#" id="chat" class="card-text"><i class="fa fa-comments fa-fw margin-right-16 text-large text-grey display-inlineblock"></i></a>		
                         <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
                         <p class="card-text">{{$matches[$matchCount]['user']['birthday']}}</p>
                         <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
@@ -263,15 +263,12 @@ $conn->close();
             	}
             }
 
-            function chat(){
-            	var fill = document.getElementById("fill");
-            	var chat = document.getElementById("chat");
-            	if(fill.style.display === 'inline-block'){
-            		chat.disabled = true;
-            	}
-            	else{
-            		chat.disabled = false;
-            	}
+            function chat_disable(){
+            	document.getElementById('chat').removeAttribute('href');
+            }
+
+            function chat_enable(){
+            	document.getElementById('chat').setAttribute("href",link);
             }
         </script>
 @endsection

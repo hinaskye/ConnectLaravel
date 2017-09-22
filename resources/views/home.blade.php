@@ -175,7 +175,7 @@
             $loopingID++;
         }
 
-
+    var_dump($matches);
 
     //sort matches by highest match percentage, uses anonymous function
     usort($matches, function($a, $b){

@@ -116,11 +116,11 @@
                         <div class="form-group">
                             <label for="select" class="col-lg-2 control-label">Education of your ideal match</label>
                             <div class="col-lg-10">
-                                <select class="form-control" name="matchedu">
-                                    <option value="Highschool" name="matchedu">High School</option>
-                                    <option value="University" name="matchedu">University</option>
-                                    <option value="Masters" name="matchedu">Masters</option>
-                                    <option value="PHD" name="matchedu">PHD</option>
+                                <select class="form-control" name="matchingedu">
+                                    <option value="Highschool" name="matchingedu">High School</option>
+                                    <option value="University" name="matchingedu">University</option>
+                                    <option value="Masters" name="matchingedu">Masters</option>
+                                    <option value="PHD" name="matchingedu">PHD</option>
                                 </select>
                             </div>
                         </div>

@@ -106,7 +106,7 @@
                             <div class="col-lg-10">
                                 <select class="form-control" name="myedu">
                                     <option value="Highschool" name="myedu">High School</option>
-                                    <option value="Univeristy" name="myedu">University</option>
+                                    <option value="University" name="myedu">University</option>
                                     <option value="Masters" name="myedu">Masters</option>
                                     <option value="PHD" name="myedu">PHD</option>
                                 </select>

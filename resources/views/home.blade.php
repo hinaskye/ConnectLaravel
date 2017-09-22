@@ -113,11 +113,10 @@
 
         //loops through every postcode in the user table and returns each postcode
         while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
-            echo "Here: " . $counter;
-            echo "      ";
+
             if ($userID != $loopingID){
-                echo "Inside UserID LoopingID:  " . $counter;
-                echo "     ";
+
+                var_dump($matches[$counter]['user']);
                 if($matches[$counter]['user'] != null){
                 $userPostcodeArray[] = $loopRow;
                 $searchPC = $loopRow['postcode'];

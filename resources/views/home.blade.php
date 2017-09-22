@@ -230,7 +230,7 @@ $conn->close();
                     	<p id="blank" class="card-text  display-inlineblock" onclick="like($userID,{{ $matches[$matchCount]['user']['id'] }})" >
                     		<i class="fa fa-heart-o fa-2x margin-right-16 text-large text-grey"></i>
                     	</p>
-                    	<p id="fill" class="card-text  display-none" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
+                    	<p id="fill" class="card-text  display-none" onclick="like($userID,{{ $matches[$matchCount]['user']['id'] }})" >
                     		<i class="fa fa-heart fa-2x margin-right-16 text-large text-grey"></i>
                     	</p>
                         <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
@@ -241,9 +241,9 @@ $conn->close();
                         	<i class="fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>Chat
                         </button>
                     </div>
+                </div>
 
                     <p id="test"></p>
-                </div>
         @endif
     @endfor
 

@@ -21,6 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('gender');
+            $table->string('looking');
+            $table->string('myedu');
+            $table->string('matchingedu');
             $table->date('birthday');
             $table->rememberToken();
             $table->timestamps();
@@ -36,6 +39,7 @@ class CreateUsersTable extends Migration
             $table->integer('q10');
             $table->string('aboutme');
             $table->integer('postcode');
+            $table->ineger('favourite');
         });
     }
 

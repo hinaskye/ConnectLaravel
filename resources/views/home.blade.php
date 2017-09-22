@@ -47,7 +47,7 @@
         if ($userID != $currentID){
 
             //Query DB for First users in DB answers to questions
-            $questionSql = "SELECT firstname, lastname, gender, birthday,
+            $questionSql = "SELECT firstname, lastname, gender,looking, birthday,
             q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, id, aboutme, postcode
             FROM users WHERE id = $currentID";
             $questionResult = mysqli_query($conn, $questionSql);
@@ -235,7 +235,7 @@
         <div class="card-body">
             <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
             <p class="card-text">{{$matches[$matchCount]['user']['birthday']}}</p>
-            <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
+            <p class="card-text">{{"approx: ".$matches[$matchCount]['0']['distance']."kms away"}}</p>
             <p class="card-text">{{"Suburb: ".$matches[$matchCount]['0']['suburb']}}</p>
         </div>
     </div>

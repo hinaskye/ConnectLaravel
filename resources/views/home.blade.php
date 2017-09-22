@@ -107,6 +107,12 @@
         $userPostcodeArray = array();
 
 
+        $lowestSQL = "SELECT min(id) as id FROM users";
+        $mResult=mysqli_query($conn,$lowestSql);
+        $row = mysqli_fetch_assoc($mResult);
+        $lowID = $row['id'];
+        echo "Lowest ID: ". $lowID;
+
         $counter = 0;
         $loopingID = 1;
 
@@ -117,6 +123,7 @@
             if ($userID != $loopingID){
 
                 var_dump($matches[$counter]['user']);
+
                 if($matches[$counter]['user'] != null){
                 $userPostcodeArray[] = $loopRow;
                 $searchPC = $loopRow['postcode'];

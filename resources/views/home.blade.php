@@ -116,7 +116,7 @@
             echo "Here: " . $counter;
             echo $matches[$counter]['user'];
             if ($userID != $loopingID){
-                if($matches['user'] != null){
+                if($matches[$counter]['user'] != null){
                 $userPostcodeArray[] = $loopRow;
                 $searchPC = $loopRow['postcode'];
 

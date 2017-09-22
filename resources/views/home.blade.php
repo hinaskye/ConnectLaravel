@@ -223,13 +223,13 @@ $conn->close();
         </div><br>
         @for($matchCount=0; $matchCount<count($matches); $matchCount++)
             @if($matches[$matchCount]['matchPcent'] != 0)
-                <div class="card col-md-4 col-sm-6">
+                <div class="card col-md-4 col-sm-6" ondblclick="like()">
                     <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
                     <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
                     <div class="card-body">
                     	<p id="blank" class="card-text  display-inlineblock" onclick="like()" ><i class="fa fa-heart-o fa-fw margin-right-16 text-large text-grey"></i></p>
                     	<p id="fill" class="card-text  display-none" onclick="like()" ><i class="fa fa-heart fa-fw margin-right-16 text-large text-grey"></i></p>
-                    	<a href="#" id="chat"  class="card-text"><i class="fa fa-comments fa-fw margin-right-16 text-large text-grey display-inlineblock"></i></a>		
+                    	<a href="#" id="chat"  class="card-text display-inlineblock"><i class="fa fa-comments fa-fw margin-right-16 text-large text-grey"></i></a>		
                         <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
                         <p class="card-text">{{$matches[$matchCount]['user']['birthday']}}</p>
                         <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>

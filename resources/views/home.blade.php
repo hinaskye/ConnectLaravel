@@ -152,9 +152,11 @@
     ?>
     <div class="card col-md-4 col-sm-6">
         <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
-       
-        <img class="card-img-top" src="{!! $file['url'] !!}" width="100%" alt="Match Image">
-      
+      <!-- @if($matches[$matchCount]['user']['id']==$key)-->
+        <img class="card-img-top" src="{!! $file['url'] !!}" alt="Match Image" style="width: 100%; height: 100%">
+       <!--@else-->
+        <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
+       @endif
         <div class="card-body">
             <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
             <p class="card-text"><?php

@@ -107,6 +107,7 @@ class RegisterController extends Controller
             'q10' => $data['q10'],
             'aboutme' => $data ['aboutme'],
             'postcode' => $data ['postcode']
+
         ]);
     }
 }

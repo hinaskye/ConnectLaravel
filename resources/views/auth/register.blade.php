@@ -127,8 +127,6 @@
 
 
 
-
-
                     <br>
                     <br>
                     <div class="panel-heading"> <legend>Questions</legend></div>

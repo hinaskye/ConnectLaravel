@@ -106,9 +106,9 @@
         $userPostCodeQuery = mysqli_query($conn, $userPostCodeSQL);
         $userPostcodeArray = array();
 
+
         $counter = 0;
         $loopingID = 1;
-
 
 
         //loops through every postcode in the user table and returns each postcode
@@ -170,6 +170,7 @@
             $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
             array_push($matches[$counter], $locoArray);
 
+            echo $counter;
             ++$counter;
             }
             $loopingID++;

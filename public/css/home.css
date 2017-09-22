@@ -253,3 +253,12 @@ input[type=range]{
  .range:focus::-ms-fill-upper {
    background: #f0f0f0;
  }
+
+ /*CSS for favourites*/
+.display-block{
+  display: block;
+}
+
+.display-none{
+  display: none;
+}

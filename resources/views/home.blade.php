@@ -115,13 +115,14 @@
 
         $counter = 0;
         $loopingID = (int)$lowID;
-        echo $counter;
+
 
         //loops through every postcode in the user table and returns each postcode
         while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
 
             if ($userID != $loopingID){
                 echo "here";
+                echo $counter;
 
                 if($matches[$counter]['user'] != null){
                     echo "inside loop";

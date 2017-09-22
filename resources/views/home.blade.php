@@ -227,7 +227,7 @@ $conn->close();
                     <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
                     <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
                     <div class="card-body">
-                    	<p id="blank" class="card-text  display-inlineblock" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
+                    	<p id="blank" class="card-text  display-inlineblock" onclick="like($userID,{{ $matches[$matchCount]['user']['id'] }})" >
                     		<i class="fa fa-heart-o fa-2x margin-right-16 text-large text-grey"></i>
                     	</p>
                     	<p id="fill" class="card-text  display-none" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
@@ -258,19 +258,20 @@ $conn->close();
                 document.getElementById("filterPercent").innerHTML=val+"%";
             }
 
-            function like(id){
+            function like(userId,favouriteId){
             	var blank = document.getElementById("blank");
             	var fill = document.getElementById("fill");
             	if(blank.style.display === 'inline-block'){
             		fill.style.display = 'inline-block';
             		blank.style.display = 'none';
             		document.getElementById('chat').disabled = false;
-                	document.getElementById("test").innerHTML=id;
+                	document.getElementById("test").innerHTML=userId;
             	}
             	else{
             		fill.style.display = 'none';
             		blank.style.display = 'inline-block';
             		document.getElementById('chat').disabled = true;
+                	document.getElementById("test").innerHTML=userId;
             	}
             }
         </script>

@@ -229,7 +229,7 @@ $conn->close();
                     <div class="card-body">
                     	<p id="blank" class="card-text" onclick="like()" ><i class="fa fa-heart-o fa-fw margin-right-16 text-large text-grey display-inlineblock"></i></p>
                     	<p id="fill" class="card-text" onclick="like()"><i class="fa fa-heart fa-fw margin-right-16 text-large text-grey display-none"></i></p>
-                    	<a href="#" id="chat" onchange="chat()"  class="card-text"><i class="fa fa-comments fa-fw margin-right-16 text-large text-grey display-inlineblock"></i></a>		
+                    	<a href="#" id="chat"  class="card-text"><i class="fa fa-comments fa-fw margin-right-16 text-large text-grey display-inlineblock"></i></a>		
                         <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
                         <p class="card-text">{{$matches[$matchCount]['user']['birthday']}}</p>
                         <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
@@ -256,23 +256,23 @@ $conn->close();
             	if(blank.style.display === 'inline-block'){
             		fill.style.display = 'inline-block';
             		blank.style.display = 'none';
+            		document.getElementById('testlink').setAttribute("href",link);
             	}
             	else{
             		fill.style.display = 'none';
             		blank.style.display = 'inline-block';
+            		document.getElementById('testlink').removeAttribute('href');
             	}
             }
 
-            function chat(){
-            	var fill = document.getElementById("fill");
-            	var chat = document.getElementById("chat");
-            	if(fill.style.display === 'inline-block'){
-            		document.getElementById('testlink').removeAttribute('href');
-            	}
-            	else{
-            		document.getElementById('testlink').setAttribute("href",link);
-            	}
-            }
+            // function chat(){
+            // 	var fill = document.getElementById("fill");
+            // 	var chat = document.getElementById("chat");
+            // 	if(fill.style.display === 'inline-block'){
+            // 	}
+            // 	else{
+            // 	}
+            // }
         </script>
 @endsection
 

@@ -124,6 +124,7 @@
                 echo "here";
 
                 if($matches[$counter]['user'] != null){
+                    echo "inside loop";
                 $userPostcodeArray[] = $loopRow;
                 $searchPC = $loopRow['postcode'];
 

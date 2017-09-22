@@ -227,8 +227,8 @@ $conn->close();
                     <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
                     <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
                     <div class="card-body">
-                    	<p id="blank" class="card-text" onclick="like()" ><i class="fa fa-heart-o fa-fw margin-right-16 text-large text-grey display-inlineblock"></i></p>
-                    	<p id="fill" class="card-text" onclick="like()"><i class="fa fa-heart fa-fw margin-right-16 text-large text-grey display-none"></i></p>
+                    	<p id="blank" class="card-text  display-inlineblock" onclick="like()" ><i class="fa fa-heart-o fa-fw margin-right-16 text-large text-grey"></i></p>
+                    	<p id="fill" class="card-text  display-none" onclick="like()" ><i class="fa fa-heart fa-fw margin-right-16 text-large text-grey"></i></p>
                     	<a href="#" id="chat"  class="card-text"><i class="fa fa-comments fa-fw margin-right-16 text-large text-grey display-inlineblock"></i></a>		
                         <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
                         <p class="card-text">{{$matches[$matchCount]['user']['birthday']}}</p>

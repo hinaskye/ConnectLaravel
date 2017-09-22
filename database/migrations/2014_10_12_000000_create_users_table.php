@@ -39,7 +39,7 @@ class CreateUsersTable extends Migration
             $table->integer('q10');
             $table->string('aboutme');
             $table->integer('postcode');
-            $table->ineger('favourite');
+            $table->integer('favourite');
         });
     }
 

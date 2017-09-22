@@ -123,7 +123,7 @@
             if ($userID != $loopingID){
                 echo "here";
 
-                if($matches[$counter]['user'] != null){
+                if($matches[$loopingID]['user'] != null){
                     echo "inside loop";
                 $userPostcodeArray[] = $loopRow;
                 $searchPC = $loopRow['postcode'];

@@ -113,7 +113,7 @@
         $lowID = $row['id'];
         var_dump($lowID);
 
-        $counter = 10;
+        $counter = (int)$lowID-1;
         $loopingID = (int)$lowID;
 
 

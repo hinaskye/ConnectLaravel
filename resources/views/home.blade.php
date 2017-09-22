@@ -114,7 +114,7 @@
         var_dump($lowID);
 
         $counter = (int)$lowID;
-        $loopingID = 1;
+        $loopingID = (int)$lowID;
 
 
         //loops through every postcode in the user table and returns each postcode

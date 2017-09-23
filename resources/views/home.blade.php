@@ -242,7 +242,6 @@ $conn->close();
                         </button>
                     </div>
                 </div>
-                    <p id="test"></p>
         @endif
     @endfor
 
@@ -264,8 +263,7 @@ $conn->close();
             	if(blank.style.display === 'inline-block'){
             		fill.style.display = 'inline-block';
             		blank.style.display = 'none';
-            		document.getElementById('chat'+id).disabled = false;
-                	document.getElementById("test").innerHTML=id;
+            		document.getElementById('chat'+id).disabled = false;  
             	}
             	else{
             		fill.style.display = 'none';

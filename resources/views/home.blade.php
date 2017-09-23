@@ -237,7 +237,7 @@ $conn->close();
                         <p class="card-text">{{$matches[$matchCount]['user']['birthday']}}</p>
                         <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
                         <p class="card-text">{{"Suburb: ".$matches[$matchCount]['0']['suburb']}}</p>
-                        <button type="button" href="#" id="chat" class="btn btn-info display-inlineblock pull-right" disabled>
+                        <button type="button" href="#" id="chat{{ $matches[$matchCount]['user']['id'] }}" class="btn btn-info display-inlineblock pull-right" disabled>
                         	<i class="fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>Chat
                         </button>
                     </div>
@@ -264,13 +264,13 @@ $conn->close();
             	if(blank.style.display === 'inline-block'){
             		fill.style.display = 'inline-block';
             		blank.style.display = 'none';
-            		document.getElementById('chat').disabled = false;
+            		document.getElementById('chat'+id).disabled = false;
                 	document.getElementById("test").innerHTML=id;
             	}
             	else{
             		fill.style.display = 'none';
             		blank.style.display = 'inline-block';
-            		document.getElementById('chat').disabled = true;
+            		document.getElementById('chat'+id).disabled = true;
             	}
             }
         </script>

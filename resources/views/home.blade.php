@@ -259,8 +259,8 @@ $conn->close();
 
             function like(id){
                 var id = id.toString();
-            	var blank = document.getElementById("blank"+"id");
-            	var fill = document.getElementById("fill"+"id");
+            	var blank = document.getElementById("blank"+id);
+            	var fill = document.getElementById("fill"+id);
             	if(blank.style.display === 'inline-block'){
             		fill.style.display = 'inline-block';
             		blank.style.display = 'none';

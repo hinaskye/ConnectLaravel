@@ -1,3 +1,15 @@
+.cont{
+  position: relative;
+  background-image: url("http://cdn.wallpapersafari.com/26/2/UNhoE1.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: auto;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  display: table;
+  height: 100%;
+  width:100%;
+}
+
 div {
     color: #FFF;
 }
@@ -31,12 +43,6 @@ div {
 
 .bg-red-xs {
     background-color: rgba(253, 116, 106, 0.90);
-}
-
-body {
-    background-image: url("http://cdn.wallpapersafari.com/26/2/UNhoE1.jpg");
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 .card {

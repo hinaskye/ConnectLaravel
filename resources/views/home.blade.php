@@ -1,3 +1,4 @@
+<div class="cont">
 @extends('layouts.app')
 <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
@@ -195,9 +196,6 @@ $conn->close();
 //print_r($matches);
 ?>
 
-
-
-
 @section('content')
     <div class="container">
         <h1>My Matches</h1><br>
@@ -254,13 +252,13 @@ $conn->close();
                             $from = new DateTime($matches[$matchCount]['user']['birthday']);
                             $to = new DateTime('today');
                             echo $from->diff($to)->y, " years old";?></p>
+                        <p class="postcode card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
                     </div>
                 </div>
             @endif
         @endfor
     </div>
-
-
+</div>
 
     <!-- Need w3.js to use their methods -->
     <script src="https://www.w3schools.com/lib/w3.js"></script>

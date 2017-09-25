@@ -118,7 +118,7 @@ while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
 
     if ($userID != $loopingID){
 
-        echo $loopingID;
+        //echo $loopingID;
         if($matches[$counter]['user'] != null){
 
             $userPostcodeArray[] = $loopRow;

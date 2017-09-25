@@ -108,10 +108,6 @@
                     <a href="https://plus.google.com/connect"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
                     <a href="mailto:connect@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                    <br>
-                    <a href="{{ url('/settings') }}"><button type="button" class="btn btn-success">Settings</button></a>
-                </div>
             </div>
 
             <div class="container-fluid footer-bottom">

@@ -86,21 +86,21 @@
     <footer>
         <div class="container-fluid" id="footer">
             <div class="container">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <h3>Connect</h3>
                     <ul>
                         <li><a href="{{ url('/home') }}">Home</a></li>
                         <li><a href="{{ url('/profile') }}">My Profile</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <h3>About</h3>
                     <ul>
                         <li><a href="{{ url('/about') }}">Founders</a></li>
                         <li><a href="https://www.paypal.me">Donate Money</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <h3>Follow Us</h3>
                     <!-- Linked do not link to real accounts, code from free site: https://bootsnipp.com/snippets/featured/social-icon-strip-footer -->
                     <a href="https://www.facebook.com/connect"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>

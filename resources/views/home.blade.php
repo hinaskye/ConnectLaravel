@@ -1,3 +1,4 @@
+<div class="cont">
 @extends('layouts.app')
 <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
@@ -107,6 +108,7 @@ $lResult=mysqli_query($conn,$lowestSQL);
 $row = mysqli_fetch_assoc($lResult);
 $lowID = $row['id'];
 
+
 $counter = (int)$lowID-1;
 $loopingID = (int)$lowID;
 
@@ -115,13 +117,16 @@ $loopingID = (int)$lowID;
 while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
 
     if ($userID != $loopingID){
+
+        //echo $loopingID;
         if($matches[$counter]['user'] != null){
+
             $userPostcodeArray[] = $loopRow;
             $searchPC = $loopRow['postcode'];
 
             //gives all the data for a row that matches the postcode of the users
             $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
-                    FROM postcodes WHERE postcode = $searchPC";
+                FROM postcodes WHERE postcode = $searchPC";
             $pcResult = mysqli_query($conn, $postcodeSql);
             $pcRow = mysqli_fetch_assoc($pcResult);
 
@@ -166,7 +171,7 @@ while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
             $dist = rad2deg($dist);
             $miles = $dist * 60 * 1.1515;
             $unit = strtoupper($unit);
-            //converting to Kilometres
+
             $kilometresFloat = $miles * 1.6;
             $kilometres = round($kilometresFloat);
             $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
@@ -179,6 +184,7 @@ while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
     $loopingID++;
 }
 
+
 //sort matches by highest match percentage, uses anonymous function
 usort($matches, function($a, $b){
     return $b['matchPcent'] - $a['matchPcent'];
@@ -190,82 +196,81 @@ $conn->close();
 //print_r($matches);
 ?>
 
-
 @section('content')
     <div class="container">
         <h1>My Matches</h1><br>
 
         <div class="row">
-        <div class="searchBox">
-            <input type="text" id="input" class="input" onkeyup="searchFunction()" placeholder="Search..."/>
-            <div class="icon"></div>
-        </div>
-    </div>
-    <div class="row padding-bottom">
-        <button class="btn btn-success" onclick="w3.toggleClass('#filterOptions','hideFilterOptions')">Toggle Advance Filter Options</button>
-    </div>
-    <div id="filterOptions"class="hideFilterOptions padding-y padding-x">
-        <div class="row">
-            <span>Filter by age:</span>
-            <span>between</span>
-            <input class="text-dark" type="number" id="lowerAge" min="18" max="125" value="18">
-            <span>and</span>
-            <input class="text-dark" type="number" id="upperAge" min="18" max="125" value="30">
-            <button class="inline-button btn-primary" onclick="filterAge()">Filter</button>
-        </div>
-        <div class="row padding-top">
-            <span>Filter by postcode:</span>
-            <input class="text-dark" type="text" id="postcodeFilter" value="3000" maxlength="4"
-            pattern="^(0[289][0-9]{2})|([1345689][0-9]{3})|(2[0-8][0-9]{2})|(290[0-9])|(291[0-4])|(7[0-4][0-9]{2})|(7[8-9][0-9]{2})$">
-            <button class="inline-button btn-primary" onclick="filterPostcode()">Filter</button>
-            <span id="postcodeError" class="text-red padding-x"></span>
-        </div>
-
-        <div class="row padding-top">
-            <div class="filter-bottombar padding-bottom">
-                <span class="whiteText">Filter by match %:</span>
-                <input type="range" class="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
-                <span id="filterPercent">50%</span>
-                <button class="inline-button btn-primary" onclick="filterMatches()">Filter</button>
+            <div class="searchBox">
+                <input type="text" id="input" class="input" onkeyup="searchFunction()" placeholder="Search..."/>
+                <div class="icon"></div>
             </div>
         </div>
-    </div>
+        <div class="row padding-bottom">
+            <button class="btn btn-success" onclick="w3.toggleClass('#filterOptions','hideFilterOptions')">Toggle Advance Filter Options</button>
+        </div>
+        <div id="filterOptions"class="hideFilterOptions padding-y padding-x">
+            <div class="row">
+                <span>Filter by age:</span>
+                <span>between</span>
+                <input class="text-dark" type="number" id="lowerAge" min="18" max="125" value="18">
+                <span>and</span>
+                <input class="text-dark" type="number" id="upperAge" min="18" max="125" value="30">
+                <button class="inline-button btn-primary" onclick="filterAge()">Filter</button>
+            </div>
+            <div class="row padding-top">
+                <span>Filter by postcode:</span>
+                <input class="text-dark" type="text" id="postcodeFilter" value="3000" maxlength="4"
+                       pattern="^(0[289][0-9]{2})|([1345689][0-9]{3})|(2[0-8][0-9]{2})|(290[0-9])|(291[0-4])|(7[0-4][0-9]{2})|(7[8-9][0-9]{2})$">
+                <button class="inline-button btn-primary" onclick="filterPostcode()">Filter</button>
+                <span id="postcodeError" class="text-red padding-x"></span>
+            </div>
+
+            <div class="row padding-top">
+                <div class="filter-bottombar padding-bottom">
+                    <span class="whiteText">Filter by match %:</span>
+                    <input type="range" class="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
+                    <span id="filterPercent">50%</span>
+                    <button class="inline-button btn-primary" onclick="filterMatches()">Filter</button>
+                </div>
+            </div>
+        </div>
 
         <div class="row" id="row">
 
         </div><br>
         @for($matchCount=0; $matchCount<count($matches); $matchCount++)
-    @if($matches[$matchCount]['matchPcent'] != 0)
-        <div onClick="submitForm()" class="card col-md-4 col-sm-6">
-          <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
-          <form id="idForm" method="POST" action="/uniqueprofile">
-            <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
-            <div class="card-body">
-              <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
-                <p class="card-text"><?php
-                  $from = new DateTime($matches[$matchCount]['user']['birthday']);
-                  $to = new DateTime('today');
-                  echo $from->diff($to)->y, " years old";?></p>
-                <p class="card-text">Postcode, {{$matches[$matchCount]['user']['postcode']}}</p>
-                {{ csrf_field() }}
-                <input type="hidden" id="idInput" name="id" value={{$matches[$matchCount]['user']['id']}} >
-                <input type="submit" value="View my profile!">
-
-              </div>
-            </div>
-            </form>
-        @endif
-    @endfor
-
-
-
+            @if($matches[$matchCount]['matchPcent'] != 0)
+                <div class="card col-md-4 col-sm-6">
+                    <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
+                    <form method="POST" action="/uniqueprofile">
+                    <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
+                    <div class="card-body">
+                        <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
+                        <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
+                        <p class="card-text">{{"Suburb: ".$matches[$matchCount]['0']['suburb']}}</p>
+                        <p class="age card-text"><?php
+                            $from = new DateTime($matches[$matchCount]['user']['birthday']);
+                            $to = new DateTime('today');
+                            echo $from->diff($to)->y, " years old";?></p>
+                        <p class="postcode card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
+                        {{ csrf_field() }}
+                        <input type="hidden" id="idInput" name="id" value={{$matches[$matchCount]['user']['id']}} >
+                        <input type="submit" value="View my profile!">
+                      </form>
+                    </div>
+                </div>
+            @endif
+        @endfor
+    </div>
+</div>
 
     <!-- Need w3.js to use their methods -->
-        <script src="https://www.w3schools.com/lib/w3.js"></script>
-        <script src="{{ asset('js/home.js') }}"></script>
-        <script>
-            function updateFilter(val){
-                document.getElementById("filterPercent").innerHTML=val+"%";
-            }
-        </script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="{{ asset('js/home.js') }}"></script>
+    <script>
+        function updateFilter(val){
+            document.getElementById("filterPercent").innerHTML=val+"%";
+        }
+    </script>
 @endsection

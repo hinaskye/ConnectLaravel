@@ -28,18 +28,6 @@ html,body,h1,h2,h3,h4,h5,h6 {
 	to{bottom:0;opacity:1}
 }
 
-.display-none{
-	display:none;
-}
-
-.display-inline{
-	display:inline;
-}
-
-.display-inline-block{
-	display: inline-block;
-}
-
 .margin-right-16{
 	margin-right: 16px!important;
 }
@@ -69,14 +57,102 @@ html,body,h1,h2,h3,h4,h5,h6 {
 
 
 
-.setting-input{
-	color:darkgray;
-	margin:10px;
+
+
+
+
+
+
+
+
+/* Modal CSS*/
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+* {
+    font-family: 'Roboto', sans-serif;
 }
 
-input,select{
-	border-radius: 10px !important;
-	color: darkgray;
-	width:80%;
-    font-size:14pt;
+.form-group {
+  color: black;
+}
+
+#submitbtn {
+  margin: 5px;
+}
+
+#img_logo {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+/* #########################################
+   #    override the bootstrap configs     #
+   ######################################### */
+
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: .8;
+}
+
+.modal-content {
+    background-color: #ececec;
+    border: 1px solid #bdc3c7;
+    border-radius: 10px;
+    outline: 0;
+}
+
+.modal-header {
+    min-height: 16.43px;
+    padding: 15px 15px 15px 15px;
+    border-bottom: 0px;
+}
+
+.modal-body {
+    position: relative;
+    padding: 5px 15px 5px 15px;
+}
+
+.modal-footer {
+    padding: 15px 15px 15px 15px;
+    text-align: left;
+    border-top: 0px;
+}
+
+.checkbox {
+    margin-bottom: 1px;
+}
+
+.btn {
+    border-radius: 1px;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+}
+
+.btn-lg, .btn-group-lg>.btn {
+    border-radius: 0px;
+}
+
+.btn-link {
+    padding: 5px 10px 0px 0px;
+    color: #95a5a6;
+}
+
+.btn-link:hover, .btn-link:focus {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.glyphicon {
+    top: 0px;
+}
+
+.form-control {
+  border-radius: 0px;
 }

@@ -240,8 +240,31 @@
                       <fieldset>
 		                <div class="modal-body">
 
+                      <legend>Edit User Details</legend>
+
                       <div class="form-group">
-                        <label class="col-lg-2 control-label">Gender</label>
+                        <label for="firstname" class="col-lg-2 control-label">First Name</label>
+                        <div class="col-lg-10">
+                          <input type="text" class="form-control" name="firstname" value="{{old('firstname')}}" placeholder='<?php echo $user->firstname ?>'>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="lastname" class="col-lg-2 control-label">Last Name</label>
+                        <div class="col-lg-10">
+                          <input type="text" class="form-control" name="lastname" value="{{old('lastname')}}" placeholder='<?php echo $user->lastname ?>'>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="username" class="col-lg-2 control-label">Username</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" name="username" value="{{old('username')}}" placeholder='<?php echo $user->username ?>'>
+                        </div>
+                    </div>
+
+                      <div class="form-group">
+                        <label class="col-lg-2 ">Gender</label>
                         <div class="col-lg-10">
                           <select class="form-control" name="gender">
                               <option value="male" name="gender">Male</option>
@@ -260,11 +283,30 @@
                       <div class="form-group">
                         <label for="email" class="col-lg-2 control-label">Email</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="inputEmail" name="email" value="{{old('email')}}" placeholder="Email">
+                            <input type="text" class="form-control" id="inputEmail" name="email" value="{{old('email')}}" placeholder='<?php echo $user->email ?>'>
                         </div>
-                      </div>
+                    </div>
+                    <br>
 
-                    <button type="submit" class="btn btn-primary">Update!</button>
+                    <legend>Edit User Preferences/Questions</legend>
+
+                    <div class="form-group">
+                        <label for="select" class="col-lg-2 control-label">What your favourite movie genre?</label>
+                        <div class="col-lg-10">
+                            <select class="form-control" name="q1">
+                                <option value="1" name="q1">Action</option>
+                                <option value="2" name="q1">Romance</option>
+                                <option value="3" name="q1">Comedy</option>
+                                <option value="4" name="q1">Horror</option>
+                                <option value="5" name="q1">Thriller</option>
+                                <option value="6" name="q1">Sci-Fi</option>
+                                <option value="7" name="q1">Disney</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <button id="Submitbtn" type="submit" class="btn btn-primary pull-right">Update!</button>
                       </fieldset>
                     </form>
                   </div>

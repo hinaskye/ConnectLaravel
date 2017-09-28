@@ -107,10 +107,10 @@ class editProfileController extends Controller
           $input['aboutme'] = $user->aboutme;
         }
 
-        if ($input['postcode'] == "")
-        {
-          $input['postcode'] = $user->postcode;
-        }
+        // if ($input['postcode'] == "")
+        // {
+        //   $input['postcode'] = $user->postcode;
+        // }
 
 
         $user->fill($input)->save();

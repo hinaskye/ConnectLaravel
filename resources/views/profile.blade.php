@@ -227,20 +227,27 @@
     	<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header" align="center">
-					<img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+            <!-- BEGIN INSERT YOUR CODE HERE FOR IMAGE UPLOAD FUNCTION CHING  -->
+          <img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
+            <!-- END INSERT YOUR CODE HERE FOR IMAGE UPLOAD FUNCTION CHING  -->
+
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 					</button>
 				</div>
 
                 <!-- Begin edit user profile form-->
-                <div id="div-forms">
+                <div class="container">
                     <form method="POST" action=""  id="login-form">
                     {{csrf_field()}}
                       <fieldset>
 		                <div class="modal-body">
 
                       <legend>Edit User Details</legend>
+
+
 
                       <div class="form-group">
                         <label for="firstname" class="col-lg-2 control-label">First Name</label>
@@ -412,7 +419,6 @@
                     </form>
                   </div>
                 <!-- End edit user form -->
-
 			</div>
 		</div>
 	</div>

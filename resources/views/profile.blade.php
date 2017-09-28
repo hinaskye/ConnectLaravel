@@ -285,7 +285,7 @@
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="inputEmail" name="email" value="{{old('email')}}" placeholder='<?php echo $user->email ?>'>
                         </div>
-                    </div>
+                      </div>
                     <br>
 
                     <legend>Edit User Preferences/Questions</legend>
@@ -305,8 +305,109 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Do you consider yourself an active person?</label>
+                        <div class="col-lg-10">
+                            <select class="form-control" name="q2">
+                                <option value="1" name="q2">Active</option>
+                                <option value="2" name="q2">Moderate</option>
+                                <option value="3" name="q2">Couch Potato</option>
+                            </select>
+                        </div>
+                    </div>
 
-                    <button id="Submitbtn" type="submit" class="btn btn-primary pull-right">Update!</button>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Would you rather stay at home, or go out with your Friends?</label>
+                        <div class="col-lg-10">
+                          <select class="form-control" name="q3">
+                              <option value="1" name="q3">Stay at home</option>
+                              <option value="2" name="q3">Go out with friends</option>
+                          </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Do you have a good sense of humour?</label>
+                        <div class="col-lg-10">
+                          <select class="form-control" name="q4">
+                              <option value="1" name="q4">Of course!</option>
+                              <option value="2" name="q4">Not at all!</option>
+                          </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Do you prefer to eat out or cook at home?</label>
+                        <div class="col-lg-10">
+                          <select class="form-control" name="q5">
+                              <option value="1" name="q5">Eat out</option>
+                              <option value="2" name="q5">Cook at home</option>
+                          </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Do you like animals?</label>
+                        <div class="col-lg-10">
+                          <select class="form-control" name="q6">
+                              <option value="1" name="q6">Yes</option>
+                              <option value="2" name="q6">No</option>
+                              <option value="3" name="q6">Neither</option>
+                          </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Do you play a musical instrument?</label>
+                        <div class="col-lg-10">
+                          <select class="form-control" name="q7">
+                              <option value="1" name="q7">Yes</option>
+                              <option value="2" name="q7">No</option>
+                          </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Would you admit to a mistake?</label>
+                        <div class="col-lg-10">
+                          <select class="form-control" name="q8">
+                              <option value="1" name="q8">Yes</option>
+                              <option value="2" name="q8">No</option>
+                          </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Do you enjoy reading?</label>
+                        <div class="col-lg-10">
+                          <select class="form-control" name="q9">
+                              <option value="1" name="q9">Yes</option>
+                              <option value="2" name="q9">No</option>
+                          </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Do you believe in fate?</label>
+                        <div class="col-lg-10">
+                          <select class="form-control" name="q10">
+                              <option value="1" name="q10">Yes</option>
+                              <option value="2" name="q10">No</option>
+                          </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                            <label for="aboutme" class="col-lg-2 control-label">About Me</label>
+                            <div class="col-lg-10">
+                                <textarea class="form-control" name="aboutme" placeholder="<?php echo $user->aboutme;?>"></textarea>
+                            </div>
+                    </div>
+
+                    <button id="Submitbtn" type="submit" class="btn btn-primary pull-right">Update!!</button>
                       </fieldset>
                     </form>
                   </div>

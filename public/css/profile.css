@@ -76,8 +76,12 @@ html,body,h1,h2,h3,h4,h5,h6 {
   color: black;
 }
 
-#submitbtn {
-  margin: 5px;
+.btn.btn-primary.pull-right {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  margin-right: 5px;
+  border-radius: 5px;
+
 }
 
 #img_logo {

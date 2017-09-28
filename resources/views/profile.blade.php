@@ -31,7 +31,6 @@
           <br>
           <legend class="text-white">
           	<?php echo $user->firstname," ", $user->lastname; ?>
-          	<a class="btn" href="#"  onclick="toggleSetting()"><i class="fa fa-cog fa-fw margin-right-16 text-large text-grey pull-right"></i></a>
           </legend>
           <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
           <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>
@@ -44,60 +43,26 @@
         </div>
       </div>
     </div>
+  <!-- End Left Column -->
 
-	<!-- Toggle settings -->
-    <div id="settings" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animate-left display-none">
-
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
-      	<h2>Settings</h2>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-          <img src="{{ asset('images/profile.jpg') }}" style="width:100%" alt="Avatar">
-
-        </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <br>
-          <legend class="text-white">
-          	<?php echo $user->firstname," ", $user->lastname; ?>
-          	<a class="btn" href="#" onclick="toggleSetting()"><i class="fa fa-times fa-fw margin-right-16 text-large text-grey pull-right"></i></a>
-          </legend>
-          <form method="post" action="">
-            {{csrf_field()}}
-			  <div class="setting-input">
-			    <span><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i></span>
-          <select class="form-control" name="gender" placeholder=<?php echo $user->gender; ?>>
-              <option value="male" name="gender">Male</option>
-              <option value="female" name="gender">Female</option>
-          </select>
-			  </div>
-			  <div class="setting-input">
-			    <span><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i></span>
-			    <input type="text" class="form-control" id="inputEmail" name="email" value="{{old('email')}}" placeholder=<?php echo $user->email; ?>>
-			  </div>
-			  <div class="setting-input">
-			    <span><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i></span>
-			    <input type="date" class="form-control" id="birthday" name="birthday" value="{{old('birthday')}}" placeholder=<?php echo $user->birthday; ?>>
-			  </div>
-			  <div class="setting-input pull-right">
-			  	<button type="submit" class="btn btn-default">
-			  </div>
-		  </form>
-		  <br>
-          <hr>
-          <br>
-        </div>
-      </div>
-    </div>
-    <!-- End Left Column -->
 
     <!-- Right Column -->
     <div id="user-info" class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12">
+          <!-- BEGIN EDIT PROFILE MODAL BUTTON -->
+          <div class="container">
+            <div class="row">
+                  <p class="text-center"><a href="#" class="btn btn-primary display-inline pull-right" role="button" data-toggle="modal" data-target="#login-modal">Edit Profile Here</a></p>
+            </div>
+          </div>
+          <!-- END EDIT PROFILE MODAL BUTTON -->
           <legend>
           	<h3 class="display-inline-block margin-top-10">About Me</h3>
-          	<a class="btn display-inline pull-right" href="#"  onclick="toggleUser()"><i class="fa fa-cog fa-fw margin-right-16 text-large text-grey"></i></a>
           </legend>
+
+
           <p><?php echo $user->aboutme; ?></p>
           <hr>
         </div>
@@ -246,151 +211,74 @@
       </div>
 
   </div>
+  <!-- End Right Column -->
 
-<!-- User Info Settings -->
-<div id="user-info-settings" class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom display-none">
-
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
-      	<h2>Settings</h2>
-        <div class="col-lg-12 col-md-12">
-        <form>
-          <legend>
-          	<h3 class="display-inline-block">About Me</h3>
-          	<a class="btn  display-inline pull-right" href="#"  onclick="toggleUser()"><i class="fa fa-times fa-fw margin-right-16 text-large text-grey"></i></a>
-          </legend>
-          <input type="text" placeholder="About Me" value=<?php echo htmlentities($user->aboutme); ?>>
-          <hr>
-        </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <legend><h3>Questions I answered...</h3></legend>
-          <h4><li>Favourite Movie Genre</li></h4>
-            <select>
-		    	<option >Action</option>
-		    	<option>Romance</option>
-		    	<option>Comedy</option>
-		    	<option>Horror</option>
-		    	<option>Thriller</option>
-		    	<option>Sci-fi</option>
-		    	<option>Disney</option>
-		    </select>
-		    <br>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h4><li>My activity level...</li></h4>
-            <select>
-            	<option>Active</option>
-		    	<option>Moderate</option>
-		    	<option>Couch Potato</option>
-		    </select>
-            <br>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h4><li>Stay at home or go out?</li></h4>
-            <select>
-            	<option>Stay at home!</option>
-            	<option>Go out with friends!</option>
-            </select>
-            <br>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h4><li>Am I funny?</li></h4>
-            <select>
-            	<option value="1">Of course!</option>
-            	<option value="2">Not really</option>
-            </select>
-            <br>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h4><li>Eat out or at home?</li></h4>
-            <select>
-            	<option>eat out</option>
-            	<option>cook at home</option>
-            </select>
-            <br>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h4><li>Animal lover?</li></h4>
-            <select>
-            	<option>Love em!</option>
-            	<option>Nope!!!</option>
-            	<option>Don't hate not like em</option>
-            </select><br>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h4><li>Play a musical instrument?</li></h4>
-            <select>
-            	<option>Hell yeah!</option>
-            	<option>Nope!!!</option>
-            </select><br>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h4><li>Do you admit mistakes?</li></h4>
-            <select>
-            	<option>Yep</option>
-            	<option>Nope!!!</option>
-            </select><br>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h4><li>Like reading?</li></h4>
-            <select>
-            	<option> Yep, books are awesome!</option>
-            	<option>Nope, reading isn't for me</option>
-            </select><br>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h4><li>Do I believe in fate??</li></h4>
-            <select>
-            	<option>Yeah, I am waiting for the one! </option>
-            	<option>No, who believes in that make believe?</option>
-            </select><br>
-        </div>
-       	 <div class="setting-input pull-right">
-	  		<input class="btn btn-default " type="submit" value="Edit">
-	 	 </div>
-      </div>
- 	 </form>
-    <!-- End Right Column -->
     </div>
-
   <!-- End Grid -->
 
-  <!-- End Page Container -->
 </div>
+<!-- End Page Container -->
 
-<script type="text/javascript">
-	function toggleSetting() {
-    var setting = document.getElementById('settings');
-    var user = document.getElementById('user-profile');
-    if (setting.style.display === 'none') {
-        setting.style.display = 'block';
-        user.style.display = 'none';
-    } else {
-        setting.style.display = 'none';
-        user.style.display = 'block';
-    }
-}
 
-function toggleUser() {
-    var setting = document.getElementById('user-info-settings');
-    var user = document.getElementById('user-info');
-    if (setting.style.display === 'none') {
-        setting.style.display = 'block';
-        user.style.display = 'none';
-    } else {
-        setting.style.display = 'none';
-        user.style.display = 'block';
-    }
-}
-</script>
+
+
+<!-- BEGIN EDIT PROFILE MODAL POPUP -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" align="center">
+					<img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+				</div>
+
+                <!-- Begin edit user profile form-->
+                <div id="div-forms">
+                    <form method="POST" action=""  id="login-form">
+                    {{csrf_field()}}
+                      <fieldset>
+		                <div class="modal-body">
+
+                      <div class="form-group">
+                        <label class="col-lg-2 control-label">Gender</label>
+                        <div class="col-lg-10">
+                          <select class="form-control" name="gender">
+                              <option value="male" name="gender">Male</option>
+                              <option value="female" name="gender">Female</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="birthday" class="col-lg-2 control-label">Birthday</label>
+                        <div class="col-lg-10">
+                            <input type="date" class="form-control" id="birthday" name="birthday" value="{{old('birthday')}}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="email" class="col-lg-2 control-label">Email</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="inputEmail" name="email" value="{{old('email')}}" placeholder="Email">
+                        </div>
+                      </div>
+
+                    <button type="submit" class="btn btn-primary">Update!</button>
+                      </fieldset>
+                    </form>
+                  </div>
+                <!-- End edit user form -->
+
+			</div>
+		</div>
+	</div>
+    <!-- END EDIT PROFILE MODAL POPUP  -->
+
+
+
+
+
 
 </body>
 </html>

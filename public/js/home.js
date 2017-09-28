@@ -41,6 +41,38 @@ function filterMatches() {
     }
 }
 
+/* filter by gender */
+function filterGender() {
+    var genderFilter = document.getElementById("genderFilter");
+    var genderSelected = genderFilter.options[genderFilter.selectedIndex].value;
+    /* get gender of each card */
+    var genders = document.getElementsByClassName("match-gender");
+    
+    /* for each match */
+    for(var i=0; i<genders.length; i++) {
+        gender = genders[i].value; /* current match's gender */
+        w3.removeClass(genders[i].parentElement.parentElement, 'hidden');
+        /* only filter if choose male or female */
+        if(genderSelected != "any")
+        {
+            if(genderSelected == "male")
+            {
+                if(gender != "male")
+                {
+                    w3.addClass(genders[i].parentElement.parentElement, 'hidden');
+                }
+            }
+            else
+            {
+                if(gender != "female")
+                {
+                    w3.addClass(genders[i].parentElement.parentElement, 'hidden');
+                }
+            }
+        }
+    }
+}
+
 /* filter by postcode */
 /* similar to filter by match */
 function filterPostcode() {

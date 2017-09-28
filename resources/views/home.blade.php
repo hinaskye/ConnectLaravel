@@ -211,6 +211,15 @@ $conn->close();
         </div>
         <div id="filterOptions"class="hideFilterOptions padding-y padding-x">
             <div class="row">
+                <span>Filter by gender:</span>
+                <select id="genderFilter" class="text-dark">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="any">Any</option>
+                </select>
+                <button class="inline-button btn-primary" onclick="filterGender()">Filter</button>
+            </div>
+            <div class="row padding-top">
                 <span>Filter by age:</span>
                 <span>between</span>
                 <input class="text-dark" type="number" id="lowerAge" min="18" max="125" value="18">
@@ -246,6 +255,7 @@ $conn->close();
                     <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
                     <div class="card-body">
                         <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
+                        <input type="hidden" class="match-gender" value="{{$matches[$matchCount]['user']['gender']}}">
                         <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
                         <p class="card-text">{{"Suburb: ".$matches[$matchCount]['0']['suburb']}}</p>
                         <p class="age card-text"><?php

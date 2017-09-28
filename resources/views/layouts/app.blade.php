@@ -61,7 +61,6 @@
                                     <li>
                                       <a href="{{ url('/home') }}">Home</a>
                                       <a href="{{ url('/profile') }}">My Profile</a>
-                                      <a href="{{ url('/profile') }}">Settings</a>
                                       <a href="{{ url('/about') }}">Founders</a>
                                       <a href="{{ route('auth.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
 
@@ -85,31 +84,27 @@
     <footer>
         <div class="container-fluid" id="footer">
             <div class="container">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <h3>Connect</h3>
                     <ul>
                         <li><a href="{{ url('/home') }}">Home</a></li>
                         <li><a href="{{ url('/profile') }}">My Profile</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <h3>About</h3>
                     <ul>
                         <li><a href="{{ url('/about') }}">Founders</a></li>
                         <li><a href="https://www.paypal.me">Donate Money</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <h3>Follow Us</h3>
                     <!-- Linked do not link to real accounts, code from free site: https://bootsnipp.com/snippets/featured/social-icon-strip-footer -->
                     <a href="https://www.facebook.com/connect"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                     <a href="https://twitter.com/connect"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
                     <a href="https://plus.google.com/connect"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
                     <a href="mailto:connect@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                    <br>
-                    <a href="{{ url('/settings') }}"><button type="button" class="btn btn-success">Settings</button></a>
                 </div>
             </div>
 

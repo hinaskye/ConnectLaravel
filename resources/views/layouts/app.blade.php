@@ -27,8 +27,8 @@
                 <div class="navbar-header">
                     <!-- Left Side Of Navbar -->
                     <div class="nav navbar-nav navbar-left nav-inline col-lg-3 col-md-3 col-sm-3 col-xs-4">
-                        <div class="nav-brand col-lg-12 col-mg-12 col-sm-12 col-xs-12"><a href="{{ url('/home') }}"><img src="{{ asset('images/Logo.png') }}" width =100%></a><li>
-                    </ul>
+                        <div class="nav-brand col-lg-12 col-mg-12 col-sm-12 col-xs-12"><a href="{{ url('/home') }}"><img src="{{ asset('images/Logo.png') }}" width =100%></a></div>
+                    </div>
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>

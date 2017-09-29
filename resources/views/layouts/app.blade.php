@@ -26,8 +26,8 @@
             <div class="container">
                 <div class="navbar-header">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-left nav-inline col-lg-2 col-md-2 col-sm-2">
-                        <li class="nav-brand col-lg-12 col-mg-12 col-sm-12 col-xs-6"><a href="{{ url('/home') }}"><img src="{{ asset('images/Logo.png') }}" width =100%></a><li>
+                    <div class="nav navbar-nav navbar-left nav-inline col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                        <div class="nav-brand col-lg-12 col-mg-12 col-sm-12 col-xs-12"><a href="{{ url('/home') }}"><img src="{{ asset('images/Logo.png') }}" width =100%></a><li>
                     </ul>
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
@@ -48,7 +48,7 @@
                             <li><a href="{{ route('auth.login') }}">Login</a></li>
                             <li><a href="{{ route('auth.register') }}">Register</a></li>
                         @else
-                        <div class="topwelcome">
+                        <div>
                             <h5 class="topusername">Welcome, <?php echo $user->username; ?></h5>
                             <li class="dropdown dropdownuser">
 
@@ -58,7 +58,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li>
+                                    <li class="dropdown-list">
                                       <a href="{{ url('/home') }}">Home</a>
                                       <a href="{{ url('/profile') }}">My Profile</a>
                                       <a href="{{ url('/about') }}">Founders</a>

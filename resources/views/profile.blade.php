@@ -3,7 +3,13 @@
 <!-- Defining $User -->
 <?php
   $user = Auth::user();
+  $userID = $user->id;
 ?>
+<?php
+                $key = $userID;
+
+                $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
+            ?>
 
 @section('content')
 <html>

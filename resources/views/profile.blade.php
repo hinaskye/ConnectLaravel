@@ -6,7 +6,7 @@
   $userID = $user->id;
 ?>
 <?php
-                $key = $matches[$matchCount]['user']['id'];
+                $key = $userID;
 
                 $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
             ?>

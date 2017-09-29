@@ -90,6 +90,43 @@
                         </div>
                     </div>
 
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">I am looking for</label>
+                            <div class="col-lg-10">
+                                <select class="form-control" name="looking">
+                                    <option value="male" name="looking">Male</option>
+                                    <option value="female" name="looking">Female</option>
+                                    <option value="both" name="looking">both</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="select" class="col-lg-2 control-label">My Level of Education</label>
+                            <div class="col-lg-10">
+                                <select class="form-control" name="myedu">
+                                    <option value="Highschool" name="myedu">High School</option>
+                                    <option value="University" name="myedu">University</option>
+                                    <option value="Masters" name="myedu">Masters</option>
+                                    <option value="PHD" name="myedu">PHD</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="select" class="col-lg-2 control-label">Education of your ideal match</label>
+                            <div class="col-lg-10">
+                                <select class="form-control" name="matchingedu">
+                                    <option value="Highschool" name="matchingedu">High School</option>
+                                    <option value="University" name="matchingedu">University</option>
+                                    <option value="Masters" name="matchingedu">Masters</option>
+                                    <option value="PHD" name="matchingedu">PHD</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
                     <br>
                     <br>
                     <div class="panel-heading"> <legend>Questions</legend></div>
@@ -213,12 +250,16 @@
                             </div>
                         </div>
 
-                    {{--<div class="form-group">--}}
-                        {{--<label class="col-lg-2 control-label">Tell me more about you.</label>--}}
-                        {{--<div class="col-lg-10">--}}
-                            {{--<input type="text" class="form-control" name="aboutme">--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
+                        <div class="form-group">
+                            <label for="postcode" class="col-lg-2 control-label">PostCode</label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" name="postcode" value="{{old('postcode')}}" placeholder="Enter Postcode...">
+                            </div>
+                        </div>
+
+
+
+
 
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">

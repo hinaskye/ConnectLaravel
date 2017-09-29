@@ -71,6 +71,14 @@ div {
     padding-bottom: 1.3em;
 }
 
+.display-none {
+  display: none;
+}
+
+.display-inlineblock{
+  display:inline-block;
+}
+
 .padding-x {
     padding-left: 2.5em;
     padding-right: 2.5em;

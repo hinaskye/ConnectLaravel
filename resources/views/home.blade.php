@@ -1,6 +1,7 @@
 <div class="cont">
 @extends('layouts.app')
 <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <?php
 //matching Algorithm code.
@@ -43,51 +44,57 @@ while ($i <= $maxID){
     if ($userID != $currentID){
 
         //Query DB for First users in DB answers to questions
-        $questionSql = "SELECT firstname, lastname, gender, birthday,
-            q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, id, aboutme, postcode
+        $questionSql = "SELECT firstname, lastname, gender,looking, myedu, matchingedu, birthday,
+            q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, id, aboutme, postcode, favourite
             FROM users WHERE id = $currentID";
         $questionResult = mysqli_query($conn, $questionSql);
         $row = mysqli_fetch_assoc($questionResult);
         $matchPcent = 0;
+        if ($user->looking == $row['gender'] or $user->looking == "both"){
 
-        if ($user->q1 == $row ['q1']){
-            $matchPcent += 10;
-        }
-        if ($user->q2 == $row ['q2']){
-            $matchPcent += 10;
-        }
-        if ($user->q3 == $row ['q3']){
-            $matchPcent += 10;
-        }
-        if ($user->q4 == $row ['q4']){
-            $matchPcent += 10;
-        }
-        if ($user->q5 == $row ['q5']){
-            $matchPcent += 10;
-        }
-        if ($user->q6 == $row ['q6']){
-            $matchPcent += 10;
-        }
-        if ($user->q7 == $row ['q7']){
-            $matchPcent += 10;
-        }
-        if ($user->q8 == $row ['q8']){
-            $matchPcent += 10;
-        }
-        if ($user->q9 == $row ['q9']){
-            $matchPcent += 10;
+            if($user->matchingedu == $row['myedu']){
+                if ($user->q1 == $row ['q1']){
+                    $matchPcent += 10;
+                }
+                if ($user->q2 == $row ['q2']){
+                    $matchPcent += 10;
+                }
+                if ($user->q3 == $row ['q3']){
+                    $matchPcent += 10;
+                }
+                if ($user->q4 == $row ['q4']){
+                    $matchPcent += 10;
+                }
+                if ($user->q5 == $row ['q5']){
+                    $matchPcent += 10;
+                }
+                if ($user->q6 == $row ['q6']){
+                    $matchPcent += 10;
+                }
+                if ($user->q7 == $row ['q7']){
+                    $matchPcent += 10;
+                }
+                if ($user->q8 == $row ['q8']){
+                    $matchPcent += 10;
+                }
+                if ($user->q9 == $row ['q9']){
+                    $matchPcent += 10;
+                }
+                if ($user->q10 == $row ['q10']){
+                    $matchPcent += 10;
+                }
 
-        }if ($user->q10 == $row ['q10']){
-            $matchPcent += 10;
-        }
+                $matchDetails = array("user"=>$row, "matchPcent"=>$matchPcent); //may want to change $row to $match
+                array_push($matches, $matchDetails);
+            }
 
-        $matchDetails = array("user"=>$row, "matchPcent"=>$matchPcent); //may want to change $row to $match
-        array_push($matches, $matchDetails);
+        }
 
     }
     $currentID ++;
     $i++;
 }
+
 
 
 //postcode to suburb algorithm
@@ -108,76 +115,77 @@ $lResult=mysqli_query($conn,$lowestSQL);
 $row = mysqli_fetch_assoc($lResult);
 $lowID = $row['id'];
 
-
-$counter = (int)$lowID-1;
+$counter = 0;
 $loopingID = (int)$lowID;
-
 
 //loops through every postcode in the user table and returns each postcode
 while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
 
     if ($userID != $loopingID){
 
-        //echo $loopingID;
-        if($matches[$counter]['user'] != null){
+        if ($counter < sizeof($matches)){
 
-            $userPostcodeArray[] = $loopRow;
-            $searchPC = $loopRow['postcode'];
+            if ($matches[$counter]['user']['id'] >= 0 ){
 
-            //gives all the data for a row that matches the postcode of the users
-            $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
-                FROM postcodes WHERE postcode = $searchPC";
-            $pcResult = mysqli_query($conn, $postcodeSql);
-            $pcRow = mysqli_fetch_assoc($pcResult);
+                $userPostcodeArray[] = $loopRow;
+                $searchPC = $loopRow['postcode'];
 
-
-            //distance from user algorithm
-
-            //get the users postcode
-            $logUserPostCodeSQL = "SELECT postcode FROM users WHERE id = $userID";
-            $logUserPostCodeResult = mysqli_query($conn, $logUserPostCodeSQL);
-            $logUserPostCode = mysqli_fetch_assoc($logUserPostCodeResult);
-            $logUserPostCodeCall = $logUserPostCode['postcode'];
+                //gives all the data for a row that matches the postcode of the users
+                $postcodeSql = "SELECT id, postcode, suburb, state, latitude, longitude
+                    FROM postcodes WHERE postcode = $searchPC";
+                $pcResult = mysqli_query($conn, $postcodeSql);
+                $pcRow = mysqli_fetch_assoc($pcResult);
 
 
-            //get the users postcode to get latitude and longitude
-            $logUserLatSQL = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCodeCall";
-            $logUserLatResult = mysqli_query($conn, $logUserLatSQL);
-            $logUserLat = mysqli_fetch_assoc($logUserLatResult);
-            $logUserLatCall = $logUserLat['latitude'];
+                //distance from user algorithm
 
-            $logUserLonSQL = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCodeCall";
-            $logUserLonResult = mysqli_query($conn, $logUserLonSQL);
-            $logUserLon = mysqli_fetch_assoc($logUserLonResult);
-            $logUserLonCall = $logUserLon['longitude'];
+                //get the users postcode
+                $logUserPostCodeSQL = "SELECT postcode FROM users WHERE id = $userID";
+                $logUserPostCodeResult = mysqli_query($conn, $logUserPostCodeSQL);
+                $logUserPostCode = mysqli_fetch_assoc($logUserPostCodeResult);
+                $logUserPostCodeCall = $logUserPostCode['postcode'];
 
 
-            $logUserLatCallConvert = floatval($logUserLatCall);
-            $logUserLonCallConvert = floatval($logUserLonCall);
+                //get the users postcode to get latitude and longitude
+                $logUserLatSQL = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCodeCall";
+                $logUserLatResult = mysqli_query($conn, $logUserLatSQL);
+                $logUserLat = mysqli_fetch_assoc($logUserLatResult);
+                $logUserLatCall = $logUserLat['latitude'];
 
-            $currentUserLat = $pcRow['latitude'];
-            $currentUserLatConvert = floatval($currentUserLat);
+                $logUserLonSQL = "SELECT longitude FROM postcodes WHERE postcode = $logUserPostCodeCall";
+                $logUserLonResult = mysqli_query($conn, $logUserLonSQL);
+                $logUserLon = mysqli_fetch_assoc($logUserLonResult);
+                $logUserLonCall = $logUserLon['longitude'];
 
-            $currentUserLon = $pcRow['longitude'];
-            $currentUserLonConvert = floatval($currentUserLon);
+
+                $logUserLatCallConvert = floatval($logUserLatCall);
+                $logUserLonCallConvert = floatval($logUserLonCall);
+
+                $currentUserLat = $pcRow['latitude'];
+                $currentUserLatConvert = floatval($currentUserLat);
+
+                $currentUserLon = $pcRow['longitude'];
+                $currentUserLonConvert = floatval($currentUserLon);
 
 
-            //Longitude & Latitude to distance algorithm (code based of code from: http://www.geodatasource.com/developers/php)
-            $unit = "K";
+                //Longitude & Latitude to distance algorithm (code based of code from: http://www.geodatasource.com/developers/php)
+                $unit = "K";
 
-            $theta = $currentUserLonConvert - $logUserLonCallConvert;
-            $dist = sin(deg2rad($currentUserLatConvert)) * sin(deg2rad($logUserLatCallConvert)) +  cos(deg2rad($currentUserLatConvert)) * cos(deg2rad($logUserLatCallConvert)) * cos(deg2rad($theta));
-            $dist = acos($dist);
-            $dist = rad2deg($dist);
-            $miles = $dist * 60 * 1.1515;
-            $unit = strtoupper($unit);
+                $theta = $currentUserLonConvert - $logUserLonCallConvert;
+                $dist = sin(deg2rad($currentUserLatConvert)) * sin(deg2rad($logUserLatCallConvert)) +  cos(deg2rad($currentUserLatConvert)) * cos(deg2rad($logUserLatCallConvert)) * cos(deg2rad($theta));
+                $dist = acos($dist);
+                $dist = rad2deg($dist);
+                $miles = $dist * 60 * 1.1515;
+                $unit = strtoupper($unit);
+                //converting to Kilometres
+                $kilometresFloat = $miles * 1.6;
+                $kilometres = round($kilometresFloat);
+                $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
 
-            $kilometresFloat = $miles * 1.6;
-            $kilometres = round($kilometresFloat);
-            $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
-            array_push($matches[$counter], $locoArray);
+                array_push($matches[$counter], $locoArray);
+                ++$counter;
 
-            ++$counter;
+            }
         }
 
     }
@@ -195,6 +203,12 @@ $conn->close();
 //test printing of matchDetails
 //print_r($matches);
 ?>
+
+
+
+
+
+
 
 @section('content')
     <div class="container">
@@ -254,15 +268,25 @@ $conn->close();
                     <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
                     <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
                     <div class="card-body">
+                        <p id="blank{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-inlineblock" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
+                            <i class="fa fa-heart-o fa-2x margin-right-16 text-large text-grey"></i>
+                        </p>
+                        <p id="fill{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-none" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
+                            <i class="fa fa-heart fa-2x margin-right-16 text-large text-grey"></i>
+                        </p>
                         <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
                         <input type="hidden" class="match-gender" value="{{$matches[$matchCount]['user']['gender']}}">
                         <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
+                        <p class="card-text">{{"Approx: ".$matches[$matchCount]['0']['distance']."kms away"}}</p>
                         <p class="card-text">{{"Suburb: ".$matches[$matchCount]['0']['suburb']}}</p>
                         <p class="age card-text"><?php
                             $from = new DateTime($matches[$matchCount]['user']['birthday']);
                             $to = new DateTime('today');
                             echo $from->diff($to)->y, " years old";?></p>
                         <p class="postcode card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
+                        <button type="button" href="#" id="chat{{ $matches[$matchCount]['user']['id'] }}" class="btn btn-info display-inlineblock pull-right" disabled>
+                            <i class="fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>Chat
+                        </button>
                     </div>
                 </div>
             @endif
@@ -271,11 +295,29 @@ $conn->close();
 </div>
 
     <!-- Need w3.js to use their methods -->
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
-    <script src="{{ asset('js/home.js') }}"></script>
-    <script>
-        function updateFilter(val){
-            document.getElementById("filterPercent").innerHTML=val+"%";
-        }
-    </script>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <script src="{{ asset('js/home.js') }}"></script>
+        <script>
+            function updateFilter(val){
+                document.getElementById("filterPercent").innerHTML=val+"%";
+            }
+
+            function like(id){
+                var id = id.toString();
+                var blank = document.getElementById("blank"+id);
+                var fill = document.getElementById("fill"+id);
+                if(blank.style.display === 'inline-block'){
+                    fill.style.display = 'inline-block';
+                    blank.style.display = 'none';
+                    document.getElementById('chat'+id).disabled = false;
+                }
+                else{
+                    fill.style.display = 'none';
+                    blank.style.display = 'inline-block';
+                    document.getElementById('chat'+id).disabled = true;
+                }
+            }
+        </script>
 @endsection
+
+

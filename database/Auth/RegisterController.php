@@ -55,6 +55,9 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'gender' => 'required|in:male,female',
+            'looking' => 'required|in:male,female,both',
+            'myedu' => 'required|myedu',
+            'matchingedu' => 'required|matchingedu',
             'birthday' => 'required|date',
             'q1' => 'required|q1',
             'q2' => 'required|q2',
@@ -66,7 +69,8 @@ class RegisterController extends Controller
             'q8' => 'required|q8',
             'q9' => 'required|q9',
             'q10' => 'required|q10',
-            'aboutme' => 'required|string|max:255'
+            'aboutme' => 'required|aboutme',
+            'postcode' => 'required|postcode',
         ]);
     }
 
@@ -86,6 +90,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'gender' => $data['gender'],
+            'looking' => $data['looking'],
+            'myedu' => $data['myedu'],
+            'matchingedu' => $data['matchingedu'],
             'birthday' => $data['birthday'],
             'photo' => $data['photo'],
             'q1' => $data['q1'],
@@ -98,7 +105,9 @@ class RegisterController extends Controller
             'q8' => $data['q8'],
             'q9' => $data['q9'],
             'q10' => $data['q10'],
-            'aboutme' => $data['aboutme']
+            'aboutme' => $data ['aboutme'],
+            'postcode' => $data ['postcode'],
+
         ]);
     }
 }

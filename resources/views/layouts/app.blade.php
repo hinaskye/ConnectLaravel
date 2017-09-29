@@ -48,7 +48,7 @@
                             <li><a href="{{ route('auth.login') }}">Login</a></li>
                             <li><a href="{{ route('auth.register') }}">Register</a></li>
                         @else
-                        <div class="topwelcome">
+                        <div>
                             <h5 class="topusername">Welcome, <?php echo $user->username; ?></h5>
                             <li class="dropdown dropdownuser">
 
@@ -58,7 +58,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li>
+                                    <li class="dropdown-list">
                                       <a href="{{ url('/home') }}">Home</a>
                                       <a href="{{ url('/profile') }}">My Profile</a>
                                       <a href="{{ url('/about') }}">Founders</a>

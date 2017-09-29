@@ -136,6 +136,10 @@ while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
                 $pcResult = mysqli_query($conn, $postcodeSql);
                 $pcRow = mysqli_fetch_assoc($pcResult);
 
+                //query user DB to get the postcodes of all users are put them in an array
+                $userPostCodeSQL = "SELECT postcode FROM users";
+                $userPostCodeResult=mysqli_query($conn,$userPostCodeSQL);
+                $userPostCode = mysqli_fetch_assoc($userPostCodeResult);
 
                 //distance from user algorithm
 
@@ -145,6 +149,10 @@ while ($loopRow = mysqli_fetch_assoc($userPostCodeQuery)){
                 $logUserPostCode = mysqli_fetch_assoc($logUserPostCodeResult);
                 $logUserPostCodeCall = $logUserPostCode['postcode'];
 
+                $lowestSQL = "SELECT min(id) as id FROM users";
+                $lResult=mysqli_query($conn,$lowestSQL);
+                $row = mysqli_fetch_assoc($lResult);
+                $lowID = $row['id'];
 
                 //get the users postcode to get latitude and longitude
                 $logUserLatSQL = "SELECT latitude FROM postcodes WHERE postcode = $logUserPostCodeCall";

@@ -10,6 +10,13 @@
 
                 $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
             ?>
+<script type="text/javascript">
+  function imgError(image) {
+    image.onerror = "";
+    image.src = "/images/profile.jpg";
+    return true;
+}
+</script>
 @section('content')
 <html>
 <title>Connect Profile</title>
@@ -31,10 +38,7 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-            @if(!file_exists(src="{!! $file['url'] !!}") <img src="images/profile.jpg" width="100%" height="300em" style="border-radius: 3em;">
-             @else 
-             <img src="{!! $file['url'] !!}" width="100%" height="300em" style="border-radius: 3em;"> 
-             @endif
+             <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;"> 
           <!--<img src="{!! $file['url'] !!}" width="100%" height="300em" style="border-radius: 3em;" >-->
       @if (count($errors) > 0)
    <div class="alert alert-danger">

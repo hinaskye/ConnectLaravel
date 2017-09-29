@@ -68,7 +68,7 @@
           <p><?php echo $user->aboutme; ?></p>
           <hr>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <legend><h3>Questions I answered...</h3></legend>
           <h4><li>Favourite Movie Genre</li></h4>
             <p> I like to watch

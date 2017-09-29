@@ -1,4 +1,4 @@
-<div class="style">
+<div class="cont">
 @extends('layouts.app')
 <link href="{{ asset('css/register.css') }}" rel="stylesheet">
 

@@ -1,8 +1,11 @@
-.style{
+.cont{
   position: relative;
-  height: 100%;
   background-image: url("http://cdn.wallpapersafari.com/26/2/UNhoE1.jpg");
   background-size: cover;
+  background-attachment: fixed;
   overflow: auto;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  display: table;
+  height: 100%;
+  width:100%;
 }

@@ -204,11 +204,11 @@ $conn->close();
 //print_r($matches);
 ?>
 
-
-
-
-
-
+<?php
+        $user = Auth::user();
+        $userPostcode = $user->postcode;
+        $json = "http://v0.postcodeapi.com.au/suburbs/" .$userPostcode.".json";
+?>
 
 @section('content')
     <div class="container">
@@ -264,7 +264,8 @@ $conn->close();
         </div><br>
         @for($matchCount=0; $matchCount<count($matches); $matchCount++)
             @if($matches[$matchCount]['matchPcent'] != 0)
-                <div class="card col-md-4 col-sm-6">
+            <form id="idForm" method="POST" action="/uniqueprofile">
+                <div onClick="submitForm()" class="card col-md-4 col-sm-6">
                     <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
                     <img class="card-img-top" src="/images/blank-female-profile-user.png" width="100%" alt="Match Image">
                     <div class="card-body">
@@ -284,40 +285,48 @@ $conn->close();
                             $to = new DateTime('today');
                             echo $from->diff($to)->y, " years old";?></p>
                         <p class="postcode card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
+                        {{ csrf_field() }}
+                        <input type="hidden" id="idInput" name="id" value={{$matches[$matchCount]['user']['id']}} >
+                        <input type="submit" value="View my profile!">
                         <button type="button" href="#" id="chat{{ $matches[$matchCount]['user']['id'] }}" class="btn btn-info display-inlineblock pull-right" disabled>
                             <i class="fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>Chat
                         </button>
                     </div>
                 </div>
+            </form>
             @endif
         @endfor
     </div>
 </div>
 
-    <!-- Need w3.js to use their methods -->
-        <script src="https://www.w3schools.com/lib/w3.js"></script>
-        <script src="{{ asset('js/home.js') }}"></script>
-        <script>
-            function updateFilter(val){
-                document.getElementById("filterPercent").innerHTML=val+"%";
-            }
+<!-- Need w3.js to use their methods -->
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script src="{{ asset('js/home.js') }}"></script>
+<script>
+    function updateFilter(val){
+        document.getElementById("filterPercent").innerHTML=val+"%";
+    }
 
-            function like(id){
-                var id = id.toString();
-                var blank = document.getElementById("blank"+id);
-                var fill = document.getElementById("fill"+id);
-                if(blank.style.display === 'inline-block'){
-                    fill.style.display = 'inline-block';
-                    blank.style.display = 'none';
-                    document.getElementById('chat'+id).disabled = false;
-                }
-                else{
-                    fill.style.display = 'none';
-                    blank.style.display = 'inline-block';
-                    document.getElementById('chat'+id).disabled = true;
-                }
-            }
-        </script>
+    function like(id){
+        var id = id.toString();
+        var blank = document.getElementById("blank"+id);
+        var fill = document.getElementById("fill"+id);
+        if(blank.style.display === 'inline-block'){
+            fill.style.display = 'inline-block';
+            blank.style.display = 'none';
+            document.getElementById('chat'+id).disabled = false;
+        }
+        else{
+            fill.style.display = 'none';
+            blank.style.display = 'inline-block';
+            document.getElementById('chat'+id).disabled = true;
+        }
+    }
+
+    function submitForm() {
+        document.getElementById('idForm').submit();
+    }
+</script>
 @endsection
 
 

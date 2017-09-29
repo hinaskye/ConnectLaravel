@@ -33,8 +33,6 @@
           <br>
           <legend class="text-white"><?php echo $user->firstname," ", $user->lastname; ?></legend>
           <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
-          <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>
-          <p><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i><?php
             $from = new DateTime($user->birthday);
             $to = new DateTime('today');
             echo $from->diff($to)->y, " years old";?></p>
@@ -58,6 +56,11 @@
           <p><?php echo $user->aboutme; ?></p><br>
           <hr>
         </div>
+      </div>
+    </div>
+
+      <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <legend><h3>Questions I answered...</h3></legend>
           <h4><li>Favourite Movie Genre</li></h4>

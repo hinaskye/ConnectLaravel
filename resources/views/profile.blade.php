@@ -31,7 +31,7 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-          <img src="{!! $file['url'] !!}" style="width:100%" alt="Avatar">
+          <img src="{!! $file['url'] !!}" width="100%" height="300em" alt="Match Image" style="border-radius: 3em;" alt="Avatar">
       @if (count($errors) > 0)
    <div class="alert alert-danger">
       <strong>Whoops!</strong> There were some problems with your input.<br><br>

@@ -31,10 +31,7 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-          <object data="{{ asset('images/profile.jpg') }}" type="image/png">
-            <img src="{!! $file['url'] !!}" width="100%" height="300em" alt="Match Image" style="border-radius: 3em;" alt="Avatar">
-          </object>
-          
+          <img src="{!! $file['url'] !!}" width="100%" height="300em" alt="Match Image" style="border-radius: 3em;" alt="Avatar" onError="this.onerror=null;this.src={{ asset('images/profile.jpg') }};">
       @if (count($errors) > 0)
    <div class="alert alert-danger">
       <strong>Whoops!</strong> There were some problems with your input.<br><br>

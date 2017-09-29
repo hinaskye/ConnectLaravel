@@ -217,6 +217,13 @@ $conn->close();
         $userPostcode = $user->postcode;
         $json = "http://v0.postcodeapi.com.au/suburbs/" .$userPostcode.".json";
 ?>
+<script type="text/javascript">
+  function imgError(image) {
+    image.onerror = "";
+    image.src = "/images/profile.jpg";
+    return true;
+}
+</script>
 
 @section('content')
     <div class="container">
@@ -281,7 +288,7 @@ $conn->close();
                   <form id="idForm" method="POST" action="/uniqueprofile">
                     <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
                     <br>
-                    <img class="card-img-top" src="{!! $file['url'] !!}" width="100%" height="300em" alt="Match Image" style="border-radius: 3em;">
+                    <img class="card-img-top" src="{!! $file['url'] !!}"  onerror="imgError(this);" width="100%" height="300em" alt="Match Image" style="border-radius: 3em;">
                     <div class="card-body">
                         <p id="blank{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-inlineblock" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
                             <i class="fa fa-heart-o fa-2x margin-right-16 text-large text-grey"></i>

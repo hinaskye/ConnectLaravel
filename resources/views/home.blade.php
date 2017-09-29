@@ -280,7 +280,7 @@ $conn->close();
                 <div class="card col-md-4 col-sm-6">
                   <form id="idForm" method="POST" action="/uniqueprofile">
                     <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
-                    <img class="card-img-top" src="{!! $file['url'] !!}" width="100%" height="40%"" alt="Match Image">
+                    <img class="card-img-top" src="{!! $file['url'] !!}" width="100%" height="40%" alt="Match Image">
                     <div class="card-body">
                         <p id="blank{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-inlineblock" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
                             <i class="fa fa-heart-o fa-2x margin-right-16 text-large text-grey"></i>

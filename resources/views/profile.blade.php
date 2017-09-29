@@ -31,7 +31,8 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-          <img src="{!! $file['url'] !!}" width="100%" height="300em" onerror="this.src=/images/profile.jpg" style="border-radius: 3em;" >
+            @if(!file_exist($file->name)) <img src="images/profile.jpg"> @else <img src="{!! $file['url'] !!}" width="100%" height="300em" style="border-radius: 3em;"> @endif
+          <!--<img src="{!! $file['url'] !!}" width="100%" height="300em" style="border-radius: 3em;" >-->
       @if (count($errors) > 0)
    <div class="alert alert-danger">
       <strong>Whoops!</strong> There were some problems with your input.<br><br>

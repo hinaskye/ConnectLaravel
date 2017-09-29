@@ -29,8 +29,12 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <br>
-          <legend class="text-white"><?php echo $user->firstname," ", $user->lastname; ?></legend>
+          <legend class="text-white">
+          	<?php echo $user->firstname," ", $user->lastname; ?>
+          </legend>
           <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
+          <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>
+          <p><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i><?php
             $from = new DateTime($user->birthday);
             $to = new DateTime('today');
             echo $from->diff($to)->y, " years old";?></p>
@@ -40,7 +44,6 @@
       </div>
     </div>
   <!-- End Left Column -->
-
 
     <!-- Right Column -->
     <div id="user-info" class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">

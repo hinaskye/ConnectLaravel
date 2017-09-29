@@ -31,7 +31,7 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-          <object data="{{ asset('css/profile.css') }}" type="image/png">
+          <object data="{{ asset('images/profile.jpg') }}" type="image/png">
             <img src="{!! $file['url'] !!}" width="100%" height="300em" alt="Match Image" style="border-radius: 3em;" alt="Avatar">
           </object>
           

@@ -18,7 +18,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--this css links gives the logo-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<img class="card-img-top" src="{!! $file['url'] !!}" width="100%" alt="Image">
 <body>
 
 <!-- Page Container -->
@@ -32,7 +31,7 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-          <img src="{{ asset('images/profile.jpg') }}" style="width:100%" alt="Avatar">
+          <img src="{!! $file['url'] !!}" style="width:100%" alt="Avatar">
       @if (count($errors) > 0)
    <div class="alert alert-danger">
       <strong>Whoops!</strong> There were some problems with your input.<br><br>

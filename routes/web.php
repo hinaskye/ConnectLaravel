@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
+//Route::get('/profile', function () {
+    //return view('profile');
+//});
 
 Route::post('/uniqueprofile',['uses'=>'passIDController@userID']);
 
@@ -57,5 +57,8 @@ Route::post('Login','CustomAuthController@login');
 
 Route::post('Logout','CustomAuthController@logout')->name('auth.logout');
 
-Route::get('s3-image-upload','S3ImageController@imageUpload');
-Route::post('s3-image-upload','S3ImageController@imageUploadPost');
+Route::get('profile','S3ImageController@imageUpload');
+Route::post('profile','S3ImageController@imageUploadPost');
+
+//Route::get('s3-image-upload','S3ImageController@imageUpload');
+//Route::post('s3-image-upload','S3ImageController@imageUploadPost');

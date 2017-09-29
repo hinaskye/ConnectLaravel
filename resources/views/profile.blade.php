@@ -4,11 +4,13 @@
 <?php
   $user = Auth::user();
 ?>
+
 @section('content')
 <html>
 <title>Connect Profile</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--this css links gives the logo-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
 <body>
@@ -29,15 +31,16 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <br>
-          <legend class="text-white">
-          	<?php echo $user->firstname," ", $user->lastname; ?>
-          </legend>
+          <legend class="text-white"><?php echo $user->firstname," ", $user->lastname; ?></legend>
           <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
           <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>
           <p><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i><?php
             $from = new DateTime($user->birthday);
             $to = new DateTime('today');
             echo $from->diff($to)->y, " years old";?></p>
+          <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
+          <p><i class="fa fa-globe fa-fw margin-right-16 text-large text-grey"></i>Postcode, <?php echo $user->postcode; ?></p>
+          <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>
           <hr>
           <br>
         </div>
@@ -65,7 +68,7 @@
           <p><?php echo $user->aboutme; ?></p>
           <hr>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
           <legend><h3>Questions I answered...</h3></legend>
           <h4><li>Favourite Movie Genre</li></h4>
             <p> I like to watch
@@ -206,7 +209,10 @@
             echo "No, who believes in that make believe?";
             }
             ?></p><br>
+            <br>
+            <hr>
         </div>
+
       </div>
 
   </div>
@@ -422,11 +428,6 @@
 		</div>
 	</div>
     <!-- END EDIT PROFILE MODAL POPUP  -->
-
-
-
-
-
 
 </body>
 </html>

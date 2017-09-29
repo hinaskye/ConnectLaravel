@@ -1,12 +1,3 @@
-<?php
-	$user = Auth::user();
-    $userID = $user->id;
-    /* Set bucket */
-    /* Set file key */
-    $key = $user->id;
-    $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
-echo $file['url'];
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +7,6 @@ echo $file['url'];
 <body>
 
 <div class="container">
-	<img src="{!! $file['url'] !!}">
   <div class="panel panel-primary">
     <div class="panel-heading"><h2>Laravel 5.3 Amazon S3 Image Upload with Validation example</h2></div>
 

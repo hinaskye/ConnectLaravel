@@ -16,7 +16,6 @@ echo $file['url'];
 <body>
 
 <div class="container">
-	<img src="{!! $file['url'] !!}">
   <div class="panel panel-primary">
     <div class="panel-heading"><h2>Laravel 5.3 Amazon S3 Image Upload with Validation example</h2></div>
 

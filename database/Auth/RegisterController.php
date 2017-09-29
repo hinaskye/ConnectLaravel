@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'q9' => 'required|q9',
             'q10' => 'required|q10',
             'aboutme' => 'required|aboutme',
-            'postcode' => 'required|postcode'
+            'postcode' => 'required|postcode',
         ]);
     }
 
@@ -106,7 +106,7 @@ class RegisterController extends Controller
             'q9' => $data['q9'],
             'q10' => $data['q10'],
             'aboutme' => $data ['aboutme'],
-            'postcode' => $data ['postcode']
+            'postcode' => $data ['postcode'],
 
         ]);
     }

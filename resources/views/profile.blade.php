@@ -3,12 +3,23 @@
 <!-- Defining $User -->
 <?php
   $user = Auth::user();
+  $userID = $user->id;
+  $key = $userID;
+  $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
 ?>
+<script type="text/javascript">
+  function imgError(image) {
+    image.onerror = "";
+    image.src = "/images/profile.jpg";
+    return true;
+}
+</script>
 @section('content')
 <html>
 <title>Connect Profile</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--this css links gives the logo-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
 <body>
@@ -24,20 +35,18 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-          <img src="{{ asset('images/profile.jpg') }}" style="width:100%" alt="Avatar">
-
+             <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;">
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <br>
-          <legend class="text-white">
-          	<?php echo $user->firstname," ", $user->lastname; ?>
-          </legend>
+          <legend class="text-white"><?php echo $user->firstname," ", $user->lastname; ?></legend>
           <p><i class="fa fa-user fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->gender; ?></p>
           <p><i class="fa fa-envelope fa-fw margin-right-16 text-large text-grey"></i><?php echo $user->email; ?></p>
           <p><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i><?php
             $from = new DateTime($user->birthday);
             $to = new DateTime('today');
             echo $from->diff($to)->y, " years old";?></p>
+            <p><i class="fa fa-globe fa-fw margin-right-16 text-large text-grey"></i>Postcode, <?php echo $user->postcode; ?></p>
           <hr>
           <br>
         </div>
@@ -206,7 +215,10 @@
             echo "No, who believes in that make believe?";
             }
             ?></p><br>
+            <br>
+            <hr>
         </div>
+
       </div>
 
   </div>
@@ -218,9 +230,6 @@
 </div>
 <!-- End Page Container -->
 
-
-
-
 <!-- BEGIN EDIT PROFILE MODAL POPUP -->
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     	<div class="modal-dialog">
@@ -228,7 +237,39 @@
 				<div class="modal-header" align="center">
 
             <!-- BEGIN INSERT YOUR CODE HERE FOR IMAGE UPLOAD FUNCTION CHING  -->
-          <img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
+                 <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;">
+              <!--<img src="{!! $file['url'] !!}" width="100%" height="300em" style="border-radius: 3em;" >-->
+          @if (count($errors) > 0)
+       <div class="alert alert-danger">
+          <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+         </ul>
+          </div>
+          @endif
+
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ $message }}</strong>
+        </div>
+        @endif
+
+        <form action="{{ url('profile') }}" enctype="multipart/form-data" method="POST">
+        {{ csrf_field() }}
+        <div class="row">
+          <div class="col-md-12">
+            <input type="file" name="image" />
+          </div>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-success">Upload</button>
+          </div>
+        </div>
+        </form>
+            </div>
             <!-- END INSERT YOUR CODE HERE FOR IMAGE UPLOAD FUNCTION CHING  -->
 
 
@@ -238,195 +279,251 @@
 				</div>
 
                 <!-- Begin edit user profile form-->
-                <div class="container">
-                    <form method="POST" action=""  id="login-form">
-                    {{csrf_field()}}
+                <div class="modal-container">
+                  <form class="form-horizontal" method="POST" action="">
+                      {{csrf_field()}}
                       <fieldset>
-		                <div class="modal-body">
+                          <div class="panel panel-default">
 
-                      <legend>Edit User Details</legend>
-
-
-
-                      <div class="form-group">
-                        <label for="firstname" class="col-lg-2 control-label">First Name</label>
-                        <div class="col-lg-10">
-                          <input type="text" class="form-control" name="firstname" value="{{old('firstname')}}" placeholder='<?php echo $user->firstname ?>'>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="lastname" class="col-lg-2 control-label">Last Name</label>
-                        <div class="col-lg-10">
-                          <input type="text" class="form-control" name="lastname" value="{{old('lastname')}}" placeholder='<?php echo $user->lastname ?>'>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="username" class="col-lg-2 control-label">Username</label>
-                        <div class="col-lg-10">
-                            <input type="text" class="form-control" name="username" value="{{old('username')}}" placeholder='<?php echo $user->username ?>'>
-                        </div>
-                    </div>
-
-                      <div class="form-group">
-                        <label class="col-lg-2 ">Gender</label>
-                        <div class="col-lg-10">
-                          <select class="form-control" name="gender">
-                              <option value="male" name="gender">Male</option>
-                              <option value="female" name="gender">Female</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="birthday" class="col-lg-2 control-label">Birthday</label>
-                        <div class="col-lg-10">
-                            <input type="date" class="form-control" id="birthday" name="birthday" value="{{old('birthday')}}">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="email" class="col-lg-2 control-label">Email</label>
-                        <div class="col-lg-10">
-                            <input type="text" class="form-control" id="inputEmail" name="email" value="{{old('email')}}" placeholder='<?php echo $user->email ?>'>
-                        </div>
-                      </div>
-                    <br>
-
-                    <legend>Edit User Preferences/Questions</legend>
-
-                    <div class="form-group">
-                        <label for="select" class="col-lg-2 control-label">What your favourite movie genre?</label>
-                        <div class="col-lg-10">
-                            <select class="form-control" name="q1">
-                                <option value="1" name="q1">Action</option>
-                                <option value="2" name="q1">Romance</option>
-                                <option value="3" name="q1">Comedy</option>
-                                <option value="4" name="q1">Horror</option>
-                                <option value="5" name="q1">Thriller</option>
-                                <option value="6" name="q1">Sci-Fi</option>
-                                <option value="7" name="q1">Disney</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label">Do you consider yourself an active person?</label>
-                        <div class="col-lg-10">
-                            <select class="form-control" name="q2">
-                                <option value="1" name="q2">Active</option>
-                                <option value="2" name="q2">Moderate</option>
-                                <option value="3" name="q2">Couch Potato</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label">Would you rather stay at home, or go out with your Friends?</label>
-                        <div class="col-lg-10">
-                          <select class="form-control" name="q3">
-                              <option value="1" name="q3">Stay at home</option>
-                              <option value="2" name="q3">Go out with friends</option>
-                          </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label">Do you have a good sense of humour?</label>
-                        <div class="col-lg-10">
-                          <select class="form-control" name="q4">
-                              <option value="1" name="q4">Of course!</option>
-                              <option value="2" name="q4">Not at all!</option>
-                          </select>
-                        </div>
-                    </div>
+                          <div class="panel-body">
+                            <legend>Edit User Details</legend>
 
 
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label">Do you prefer to eat out or cook at home?</label>
-                        <div class="col-lg-10">
-                          <select class="form-control" name="q5">
-                              <option value="1" name="q5">Eat out</option>
-                              <option value="2" name="q5">Cook at home</option>
-                          </select>
-                        </div>
-                    </div>
+                          <div class="form-group">
+                              <label for="firstname" class="col-lg-2 control-label">First Name</label>
+                              <div class="col-lg-10">
+                                  <input type="text" class="form-control" name="firstname" value="{{old('firstname')}}" placeholder="First Name">
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="lastname" class="col-lg-2 control-label">Last Name</label>
+                              <div class="col-lg-10">
+                                  <input type="text" class="form-control" name="lastname" value="{{old('lastname')}}" placeholder="Last Name">
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="username" class="col-lg-2 control-label">Username</label>
+                              <div class="col-lg-10">
+                                  <input type="text" class="form-control" name="username" value="{{old('username')}}" placeholder="Username">
+                              </div>
+                          </div>
 
 
+                          <div class="form-group">
+                              <label for="email" class="col-lg-2 control-label">Email</label>
+                              <div class="col-lg-10">
+                                  <input type="text" class="form-control" id="inputEmail" name="email" value="{{old('email')}}" placeholder="Email">
+                              </div>
+                          </div>
 
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label">Do you like animals?</label>
-                        <div class="col-lg-10">
-                          <select class="form-control" name="q6">
-                              <option value="1" name="q6">Yes</option>
-                              <option value="2" name="q6">No</option>
-                              <option value="3" name="q6">Neither</option>
-                          </select>
-                        </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label">Do you play a musical instrument?</label>
-                        <div class="col-lg-10">
-                          <select class="form-control" name="q7">
-                              <option value="1" name="q7">Yes</option>
-                              <option value="2" name="q7">No</option>
-                          </select>
-                        </div>
-                    </div>
+                          <div class="form-group">
+                              <label for="password" class="col-lg-2 control-label">Password</label>
+                              <div class="col-lg-10">
+                                  <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
+                              </div>
+                          </div>
 
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label">Would you admit to a mistake?</label>
-                        <div class="col-lg-10">
-                          <select class="form-control" name="q8">
-                              <option value="1" name="q8">Yes</option>
-                              <option value="2" name="q8">No</option>
-                          </select>
-                        </div>
-                    </div>
+                          <div class="form-group">
+                              <label for="password" class="col-lg-2 control-label">Confirm Password</label>
+                              <div class="col-lg-10">
+                                  <input type="password" class="form-control" id="inputPassword" name="password_confirmation" placeholder="Password">
+                              </div>
+                          </div>
 
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label">Do you enjoy reading?</label>
-                        <div class="col-lg-10">
-                          <select class="form-control" name="q9">
-                              <option value="1" name="q9">Yes</option>
-                              <option value="2" name="q9">No</option>
-                          </select>
-                        </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label class="col-lg-2 control-label">Do you believe in fate?</label>
-                        <div class="col-lg-10">
-                          <select class="form-control" name="q10">
-                              <option value="1" name="q10">Yes</option>
-                              <option value="2" name="q10">No</option>
-                          </select>
-                        </div>
-                    </div>
+                          <div class="form-group">
+                              <label for="birthday" class="col-lg-2 control-label">Birthday</label>
+                              <div class="col-lg-10">
+                                  <input type="text" class="form-control" id="birthday" name="birthday" value="{{old('birthday')}}" placeholder="YYYY-MM-DD">
+                              </div>
+                          </div>
 
-                    <div class="form-group">
-                            <label for="aboutme" class="col-lg-2 control-label">About Me</label>
-                            <div class="col-lg-10">
-                                <textarea class="form-control" name="aboutme" placeholder="<?php echo $user->aboutme;?>"></textarea>
-                            </div>
-                    </div>
 
-                    <button id="Submitbtn" type="submit" class="btn btn-primary pull-right">Update!!</button>
+                          <div class="form-group">
+                              <label class="col-lg-2 control-label">Gender</label>
+                              <div class="col-lg-10">
+                                <select class="form-control" name="gender">
+                                    <option value="male" name="gender">Male</option>
+                                    <option value="female" name="gender">Female</option>
+                                </select>
+                              </div>
+                          </div>
+
+                              <div class="form-group">
+                                  <label class="col-lg-2 control-label">I am looking for</label>
+                                  <div class="col-lg-10">
+                                      <select class="form-control" name="looking">
+                                          <option value="male" name="looking">Male</option>
+                                          <option value="female" name="looking">Female</option>
+                                          <option value="both" name="looking">both</option>
+                                      </select>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label for="select" class="col-lg-2 control-label">My Level of Education</label>
+                                  <div class="col-lg-10">
+                                      <select class="form-control" name="myedu">
+                                          <option value="Highschool" name="myedu">High School</option>
+                                          <option value="University" name="myedu">University</option>
+                                          <option value="Masters" name="myedu">Masters</option>
+                                          <option value="PHD" name="myedu">PHD</option>
+                                      </select>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label for="select" class="col-lg-2 control-label">Education of your ideal match</label>
+                                  <div class="col-lg-10">
+                                      <select class="form-control" name="matchingedu">
+                                          <option value="Highschool" name="matchingedu">High School</option>
+                                          <option value="University" name="matchingedu">University</option>
+                                          <option value="Masters" name="matchingedu">Masters</option>
+                                          <option value="PHD" name="matchingedu">PHD</option>
+                                      </select>
+                                  </div>
+                              </div>
+                          <br>
+
+                          <div class="panel-heading"> <legend>Edit User Questions/Preferences</legend></div>
+                          <div class="form-group">
+                              <label for="select" class="col-lg-2 control-label">What your favourite movie genre?</label>
+                              <div class="col-lg-10">
+                                  <select class="form-control" name="q1">
+                                      <option value="1" name="q1">Action</option>
+                                      <option value="2" name="q1">Romance</option>
+                                      <option value="3" name="q1">Comedy</option>
+                                      <option value="4" name="q1">Horror</option>
+                                      <option value="5" name="q1">Thriller</option>
+                                      <option value="6" name="q1">Sci-Fi</option>
+                                      <option value="7" name="q1">Disney</option>
+                                  </select>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-lg-2 control-label">Do you consider yourself an active person?</label>
+                              <div class="col-lg-10">
+                                  <select class="form-control" name="q2">
+                                      <option value="1" name="q2">Active</option>
+                                      <option value="2" name="q2">Moderate</option>
+                                      <option value="3" name="q2">Couch Potato</option>
+                                  </select>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-lg-2 control-label">Would you rather stay at home, or go out with your Friends?</label>
+                              <div class="col-lg-10">
+                                <select class="form-control" name="q3">
+                                    <option value="1" name="q3">Stay at home</option>
+                                    <option value="2" name="q3">Go out with friends</option>
+                                </select>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-lg-2 control-label">Do you have a good sense of humour?</label>
+                              <div class="col-lg-10">
+                                <select class="form-control" name="q4">
+                                    <option value="1" name="q4">Of course!</option>
+                                    <option value="2" name="q4">Not at all!</option>
+                                </select>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-lg-2 control-label">Do you prefer to eat out or cook at home?</label>
+                              <div class="col-lg-10">
+                                <select class="form-control" name="q5">
+                                    <option value="1" name="q5">Eat out</option>
+                                    <option value="2" name="q5">Cook at home</option>
+                                </select>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-lg-2 control-label">Do you like animals?</label>
+                              <div class="col-lg-10">
+                                <select class="form-control" name="q6">
+                                    <option value="1" name="q6">Yes</option>
+                                    <option value="2" name="q6">No</option>
+                                    <option value="3" name="q6">Neither</option>
+                                </select>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-lg-2 control-label">Do you play a musical instrument?</label>
+                              <div class="col-lg-10">
+                                <select class="form-control" name="q7">
+                                    <option value="1" name="q7">Yes</option>
+                                    <option value="2" name="q7">No</option>
+                                </select>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-lg-2 control-label">Would you admit to a mistake?</label>
+                              <div class="col-lg-10">
+                                <select class="form-control" name="q8">
+                                    <option value="1" name="q8">Yes</option>
+                                    <option value="2" name="q8">No</option>
+                                </select>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-lg-2 control-label">Do you enjoy reading?</label>
+                              <div class="col-lg-10">
+                                <select class="form-control" name="q9">
+                                    <option value="1" name="q9">Yes</option>
+                                    <option value="2" name="q9">No</option>
+                                </select>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-lg-2 control-label">Do you believe in fate?</label>
+                              <div class="col-lg-10">
+                                <select class="form-control" name="q10">
+                                    <option value="1" name="q10">Yes</option>
+                                    <option value="2" name="q10">No</option>
+                                </select>
+                              </div>
+                          </div>
+
+                              <div class="form-group">
+                                  <label for="firstname" class="col-lg-2 control-label">About Me</label>
+                                  <div class="col-lg-10">
+                                      <input type="text" class="form-control" name="aboutme" value="{{old('aboutme')}}" placeholder="Tell us a bit about yourself">
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label for="postcode" class="col-lg-2 control-label">PostCode</label>
+                                  <div class="col-lg-10">
+                                      <input type="text" class="form-control" name="postcode" value="{{old('postcode')}}" placeholder="Enter Postcode...">
+                                  </div>
+                              </div>
+
+                          <div class="form-group">
+                              <div class="col-lg-10 col-lg-offset-2">
+                                  <button type="reset" class="btn btn-default">Cancel</button>
+                                  <button type="submit" class="btn btn-primary">Update!</button>
+                              </div>
+                          </div>
                       </fieldset>
-                    </form>
+                  </form>
                   </div>
                 <!-- End edit user form -->
 			</div>
 		</div>
 	</div>
     <!-- END EDIT PROFILE MODAL POPUP  -->
-
-
-
-
-
 
 </body>
 </html>

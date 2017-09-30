@@ -1,6 +1,10 @@
+
+
+
 body {
     background-image: url("http://cdn.wallpapersafari.com/26/2/UNhoE1.jpg");
     background-size: cover;
+    padding-top:50px;
 }
 
 html,body,h1,h2,h3,h4,h5,h6 {
@@ -52,16 +56,23 @@ html,body,h1,h2,h3,h4,h5,h6 {
     border-radius: 2em;
 }
 
+
+
+
+
+
+
+
+
+
+
 /* Modal CSS*/
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 * {
     font-family: 'Roboto', sans-serif;
-}
+  }
 
-.form-group {
-  color: black;
-}
 
 .btn.btn-primary.pull-right {
   margin-top: 5px;
@@ -71,14 +82,39 @@ html,body,h1,h2,h3,h4,h5,h6 {
 
 }
 
+.form-control {
+  width: 200px;
+  border-radius: 1em;
+  margin: 10px;
+  float: right;
+  display: block;
+}
+
+.control-label{
+  width: 400px;
+  text-align: left;
+}
+
+.form-group {
+  color: black;
+}
+
+.modal-container {
+  width:  580px;
+  background-color: #ececec;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 1px;
+}
+
+.panel{
+  width:580px;
+}
+
 #img_logo {
     max-height: 100px;
     max-width: 100px;
 }
-
-/* #########################################
-   #    override the bootstrap configs     #
-   ######################################### */
 
 .modal-backdrop.in {
     filter: alpha(opacity=50);
@@ -100,6 +136,7 @@ html,body,h1,h2,h3,h4,h5,h6 {
 
 .modal-body {
     position: relative;
+    color: black;
     padding: 5px 15px 5px 15px;
 }
 
@@ -109,9 +146,7 @@ html,body,h1,h2,h3,h4,h5,h6 {
     border-top: 0px;
 }
 
-.checkbox {
-    margin-bottom: 1px;
-}
+
 
 .btn {
     border-radius: 1px;
@@ -142,27 +177,4 @@ html,body,h1,h2,h3,h4,h5,h6 {
 
 .glyphicon {
     top: 0px;
-}
-
-.form-control {
-  border-radius: 0px;
-}
-
-.text-large{
-	font-size:18px !important;
-}
-
-.text-grey{
-	color:#757575!important;
-}
-
-.text-white{
-	color:white !important;
-}
-
-.background-gray{
-	background-color:rgba(84, 84, 84, 0.75);
-    background-clip: padding-box;
-    border: 1em solid transparent;
-    border-radius: 2em;
 }

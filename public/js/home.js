@@ -33,10 +33,10 @@ function filterMatches() {
     for(var i=0; i<matchPercent.length; i++) {
         var percent_value = parseInt(matchPercent[i].innerHTML.replace(/%/g,''));
         /* remove hidden first */
-        w3.removeClass(matchPercent[i].parentElement, 'hidden');
+        w3.removeClass(matchPercent[i].parentElement.parentElement, 'hidden');
         if(percent_value<filterPercent) {
             /* add hidden based on filter */
-            w3.addClass(matchPercent[i].parentElement, 'hidden');
+            w3.addClass(matchPercent[i].parentElement.parentElement, 'hidden');
         }
     }
 }
@@ -51,7 +51,7 @@ function filterGender() {
     /* for each match */
     for(var i=0; i<genders.length; i++) {
         gender = genders[i].value; /* current match's gender */
-        w3.removeClass(genders[i].parentElement.parentElement, 'hidden');
+        w3.removeClass(genders[i].parentElement.parentElement.parentElement, 'hidden');
         /* only filter if choose male or female */
         if(genderSelected != "any")
         {
@@ -59,14 +59,14 @@ function filterGender() {
             {
                 if(gender != "male")
                 {
-                    w3.addClass(genders[i].parentElement.parentElement, 'hidden');
+                    w3.addClass(genders[i].parentElement.parentElement.parentElement, 'hidden');
                 }
             }
             else
             {
                 if(gender != "female")
                 {
-                    w3.addClass(genders[i].parentElement.parentElement, 'hidden');
+                    w3.addClass(genders[i].parentElement.parentElement.parentElement, 'hidden');
                 }
             }
         }
@@ -85,9 +85,9 @@ function filterPostcode() {
     {
         for(var i=0; i<postcodes.length; i++) {
             postcode_value = parseInt(postcodes[i].innerHTML);
-            w3.removeClass(postcodes[i].parentElement.parentElement, 'hidden');
+            w3.removeClass(postcodes[i].parentElement.parentElement.parentElement, 'hidden');
             if(postcode_value != postcodeSelected) {
-                w3.addClass(postcodes[i].parentElement.parentElement, 'hidden');
+                w3.addClass(postcodes[i].parentElement.parentElement.parentElement, 'hidden');
             }
         }
     }
@@ -123,10 +123,10 @@ function filterAge() {
     {
         for(var i=0; i<ages.length; i++) {
             age_value = parseInt(ages[i].innerHTML);
-            w3.removeClass(ages[i].parentElement.parentElement, 'hidden');
+            w3.removeClass(ages[i].parentElement.parentElement.parentElement, 'hidden');
             if(age_value<lowerAge || age_value > upperAge)
             {
-                w3.addClass(ages[i].parentElement.parentElement, 'hidden');
+                w3.addClass(ages[i].parentElement.parentElement.parentElement, 'hidden');
             }
         }
     }

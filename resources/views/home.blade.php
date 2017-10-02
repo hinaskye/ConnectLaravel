@@ -285,36 +285,36 @@ $conn->close();
                 $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
             ?>
                 <div class="card col-md-4 col-sm-6">
-                  <form id="idForm" method="POST" action="/uniqueprofile">
-                    <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
-                    <br>
-                    <img class="card-img-top" src="{!! $file['url'] !!}"  onerror="imgError(this);" width="100%" height="300em" alt="Match Image" style="border-radius: 3em;">
-                    <div class="card-body">
-                        <p id="blank{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-inlineblock" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
-                            <i class="fa fa-heart-o fa-2x margin-right-16 text-large text-grey"></i>
-                        </p>
-                        <p id="fill{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-none" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
-                            <i class="fa fa-heart fa-2x margin-right-16 text-large text-grey"></i>
-                        </p>
-                        <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
-                        <input type="hidden" class="match-gender" value="{{$matches[$matchCount]['user']['gender']}}">
-                        <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
-                        <p class="card-text">{{"Approx: ".$matches[$matchCount]['0']['distance']."kms away"}}</p>
-                        <p class="card-text">{{"Suburb: ".$matches[$matchCount]['0']['suburb']}}</p>
-                        <p class="age card-text"><?php
-                            $from = new DateTime($matches[$matchCount]['user']['birthday']);
-                            $to = new DateTime('today');
-                            echo $from->diff($to)->y, " years old";?></p>
-                        <p class="postcode card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
-                        {{ csrf_field() }}
-                        <input type="hidden" id="idInput" name="id" value={{$matches[$matchCount]['user']['id']}} >
-                        <input type="submit" value="View my profile!">
-                        <button type="button" href="#" id="chat{{ $matches[$matchCount]['user']['id'] }}" class="btn btn-info display-inlineblock pull-right" disabled>
-                            <i class="fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>Chat
-                        </button>
-                    </div>
+                    <form id="idForm" method="POST" action="/uniqueprofile">
+                        <p class="matchingPercent">{{$matches[$matchCount]['matchPcent']}}%</p>
+                        <br>
+                        <img class="card-img-top" src="{!! $file['url'] !!}"  onerror="imgError(this);" width="100%" height="300em" alt="Match Image" style="border-radius: 3em;">
+                        <div class="card-body">
+                            <p id="blank{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-inlineblock" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
+                                <i class="fa fa-heart-o fa-2x margin-right-16 text-large text-grey"></i>
+                            </p>
+                            <p id="fill{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-none" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
+                                <i class="fa fa-heart fa-2x margin-right-16 text-large text-grey"></i>
+                            </p>
+                            <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
+                            <input type="hidden" class="match-gender" value="{{$matches[$matchCount]['user']['gender']}}">
+                            <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
+                            <p class="card-text">{{"Approx: ".$matches[$matchCount]['0']['distance']."kms away"}}</p>
+                            <p class="card-text">{{"Suburb: ".$matches[$matchCount]['0']['suburb']}}</p>
+                            <p class="age card-text"><?php
+                                $from = new DateTime($matches[$matchCount]['user']['birthday']);
+                                $to = new DateTime('today');
+                                echo $from->diff($to)->y, " years old";?></p>
+                            <p class="postcode card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
+                            {{ csrf_field() }}
+                            <input type="hidden" id="idInput" name="id" value={{$matches[$matchCount]['user']['id']}} >
+                            <input type="submit" value="View my profile!">
+                            <button type="button" href="#" id="chat{{ $matches[$matchCount]['user']['id'] }}" class="btn btn-info display-inlineblock pull-right" disabled>
+                                <i class="fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>Chat
+                            </button>
+                        </div>
+                    </form>
                 </div>
-            </form>
             @endif
         @endfor
     </div>

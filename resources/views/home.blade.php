@@ -259,13 +259,13 @@ $conn->close();
             <div class="row padding-top">
                 <span>Filter by distance:</span>
                 <span><</span>
-                <input class="text-dark" type="text" id="distanceFilter" value="10" pattern="^[0-9]{1,4}$"><span>km</span>
+                <input class="text-dark" type="text" id="distanceFilter" value="10" pattern="^[0-9]{1,4}$" size="4"><span>km</span>
                 <button class="inline-button btn-primary" onclick="filterDistance()">Filter</button>
                 <span id="distanceError" class="text-red padding-x"></span>
             </div>
             <div class="row padding-top">
                 <span>Filter by postcode:</span>
-                <input class="text-dark" type="text" id="postcodeFilter" value="3000" maxlength="4"
+                <input class="text-dark" type="text" id="postcodeFilter" value="3000" maxlength="4" size="4"
                        pattern="^(0[289][0-9]{2})|([1345689][0-9]{3})|(2[0-8][0-9]{2})|(290[0-9])|(291[0-4])|(7[0-4][0-9]{2})|(7[8-9][0-9]{2})$">
                 <button class="inline-button btn-primary" onclick="filterPostcode()">Filter</button>
                 <span id="postcodeError" class="text-red padding-x"></span>

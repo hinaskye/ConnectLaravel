@@ -34,6 +34,23 @@ for(var i=0; i<matchPercent.length; i++) {
 
 /* Functions */
 
+/* Recursively call */
+function getParentCard(targetElement) {
+    var parent = targetElement.parentElement;
+    if(parent != null)
+    {
+        if(parent.classList.contains("card"))
+        {
+            return parent;
+        }
+        else
+        {
+            getParentCard(parent);
+        }
+    }
+    return null;
+}
+
 /* filter functions */
 
 /* filter by match %*/

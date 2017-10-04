@@ -76,7 +76,7 @@
                         <label for="birthday" class="col-lg-2 control-label">Birthday</label>
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="birthday" name="birthday" value="{{old('birthday')}}" placeholder="YYYY-MM-DD"
-                            pattern="^((1[8-9])|(2[0-1]))[0-9]{2}-(0[1-9]|1[0-2])-(0[0-9]|[1-2][0-9]|(3[0-1]))">
+                            pattern="^(1[8-9])[0-9]{2}-(0[1-9]|1[0-2])-(0[0-9]|[1-2][0-9]|(3[0-1]))">
                         </div>
                     </div>
 

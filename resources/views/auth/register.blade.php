@@ -27,14 +27,16 @@
                     <div class="form-group">
                         <label for="firstname" class="col-lg-2 control-label">First Name</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" name="firstname" value="{{old('firstname')}}" placeholder="First Name">
+                            <input type="text" class="form-control" name="firstname" value="{{old('firstname')}}" placeholder="First Name"
+                            pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="lastname" class="col-lg-2 control-label">Last Name</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" name="lastname" value="{{old('lastname')}}" placeholder="Last Name">
+                            <input type="text" class="form-control" name="lastname" value="{{old('lastname')}}" placeholder="Last Name"
+                            pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required>
                         </div>
                     </div>
 
@@ -49,7 +51,8 @@
                     <div class="form-group">
                         <label for="email" class="col-lg-2 control-label">Email</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="inputEmail" name="email" value="{{old('email')}}" placeholder="Email">
+                            <input type="text" class="form-control" id="inputEmail" name="email" value="{{old('email')}}" placeholder="Email"
+                            pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
                         </div>
                     </div>
 
@@ -72,7 +75,8 @@
                     <div class="form-group">
                         <label for="birthday" class="col-lg-2 control-label">Birthday</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="birthday" name="birthday" value="{{old('birthday')}}" placeholder="YYYY-MM-DD">
+                            <input type="text" class="form-control" id="birthday" name="birthday" value="{{old('birthday')}}" placeholder="YYYY-MM-DD"
+                            pattern="^((1[8-9])|(2[0-1]))[0-9]{2}-(0[1-9]|1[0-2])-(0[0-9]|[1-2][0-9]|(3[0-1]))">
                         </div>
                     </div>
 
@@ -250,7 +254,8 @@
                         <div class="form-group">
                             <label for="postcode" class="col-lg-2 control-label">PostCode</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" name="postcode" value="{{old('postcode')}}" placeholder="Enter Postcode...">
+                                <input type="text" class="form-control" name="postcode" value="{{old('postcode')}}" placeholder="Enter Postcode..."
+                                pattern="^(0[289][0-9]{2})|([1345689][0-9]{3})|(2[0-8][0-9]{2})|(290[0-9])|(291[0-4])|(7[0-4][0-9]{2})|(7[8-9][0-9]{2})$">
                             </div>
                         </div>
 

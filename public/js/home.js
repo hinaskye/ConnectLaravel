@@ -3,20 +3,32 @@ var matchPercent = document.getElementsByClassName("matchingPercent");
 /* For each match card add background colour based on match percentage */
 for(var i=0; i<matchPercent.length; i++) {
     var percent_value = parseInt(matchPercent[i].innerHTML.replace(/%/g,''));
-    if(percent_value<= 60) {
+    if(percent_value<= 20) {
+        w3.addClass(matchPercent[i],'bg-red-xxxs');
+    }
+    else if(percent_value<= 30) {
+        w3.addClass(matchPercent[i],'bg-red-xxs');
+    }
+    else if(percent_value<= 40) {
         w3.addClass(matchPercent[i],'bg-red-xs');
     }
+    else if(percent_value<= 50) {
+        w3.addClass(matchPercent[i],'bg-red-s');
+    }
+    else if(percent_value<= 60) {
+        w3.addClass(matchPercent[i],'bg-red-m');
+    }
     else if(percent_value <= 70) {
-        w3.addClass(matchPercent[i], 'bg-red-s')
-    }
-    else if(percent_value <= 80) {
-        w3.addClass(matchPercent[i], 'bg-red-m')
-    }
-    else if(percent_value <= 90) {
         w3.addClass(matchPercent[i], 'bg-red-l')
     }
-    else if(percent_value <= 100) {
+    else if(percent_value <= 80) {
         w3.addClass(matchPercent[i], 'bg-red-xl')
+    }
+    else if(percent_value <= 90) {
+        w3.addClass(matchPercent[i], 'bg-red-xxl')
+    }
+    else if(percent_value <= 100) {
+        w3.addClass(matchPercent[i], 'bg-red-xxxl')
     }
 }
 
@@ -70,6 +82,41 @@ function filterGender() {
                 }
             }
         }
+    }
+}
+
+/* filter by distance */
+function filterDistance() {
+    var distanceSelected = document.getElementById("distanceFilter").value;
+    var distances = document.getElementsByClassName("distance");
+
+    var isValid = validateDistance();
+
+    if(isValid)
+    {
+        for(var i=0; i<distances.length; i++)
+        {
+            distance_value = distances[i].innerHTML;
+            w3.removeClass(distances[i].parentElement.parentElement.parentElement.parentElement, 'hidden');
+            if(distance_value != distanceSelected) {
+                w3.addClass(distances[i].parentElement.parentElement.parentElement.parentElement, 'hidden');
+            }
+        }
+    }
+}
+
+/* performs validation without a form on distance */
+function validateDistance() {
+    var distanceSelected = document.getElementById("distanceFilter").value;
+    if(distanceSelected.checkValidity() == false)
+    {
+        document.getElementById("distanceError").innerHTML = "Invalid Distance, must be 0 to 9999";
+        return false;
+    }
+    else
+    {
+        document.getElementById("distanceError").innerHTML = "";
+        return true;
     }
 }
 

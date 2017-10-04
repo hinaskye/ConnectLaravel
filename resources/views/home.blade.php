@@ -257,6 +257,13 @@ $conn->close();
                 <button class="inline-button btn-primary" onclick="filterAge()">Filter</button>
             </div>
             <div class="row padding-top">
+                <span>Filter by distance:</span>
+                <span><</span>
+                <input class="text-dark" type="text" id="distanceFilter" value="10" pattern="^[0-9]+{1,4}$"><span>km</span>
+                <button class="inline-button btn-primary" onclick="filterDistance()">Filter</button>
+                <span id="distanceError" class="text-red padding-x"></span>
+            </div>
+            <div class="row padding-top">
                 <span>Filter by postcode:</span>
                 <input class="text-dark" type="text" id="postcodeFilter" value="3000" maxlength="4"
                        pattern="^(0[289][0-9]{2})|([1345689][0-9]{3})|(2[0-8][0-9]{2})|(290[0-9])|(291[0-4])|(7[0-4][0-9]{2})|(7[8-9][0-9]{2})$">
@@ -299,7 +306,7 @@ $conn->close();
                             <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
                             <input type="hidden" class="match-gender" value="{{$matches[$matchCount]['user']['gender']}}">
                             <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
-                            <p class="card-text">{{"Approx: ".$matches[$matchCount]['0']['distance']."kms away"}}</p>
+                            <p class="card-text">Approx: <span class="distance">{{$matches[$matchCount]['0']['distance']}}</span>kms away</p>
                             <p class="card-text">{{"Suburb: ".$matches[$matchCount]['0']['suburb']}}</p>
                             <p class="age card-text"><?php
                                 $from = new DateTime($matches[$matchCount]['user']['birthday']);

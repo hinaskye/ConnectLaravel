@@ -87,7 +87,7 @@ function filterGender() {
 
 /* filter by distance */
 function filterDistance() {
-    var distanceSelected = document.getElementById("distanceFilter").value;
+    var distanceSelected = parseInt(document.getElementById("distanceFilter").value);
     var distances = document.getElementsByClassName("distance");
 
     var isValid = validateDistance();
@@ -96,9 +96,9 @@ function filterDistance() {
     {
         for(var i=0; i<distances.length; i++)
         {
-            distance_value = distances[i].innerHTML;
+            distance_value = parsaInt(distances[i].innerHTML);
             w3.removeClass(distances[i].parentElement.parentElement.parentElement.parentElement, 'hidden');
-            if(distance_value != distanceSelected) {
+            if(distance_value > distanceSelected) {
                 w3.addClass(distances[i].parentElement.parentElement.parentElement.parentElement, 'hidden');
             }
         }
@@ -107,7 +107,7 @@ function filterDistance() {
 
 /* performs validation without a form on distance */
 function validateDistance() {
-    var distanceSelected = document.getElementById("distanceFilter").value;
+    var distanceSelected = document.getElementById("distanceFilter");
     if(distanceSelected.checkValidity() == false)
     {
         document.getElementById("distanceError").innerHTML = "Invalid Distance, must be 0 to 9999";

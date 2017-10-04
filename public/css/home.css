@@ -25,24 +25,40 @@ div {
 }
 
 /* T-shirt size background red */
-.bg-red-xl {
+.bg-red-xxxl {
     background-color: rgba(255, 18, 0, 0.90);
 }
 
-.bg-red-l {
+.bg-red-xxl {
     background-color: rgba(248, 56, 43, 0.90);
 }
 
-.bg-red-m {
+.bg-red-xl {
     background-color: rgba(251, 81, 69, 0.90);
 }
 
-.bg-red-s {
+.bg-red-l {
     background-color: rgba(255, 100, 89, 0.90);
 }
 
-.bg-red-xs {
+.bg-red-m {
     background-color: rgba(253, 116, 106, 0.90);
+}
+
+.bg-red-s {
+    background-color: rgba(242, 162, 151, 0.90);
+}
+
+.bg-red-xs {
+    background-color: rgba(244, 177, 159, 0.90);
+}
+
+.bg-red-xxs {
+    background-color: rgba(244, 184, 163, 0.90);
+}
+
+.bg-red-xxxs {
+    background-color: rgba(244, 194, 168, 0.90);
 }
 
 .card {

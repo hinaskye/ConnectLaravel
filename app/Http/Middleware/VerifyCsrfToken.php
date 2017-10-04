@@ -16,18 +16,3 @@ class VerifyCsrfToken extends BaseVerifier
         //
     ];
 }
-
-function handle($request, Closure $next)
-{
-  if($request->input('_token'))
-  {
-    if ( \Session::getToken() != $request->input('_token'))
-    {
-
-      notify()->flash('Your session has expired. Please try logging in again.', 'warning');
-
-      return redirect()->guest('/login');
-    }
-  }
-  return parent::handle($request, $next);
-}

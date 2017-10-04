@@ -96,7 +96,7 @@ function filterDistance() {
     {
         for(var i=0; i<distances.length; i++)
         {
-            distance_value = parsaInt(distances[i].innerHTML);
+            distance_value = parseInt(distances[i].innerHTML);
             w3.removeClass(distances[i].parentElement.parentElement.parentElement.parentElement, 'hidden');
             if(distance_value > distanceSelected) {
                 w3.addClass(distances[i].parentElement.parentElement.parentElement.parentElement, 'hidden');

@@ -15,14 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
+// Route::get('/profile', function () {
+//     return view('profile');
+// });
 
 Route::post('/uniqueprofile',['uses'=>'passIDController@userID']);
 
 Route::get('profile','editProfileController@showEditForm')->name('views.profile');
-Route::post('profile','editProfileController@update');
+Route::post('profile','editProfileController@update', 'editProfileController@imageUploadPost');
+// Route::get('profile','editProfileControllered@imageUpload');
 
 
 Route::get('/about', function () {

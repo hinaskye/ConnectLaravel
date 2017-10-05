@@ -37,35 +37,6 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
              <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;">
-      @if (count($errors) > 0)
-   <div class="alert alert-danger">
-      <strong>Whoops!</strong> There were some problems with your input.<br><br>
-    <ul>
-      @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-      @endforeach
-     </ul>
-      </div>
-      @endif
-
-    @if ($message = Session::get('success'))
-    <div class="alert alert-success alert-block">
-      <button type="button" class="close" data-dismiss="alert">×</button>
-            <strong>{{ $message }}</strong>
-    </div>
-    @endif
-
-    <form action="{{ url('profile') }}" enctype="multipart/form-data" method="POST">
-    {{ csrf_field() }}
-    <div class="row">
-      <div class="col-md-12">
-        <input type="file" name="image" />
-      </div>
-      <div class="col-md-12">
-        <button type="submit" class="btn btn-success">Upload</button>
-      </div>
-    </div>
-    </form>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <br>
@@ -78,6 +49,9 @@
             echo $from->diff($to)->y, " years old";?></p>
             <p><i class="fa fa-globe fa-fw margin-right-16 text-large text-grey"></i>Postcode, <?php echo $user->postcode; ?></p>
           <hr>
+          <!-- BEGIN EDIT PROFILE MODAL BUTTON -->
+                  <p class="text-center"><a href="#" class="btn btn-primary display-inline pull-right" role="button" data-toggle="modal" data-target="#login-modal">Edit Profile Here</a></p>
+          <!-- END EDIT PROFILE MODAL BUTTON -->
           <br>
         </div>
       </div>
@@ -89,13 +63,7 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12">
-          <!-- BEGIN EDIT PROFILE MODAL BUTTON -->
-          <div class="container">
-            <div class="row">
-                  <p class="text-center"><a href="#" class="btn btn-primary display-inline pull-right" role="button" data-toggle="modal" data-target="#login-modal">Edit Profile Here</a></p>
-            </div>
-          </div>
-          <!-- END EDIT PROFILE MODAL BUTTON -->
+
           <legend>
           	<h3 class="display-inline-block margin-top-10">About Me</h3>
           </legend>
@@ -265,15 +233,47 @@
     	<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header" align="center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
 
             <!-- BEGIN INSERT YOUR CODE HERE FOR IMAGE UPLOAD FUNCTION CHING  -->
-          <img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
+            <legend>Edit User Profile Picture</legend>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
+               <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;">
+               <br>
+          @if (count($errors) > 0)
+          <div class="alert alert-danger">
+          <strong>Whoops!</strong> There were some problems with your input.<br><br>
+          <ul>
+          @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+          @endforeach
+          </ul>
+          </div>
+          @endif
+
+          @if ($message = Session::get('success'))
+          <div class="alert alert-success alert-block">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+              <strong>{{ $message }}</strong>
+          </div>
+          @endif
+
+          <form action="{{ url('profile') }}" enctype="multipart/form-data" method="POST">
+          {{ csrf_field() }}
+          <div class="row">
+          <div class="col-md-12">
+          <input type="file" name="image" />
+          </div>
+          <div class="col-md-12">
+          <button type="submit" class="btn btn-success">Upload</button>
+          </div>
+          </div>
+          </form>
+          </div>
             <!-- END INSERT YOUR CODE HERE FOR IMAGE UPLOAD FUNCTION CHING  -->
 
-
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-					</button>
 				</div>
 
                 <!-- Begin edit user profile form-->
@@ -323,6 +323,36 @@
       <br>
 
       <legend>Edit User Preferences/Questions</legend>
+
+      <div class="form-group">
+          <label>I am looking for</label>
+              <select class="form-control" name="looking">
+                  <option value="male" name="looking">Male</option>
+                  <option value="female" name="looking">Female</option>
+                  <option value="both" name="looking">both</option>
+              </select>
+      </div>
+
+      <div class="form-group">
+          <label for="select">My Level of Education</label>
+              <select class="form-control" name="myedu">
+                  <option value="Highschool" name="myedu">High School</option>
+                  <option value="University" name="myedu">University</option>
+                  <option value="Masters" name="myedu">Masters</option>
+                  <option value="PHD" name="myedu">PHD</option>
+              </select>
+      </div>
+
+      <div class="form-group">
+          <label for="select">Education of your ideal match</label>
+              <select class="form-control" name="matchingedu">
+                  <option value="Highschool" name="matchingedu">High School</option>
+                  <option value="University" name="matchingedu">University</option>
+                  <option value="Masters" name="matchingedu">Masters</option>
+                  <option value="PHD" name="matchingedu">PHD</option>
+              </select>
+      </div>
+
 
       <div class="form-group">
           <label>What your favourite movie genre?</label>

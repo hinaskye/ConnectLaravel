@@ -140,8 +140,6 @@
                     $postCodeLoopRow = mysqli_fetch_assoc($userPostCodeQueryLoopRow);
 
 
-                    var_dump($correctPostCode);
-
                     $userPostcodeArray[] = $postCodeLoopRow;
                     $searchPC = $postCodeLoopRow['postcode'];
 
@@ -151,7 +149,6 @@
                     $pcResult = mysqli_query($conn, $postcodeSql);
                     $pcRow = mysqli_fetch_assoc($pcResult);
 
-                    var_dump($pcRow);
 
                     //query user DB to get the postcodes of all users are put them in an array
                     $userPostCodeSQL = "SELECT postcode FROM users";
@@ -209,7 +206,6 @@
                     $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
 
                     array_push($matches[$counter], $locoArray);
-                    //var_dump($pcRow,$loopRow,$userPostcodeArray);
                     ++$counter;
 
 
@@ -219,7 +215,6 @@
         }
         $loopingID++;
     }
-    var_dump($matches);
 
 
     //sort matches by highest match percentage, uses anonymous function

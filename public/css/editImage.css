@@ -1,0 +1,40 @@
+.cont{
+  position: relative;
+  background-image: url("http://cdn.wallpapersafari.com/26/2/UNhoE1.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: auto;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  display: table;
+  height: 100%;
+  width:100%;
+}
+
+div {
+    color: #FFF;
+}
+
+
+/*PHILLIP'S ANIMATED CONTAINER*/
+.animate-left{
+	position:relative;animation:animateleft 0.4s
+}
+@keyframes animateleft{
+	from{left:-300px;opacity:0}
+	 to{left:0;opacity:1}
+}
+
+.animate-bottom{
+	position:relative;animation:animatebottom 0.4s
+}
+
+@keyframes animatebottom{
+	from{bottom:-300px;opacity:0}
+	to{bottom:0;opacity:1}
+}
+.background-gray{
+	background-color:rgba(84, 84, 84, 0.75);
+    background-clip: padding-box;
+    border: 1em solid transparent;
+    border-radius: 2em;
+}

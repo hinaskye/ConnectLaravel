@@ -22,8 +22,9 @@ Route::get('/', function () {
 Route::post('/uniqueprofile',['uses'=>'passIDController@userID']);
 
 Route::get('profile','editProfileController@showEditForm')->name('views.profile');
-Route::post('profile','editProfileController@update', 'editProfileController@imageUploadPost');
-// Route::get('profile','editProfileControllered@imageUpload');
+Route::post('profile','editProfileController@update');
+
+Route::post('profile','editProfileController@imageUploadPost');
 
 
 Route::get('/about', function () {

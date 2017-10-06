@@ -21,6 +21,8 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
           <img src="{{ asset('images/profile.jpg') }}" style="width:100%" alt="Avatar">
+
+        </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <br>
           <legend class="text-white"><?php echo $user->firstname," ", $user->lastname; ?></legend>

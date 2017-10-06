@@ -203,8 +203,12 @@
                     //converting to Kilometres
                     $kilometresFloat = $miles * 1.6;
                     $kilometres = round($kilometresFloat);
-                    $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
-
+                    if($kilometres > 0){
+                        $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>$kilometres);
+                    }
+                    else{
+                        $locoArray = array("suburb"=>$pcRow['suburb'], "distance"=>0);
+                    }
                     array_push($matches[$counter], $locoArray);
                     ++$counter;
 

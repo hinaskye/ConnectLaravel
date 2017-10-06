@@ -241,7 +241,7 @@
 <script type="text/javascript">
   function imgError(image) {
     image.onerror = "";
-    image.src = "/images/profile.jpg";
+    image.src = "/images/blank-female-profile-user.png";
     return true;
 }
 </script>

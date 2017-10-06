@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Http\Requests;
+// use Illuminate\Support\Facades\Request as RequestOld;
 use App\User;
 use Auth;
 use Storage;
@@ -9,6 +11,25 @@ use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 class editProfileController extends Controller
 {
+  public function imageUploadPost(Request $req)
+  {
+      $user = Auth::user();
+      $userID = $user->id;
+      $this->validate($req, [
+          'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      ]);
+      $imageName = $userID;
+     // $imageName = time().'.'.$request->image->getClientOriginalExtension();
+      $image = $req->file('image');
+      $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
+      //$imageName = Storage::disk('s3')->url($imageName);
+      $imageName = $userID;
+      return back()
+          ->with('success','Image Uploaded successfully.')
+          ->with('path',$imageName);
+  }
+
+
     //For registration form
     public function  showEditForm(){
         return view('/profile');
@@ -16,7 +37,6 @@ class editProfileController extends Controller
     public function update(Request $request){
         $user = Auth::user();
         $input = $request->all();
-        // dd($input);
         if ($input['firstname'] == "")
         {
           $input['firstname'] = $user->firstname;
@@ -89,26 +109,27 @@ class editProfileController extends Controller
         {
           $input['postcode'] = $user->postcode;
         }
+
         $user->fill($input)->save();
         return view('/profile');
     }
 
 
-    public function imageUploadPost(Request $request)
-    {
-        $user = Auth::user();
-        $userID = $user->id;
-        $this->validate($request, [
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-        $imageName = $userID;
-       // $imageName = time().'.'.$request->image->getClientOriginalExtension();
-        $image = $request->file('image');
-        $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
-        //$imageName = Storage::disk('s3')->url($imageName);
-        $imageName = $userID;
-        return back()
-            ->with('success','Image Uploaded successfully.')
-            ->with('path',$imageName);
-    }
+    // public function imageUploadPost(Request $request)
+    // {
+    //     $user = Auth::user();
+    //     $userID = $user->id;
+    //     $this->validate($request, [
+    //         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    //     ]);
+    //     $imageName = $userID;
+    //    // $imageName = time().'.'.$request->image->getClientOriginalExtension();
+    //     $image = $request->file('image');
+    //     $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
+    //     //$imageName = Storage::disk('s3')->url($imageName);
+    //     $imageName = $userID;
+    //     return back()
+    //         ->with('success','Image Uploaded successfully.')
+    //         ->with('path',$imageName);
+    // }
 }

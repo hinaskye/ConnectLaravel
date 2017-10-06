@@ -36,36 +36,41 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-             <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;"> 
-      @if (count($errors) > 0)
-   <div class="alert alert-danger">
-      <strong>Whoops!</strong> There were some problems with your input.<br><br>
-    <ul>
-      @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-      @endforeach
-     </ul>
-      </div>
-      @endif
 
-    @if ($message = Session::get('success'))
-    <div class="alert alert-success alert-block">
-      <button type="button" class="close" data-dismiss="alert">×</button>
-            <strong>{{ $message }}</strong>
-    </div>
-    @endif
+             <!-- <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;"> -->
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
+                  <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;">
+                  <br>
+             @if (count($errors) > 0)
+             <div class="alert alert-danger">
+             <strong>Whoops!</strong> There were some problems with your input.<br><br>
+             <ul>
+             @foreach ($errors->all() as $error)
+             <li>{{ $error }}</li>
+             @endforeach
+             </ul>
+             </div>
+             @endif
 
-    <form action="{{ url('profile') }}" enctype="multipart/form-data" method="POST">
-    {{ csrf_field() }}
-    <div class="row">
-      <div class="col-md-12">
-        <input type="file" name="image" />
-      </div>
-      <div class="col-md-12">
-        <button type="submit" class="btn btn-success">Upload</button>
-      </div>
-    </div>
-    </form>
+             @if ($message = Session::get('success'))
+             <div class="alert alert-success alert-block">
+             <button type="button" class="close" data-dismiss="alert">×</button>
+                 <strong>{{ $message }}</strong>
+             </div>
+             @endif
+
+             <form action="{{ url('profile') }}" name="submitImage" enctype="multipart/form-data" method="POST">
+             {{ csrf_field() }}
+             <div class="row">
+             <div class="col-md-12">
+             <input type="file" name="image" />
+             </div>
+             <div class="col-md-12">
+             <button type="submit" class="btn btn-success">Upload</button>
+             </div>
+             </div>
+             </form>
+             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <br>
@@ -320,7 +325,7 @@
 
             <!-- BEGIN INSERT YOUR CODE HERE FOR IMAGE UPLOAD FUNCTION CHING  -->
             <legend>Edit User Profile Picture</legend>
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
+          <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
                <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;">
                <br>
           @if (count($errors) > 0)
@@ -352,7 +357,7 @@
           </div>
           </div>
           </form>
-          </div>
+          </div> -->
             <!-- END INSERT YOUR CODE HERE FOR IMAGE UPLOAD FUNCTION CHING  -->
 
 				</div>
@@ -361,7 +366,7 @@
         <div class="container">
           <div class="col-md-5">
             <div class="form-area">
-              <form role="form" method="POST" action="">
+              <form role="form" name="editForm" method="POST" action="">
                 {{csrf_field()}}
                 <br style="clear:both">
 

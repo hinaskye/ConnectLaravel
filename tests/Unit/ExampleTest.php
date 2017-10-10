@@ -17,12 +17,12 @@ class ExampleTest extends TestCase
     {
         $this->browse(function ($browser) {
              $browser->visit('/Login')
-             ->type('KP123@gmail.com','email')
-             ->type('123456','password')
-             ->press('Login')
-             ->seePageIs('/home')
-             ->see('Mario');
-         }
+                     ->type('KP123@gmail.com','email')
+                     ->type('123456','password')
+                     ->press('Login')
+                     ->seePageIs('/home')
+                     ->see('Mario');
+         });
     }
 
     // public function testRegisterNewUser(){

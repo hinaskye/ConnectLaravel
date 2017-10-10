@@ -15,7 +15,12 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->assertTrue(true);
+        $this->visit('/Login')
+             ->type('KP123@gmail.com','email')
+             ->type('123456','password')
+             ->press('Login')
+             ->seePageIs('/home')
+             ->see('Katy Perry');
     }
 
     // public function testRegisterNewUser(){
@@ -44,13 +49,4 @@ class ExampleTest extends TestCase
     // 		 ->type('3000','postcode')
     // 		 ->press('Register');
     // }
-
-    public function testLoginUser(){
-        $this->visit('/Login')
-             ->type('KP123@gmail.com','email')
-             ->type('123456','password')
-             ->press('Login')
-             ->seePageIs('/home')
-             ->see('Katy Perry');
-    }
 }

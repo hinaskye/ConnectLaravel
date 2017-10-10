@@ -15,14 +15,12 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->browse(function ($browser) {
-             $browser->visit('/Login')
-                     ->type('KP123@gmail.com','email')
-                     ->type('123456','password')
-                     ->press('Login')
-                     ->seePageIs('/home')
-                     ->see('Mario');
-         });
+        $this->visit('/Login')
+             ->type('KP123@gmail.com','email')
+             ->type('123456','password')
+             ->press('Login')
+             ->seePageIs('/home')
+             ->see('Katy Perry');
     }
 
     // public function testRegisterNewUser(){

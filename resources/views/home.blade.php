@@ -268,7 +268,7 @@
                     <option value="female">Female</option>
                     <option value="any">Any</option>
                 </select>
-                <button class="inline-button btn-primary" onclick="filterGender()">Filter</button>
+                <button class="inline-button btn-primary hidden" onclick="filterGender()">Filter</button>
             </div>
             <div class="row padding-top">
                 <input id="ageFilterCheck" type="checkbox">
@@ -277,14 +277,14 @@
                 <input class="text-dark" type="number" id="lowerAge" min="18" max="125" value="18">
                 <span>and</span>
                 <input class="text-dark" type="number" id="upperAge" min="18" max="125" value="30">
-                <button class="inline-button btn-primary" onclick="filterAge()">Filter</button>
+                <button class="inline-button btn-primary hidden" onclick="filterAge()">Filter</button>
             </div>
             <div class="row padding-top">
                 <input id="distanceFilterCheck" type="checkbox">
                 <span>Filter by distance:</span>
                 <span><</span>
                 <input class="text-dark" type="text" id="distanceFilter" value="10" pattern="^[0-9]{1,4}$" maxLength="4" size="4"><span>km</span>
-                <button class="inline-button btn-primary" onclick="filterDistance()">Filter</button>
+                <button class="inline-button btn-primary hidden" onclick="filterDistance()">Filter</button>
                 <span id="distanceError" class="text-red padding-x"></span>
             </div>
             <div class="row padding-top">
@@ -292,7 +292,7 @@
                 <span>Filter by postcode:</span>
                 <input class="text-dark" type="text" id="postcodeFilter" value="3000" maxlength="4" size="4"
                        pattern="^(0[289][0-9]{2})|([1345689][0-9]{3})|(2[0-8][0-9]{2})|(290[0-9])|(291[0-4])|(7[0-4][0-9]{2})|(7[8-9][0-9]{2})$">
-                <button class="inline-button btn-primary" onclick="filterPostcode()">Filter</button>
+                <button class="inline-button btn-primary hidden" onclick="filterPostcode()">Filter</button>
                 <span id="postcodeError" class="text-red padding-x"></span>
             </div>
 
@@ -302,8 +302,8 @@
                     <span class="whiteText">Filter by match %:</span>
                     <input type="range" class="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
                     <span id="filterPercent">50%</span>
-                    <button class="inline-button btn-primary" onclick="filterMatches()">Filter</button>
-                    <br><button id="filterSelected" class="inline-button btn-danger pull-right" onclick="filterAllSelected()">Filter Selected</button>
+                    <button class="inline-button btn-primary hidden" onclick="filterMatches()">Filter</button>
+                    <button id="filterSelected" class="inline-button btn-danger pull-right" onclick="filterAllSelected()">Filter Selected</button>
                 </div>
             </div>
         </div>

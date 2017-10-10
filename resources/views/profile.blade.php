@@ -13,7 +13,7 @@
 
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="{{ asset('css/editProfile.css') }}" rel="stylesheet">
+<link href="{{ asset('css/profile.css') }}" rel="stylesheet">
 <body>
 
   <!-- Page Container -->
@@ -32,7 +32,9 @@
                     <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;">
                </div>
                <!-- BEGIN EDIT PROFILE PICTURE BUTTON -->
+                      <div class="editPPButton">
                        <p class="text-center"><a href="/editImage" class="btn btn-primary display-inline pull-right" role="button">Edit Profile Picture Here</a></p>
+                     </div>
                <!-- END EDIT PROFILE PICTURE BUTTON -->
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -43,12 +45,9 @@
             <p><i class="fa fa-birthday-cake fa-fw margin-right-16 text-large text-grey"></i><?php
               $from = new DateTime($user->birthday);
               $to = new DateTime('today');
-              echo $from->diff($to)->y, " years old";?></p>
+              echo $user->birthday, " (", $from->diff($to)->y, " years old)";?></p>
               <p><i class="fa fa-globe fa-fw margin-right-16 text-large text-grey"></i>Postcode, <?php echo $user->postcode; ?></p>
             <hr>
-            <!-- BEGIN EDIT PROFILE MODAL BUTTON -->
-                    <p class="text-center"><a href="#" class="btn btn-primary display-inline pull-right" role="button" data-toggle="modal" data-target="#login-modal">Edit Profile Here</a></p>
-            <!-- END EDIT PROFILE MODAL BUTTON -->
             <br>
           </div>
         </div>
@@ -61,16 +60,18 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
           <div class="col-lg-12 col-md-12">
 
-            <legend>
-            	<h3 class="display-inline-block margin-top-10">About Me</h3>
-            </legend>
+            <legend class="text-white"><h3 class="display-inline-block margin-top-10">About Me
+              <!-- BEGIN EDIT PROFILE MODAL BUTTON -->
+              <a href="#" class="btn btn-primary display-inline pull-right" role="button" data-toggle="modal" data-target="#login-modal">Edit Profile Here</a>
+              <!-- END EDIT PROFILE MODAL BUTTON -->
+            </h3></legend>
 
 
             <p><?php echo $user->aboutme; ?></p>
             <hr>
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <legend><h3>Questions I answered...</h3></legend>
+            <legend class="text-white"><h3>Questions I answered...</h3></legend>
 
             <h4><li>Favourite Movie Genre</li></h4>
               <p> I like to watch
@@ -324,7 +325,7 @@
 
           <div class="form-group">
             <label for="birthday">Birthday</label>
-                <input type="date" class="form-control" id="birthday" name="birthday" value="{{old('birthday')}}">
+                <input type="date" class="form-control" id="birthday" name="birthday" value="{{old('birthday')}}" placeholder='<?php echo $user->birthday ?>'>
           </div>
 
           <div class="form-group">

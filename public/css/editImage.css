@@ -1,3 +1,4 @@
+/* PAGE LAYOUT CSS */
 .cont{
   position: relative;
   background-image: url("http://cdn.wallpapersafari.com/26/2/UNhoE1.jpg");
@@ -13,7 +14,6 @@
 div {
     color: #FFF;
 }
-
 
 /*PHILLIP'S ANIMATED CONTAINER*/
 .animate-left{
@@ -37,4 +37,7 @@ div {
     background-clip: padding-box;
     border: 1em solid transparent;
     border-radius: 2em;
+}
+.text-white{
+	color:white !important;
 }

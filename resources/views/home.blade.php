@@ -297,14 +297,15 @@
             </div>
 
             <div class="row padding-top">
-                <div class="filter-bottombar padding-bottom">
+                <div class="padding-bottom">
                     <input id="matchPercentCheck" type="checkbox">
                     <span class="whiteText">Filter by match %:</span>
                     <input type="range" class="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
                     <span id="filterPercent">50%</span>
                     <button class="inline-button btn-primary hidden" onclick="filterMatches()">Filter</button>
-                    <button id="filterSelected" class="inline-button btn-danger pull-right" onclick="filterAllSelected()">Filter Selected</button>
+                    <br><button id="filterSelected" class="inline-button btn-danger margin-top" onclick="filterAllSelected()">Filter Selected</button>
                 </div>
+                <div class="filter-bottombar"></div>
             </div>
         </div>
 

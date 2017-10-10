@@ -20,7 +20,7 @@ class ExampleTest extends TestCase
              ->type('123456','password')
              ->press('Login')
              ->seePageIs('/home')
-             ->see('Katy Perry');
+             ->see('Mario');
     }
 
     // public function testRegisterNewUser(){

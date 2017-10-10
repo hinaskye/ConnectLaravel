@@ -231,68 +231,66 @@ function filterAllSelected() {
         }
         else
         {
-
-        }
-    }
-
-    // For all matches
-    for(var i=0; i<matchPercent.length; i++) {
-        var percent_value = parseInt(matchPercent[i].innerHTML.replace(/%/g,''));
-        gender = genders[i].value;
-        distance_value = parseInt(distances[i].innerHTML);
-        postcode_value = parseInt(postcodes[i].innerHTML);
-        age_value = parseInt(ages[i].innerHTML);
-        /* remove hidden first */
-        w3.removeClass(matchPercent[i].parentElement.parentElement, 'hidden');
-        // filter by percentage
-        if(percentCheck == true)
-        {
-            if(percent_value<filterPercent) {
-                /* add hidden based on filter */
-                w3.addClass(matchPercent[i].parentElement.parentElement, 'hidden');
-            }
-        }
-        // filter by gender
-        if(genderCheck == true)
-        {
-            if(genderSelected != "any")
-            {
-                if(genderSelected == "male")
+            // For all matches
+            for(var i=0; i<matchPercent.length; i++) {
+                var percent_value = parseInt(matchPercent[i].innerHTML.replace(/%/g,''));
+                gender = genders[i].value;
+                distance_value = parseInt(distances[i].innerHTML);
+                postcode_value = parseInt(postcodes[i].innerHTML);
+                age_value = parseInt(ages[i].innerHTML);
+                /* remove hidden first */
+                w3.removeClass(matchPercent[i].parentElement.parentElement, 'hidden');
+                // filter by percentage
+                if(percentCheck == true)
                 {
-                    if(gender != "male")
-                    {
-                        w3.addClass(genders[i].parentElement.parentElement.parentElement, 'hidden');
+                    if(percent_value<filterPercent) {
+                        /* add hidden based on filter */
+                        w3.addClass(matchPercent[i].parentElement.parentElement, 'hidden');
                     }
                 }
-                else
+                // filter by gender
+                if(genderCheck == true)
                 {
-                    if(gender != "female")
+                    if(genderSelected != "any")
                     {
-                        w3.addClass(genders[i].parentElement.parentElement.parentElement, 'hidden');
+                        if(genderSelected == "male")
+                        {
+                            if(gender != "male")
+                            {
+                                w3.addClass(genders[i].parentElement.parentElement.parentElement, 'hidden');
+                            }
+                        }
+                        else
+                        {
+                            if(gender != "female")
+                            {
+                                w3.addClass(genders[i].parentElement.parentElement.parentElement, 'hidden');
+                            }
+                        }
                     }
                 }
-            }
-        }
-        // filter by distance
-        if(distanceCheck == true)
-        {
-            if(distance_value > distanceSelected) {
-                w3.addClass(distances[i].parentElement.parentElement.parentElement.parentElement, 'hidden');
-            }
-        }
-        // filter by postcode
-        if(postcodeCheck == true)
-        {
-            if(postcode_value != postcodeSelected) {
-                w3.addClass(postcodes[i].parentElement.parentElement.parentElement, 'hidden');
-            }
-        }
-        // filte by age
-        if(ageCheck == true)
-        {
-            if(age_value<lowerAge || age_value > upperAge)
-            {
-                w3.addClass(ages[i].parentElement.parentElement.parentElement, 'hidden');
+                // filter by distance
+                if(distanceCheck == true)
+                {
+                    if(distance_value > distanceSelected) {
+                        w3.addClass(distances[i].parentElement.parentElement.parentElement.parentElement, 'hidden');
+                    }
+                }
+                // filter by postcode
+                if(postcodeCheck == true)
+                {
+                    if(postcode_value != postcodeSelected) {
+                        w3.addClass(postcodes[i].parentElement.parentElement.parentElement, 'hidden');
+                    }
+                }
+                // filte by age
+                if(ageCheck == true)
+                {
+                    if(age_value<lowerAge || age_value > upperAge)
+                    {
+                        w3.addClass(ages[i].parentElement.parentElement.parentElement, 'hidden');
+                    }
+                }
             }
         }
     }

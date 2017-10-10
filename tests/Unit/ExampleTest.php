@@ -13,10 +13,10 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    // public function testBasicTest()
-    // {
-    //     $this->assertTrue(true);
-    // }
+    public function testBasicTest()
+    {
+        $this->assertTrue(true);
+    }
 
     // public function testRegisterNewUser(){
     // 	$this->visit('/Register')
@@ -44,10 +44,13 @@ class ExampleTest extends TestCase
     // 		 ->type('3000','postcode')
     // 		 ->press('Register');
     // }
+
     public function testLoginUser(){
         $this->visit('/Login')
              ->type('KP123@gmail.com','email')
              ->type('123456','password')
-             ->press('Login');
+             ->press('Login')
+             ->seePageIs('/home')
+             ->see('Katy Perry');
     }
 }

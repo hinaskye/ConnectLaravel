@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
+use Illuminate\Foundation\Testing\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -23,7 +23,7 @@ class ExampleTest extends TestCase
              ->seePageIs('/home')
              ->see('Katy Perry');
     }
-
+}
     // public function testRegisterNewUser(){
     // 	$this->visit('/Register')
     // 		 ->type('Test','firstname')
@@ -50,4 +50,4 @@ class ExampleTest extends TestCase
     // 		 ->type('3000','postcode')
     // 		 ->press('Register');
     // }
-}
+

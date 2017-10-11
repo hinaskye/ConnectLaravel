@@ -3,11 +3,11 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
-use Laravel\BrowserKitTesting\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Laracasts\Integrated\Extensions\Goutte as IntegrationTest
 
-class ExampleTest extends TestCase
+class ExampleTest extends IntegrationTest
 {
     /**
      * A basic test example.

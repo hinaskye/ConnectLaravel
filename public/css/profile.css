@@ -14,6 +14,11 @@ div {
     color: #FFF;
 }
 
+#editbtn{
+  margin:5px;
+  margin-bottom: 50px !important;
+}
+
 .animate-left{
 	position:relative;animation:animateleft 0.4s
 }

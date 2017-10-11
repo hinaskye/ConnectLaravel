@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 @extends('layouts.app')
 @section('content')
+
+
+<?php
+  $key = $user->id;
+  $file['url']= 'https://s3-ap-southeast-2.amazonaws.com/profile.pictures.pp'.'/'.$key;
+  ?>
+
 <html>
 <title>Connect Profile</title>
 <meta charset="UTF-8">
@@ -20,7 +27,7 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-          <img src="{{ asset('images/profile.jpg') }}" style="width:100%" alt="Avatar">
+          <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;">
 
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

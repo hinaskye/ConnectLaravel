@@ -14,8 +14,13 @@ div {
     color: #FFF;
 }
 
-.form-group{
+.form-group {
   color: black!important;
+}
+
+#editbtn {
+  margin:5px;
+  margin-bottom: 50px !important;
 }
 
 .animate-left{

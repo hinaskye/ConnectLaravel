@@ -24,8 +24,6 @@ Route::post('/uniqueprofile',['uses'=>'passIDController@userID']);
 Route::get('profile','editProfileController@showEditForm')->name('views.profile');
 Route::post('profile','editProfileController@update');
 
-Route::post('profile','editProfileController@imageUploadPost');
-
 
 Route::get('/about', function () {
     return view('about');
@@ -59,8 +57,8 @@ Route::post('Login','CustomAuthController@login');
 
 Route::post('Logout','CustomAuthController@logout')->name('auth.logout');
 
-Route::get('profile','S3ImageController@imageUpload');
-Route::post('profile','S3ImageController@imageUploadPost');
+Route::get('editImage','S3ImageController@imageUpload');
+Route::post('editImage','S3ImageController@imageUploadPost');
 
 //Route::get('s3-image-upload','S3ImageController@imageUpload');
 //Route::post('s3-image-upload','S3ImageController@imageUploadPost');

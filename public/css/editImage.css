@@ -1,3 +1,4 @@
+/* PAGE LAYOUT CSS */
 .cont{
   position: relative;
   background-image: url("http://cdn.wallpapersafari.com/26/2/UNhoE1.jpg");
@@ -14,6 +15,7 @@ div {
     color: #FFF;
 }
 
+/*PHILLIP'S ANIMATED CONTAINER*/
 .animate-left{
 	position:relative;animation:animateleft 0.4s
 }
@@ -30,30 +32,12 @@ div {
 	from{bottom:-300px;opacity:0}
 	to{bottom:0;opacity:1}
 }
-
-.margin-right-16{
-	margin-right: 16px!important;
-}
-
-.margin-top-10{
-	margin-top: 10px!important;
-}
-
-.text-large{
-	font-size:18px !important;
-}
-
-.text-grey{
-	color:#757575!important;
-}
-
-.text-white{
-	color:white !important;
-}
-
 .background-gray{
 	background-color:rgba(84, 84, 84, 0.75);
     background-clip: padding-box;
     border: 1em solid transparent;
     border-radius: 2em;
+}
+.text-white{
+	color:white !important;
 }

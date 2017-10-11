@@ -6,8 +6,9 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Laracasts\Integrated\Extensions\Laravel as IntegrationTest;
 
-class ExampleTest extends TestCase
+class ExampleTest extends IntegrationTest
 {
     /**
      * A basic test example.

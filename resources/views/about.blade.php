@@ -19,7 +19,7 @@
     <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12">
-          <legend><h3>About Connect</h3></legend>
+          <legend class="white-text"><h3>About Connect</h3></legend>
           <p>The main objective of project connect is to find a person's soulmate by linking
               them to compatible people and facilitate the connecting of the two. <br><br>
 
@@ -53,7 +53,7 @@
     <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12">
-          <legend><h3>Developers of Connect</h3></legend>
+          <legend class="white-text"><h3>Developers of Connect</h3></legend>
           <p>
             <h5><b>Rhys Ellwood</b></h5>
             <p> Hi my name is Rhys and I am Connect's scrum Master</p><br>

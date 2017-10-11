@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<div class="cont">
 @extends('layouts.app')
 @section('content')
 
@@ -49,21 +50,19 @@
     </div>
 
     <!-- Right Column -->
-    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
+    <div id="user-info" class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12">
-          <legend><h3>About Me</h3></legend>
-          <p><?php echo $user->aboutme; ?></p><br>
+
+          <legend class="text-white"><h3 class="display-inline-block margin-top-10">About Me</h3></legend>
+
+          <p><?php echo $user->aboutme; ?></p>
           <hr>
         </div>
-      </div>
-    </div>
-
-      <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <legend><h3>Questions I answered...</h3></legend>
+          <legend class="text-white"><h3>Questions I answered...</h3></legend>
+
           <h4><li>Favourite Movie Genre</li></h4>
             <p> I like to watch
             <?php  if ($user->q1 == "1")
@@ -90,6 +89,57 @@
               }
             ?> movies!</p><br>
         </div>
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h4><li>I am looking for </li></h4>
+        <p><?php  if ($user->looking == "male")
+          {
+          echo "male.";
+        } elseif ($user->looking == "female")
+          {
+          echo "female.";
+        } elseif ($user->looking =="both")
+        {
+          echo "both male & female.";
+        }
+          ?></p><br>
+      </div>
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h4><li>My level of education is</li></h4>
+        <p><?php  if ($user->myedu == "Highschool")
+          {
+          echo "High School";
+        } elseif ($user->myedu == "University")
+          {
+          echo "University";
+        } elseif ($user->myedu =="Masters")
+        {
+          echo "Masters";
+        } elseif ($user->myedu =="PHD")
+        {
+          echo "PHD";
+        }
+          ?></p><br>
+      </div>
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h4><li>Education of my ideal match is</li></h4>
+        <p><?php  if ($user->matchingedu == "Highschool")
+          {
+          echo "High School";
+        } elseif ($user->matchingedu == "University")
+          {
+          echo "University";
+        } elseif ($user->matchingedu =="Masters")
+        {
+          echo "Masters";
+        } elseif ($user->matchingedu =="PHD")
+        {
+          echo "PHD";
+        }
+          ?></p><br>
+      </div>
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <h4><li>My activity level...</li></h4>
@@ -209,7 +259,8 @@
 
       </div>
 
-    <!-- End Right Column -->
+  </div>
+  <!-- End Right Column -->
     </div>
 
   <!-- End Grid -->
@@ -220,4 +271,5 @@
 
 </body>
 </html>
+</div>
 @endsection

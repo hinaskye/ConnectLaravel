@@ -31,11 +31,6 @@
                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
                     <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;">
                </div>
-               <!-- BEGIN EDIT PROFILE PICTURE BUTTON -->
-                      <div class="editPPButton">
-                       <p class="text-center"><a href="/editImage" class="btn btn-primary display-inline pull-right" role="button">Edit Profile Picture Here</a></p>
-                     </div>
-               <!-- END EDIT PROFILE PICTURE BUTTON -->
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <br>
@@ -62,8 +57,11 @@
 
             <legend class="text-white"><h3 class="display-inline-block margin-top-10">About Me
               <!-- BEGIN EDIT PROFILE MODAL BUTTON -->
-              <a href="#" class="btn btn-primary display-inline pull-right" role="button" data-toggle="modal" data-target="#login-modal">Edit Profile Here</a>
+              <a id="editbtn" href="#" class="btn btn-primary display-inline pull-right" role="button" data-toggle="modal" data-target="#login-modal">Edit Profile Here</a>
               <!-- END EDIT PROFILE MODAL BUTTON -->
+              <!-- BEGIN EDIT PROFILE PICTURE BUTTON -->
+              <a id="editbtn" href="/editImage" class="btn btn-primary display-inline pull-right" role="button">Edit Profile Picture Here</a>
+              <!-- END EDIT PROFILE PICTURE BUTTON -->
             </h3></legend>
 
 

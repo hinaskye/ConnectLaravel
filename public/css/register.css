@@ -9,3 +9,18 @@
   height: 100%;
   width:100%;
 }
+
+label{
+  margin-left: 12px;
+}
+
+.form-group {
+  color: black!important;
+  width: 80%;
+  display: inline-block;
+}
+
+.form-control{
+  margin-left: 10px;
+  border-radius: 1em;
+}

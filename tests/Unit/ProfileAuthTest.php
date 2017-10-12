@@ -25,6 +25,7 @@ class ProfileAuthTest extends TestCase
      */
     public function testLogin()
     {
+        //$user = User::first() // returns the first user in our database
         $user = User::where('firstname','female')->first();
         //dd($user); // this prints all the user data for this user
         $this->be($user);

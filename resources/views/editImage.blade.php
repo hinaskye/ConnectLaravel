@@ -27,9 +27,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
           <legend class="text-white"><h3>Edit User Profile Picture</h3></legend>
 
-             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-                  <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;">
-             </div>
+                <img class="card-img-top" src="{!! $file['url'] !!}"  onerror="imgError(this);" width="100%" height="300em" alt="Match Image" style="border-radius: 3em;">
 
               <legend class="text-white"><?php echo $user->firstname," ", $user->lastname; ?></legend>
 

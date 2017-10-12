@@ -16,6 +16,17 @@ div {
 
 .form-group {
   color: black!important;
+  width: 100%;
+  display: inline-block;
+}
+
+label{
+  margin-left: 9px;
+}
+
+.form-control{
+  margin-left: 7px;
+  border-radius: 1em;
 }
 
 #editbtn {

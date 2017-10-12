@@ -289,7 +289,7 @@
 
                   <!-- Begin edit user profile form-->
           <div class="container">
-            <div class="col-md-5">
+            <div class="col-md-6">
               <div class="form-area">
                 <form role="form" name="editForm" method="POST" action="">
                   {{csrf_field()}}

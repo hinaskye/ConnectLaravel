@@ -28,9 +28,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
 
-               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
                     <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;">
-               </div>
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <br>

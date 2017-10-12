@@ -30,8 +30,9 @@ label{
 }
 
 #editbtn {
-  margin:5px;
-  margin-bottom: 50px !important;
+  /*margin:5px;*/
+  margin-left: 5px;
+  display: inline-block;
 }
 
 .animate-left{

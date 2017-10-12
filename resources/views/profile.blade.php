@@ -26,12 +26,7 @@
       <div id="user-profile" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animate-left">
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-
-               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-10">
-                    <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em;">
-               </div>
-          </div>
+                    <img src="{!! $file['url'] !!}" onerror="imgError(this);" width="100%" height="300em" style="border-radius: 3em; margin-top:1em;">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <br>
             <legend class="text-white"><?php echo $user->firstname," ", $user->lastname; ?></legend>
@@ -49,90 +44,89 @@
       </div>
     <!-- End Left Column -->
 
-      <!-- Right Column -->
+<!-- First Right Column -->
+<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
+    <div class="col-lg-12 col-md-12">
+      <legend class="text-white"><h3 class="display-inline-block margin-top-10">About Me
+        <!-- BEGIN EDIT PROFILE MODAL BUTTON -->
+        <a id="editbtn" href="#" class="btn btn-primary display-inline pull-right" role="button" data-toggle="modal" data-target="#login-modal">Edit Profile Here</a>
+        <!-- END EDIT PROFILE MODAL BUTTON -->
+        <!-- BEGIN EDIT PROFILE PICTURE BUTTON -->
+        <a id="editbtn" href="/editImage" class="btn btn-primary display-inline pull-right" role="button">Edit Profile Picture Here</a>
+        <!-- END EDIT PROFILE PICTURE BUTTON -->
+      </h3></legend>
+      <p><?php echo $user->aboutme; ?></p>
+        <br>
+      <hr>
+    </div>
+  </div>
+</div>
+<!-- End First Right Column -->
+
+      <!-- Second Right Column -->
       <div id="user-info" class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
-          <div class="col-lg-12 col-md-12">
 
-            <legend class="text-white"><h3 class="display-inline-block margin-top-10">About Me
-              <!-- BEGIN EDIT PROFILE MODAL BUTTON -->
-              <a id="editbtn" href="#" class="btn btn-primary display-inline pull-right" role="button" data-toggle="modal" data-target="#login-modal">Edit Profile Here</a>
-              <!-- END EDIT PROFILE MODAL BUTTON -->
-              <!-- BEGIN EDIT PROFILE PICTURE BUTTON -->
-              <a id="editbtn" href="/editImage" class="btn btn-primary display-inline pull-right" role="button">Edit Profile Picture Here</a>
-              <!-- END EDIT PROFILE PICTURE BUTTON -->
-            </h3></legend>
+            <legend class="text-white"><h3>My Questions/Preferences</h3></legend>
 
+            <h4><b>Favourite Movie Genre</b></h4>
+            <p> I like to watch
+            <?php  if ($user->q1 == "1")
+              {
+              echo "Action";
+              } elseif ($user->q1 == "2")
+              {
+              echo "Romance";
+              } elseif ($user->q1 == "3")
+              {
+              echo "Comedy";
+              } elseif ($user->q1 == "4")
+              {
+              echo "Horror";
+              } elseif ($user->q1 == "5")
+              {
+              echo "Thriller";
+              } elseif ($user->q1 == "6")
+              {
+              echo "Sci-Fi";
+              } elseif ($user->q1 == "7")
+              {
+              echo "Disney";
+              }
+            ?> movies!</p><br>
 
-            <p><?php echo $user->aboutme; ?></p>
-            <hr>
-          </div>
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <legend class="text-white"><h3>Questions I answered...</h3></legend>
-
-            <h4><li>Favourite Movie Genre</li></h4>
-              <p> I like to watch
-              <?php  if ($user->q1 == "1")
-                {
-                echo "Action";
-                } elseif ($user->q1 == "2")
-                {
-                echo "Romance";
-                } elseif ($user->q1 == "3")
-                {
-                echo "Comedy";
-                } elseif ($user->q1 == "4")
-                {
-                echo "Horror";
-                } elseif ($user->q1 == "5")
-                {
-                echo "Thriller";
-                } elseif ($user->q1 == "6")
-                {
-                echo "Sci-Fi";
-                } elseif ($user->q1 == "7")
-                {
-                echo "Disney";
-                }
-              ?> movies!</p><br>
-          </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h4><li>I am looking for </li></h4>
-          <p><?php  if ($user->looking == "male")
-            {
-            echo "male.";
-          } elseif ($user->looking == "female")
-            {
-            echo "female.";
-          } elseif ($user->looking =="both")
+        <h4><b>I am looking for</b></h4>
+        <p><?php  if ($user->looking == "male")
           {
-            echo "both male & female.";
-          }
-            ?></p><br>
-        </div>
-
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h4><li>My level of education is</li></h4>
-          <p><?php  if ($user->myedu == "Highschool")
-            {
-            echo "High School";
-          } elseif ($user->myedu == "University")
-            {
-            echo "University";
-          } elseif ($user->myedu =="Masters")
+          echo "male.";
+        } elseif ($user->looking == "female")
           {
-            echo "Masters";
-          } elseif ($user->myedu =="PHD")
-          {
-            echo "PHD";
-          }
-            ?></p><br>
-        </div>
+          echo "female.";
+        } elseif ($user->looking =="both")
+        {
+          echo "both male & female.";
+        }
+          ?></p><br>
 
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <h4><li>Education of my ideal match is</li></h4>
+        <h4><b>My Level of Education is</b></h4>
+        <p><?php  if ($user->myedu == "Highschool")
+          {
+          echo "High School";
+        } elseif ($user->myedu == "University")
+          {
+          echo "University";
+        } elseif ($user->myedu =="Masters")
+        {
+          echo "Masters";
+        } elseif ($user->myedu =="PHD")
+        {
+          echo "PHD";
+        }
+          ?></p><br>
+
+          <h4><b>Education of my ideal match is</b></h4>
           <p><?php  if ($user->matchingedu == "Highschool")
             {
             echo "High School";
@@ -147,10 +141,8 @@
             echo "PHD";
           }
             ?></p><br>
-        </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4><li>My activity level...</li></h4>
+            <h4><b>My activity level...</b></h4>
             <p><?php  if ($user->q2 == "1")
               {
               echo "Active";
@@ -162,10 +154,8 @@
               echo "Couch Potato";
               }
               ?></p><br>
-          </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4><li>Stay at home or go out?</li></h4>
+            <h4><b>Stay at home or go out?</b></h4>
             <p><?php  if ($user->q3 == "1")
               {
               echo "Stay at home!";
@@ -174,10 +164,8 @@
               echo "Go out with friends!";
               }
               ?></p><br>
-          </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4><li>Am I funny?</li></h4>
+            <h4><b>Am I funny?</b></h4>
             <p><?php  if ($user->q4 == "1")
               {
               echo "Of course!";
@@ -186,10 +174,8 @@
               echo "Not really :(";
               }
               ?></p><br>
-          </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4><li>Eat out or at home?</li></h4>
+            <h4><b>Eat out or at home?</b></h4>
             <p>I like to <?php  if ($user->q5 == "1")
               {
               echo "eat out.";
@@ -198,10 +184,8 @@
               echo "cook at home.";
               }
               ?></p><br>
-          </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4><li>Animal lover?</li></h4>
+            <h4><b>Animal lover?</b></h4>
             <p><?php  if ($user->q6 == "1")
               {
               echo "Love em!";
@@ -213,10 +197,8 @@
               echo "Don't hate nor like em'";
               }
               ?></p><br>
-          </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4><li>Play a musical instrument?</li></h4>
+            <h4><b>Play a musical instrument?</b></h4>
             <p><?php  if ($user->q7 == "1")
               {
               echo "Hell yeah!";
@@ -225,10 +207,8 @@
               echo "Nope!!!";
               }
               ?></p><br>
-          </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4><li>Do you admit mistakes?</li></h4>
+            <h4><b>Do you admit mistakes?</b></h4>
             <p><?php  if ($user->q8 == "1")
               {
               echo "Yep";
@@ -237,10 +217,8 @@
               echo "Nope!!!";
               }
               ?></p><br>
-          </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4><li>Like reading?</li></h4>
+            <h4><b>Like reading?</b></h4>
             <p><?php  if ($user->q9 == "1")
               {
               echo "Yep, books are awesome!";
@@ -249,10 +227,8 @@
               echo "Nope, reading isn't for me";
               }
               ?></p><br>
-          </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4><li>Do I believe in fate??</li></h4>
+            <h4><b>Do I believe in fate??</b></h4>
             <p><?php  if ($user->q10 == "1")
               {
               echo "Yeah, I am waiting for the one <3";
@@ -260,15 +236,13 @@
               {
               echo "No, who believes in that make believe?";
               }
-              ?></p><br>
-              <br>
+              ?></p>
               <hr>
-          </div>
 
         </div>
 
     </div>
-    <!-- End Right Column -->
+    <!-- End Second Right Column -->
 
       </div>
     <!-- End Grid -->
@@ -281,22 +255,19 @@
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
       	<div class="modal-dialog">
   			<div class="modal-content">
-  				<div class="modal-header" align="center">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-  				</div>
 
                   <!-- Begin edit user profile form-->
           <div class="container">
-            <div class="col-md-5">
+            <div class="col-md-6">
               <div class="form-area">
                 <form role="form" name="editForm" method="POST" action="">
                   {{csrf_field()}}
                   <br style="clear:both">
 
                   <fieldset>
-          <legend>Edit User Details</legend>
+          <legend>Edit User Details<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button></legend>
 
           <div class="form-group">
             <label for="firstname">First Name</label>

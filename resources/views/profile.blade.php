@@ -287,6 +287,7 @@
           <div class="form-group">
             <label for="gender">Gender</label>
               <select class="form-control" name="gender">
+                  <option value="" name="gender" selected><?php echo $user->gender; ?></option>
                   <option value="male" name="gender">Male</option>
                   <option value="female" name="gender">Female</option>
               </select>
@@ -309,6 +310,17 @@
         <div class="form-group">
             <label>I am looking for</label>
                 <select class="form-control" name="looking">
+                    <option value="" name="looking" selected><?php  if ($user->looking == "male")
+          {
+          echo "male";
+        } elseif ($user->looking == "female")
+          {
+          echo "female";
+        } elseif ($user->looking =="both")
+        {
+          echo "both male & female";
+        }
+          ?></option>
                     <option value="male" name="looking">Male</option>
                     <option value="female" name="looking">Female</option>
                     <option value="both" name="looking">both</option>
@@ -318,6 +330,20 @@
         <div class="form-group">
             <label for="select">My Level of Education</label>
                 <select class="form-control" name="myedu">
+                    <option value="" name="myedu" selected><?php  if ($user->myedu == "Highschool")
+          {
+          echo "High School";
+        } elseif ($user->myedu == "University")
+          {
+          echo "University";
+        } elseif ($user->myedu =="Masters")
+        {
+          echo "Masters";
+        } elseif ($user->myedu =="PHD")
+        {
+          echo "PHD";
+        }
+          ?></option>
                     <option value="Highschool" name="myedu">High School</option>
                     <option value="University" name="myedu">University</option>
                     <option value="Masters" name="myedu">Masters</option>
@@ -328,6 +354,20 @@
         <div class="form-group">
             <label for="select">Education of your ideal match</label>
                 <select class="form-control" name="matchingedu">
+                    <option value="" name="matchingedu" selected><?php  if ($user->matchingedu == "Highschool")
+            {
+            echo "High School";
+          } elseif ($user->matchingedu == "University")
+            {
+            echo "University";
+          } elseif ($user->matchingedu =="Masters")
+          {
+            echo "Masters";
+          } elseif ($user->matchingedu =="PHD")
+          {
+            echo "PHD";
+          }
+            ?></option>
                     <option value="Highschool" name="matchingedu">High School</option>
                     <option value="University" name="matchingedu">University</option>
                     <option value="Masters" name="matchingedu">Masters</option>
@@ -339,6 +379,29 @@
         <div class="form-group">
             <label>What your favourite movie genre?</label>
                 <select class="form-control" name="q1">
+                    <option value="" name="q1" selected><?php  if ($user->q1 == "1")
+                      {
+                      echo "Action";
+                      } elseif ($user->q1 == "2")
+                      {
+                      echo "Romance";
+                      } elseif ($user->q1 == "3")
+                      {
+                      echo "Comedy";
+                      } elseif ($user->q1 == "4")
+                      {
+                      echo "Horror";
+                      } elseif ($user->q1 == "5")
+                      {
+                      echo "Thriller";
+                      } elseif ($user->q1 == "6")
+                      {
+                      echo "Sci-Fi";
+                      } elseif ($user->q1 == "7")
+                      {
+                      echo "Disney";
+                      }
+                    ?></option>
                     <option value="1" name="q1">Action</option>
                     <option value="2" name="q1">Romance</option>
                     <option value="3" name="q1">Comedy</option>
@@ -352,6 +415,17 @@
         <div class="form-group">
             <label>Do you consider yourself an active person?</label>
                 <select class="form-control" name="q2">
+                    <option value="" name="q2" selected><?php  if ($user->q2 == "1")
+              {
+              echo "Active";
+              } elseif ($user->q2 == "2")
+              {
+              echo "Moderate";
+              } elseif ($user->q2 == "3")
+              {
+              echo "Couch Potato";
+              }
+              ?></option>
                     <option value="1" name="q2">Active</option>
                     <option value="2" name="q2">Moderate</option>
                     <option value="3" name="q2">Couch Potato</option>
@@ -361,6 +435,14 @@
         <div class="form-group">
             <label>Would you rather stay at home, or go out with your Friends?</label>
               <select class="form-control" name="q3">
+                  <option value="" name="q3" selected><?php  if ($user->q3 == "1")
+              {
+              echo "Stay at home!";
+              } elseif ($user->q3 == "2")
+              {
+              echo "Go out with friends!";
+              }
+              ?></option>
                   <option value="1" name="q3">Stay at home</option>
                   <option value="2" name="q3">Go out with friends</option>
               </select>
@@ -369,6 +451,14 @@
         <div class="form-group">
             <label>Do you have a good sense of humour?</label>
               <select class="form-control" name="q4">
+                  <option value="" name="q4" selected><?php  if ($user->q4 == "1")
+              {
+              echo "Of course!";
+              } elseif ($user->q4 == "2")
+              {
+              echo "Not really :(";
+              }
+              ?></option>
                   <option value="1" name="q4">Of course!</option>
                   <option value="2" name="q4">Not at all!</option>
               </select>
@@ -378,6 +468,14 @@
         <div class="form-group">
             <label>Do you prefer to eat out or cook at home?</label>
               <select class="form-control" name="q5">
+                  <option value="" name="q5" selected><?php  if ($user->q5 == "1")
+              {
+              echo "eat out.";
+              } elseif ($user->q5 == "2")
+              {
+              echo "cook at home.";
+              }
+              ?></option>
                   <option value="1" name="q5">Eat out</option>
                   <option value="2" name="q5">Cook at home</option>
               </select>
@@ -388,6 +486,17 @@
         <div class="form-group">
             <label>Do you like animals?</label>
               <select class="form-control" name="q6">
+                  <option value="" name="q6" selected><?php  if ($user->q6 == "1")
+              {
+              echo "Love em!";
+              } elseif ($user->q6 == "2")
+              {
+              echo "Nope!!!";
+            } elseif ($user->q6 == "3")
+              {
+              echo "Don't hate nor like em'";
+              }
+              ?></option>
                   <option value="1" name="q6">Yes</option>
                   <option value="2" name="q6">No</option>
                   <option value="3" name="q6">Neither</option>
@@ -397,6 +506,14 @@
         <div class="form-group">
             <label>Do you play a musical instrument?</label>
               <select class="form-control" name="q7">
+                  <option value="" name="q7" selected><?php  if ($user->q7 == "1")
+              {
+              echo "Hell yeah!";
+              } elseif ($user->q7 == "2")
+              {
+              echo "Nope!!!";
+              }
+              ?></option>
                   <option value="1" name="q7">Yes</option>
                   <option value="2" name="q7">No</option>
               </select>
@@ -405,6 +522,14 @@
         <div class="form-group">
             <label>Would you admit to a mistake?</label>
               <select class="form-control" name="q8">
+                  <option value="" name="q8" selected><?php  if ($user->q8 == "1")
+              {
+              echo "Yep";
+              } elseif ($user->q8 == "2")
+              {
+              echo "Nope!!!";
+              }
+              ?></option>
                   <option value="1" name="q8">Yes</option>
                   <option value="2" name="q8">No</option>
               </select>
@@ -413,6 +538,14 @@
         <div class="form-group">
             <label>Do you enjoy reading?</label>
               <select class="form-control" name="q9">
+                  <option value="" name="q9" selected><?php  if ($user->q9 == "1")
+              {
+              echo "Yep, books are awesome!";
+              } elseif ($user->q9 == "2")
+              {
+              echo "Nope, reading isn't for me";
+              }
+              ?></option>
                   <option value="1" name="q9">Yes</option>
                   <option value="2" name="q9">No</option>
               </select>
@@ -421,6 +554,14 @@
         <div class="form-group">
             <label>Do you believe in fate?</label>
               <select class="form-control" name="q10">
+                  <option value="" name="q10" selected><?php  if ($user->q10 == "1")
+              {
+              echo "Yeah, I am waiting for the one <3";
+              } elseif ($user->q10 == "2")
+              {
+              echo "No, who believes in that make believe?";
+              }
+              ?></option>
                   <option value="1" name="q10">Yes</option>
                   <option value="2" name="q10">No</option>
               </select>
@@ -428,12 +569,12 @@
 
         <div class="form-group">
                 <label for="aboutme">About Me</label>
-                    <textarea class="form-control" name="aboutme" placeholder="<?php echo $user->aboutme;?>"></textarea>
+                    <textarea class="form-control" name="aboutme" placeholder="<?php echo $user->aboutme;?>"><?php echo $user->aboutme;?></textarea>
         </div>
 
         <div class="form-group">
             <label for="postcode">PostCode</label>
-                <input type="text" class="form-control" name="postcode" value="{{old('postcode')}}" placeholder="Enter Postcode...">
+                <input type="text" class="form-control" name="postcode" value="{{old('postcode')}}" placeholder="<?php echo $user->postcode;?>">
         </div>
 
         <button id="Submitbtn" type="submit" class="btn btn-primary pull-right">Update!!</button>

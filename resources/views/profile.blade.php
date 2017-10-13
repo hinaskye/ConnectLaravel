@@ -312,13 +312,13 @@
                 <select class="form-control" name="looking">
                     <option value="" name="looking" selected><?php  if ($user->looking == "male")
           {
-          echo "male.";
+          echo "male";
         } elseif ($user->looking == "female")
           {
-          echo "female.";
+          echo "female";
         } elseif ($user->looking =="both")
         {
-          echo "both male & female.";
+          echo "both male & female";
         }
           ?></option>
                     <option value="male" name="looking">Male</option>

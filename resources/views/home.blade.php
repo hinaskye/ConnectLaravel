@@ -343,10 +343,10 @@
                             <p class="postcode card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
                             {{ csrf_field() }}
                             <input type="hidden" id="idInput" name="id" value={{$matches[$matchCount]['user']['id']}} >
-                            <input type="submit" value="View my profile!">
-                            <button type="button" href="#" id="chat{{ $matches[$matchCount]['user']['id'] }}" class="btn btn-info display-inlineblock pull-right" disabled>
-                                <i class="fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>Chat
-                            </button>
+                              <button type="submit" class="btn btn-primary pull-right">View My Profile</button>
+                            <!-- <button type="button" href="#" id="chat{{ $matches[$matchCount]['user']['id'] }}" class="btn btn-primary display-inlineblock pull-right" disabled> -->
+                                <!-- <i class="hidden fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>Chat -->
+                            <!-- </button> -->
                         </div>
                     </form>
                 </div>

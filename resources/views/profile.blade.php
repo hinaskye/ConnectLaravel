@@ -575,7 +575,6 @@
         <div class="form-group">
             <label for="postcode">PostCode</label>
                 <input type="text" class="form-control" name="postcode" value="{{old('postcode')}}" placeholder="<?php echo $user->postcode;?>">
-                <input type="text" class="form-control" name="postcode" value="{{old('postcode')}}" placeholder="<?php echo $user->postcode;?>"><?php echo $user->postcode;?></input>
         </div>
 
         <button id="Submitbtn" type="submit" class="btn btn-primary pull-right">Update!!</button>

@@ -81,7 +81,7 @@
             <hr>
 
             <h5><b>Chan Hoe Teng</b></h5>
-            <p> Hi my name is Phillip and I am Connect's developer</p><br>
+            <p> Hi my name is Philip and I am Connect's developer</p><br>
             <p><b>Student Number:</b> s3536311</p>
             <p><b>Roles:</b> Developer, Debugger, Tester</p>
             </p><br>

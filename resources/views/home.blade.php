@@ -333,7 +333,6 @@
                             </p>
                             <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
                             <input type="hidden" class="match-gender" value="{{$matches[$matchCount]['user']['gender']}}">
-                            <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
                             <p class="card-text">Approx: <span class="distance">{{$matches[$matchCount]['0']['distance']}}</span>kms away</p>
                             <p class="card-text">{{"Suburb: ".$matches[$matchCount]['0']['suburb']}}</p>
                             <p class="age card-text"><?php

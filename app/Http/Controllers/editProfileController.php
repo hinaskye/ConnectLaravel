@@ -57,6 +57,19 @@ class editProfileController extends Controller
         {
           $input['email'] = $user->email;
         }
+        if ($input['looking'] == "")
+        {
+          $input['looking'] = $user->looking;
+        }
+        if ($input['myedu'] == "")
+        {
+          $input['myedu'] = $user->myedu;
+        }
+        if ($input['matchingedu'] == "")
+        {
+          $input['matchingedu'] = $user->matchingedu;
+        }
+
         if ($input['birthday'] == "")
         {
           $input['birthday'] = $user->birthday;
@@ -114,22 +127,4 @@ class editProfileController extends Controller
         return view('/profile');
     }
 
-
-    // public function imageUploadPost(Request $request)
-    // {
-    //     $user = Auth::user();
-    //     $userID = $user->id;
-    //     $this->validate($request, [
-    //         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    //     ]);
-    //     $imageName = $userID;
-    //    // $imageName = time().'.'.$request->image->getClientOriginalExtension();
-    //     $image = $request->file('image');
-    //     $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
-    //     //$imageName = Storage::disk('s3')->url($imageName);
-    //     $imageName = $userID;
-    //     return back()
-    //         ->with('success','Image Uploaded successfully.')
-    //         ->with('path',$imageName);
-    // }
 }

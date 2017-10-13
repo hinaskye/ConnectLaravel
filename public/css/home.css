@@ -109,16 +109,16 @@ div {
 }
 
 .margin-y {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1em!important;
+    margin-bottom: 1em!important;
 }
 
 .margin-top {
-    margin-top: 1em;
+    margin-top: 1em!important;
 }
 
 .margin-bottom {
-    margin-bottom: 1em;
+    margin-bottom: 1em!important;
 }
 
 .hideFilterOptions {

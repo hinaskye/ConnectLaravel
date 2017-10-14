@@ -6,9 +6,8 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Laracasts\Integrated\Extensions\Laravel as IntegrationTest;
 
-class ExampleTest extends IntegrationTest
+class ExampleTest extends TestCase
 {
     /**
      * A basic test example.
@@ -17,7 +16,7 @@ class ExampleTest extends IntegrationTest
      */
     public function testBasicTest()
     {
-        $this->visit('/Login')
+        $this->get('/Login')
              ->type('KP123@gmail.com','email')
              ->type('123456','password')
              ->press('Login')

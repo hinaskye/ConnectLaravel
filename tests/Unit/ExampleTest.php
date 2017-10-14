@@ -16,6 +16,11 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
+        $this->assert(true);
+    }
+
+    public function testLoginUser(){
+
         $this->get('/Login')
              ->type('KP123@gmail.com','email')
              ->type('123456','password')

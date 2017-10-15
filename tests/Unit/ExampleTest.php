@@ -22,11 +22,11 @@ class ExampleTest extends TestCase
     public function testLoginUser(){
 
         $this->get('/Login')
-             ->type('KP123@gmail.com','email')
-             ->type('123456','password')
-             ->press('Login')
-             ->seePageIs('/home')
-             ->see('Katy Perry');
+             ->assertField('KP123@gmail.com','email')
+             ->assertField('123456','password')
+             ->click('Login');
+             // ->seePageIs('/home')
+             // ->see('Katy Perry');
     }
 }
     // public function testRegisterNewUser(){

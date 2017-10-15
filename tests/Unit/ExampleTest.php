@@ -21,10 +21,10 @@ class ExampleTest extends TestCase
 
     public function testLoginUser(){
 
-        $this->get('/Login')
-             ->setField('email','KP123@gmail.com')
-             ->setField('password','123456')
-             ->click('Login');
+        $this->get('/Login');
+        $this->setField('email','KP123@gmail.com');
+        $this->setField('password','123456');
+        $this->click('Login');
              // ->seePageIs('/home')
              // ->see('Katy Perry');
     }

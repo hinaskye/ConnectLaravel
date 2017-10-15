@@ -22,12 +22,36 @@ class ExampleTest extends TestCase
     public function testLoginUser(){
 
         $this->get('/Login');
-        $this->setField('email','KP123@gmail.com');
-        $this->setField('password','123456');
-        $this->click('Login');
+        // $this->setField('email','KP123@gmail.com');
+        // $this->setField('password','123456');
+        // $this->click('Login');
+
+
+        $formData = array(
+                'email' => 'KP123@gmail.com',
+                'password' => '123456',
+            );
+
+            $form = $this->factory->create(TestedType::class);
+
+            $object = TestObject::fromArray($formData);
+
+            // submit the data to the form directly
+            $form->submit($formData);
+
+            $this->assertTrue($form->isSynchronized());
+            $this->assertEquals($object, $form->getData());
+
+            $view = $form->createView();
+            $children = $view->children;
+
+            foreach (array_keys($formData) as $key) {
+                $this->assertArrayHasKey($key, $children);
+            }
              // ->seePageIs('/home')
              // ->see('Katy Perry');
     }
+
 }
     // public function testRegisterNewUser(){
     // 	$this->visit('/Register')

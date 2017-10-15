@@ -32,7 +32,7 @@ class ExampleTest extends TestCase
                 'password' => '123456',
             );
 
-            $form = $this->factory->create(TestedType::class);
+            $form = $this->create(TestedType::class);
 
             $object = TestObject::fromArray($formData);
 

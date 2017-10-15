@@ -22,8 +22,8 @@ class ExampleTest extends TestCase
     public function testLoginUser(){
 
         $this->get('/Login')
-             ->assertField('KP123@gmail.com','email')
-             ->assertField('123456','password')
+             ->setField('email','KP123@gmail.com')
+             ->setField('password','123456')
              ->click('Login');
              // ->seePageIs('/home')
              // ->see('Katy Perry');

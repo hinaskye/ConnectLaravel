@@ -271,17 +271,17 @@
 
           <div class="form-group">
             <label for="firstname">First Name</label>
-              <input type="text" class="form-control" name="firstname" value="{{old('firstname')}}" placeholder='<?php echo $user->firstname ?>'>
+              <input type="text" class="form-control" name="firstname" value="{{old('firstname')}}" placeholder='<?php echo $user->firstname ?>' pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$">
           </div>
 
           <div class="form-group">
             <label for="lastname">Last Name</label>
-              <input type="text" class="form-control" name="lastname" value="{{old('lastname')}}" placeholder='<?php echo $user->lastname ?>'>
+              <input type="text" class="form-control" name="lastname" value="{{old('lastname')}}" placeholder='<?php echo $user->lastname ?>' pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$">
           </div>
 
           <div class="form-group">
             <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" value="{{old('username')}}" placeholder='<?php echo $user->username ?>'>
+                <input type="text" class="form-control" name="username" value="{{old('username')}}" placeholder='<?php echo $user->username ?>' pattern="^[a-zA-Z]a-zA-Z0-9-_\.]{1-20}$">
         </div>
 
           <div class="form-group">
@@ -300,7 +300,9 @@
 
           <div class="form-group">
             <label>Email</label>
-            <input type="text" class="form-control" id="inputEmail" name="email" value="{{old('email')}}" placeholder='<?php echo $user->email ?>'>
+            <input type="email" size="64" maxlength="64" class="form-control" id="inputEmail" name="email" value="{{old('email')}}" placeholder='<?php echo $user->email ?>'
+            pattern="[a-zA-Z0-9._%+-\.]+@[a-zA-Z0-9.-]+\.[a-z]{2,3}$"
+            oninvalid="this.setCustomValidity('Enter a correct email address like example@email.com')">
           </div>
 
         <br>
@@ -574,7 +576,7 @@
 
         <div class="form-group">
             <label for="postcode">PostCode</label>
-                <input type="text" class="form-control" name="postcode" value="{{old('postcode')}}" placeholder="<?php echo $user->postcode;?>">
+                <input type="text" class="form-control" name="postcode" value="{{old('postcode')}}" placeholder="<?php echo $user->postcode;?>" pattern="[0-9]{4}">
         </div>
 
         <button id="Submitbtn" type="submit" class="btn btn-primary pull-right">Update!!</button>

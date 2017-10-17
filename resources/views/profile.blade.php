@@ -14,6 +14,7 @@
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
+<script src="{{ asset('js/validation.js') }}"></script>
 <body>
 
   <!-- Page Container -->
@@ -295,7 +296,8 @@
 
           <div class="form-group">
             <label for="birthday">Birthday</label>
-                <input type="date" class="form-control" id="birthday" name="birthday" value="{{old('birthday')}}" placeholder='<?php echo $user->birthday ?>'>
+                <input type="date" class="form-control" id="valDate" name="birthday" value="{{old('birthday')}}" placeholder='<?php echo $user->birthday ?>'
+                oninvalid="this.setCustomValidity('Enter your birthday in this format DD-MM-YYYY')">
           </div>
 
           <div class="form-group">
@@ -576,7 +578,10 @@
 
         <div class="form-group">
             <label for="postcode">PostCode</label>
-                <input type="text" class="form-control" name="postcode" value="{{old('postcode')}}" placeholder="<?php echo $user->postcode;?>" pattern="[0-9]{4}">
+                <input type="text" class="form-control" name="postcode" value="{{old('postcode')}}" placeholder="<?php echo $user->postcode;?>" pattern="[0-9]{4}"
+                oninvalid="this.setCustomValidity('Enter a correct postcode format: nnnn')"
+                oninput="setCustomValidity('')">
+
         </div>
 
         <button id="Submitbtn" type="submit" class="btn btn-primary pull-right">Update!!</button>
@@ -596,4 +601,22 @@
 </body>
 </html>
 </div>
+
+<script>
+$(function(){
+    var dtToday = new Date();
+
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+
+    var maxDate = year + '-' + month + '-' + day  if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    ;
+    alert(maxDate);
+    $('#ValDate').attr('max', maxDate);
+});
+</script>
 @endsection

@@ -350,6 +350,7 @@ class Thread extends Eloquent
         return false;
     }
 
+
     /**
      * Generates a select string used in participantsString().
      *

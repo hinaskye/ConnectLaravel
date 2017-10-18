@@ -5,7 +5,7 @@
     <div class="row">
         <div class="media alert {{ $class }} background-div">
             <h4 class="media-heading">
-                <h4><a href="{{ route('messages.show', $thread->id) }}"></a>{{ $thread->subject }}</h4>
+                <a href="{{ route('messages.show', $thread->id) }}">{{ $thread->subject }}</a>
                 ({{ $thread->userUnreadMessagesCount(Auth::id()) }} unread)</h4>
             <p>
                 {{ $thread->latestMessage->body }}

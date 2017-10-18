@@ -10,3 +10,7 @@ body{
 .background-div{
 	background-color: rgba(51, 39, 21, 0.7);
 }
+
+.color-white{
+	color:#fff;
+}

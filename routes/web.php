@@ -15,13 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
+// Route::get('/profile', function () {
+//     return view('profile');
+// });
 
-Route::get('/tempprofile', function () {
-    return view('tempprofile');
-});
+Route::post('/uniqueprofile',['uses'=>'passIDController@userID']);
+
+Route::get('profile','editProfileController@showEditForm')->name('views.profile');
+Route::post('profile','editProfileController@update');
 
 
 Route::get('/about', function () {
@@ -56,5 +57,16 @@ Route::post('Login','CustomAuthController@login');
 
 Route::post('Logout','CustomAuthController@logout')->name('auth.logout');
 
-Route::get('s3-image-upload','S3ImageController@imageUpload');
-Route::post('s3-image-upload','S3ImageController@imageUploadPost');
+Route::get('editImage','S3ImageController@imageUpload');
+Route::post('editImage','S3ImageController@imageUploadPost');
+
+//Route::get('s3-image-upload','S3ImageController@imageUpload');
+//Route::post('s3-image-upload','S3ImageController@imageUploadPost');
+
+Route::group(['prefix' => 'messages'], function () {
+    Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
+    Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
+    Route::post('/', ['as' => 'messages.store', 'uses' => 'MessagesController@store']);
+    Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
+    Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
+});

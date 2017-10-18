@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-image:{{url('/images/wood-background.jpg')}};
+                background-image:{{asset('/images/wood-background.jpg')}};
                 background-size: cover;
                 background-attachment: fixed;
                 color: #636b6f;

@@ -1,5 +1,5 @@
 body{
-	background-image:url({{asset('/images/wood-background.jpg')}});
-	background-size: cover;
-	background-attachment: fixed;
+	background-image:url("https://www.google.com.au/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwinlIWIj_rWAhUY84MKHecdAdgQjRwIBw&url=http%3A%2F%2Fwww.bestfurnitureplans.com%2Fhome-craft-business-few-things-to-consider-before-starting-one%2F&psig=AOvVaw3ZxYiMRI_dAeZK00bsLQTt&ust=1508413223494805");
+    background-size: cover;
+    background-attachment: fixed;
 }

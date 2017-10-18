@@ -304,6 +304,7 @@ class Thread extends Eloquent
         }
     }
 
+
     /**
      * Generates a string of participant information.
      *

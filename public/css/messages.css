@@ -1,5 +1,8 @@
 body{
-	background-image:url("https://www.google.com.au/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwinlIWIj_rWAhUY84MKHecdAdgQjRwIBw&url=http%3A%2F%2Fwww.bestfurnitureplans.com%2Fhome-craft-business-few-things-to-consider-before-starting-one%2F&psig=AOvVaw3ZxYiMRI_dAeZK00bsLQTt&ust=1508413223494805");
+	background-image:url("http://www.bestfurnitureplans.com/wp-content/uploads/2016/10/Home-Craft-Business-Few-Things-to-Consider-Before-Starting-One.jpg");
     background-size: cover;
     background-attachment: fixed;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
 }

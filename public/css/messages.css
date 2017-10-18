@@ -6,3 +6,8 @@ body{
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
 }
+
+.background-div{
+	background-color: #795227;
+	opacity: 0.7;
+}

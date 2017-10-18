@@ -13,10 +13,10 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-image:{{asset('/images/wood-background.jpg')}};
+                background-image:url({{asset('/images/wood-background.jpg')}});
                 background-size: cover;
                 background-attachment: fixed;
-                color: #636b6f;
+                color: #fff;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -52,7 +52,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fff;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;

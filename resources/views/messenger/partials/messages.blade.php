@@ -3,7 +3,7 @@
         <img src="//www.gravatar.com/avatar/{{ md5($message->user->email) }} ?s=64"
              alt="{{ $message->user->name }}" class="img-circle">
     </a>
-    <div class="media-body">
+    <div class="media-body background-div">
         <h5 class="media-heading">{{ $message->user->name }}</h5>
         <p>{{ $message->body }}</p>
         <div class="text-muted">

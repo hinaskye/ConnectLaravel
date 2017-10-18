@@ -4,7 +4,7 @@
     <h1>Create a new message</h1>
     <form action="{{ route('messages.store') }}" method="post">
         {{ csrf_field() }}
-        <div class="col-md-6">
+        <div class="col-md-6 background-div">
             <!-- Subject Form Input -->
             <div class="form-group">
                 <label class="control-label">Subject</label>

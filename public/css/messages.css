@@ -8,6 +8,5 @@ body{
 }
 
 .background-div{
-	background-color: #806641;
-	opacity: 0.7;
+	background-color: rgba(51, 39, 21, 0.7);
 }

@@ -9,6 +9,8 @@ body{
 
 .background-div{
 	background-color: rgba(51, 39, 21, 0.7);
+	border-radius: 1em;
+	padding: 10px;
 }
 
 .color-white{

@@ -13,7 +13,9 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-image:{{url('/images/wood-background.jpg')}};
+                background-size: cover;
+                background-attachment: fixed;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;

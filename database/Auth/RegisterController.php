@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'q8' => 'required|q8',
             'q9' => 'required|q9',
             'q10' => 'required|q10',
-            'aboutme' => 'required|aboutme',
+            'aboutme' => 'nullable|aboutme',
             'postcode' => 'required|postcode',
         ]);
     }

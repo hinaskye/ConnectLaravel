@@ -343,9 +343,9 @@
                             {{ csrf_field() }}
                             <input type="hidden" id="idInput" name="id" value={{$matches[$matchCount]['user']['id']}} >
                               <button type="submit" class="btn btn-primary pull-right margin-bottom">View My Profile</button>
-                            <!-- <button type="button" href="#" id="chat{{ $matches[$matchCount]['user']['id'] }}" class="btn btn-primary display-inlineblock pull-right" disabled> -->
-                                <!-- <i class="hidden fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>Chat -->
-                            <!-- </button> -->
+                            <button type="button" href="#" id="chat{{ $matches[$matchCount]['user']['id'] }}" class="btn btn-primary display-inlineblock pull-right" disabled>
+                                <i class="hidden fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>
+                            </button>
                         </div>
                     </form>
                 </div>

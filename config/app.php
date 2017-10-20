@@ -163,11 +163,12 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        /*Message Provider*/
+
         Cmgmyr\Messenger\MessengerServiceProvider::class,
 
-        /*captcha Provider*/
+
         Mews\Captcha\CaptchaServiceProvider::class,
+
         /*
          * Package Service Providers...
          */

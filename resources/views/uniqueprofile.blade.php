@@ -50,7 +50,11 @@
     <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 animate-bottom">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 background-gray">
         <div class="col-lg-12 col-md-12">
-          <legend class="text-white"><h3 class="display-inline-block margin-top-10"><?php echo "About ", $user->firstname," ", $user->lastname; ?></h3></legend>
+          <legend class="text-white"><h3 class="display-inline-block margin-top-10"><?php echo "About ", $user->firstname," ", $user->lastname; ?>
+            <!-- BEGIN CHAT BUTTON -->
+            <a href="/messages" class="btn btn-info display-inline pull-right" role="button">Chat with me here!</a>
+            <!-- END CHAT BUTTON -->
+          </h3></legend>
           <p><?php echo $user->aboutme; ?></p>
             <br>
           <hr>

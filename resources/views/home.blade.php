@@ -325,10 +325,10 @@
                         <br>
                         <img class="card-img-top" src="{!! $file['url'] !!}"  onerror="imgError(this);" width="100%" height="300em" alt="Match Image" style="border-radius: 3em;">
                         <div class="card-body">
-                            <p id="blank{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-inlineblock" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
+                            <p id="blank{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-inlineblock pull-right" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
                                 <i class="fa fa-heart-o fa-2x margin-right-16 text-large text-grey"></i>
                             </p>
-                            <p id="fill{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-none" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
+                            <p id="fill{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-none pull-right" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
                                 <i class="fa fa-heart fa-2x margin-right-16 text-large text-grey"></i>
                             </p>
                             <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>

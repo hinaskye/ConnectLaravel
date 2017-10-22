@@ -14,7 +14,6 @@
                     <p class="alert alert-danger">{{$errors}}</p>
                 @endforeach
             @endif
-                {!! NoCaptcha::display() !!}
             <form class="form-horizontal" action="{{route('auth.register')}}" method="post">
                 {{csrf_field()}}
                 <fieldset>
@@ -214,7 +213,12 @@
                         </div>
 
 
-                        {!! NoCaptcha::display() !!}
+                        <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                            <div class="col-md-offset-4 col-md-6">
+                                {!! app('captcha')->display() !!}
+                                {!! $errors->first('g-recaptcha-response', '<p class="help-block">:message</p>') !!}
+                            </div>
+                        </div>
 
 
                     <div class="form-group">

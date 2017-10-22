@@ -213,7 +213,6 @@
                         </div>
 
                         <div class="g-recaptcha" data-sitekey="6LfvXDUUAAAAAITEune8Z_qw0FcfF9ffUGYT3WFM"></div>
-                        <div class="g-recaptcha" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
 
 
 

@@ -48,7 +48,6 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        $data['captcha'] = $this->captchaCheck();
 
         return Validator::make($data, [
             'id' => 'required',
@@ -70,8 +69,7 @@ class RegisterController extends Controller
             'q9' => 'required|q9',
             'q10' => 'required|q10',
             'aboutme' => 'required',
-            'g-recaptcha-response'  => 'required',
-            'captcha'               => 'required|min:1'
+            'g-recaptcha-response'=>'required|recaptcha'
         ],
         [   'first_name.required'   => 'First Name is required',
             'last_name.required'    => 'Last Name is required',

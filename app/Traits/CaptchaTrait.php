@@ -1,25 +1,32 @@
-<?php namespace App\Traits;
+<?php
 
-use Input;
-use ReCaptcha\ReCaptcha;
+namespace App\Validators;
 
-trait CaptchaTrait {
+use GuzzleHttp\Client;
 
-    public function captchaCheck()
-    {
+class ReCaptcha
+{
+    public function validate(
+        $attribute,
+        $value,
+        $parameters,
+        $validator
+    ){
 
-        $response = Input::get('g-recaptcha-response');
-        $remoteip = $_SERVER['REMOTE_ADDR'];
-        $secret   = '6LfsXDUUAAAAANITWGbf1BmYN0AKaAGo55FHTfQQ';
+        $client = new Client();
 
-        $recaptcha = new ReCaptcha($secret);
-        $resp = $recaptcha->verify($response, $remoteip);
-        if ($resp->isSuccess()) {
-            return 1;
-        } else {
-            return 0;
-        }
+        $response = $client->post(
+            'https://www.google.com/recaptcha/api/siteverify',
+            ['form_params'=>
+                [
+                    'secret'=>env('GOOGLE_RECAPTCHA_SECRET'),
+                    'response'=>$value
+                ]
+            ]
+        );
 
+        $body = json_decode((string)$response->getBody());
+        return $body->success;
     }
 
 }

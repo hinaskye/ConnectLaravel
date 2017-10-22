@@ -47,6 +47,8 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $data['captcha'] = $this->captchaCheck();
+
         return Validator::make($data, [
             'id' => 'required',
             'firstname' => 'required|string|max:255',
@@ -68,8 +70,18 @@ class RegisterController extends Controller
             'q10' => 'required|q10',
             'aboutme' => 'required',
             'g-recaptcha-response'  => 'required',
-            'captcha'               => 'required|min:1'
-        ]);
+            'captcha'               => 'required'
+        ],
+        [   'first_name.required'   => 'First Name is required',
+            'last_name.required'    => 'Last Name is required',
+            'email.required'        => 'Email is required',
+            'email.email'           => 'Email is invalid',
+            'password.required'     => 'Password is required',
+            'password.min'          => 'Password needs to have at least 6 characters',
+            'password.max'          => 'Password maximum length is 20 characters',
+            'g-recaptcha-response.required' => 'Captcha is required',
+            'captcha.min'           => 'Wrong captcha, please try again.']
+        );
     }
 
     /**

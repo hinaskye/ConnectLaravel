@@ -14,7 +14,7 @@
                     <p class="alert alert-danger">{{$errors}}</p>
                 @endforeach
             @endif
-
+                {!! NoCaptcha::display() !!}
             <form class="form-horizontal" action="{{route('auth.register')}}" method="post">
                 {{csrf_field()}}
                 <fieldset>
@@ -214,7 +214,7 @@
                         </div>
 
 
-
+                        {!! NoCaptcha::display() !!}
 
 
                     <div class="form-group">

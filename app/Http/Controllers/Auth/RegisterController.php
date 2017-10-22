@@ -79,7 +79,7 @@ class RegisterController extends Controller
             'password.min'          => 'Password needs to have at least 6 characters',
             'password.max'          => 'Password maximum length is 20 characters',
             'g-recaptcha-response.required' => 'Captcha is required',
-            'captcha.min'           => 'Wrong captcha, please try again.']
+            'recaptcha'=>'Please ensure that you are a human!']
         );
     }
 

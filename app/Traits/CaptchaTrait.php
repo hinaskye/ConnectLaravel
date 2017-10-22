@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Validators;
+namespace App\Http\Controllers\Auth;
 
 use GuzzleHttp\Client;
 
@@ -19,7 +20,7 @@ class ReCaptcha
             'https://www.google.com/recaptcha/api/siteverify',
             ['form_params'=>
                 [
-                    'secret'=>env('GOOGLE_RECAPTCHA_SECRET'),
+                    'secret'=>'66LfvXDUUAAAAAAuDp_T_6LEq-UQCyVQRiL8CivT3',
                     'response'=>$value
                 ]
             ]

@@ -50,6 +50,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
 
+        $data['captcha'] = $this->captchaCheck();
         return Validator::make($data, [
             'id' => 'required',
             'firstname' => 'required|string|max:255',

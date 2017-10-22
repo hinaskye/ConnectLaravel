@@ -213,12 +213,8 @@
                         </div>
 
 
-                        <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
-                            <div class="col-md-offset-4 col-md-6">
-                                {!! NoCaptcha::display(['data-theme' => 'dark']) !!}
-                                {!! $errors->first('g-recaptcha-response', '<p class="help-block">:message</p>') !!}
-                            </div>
-                        </div>
+                        <div class="g-recaptcha" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>
+
 
 
                     <div class="form-group">

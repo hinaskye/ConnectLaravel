@@ -71,7 +71,7 @@ class RegisterController extends Controller
             'q10' => 'required|q10',
             'aboutme' => 'required',
             'g-recaptcha-response'  => 'required',
-            'captcha'               => 'accepted'
+            'captcha'               => 'required|min:1'
         ],
         [   'firstname.required'   => 'First Name is required',
             'lastname.required'    => 'Last Name is required',

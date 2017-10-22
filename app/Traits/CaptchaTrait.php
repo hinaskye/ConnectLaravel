@@ -8,7 +8,7 @@ trait CaptchaTrait {
     public function captchaCheck()
     {
 
-        $response = Input::get('g-recaptcha-response');
+        $response = request::get('g-recaptcha-response');
         $remoteip = $_SERVER['REMOTE_ADDR'];
         $secret   = env('RE_CAP_SECRET');
 

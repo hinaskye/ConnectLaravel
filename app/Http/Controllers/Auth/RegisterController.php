@@ -65,7 +65,10 @@ class RegisterController extends Controller
             'q7' => 'required|q7',
             'q8' => 'required|q8',
             'q9' => 'required|q9',
-            'q10' => 'required|q10'
+            'q10' => 'required|q10',
+            'aboutme' => 'required',
+            'g-recaptcha-response'  => 'required',
+            'captcha'               => 'required|min:1'
         ]);
     }
 

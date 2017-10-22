@@ -45,8 +45,21 @@ class CustomAuthController extends Controller
             'q7' => 'required',
             'q8' => 'required',
             'q9' => 'required',
-            'q10' => 'required'
-        ]);
+            'q10' => 'required',
+            'aboutme' => 'required',
+            'g-recaptcha-response'  => 'required'
+        ],
+            [   'firstname.required'   => 'First Name is required',
+                'lastname.required'    => 'Last Name is required',
+                'email.required'        => 'Email is required',
+                'email.email'           => 'Email is invalid',
+                'password.required'     => 'Password is required',
+                'password.min'          => 'Password needs to have at least 6 characters',
+                'password.max'          => 'Password maximum length is 20 characters',
+                'g-recaptcha-response.required' => 'Captcha is required',
+                'captcha.min'           => 'Wrong captcha, please try again.']
+
+        );
     }
 
     //For login form
@@ -61,13 +74,13 @@ class CustomAuthController extends Controller
         $this->validate($request, [
             'email' => 'required|email|max:255',
             'password' => 'required|max:255',
-            ]);
+        ]);
 
         if (Auth::attempt(['email'=>$request->email, 'password'=>$request->password])){
             return redirect('/home');
         }
         return view('auth.login');
-}
+    }
 
     //for logout
     public function logout(Request $request) {

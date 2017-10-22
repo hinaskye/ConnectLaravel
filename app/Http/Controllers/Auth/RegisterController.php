@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use app\Traits\CaptchaTrait;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -69,17 +70,18 @@ class RegisterController extends Controller
             'q9' => 'required|q9',
             'q10' => 'required|q10',
             'aboutme' => 'required',
-            'g-recaptcha-response'=>'required|recaptcha'
+            'g-recaptcha-response'  => 'required',
+            'captcha'               => 'accepted'
         ],
-        [   'first_name.required'   => 'First Name is required',
-            'last_name.required'    => 'Last Name is required',
+        [   'firstname.required'   => 'First Name is required',
+            'lastname.required'    => 'Last Name is required',
             'email.required'        => 'Email is required',
             'email.email'           => 'Email is invalid',
             'password.required'     => 'Password is required',
             'password.min'          => 'Password needs to have at least 6 characters',
             'password.max'          => 'Password maximum length is 20 characters',
             'g-recaptcha-response.required' => 'Captcha is required',
-            'recaptcha'=>'Please ensure that you are a human!']
+            'captcha.min'           => 'Wrong captcha, please try again.']
         );
     }
 

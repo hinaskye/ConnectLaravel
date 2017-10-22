@@ -162,12 +162,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
-
         Cmgmyr\Messenger\MessengerServiceProvider::class,
 
 
-        Mews\Captcha\CaptchaServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -235,8 +232,6 @@ return [
         //added by me
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-
-        'Captcha' => Mews\Captcha\Facades\Captcha::class,
 
     ],
 

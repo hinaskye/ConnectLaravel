@@ -3,6 +3,7 @@
 namespace App\Providers;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use App\Validators\ReCaptcha;
 
 class AppServiceProvider extends ServiceProvider
 {

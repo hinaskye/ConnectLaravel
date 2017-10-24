@@ -22,7 +22,7 @@
                 <div class="checkbox">
                     @foreach($users as $user)
                         <label title="{{ $user->firstname }} {{ $user->lastname }}"><input type="checkbox" name="recipients[]"
-                                                                value="{{ $user->id }}">{!!$user->firstname!!}</label>
+							value="{{ $user->id }}">{!!$user->firstname!!} {!!$user->lastname!!}</label>
                     @endforeach
                 </div>
         @endif

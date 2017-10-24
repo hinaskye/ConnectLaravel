@@ -8,10 +8,10 @@
                 <a class="color-white" href="{{ route('messages.show', $thread->id) }}">{{ $thread->subject }}</a>
                 ({{ $thread->userUnreadMessagesCount(Auth::id()) }} unread)</h4>
             <p>
-                {{ @$thread->latestMessage->body }}
+                {{ $thread->latestMessage->body }}
             </p>
             <p>
-                <small><strong>Creator:</strong> {{ $thread->creator()->firstname }}
+                <small><strong>Creator:</strong> {{ $thread->creator()->firstname }} {{ $thread->creator()->lastname }}</small>
             </p>
             <p>
                 <small><strong>Participants:</strong> {{ $thread->participantsString(Auth::id()) }}</small>

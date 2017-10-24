@@ -21,7 +21,7 @@
             @if($users->count() > 0)
                 <div class="checkbox">
                     @foreach($users as $user)
-                        <label title="{{ $user->firstname }}"><input type="checkbox" name="recipients[]"
+                        <label title="{{ $user->firstname }} {{ $user->lastname }}"><input type="checkbox" name="recipients[]"
                                                                 value="{{ $user->id }}">{!!$user->firstname!!}</label>
                     @endforeach
                 </div>

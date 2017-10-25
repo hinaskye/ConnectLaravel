@@ -10,6 +10,14 @@ use Illuminate\Http\Response;
 class passIDController extends Controller
 {
     /**
+     * Ensure only authenticated user access
+     */
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+
+    /**
     * Create view file
     *
     * @return void
@@ -19,21 +27,18 @@ class passIDController extends Controller
     	return view('uniqueprofile');
     }
 
-
     /**
     * Manage Post Request
     *
     * @return void
     */
 
-
     public function userID(Request $request)
     {
-    $user = $request->id;
-    $user = DB::table('users')->where('id', $user)->first();
-    return view('uniqueprofile')->with('user', $user);
-
-	  }
+        $user = $request->id;
+        $user = DB::table('users')->where('id', $user)->first();
+        return view('uniqueprofile')->with('user', $user);
+    }
 }
 
 ?>

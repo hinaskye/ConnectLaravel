@@ -26,7 +26,6 @@ class CustomAuthController extends Controller
         //return $request->all();
     }
 
-
     public function validation($request){
         return $this->validate($request, [
             'firstname' => 'required|string|max:255',
@@ -67,8 +66,6 @@ class CustomAuthController extends Controller
         return view('auth.login');
     }
 
-
-
     public function login(Request $request){
 
         $this->validate($request, [
@@ -87,7 +84,4 @@ class CustomAuthController extends Controller
         Auth::logout();
         return view('auth.login');
     }
-
-
-
 }

@@ -33,21 +33,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'ResetPasswordController@reset');
-
-
 
 Route::get('Register','CustomAuthController@showRegisterForm')->name('auth.register');
 Route::post('Register','CustomAuthController@register');

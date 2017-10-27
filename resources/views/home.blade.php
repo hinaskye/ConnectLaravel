@@ -325,15 +325,14 @@
                         <br>
                         <img class="card-img-top" src="{!! $file['url'] !!}"  onerror="imgError(this);" width="100%" height="300em" alt="Match Image" style="border-radius: 3em;">
                         <div class="card-body">
-                            <p id="blank{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-inlineblock" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
+                            <p id="blank{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-inlineblock pull-right" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
                                 <i class="fa fa-heart-o fa-2x margin-right-16 text-large text-grey"></i>
                             </p>
-                            <p id="fill{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-none" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
+                            <p id="fill{{ $matches[$matchCount]['user']['id'] }}" class="card-text  display-none pull-right" onclick="like({{ $matches[$matchCount]['user']['id'] }})" >
                                 <i class="fa fa-heart fa-2x margin-right-16 text-large text-grey"></i>
                             </p>
                             <h3 class="card-title">{{$matches[$matchCount]['user']['firstname']}} {{$matches[$matchCount]['user']['lastname']}}</h3>
                             <input type="hidden" class="match-gender" value="{{$matches[$matchCount]['user']['gender']}}">
-                            <p class="card-text">{{"~".$matches[$matchCount]['0']['distance']."kms away"}}</p>
                             <p class="card-text">Approx: <span class="distance">{{$matches[$matchCount]['0']['distance']}}</span>kms away</p>
                             <p class="card-text">{{"Suburb: ".$matches[$matchCount]['0']['suburb']}}</p>
                             <p class="age card-text"><?php
@@ -343,9 +342,9 @@
                             <p class="postcode card-text">{{$matches[$matchCount]['user']['postcode']}}</p>
                             {{ csrf_field() }}
                             <input type="hidden" id="idInput" name="id" value={{$matches[$matchCount]['user']['id']}} >
-                            <input type="submit" value="View my profile!">
-                            <button type="button" href="#" id="chat{{ $matches[$matchCount]['user']['id'] }}" class="btn btn-info display-inlineblock pull-right" disabled>
-                                <i class="fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>Chat
+                              <button type="submit" class="btn btn-primary pull-right margin-bottom">View My Profile</button>
+                            <button type="button" href="#" id="chat{{ $matches[$matchCount]['user']['id'] }}" class="btn btn-primary display-inlineblock pull-right" disabled>
+                                <i class="hidden fa fa-comments fa-2x margin-right-16 text-large text-grey"></i>
                             </button>
                         </div>
                     </form>

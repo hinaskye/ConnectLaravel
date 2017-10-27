@@ -33,21 +33,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'ResetPasswordController@reset');
-
-
 
 Route::get('Register','CustomAuthController@showRegisterForm')->name('auth.register');
 Route::post('Register','CustomAuthController@register');
@@ -62,3 +51,11 @@ Route::post('editImage','S3ImageController@imageUploadPost');
 
 //Route::get('s3-image-upload','S3ImageController@imageUpload');
 //Route::post('s3-image-upload','S3ImageController@imageUploadPost');
+
+Route::group(['prefix' => 'messages'], function () {
+    Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
+    Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
+    Route::post('/', ['as' => 'messages.store', 'uses' => 'MessagesController@store']);
+    Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
+    Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
+});

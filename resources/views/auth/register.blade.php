@@ -14,7 +14,6 @@
                     <p class="alert alert-danger">{{$errors}}</p>
                 @endforeach
             @endif
-
             <form class="form-horizontal" action="{{route('auth.register')}}" method="post">
                 {{csrf_field()}}
                 <fieldset>
@@ -213,7 +212,7 @@
                                 pattern="^(0[289][0-9]{2})|([1345689][0-9]{3})|(2[0-8][0-9]{2})|(290[0-9])|(291[0-4])|(7[0-4][0-9]{2})|(7[8-9][0-9]{2})$">
                         </div>
 
-
+                        <div class="g-recaptcha" data-sitekey="6LfvXDUUAAAAAITEune8Z_qw0FcfF9ffUGYT3WFM"></div>
 
 
 
@@ -234,4 +233,5 @@
 </div>
 <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 @endsection

@@ -1,0 +1,18 @@
+body{
+	background-image:url("http://www.bestfurnitureplans.com/wp-content/uploads/2016/10/Home-Craft-Business-Few-Things-to-Consider-Before-Starting-One.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+}
+
+.background-div{
+	background-color: rgba(51, 39, 21, 0.7);
+	border-radius: 1em;
+	padding: 10px;
+}
+
+.color-white{
+	color:#fff;
+}

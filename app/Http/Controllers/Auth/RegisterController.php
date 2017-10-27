@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use app\Traits\CaptchaTrait;
+
 
 class RegisterController extends Controller
 {
@@ -47,6 +49,8 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
+        $data['captcha'] = $this->captchaCheck();
         return Validator::make($data, [
             'id' => 'required',
             'firstname' => 'required|string|max:255',
@@ -65,8 +69,21 @@ class RegisterController extends Controller
             'q7' => 'required|q7',
             'q8' => 'required|q8',
             'q9' => 'required|q9',
-            'q10' => 'required|q10'
-        ]);
+            'q10' => 'required|q10',
+            'aboutme' => 'required',
+            'g-recaptcha-response'  => 'required',
+            'captcha'               => 'required|min:1'
+        ],
+        [   'firstname.required'   => 'First Name is required',
+            'lastname.required'    => 'Last Name is required',
+            'email.required'        => 'Email is required',
+            'email.email'           => 'Email is invalid',
+            'password.required'     => 'Password is required',
+            'password.min'          => 'Password needs to have at least 6 characters',
+            'password.max'          => 'Password maximum length is 20 characters',
+            'g-recaptcha-response.required' => 'Captcha is required',
+            'captcha.min'           => 'Wrong captcha, please try again.']
+        );
     }
 
     /**

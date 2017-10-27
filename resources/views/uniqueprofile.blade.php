@@ -52,7 +52,16 @@
         <div class="col-lg-12 col-md-12">
           <legend class="text-white"><h3 class="display-inline-block margin-top-10"><?php echo "About ", $user->firstname," ", $user->lastname; ?>
             <!-- BEGIN CHAT BUTTON -->
-            <a href="/messages" class="btn btn-success display-inline pull-right" role="button">Chat with me here!</a>
+            <a href=<?php
+            try {
+              // Returns latest thread between auth user and matched user, else send to create message screen
+              $thread = Cmgmyr\Messenger\Models\Thread::between([Auth::id(), $user->id])->latest('updated_at')->firstOrFail();
+              echo "/messages/".$thread->id;
+            } catch (Exception $e) {
+              // Exception occurs when there is no thread that matches the above query
+              echo "/messages/create";
+            }?> 
+            class="btn btn-success display-inline pull-right" role="button">Chat with me here!</a>
             <!-- END CHAT BUTTON -->
           </h3></legend>
           <p><?php echo $user->aboutme; ?></p>

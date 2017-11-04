@@ -252,7 +252,7 @@
 
         <div class="row">
             <div class="searchBox">
-                <input type="text" id="input" class="input" onkeyup="searchFunction()" placeholder="Search..."/>
+                <input type="text" id="input" name="input" class="input" onkeyup="searchFunction()" placeholder="Search..."/>
                 <div class="icon"></div>
             </div>
         </div>

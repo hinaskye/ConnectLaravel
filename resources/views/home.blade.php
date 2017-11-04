@@ -257,7 +257,7 @@
             </div>
         </div>
         <div class="row padding-bottom">
-            <button class="btn btn-success" onclick="w3.toggleClass('#filterOptions','hideFilterOptions')">Toggle Advance Filter Options</button>
+            <button class="btn btn-success" name="buttonFilter" onclick="w3.toggleClass('#filterOptions','hideFilterOptions')">Toggle Advance Filter Options</button>
         </div>
         <div id="filterOptions"class="hideFilterOptions padding-y padding-x">
             <div class="row">

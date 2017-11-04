@@ -302,7 +302,7 @@
                     <span class="whiteText">Filter by match %:</span>
                     <input type="range" class="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
                     <span id="filterPercent">50%</span>
-                    <button class="inline-button btn-primary hidden" onclick="filterMatches()">Filter</button>
+                    <button class="inline-button btn-primary hidden" name="filter" onclick="filterMatches()">Filter</button>
                     <br><button id="filterSelected" class="inline-button btn-danger margin-top" onclick="filterAllSelected()">Filter Selected</button>
                 </div>
                 <div class="filter-bottombar"></div>

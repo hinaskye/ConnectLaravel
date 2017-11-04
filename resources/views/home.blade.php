@@ -261,7 +261,7 @@
         </div>
         <div id="filterOptions"class="hideFilterOptions padding-y padding-x">
             <div class="row">
-                <input id="genderFilterCheck" type="checkbox">
+                <input id="genderFilterCheck" type="checkbox" name="genderCheckBox">
                 <span>Filter by gender:</span>
                 <select id="genderFilter" class="text-dark">
                     <option value="male">Male</option>
@@ -271,7 +271,7 @@
                 <button class="inline-button btn-primary hidden" onclick="filterGender()">Filter</button>
             </div>
             <div class="row padding-top">
-                <input id="ageFilterCheck" type="checkbox">
+                <input id="ageFilterCheck" type="checkbox" name="ageCheckBox">
                 <span>Filter by age:</span>
                 <span>between</span>
                 <input class="text-dark" type="number" id="lowerAge" min="18" max="125" value="18">
@@ -280,7 +280,7 @@
                 <button class="inline-button btn-primary hidden" onclick="filterAge()">Filter</button>
             </div>
             <div class="row padding-top">
-                <input id="distanceFilterCheck" type="checkbox">
+                <input id="distanceFilterCheck" type="checkbox" name="distanceCheckBox">
                 <span>Filter by distance:</span>
                 <span><</span>
                 <input class="text-dark" type="text" id="distanceFilter" value="10" pattern="^[0-9]{1,4}$" maxLength="4" size="4"><span>km</span>
@@ -288,7 +288,7 @@
                 <span id="distanceError" class="text-red padding-x"></span>
             </div>
             <div class="row padding-top">
-                <input id="postcodeFilterCheck" type="checkbox">
+                <input id="postcodeFilterCheck" type="checkbox" name="postcodeCheckBox">
                 <span>Filter by postcode:</span>
                 <input class="text-dark" type="text" id="postcodeFilter" value="3000" maxlength="4" size="4"
                        pattern="^(0[289][0-9]{2})|([1345689][0-9]{3})|(2[0-8][0-9]{2})|(290[0-9])|(291[0-4])|(7[0-4][0-9]{2})|(7[8-9][0-9]{2})$">
@@ -298,7 +298,7 @@
 
             <div class="row padding-top">
                 <div class="padding-bottom">
-                    <input id="matchPercentCheck" type="checkbox">
+                    <input id="matchPercentCheck" type="checkbox" name="percentCheckBox">
                     <span class="whiteText">Filter by match %:</span>
                     <input type="range" class="range" id="filterRange" min=0 max=100 oninput="updateFilter(this.value)" onchange="updateFilter(this.value)">
                     <span id="filterPercent">50%</span>
